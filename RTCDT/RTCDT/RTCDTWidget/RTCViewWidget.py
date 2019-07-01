@@ -5,7 +5,7 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore,QtGui
 import tempfile
 import OpenRTM_aist
 import RTC
@@ -14,10 +14,11 @@ import CreateDataObject
 
 
 
-class RenderPath(QtGui.QGraphicsItem):
+class RenderPath(QtWidgets.QGraphicsItem):
     def __init__(self, scene, parent=None):
         
-        super(RenderPath, self).__init__(parent,scene)
+        super(RenderPath, self).__init__(parent)
+        scene.addItem(self)
         self.path = QtGui.QPainterPath()
         self.penWidth = 1
         self.rotationAngle = 0
@@ -90,16 +91,16 @@ class RenderPath(QtGui.QGraphicsItem):
         painter.setBrush(QtGui.QBrush(gradient))
         painter.drawPath(self.path)
 
-class RTCViewWidget(QtGui.QWidget):
+class RTCViewWidget(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(RTCViewWidget, self).__init__(parent)
         self.parent_window = parent
-        self.scene = QtGui.QGraphicsScene(0, 0, 600, 600)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.scene = QtWidgets.QGraphicsScene(0, 0, 600, 600)
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.view = GraphicsView(self.scene)
         self.view.scale(0.25, 0.25)
-        self.view.setViewportUpdateMode(QtGui.QGraphicsView.BoundingRectViewportUpdate)
+        self.view.setViewportUpdateMode(QtWidgets.QGraphicsView.BoundingRectViewportUpdate)
         self.view.setBackgroundBrush(QtGui.QColor(255, 255, 255))
         self.mainLayout.addWidget(self.view)
         self.renderWindow = RenderRTC(None, self.scene, self.parent_window)
@@ -108,7 +109,7 @@ class RTCViewWidget(QtGui.QWidget):
         
         
 
-class GraphicsView(QtGui.QGraphicsView):
+class GraphicsView(QtWidgets.QGraphicsView):
     def __init__(self, scene, parent=None):
         super(GraphicsView, self).__init__(scene, parent)
 
@@ -147,19 +148,19 @@ class ServicePortWidget(BaseTab.BaseTab):
 
 
         
-        self.deleteButton = QtGui.QPushButton(u"削除")
+        self.deleteButton = QtWidgets.QPushButton(u"削除")
         self.deleteButton.clicked.connect(self.deleteButtonSlot)
         self.subLayouts[-1].addWidget(self.deleteButton)
     def deleteButtonSlot(self):
         self.dialog.accept()
     
 
-class ServicePortDialog(QtGui.QDialog):
+class ServicePortDialog(QtWidgets.QDialog):
     def __init__(self, dport, parent=None):
         super(ServicePortDialog, self).__init__(parent)
         
         self.setWindowTitle(u"サービスポート編集ダイアログ")
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.dpwidget = ServicePortWidget(dport, self)
         self.mainLayout.addWidget(self.dpwidget)
@@ -222,25 +223,25 @@ class DataPortWidget(BaseTab.BaseTab):
         super(DataPortWidget, self).__init__(parent)
         self.dialog = dialog
         self.dport = dport
-        key_list = CreateDataObject.CreateDataObject.dataTypeList.keys()
+        key_list = list(CreateDataObject.CreateDataObject.dataTypeList.keys())
         key_list.sort()
         
         self.portNameTextbox = self.addTextBox("portNameTextbox",u"ポート名",[], dport.profile["portName"])
         self.portTypeCombox = self.addCombox("portTypeCombox",u"ポート",[],["DataOutPort","DataInPort"], dport.profile["portType"])
         self.dataTypeCombox = self.addCombox("dataTypeCombox",u"データ型",[],key_list, dport.profile["dataType"])
-        self.deleteButton = QtGui.QPushButton(u"削除")
+        self.deleteButton = QtWidgets.QPushButton(u"削除")
         self.deleteButton.clicked.connect(self.deleteButtonSlot)
         self.subLayouts[-1].addWidget(self.deleteButton)
     def deleteButtonSlot(self):
         self.dialog.accept()
     
 
-class DataPortDialog(QtGui.QDialog):
+class DataPortDialog(QtWidgets.QDialog):
     def __init__(self, dport, parent=None):
         super(DataPortDialog, self).__init__(parent)
         
         self.setWindowTitle(u"データポート編集ダイアログ")
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.dpwidget = DataPortWidget(dport, self)
         self.mainLayout.addWidget(self.dpwidget)
@@ -373,10 +374,10 @@ class RenderRTC(RenderPath):
     def check_rtc(self):
         if self.comp is not None:
             ec_num = self.mainwindow.controlCompWidget.getECNum()
-            state = [None]
-            if OpenRTM_aist.CORBA_RTCUtil.get_state(state, self.comp.getObjRef(),ec_num):
+            ret, state = OpenRTM_aist.CORBA_RTCUtil.get_state(self.comp.getObjRef(),ec_num)
+            if ret:
                  
-                if state[0] == RTC.INACTIVE_STATE:
+                if state == RTC.INACTIVE_STATE:
                     if self.current_state != RTC.INACTIVE_STATE:
                         color1 = QtGui.QColor("blue")
                         color2 = QtGui.QColor("blue")
@@ -384,7 +385,7 @@ class RenderRTC(RenderPath):
                         self.setFillGradient(color1,color2)
                         self.scene().update()
                     self.current_state = RTC.INACTIVE_STATE
-                elif state[0] == RTC.ACTIVE_STATE:
+                elif state == RTC.ACTIVE_STATE:
                     if self.current_state != RTC.ACTIVE_STATE:
                         color1 = QtGui.QColor("lime")
                         color2 = QtGui.QColor("lime")
@@ -392,7 +393,7 @@ class RenderRTC(RenderPath):
                         self.setFillGradient(color1,color2)
                         self.scene().update()
                     self.current_state = RTC.ACTIVE_STATE
-                elif state[0] == RTC.ERROR_STATE:
+                elif state == RTC.ERROR_STATE:
                     if self.current_state != RTC.ERROR_STATE:
                         color1 = QtGui.QColor("red")
                         color2 = QtGui.QColor("red")

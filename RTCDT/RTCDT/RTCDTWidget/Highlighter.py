@@ -3,7 +3,7 @@
 # -*- Python -*-
 
 import sys
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore,QtGui
 
 
 def format(color, style=''):
@@ -103,7 +103,7 @@ class Highlighter (QtGui.QSyntaxHighlighter):
             while index >= 0:
 
                 index = expression.pos(nth)
-                length = expression.cap(nth).length()
+                length = len(expression.cap(nth))
                 self.setFormat(index, length, format)
                 index = expression.indexIn(text, index + length)
 

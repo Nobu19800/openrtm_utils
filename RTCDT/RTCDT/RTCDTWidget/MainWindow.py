@@ -5,7 +5,7 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore,QtGui
 import tempfile
 import OpenRTM_aist
 
@@ -29,93 +29,97 @@ import struct
 
 
         
-class ModuleSettingWidget(QtGui.QWidget):
+class ModuleSettingWidget(QtWidgets.QWidget):
     def __init__(self, name, module_name,  dialog, parent=None):
         super(ModuleSettingWidget, self).__init__(parent)
         self.dialog = dialog
-        self.mainLayout = QtGui.QHBoxLayout()
+        self.mainLayout = QtWidgets.QHBoxLayout()
         self.setLayout(self.mainLayout)
         
-        self.editLayout = QtGui.QHBoxLayout()
+        self.editLayout = QtWidgets.QHBoxLayout()
         self.mainLayout.addLayout(self.editLayout)
 
 
-        self.namewidget = QtGui.QGroupBox(u"変数名")
+        self.namewidget = QtWidgets.QGroupBox(u"変数名")
         self.editLayout.addWidget(self.namewidget)
-        self.nameLayout = QtGui.QVBoxLayout()
+        self.nameLayout = QtWidgets.QVBoxLayout()
         self.namewidget.setLayout(self.nameLayout)
         
         
-        self.nameedit = QtGui.QLineEdit()
+        self.nameedit = QtWidgets.QLineEdit()
         self.nameedit.setMinimumWidth(150)
         self.nameedit.setText(name)
         self.nameLayout.addWidget(self.nameedit)
 
 
-        self.modulewidget = QtGui.QGroupBox(u"モジュール名")
+        self.modulewidget = QtWidgets.QGroupBox(u"モジュール名")
         self.editLayout.addWidget(self.modulewidget)
-        self.moduleLayout = QtGui.QVBoxLayout()
+        self.moduleLayout = QtWidgets.QVBoxLayout()
         self.modulewidget.setLayout(self.moduleLayout)
 
 
-        self.moduleedit = QtGui.QLineEdit()
+        self.moduleedit = QtWidgets.QLineEdit()
         self.moduleedit.setMinimumWidth(150)
         self.moduleedit.setText(module_name)
         self.moduleLayout.addWidget(self.moduleedit)
         
-        self.deleteButton = QtGui.QPushButton(u"削除")
+        self.deleteButton = QtWidgets.QPushButton(u"削除")
         self.deleteButton.clicked.connect(self.pushSlot)
         self.mainLayout.addWidget(self.deleteButton)
     def pushSlot(self):
         self.dialog.deleteModule(self)
         
     def getModule(self):
-        name = str(self.nameedit.text().toLocal8Bit())
-        module_name = str(self.moduleedit.text().toLocal8Bit())
+        try:
+            name = str(self.nameedit.text().toLocal8Bit())
+            module_name = str(self.moduleedit.text().toLocal8Bit())
+        except:
+            name = self.nameedit.text()
+            module_name = self.moduleedit.text()
         return {"name":name,"module":module_name}
 
 
 
-class ModuleDialog(QtGui.QDialog):
+class ModuleDialog(QtWidgets.QDialog):
     def __init__(self, module_lists, parent=None):
         super(ModuleDialog, self).__init__(parent)
         self.setMinimumWidth(500)
         self.setWindowTitle(u"モジュール設定ダイアログ")
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
 
 
-        self.editLayout = QtGui.QHBoxLayout()
+        self.editLayout = QtWidgets.QHBoxLayout()
         self.mainLayout.addLayout(self.editLayout)
 
-        self.namewidget = QtGui.QGroupBox(u"変数名")
+        self.namewidget = QtWidgets.QGroupBox(u"変数名")
         self.editLayout.addWidget(self.namewidget)
-        self.nameLayout = QtGui.QVBoxLayout()
+        self.nameLayout = QtWidgets.QVBoxLayout()
         self.namewidget.setLayout(self.nameLayout)
         
         
-        self.nameedit = QtGui.QLineEdit()
+        self.nameedit = QtWidgets.QLineEdit()
         self.nameedit.setMinimumWidth(150)
         self.nameedit.setText("")
         self.nameLayout.addWidget(self.nameedit)
 
 
-        self.modulewidget = QtGui.QGroupBox(u"モジュール名")
+        self.modulewidget = QtWidgets.QGroupBox(u"モジュール名")
         self.editLayout.addWidget(self.modulewidget)
-        self.moduleLayout = QtGui.QVBoxLayout()
+        self.moduleLayout = QtWidgets.QVBoxLayout()
         self.modulewidget.setLayout(self.moduleLayout)
 
 
-        self.moduleedit = QtGui.QLineEdit()
+        self.moduleedit = QtWidgets.QLineEdit()
         self.moduleedit.setMinimumWidth(150)
         self.moduleedit.setText("")
         self.moduleLayout.addWidget(self.moduleedit)
     
-        self.addButton = QtGui.QPushButton(u"追加")
+        self.addButton = QtWidgets.QPushButton(u"追加")
         self.addButton.clicked.connect(self.addModuleSlot)
         self.mainLayout.addWidget(self.addButton)
 
-        self.exitButton = QtGui.QPushButton(u"更新")
+        self.exitButton = QtWidgets.QPushButton(u"更新")
         self.exitButton.clicked.connect(self.exitSlot)
         self.mainLayout.addWidget(self.exitButton)
         
@@ -129,8 +133,12 @@ class ModuleDialog(QtGui.QDialog):
         self.accept()
         
     def addModuleSlot(self):
-        name = str(self.nameedit.text().toLocal8Bit())
-        module_name = str(self.moduleedit.text().toLocal8Bit())
+        try:
+            name = str(self.nameedit.text().toLocal8Bit())
+            module_name = str(self.moduleedit.text().toLocal8Bit())
+        except:
+            name = self.nameedit.text()
+            module_name = self.moduleedit.text()
         
         if module_name == "":
             return
@@ -161,17 +169,17 @@ class ModuleDialog(QtGui.QDialog):
 
 
 
-class PathSettingWidget(QtGui.QWidget):
+class PathSettingWidget(QtWidgets.QWidget):
     def __init__(self, text, dialog, parent=None):
         super(PathSettingWidget, self).__init__(parent)
         self.dialog = dialog
-        self.mainLayout = QtGui.QHBoxLayout()
+        self.mainLayout = QtWidgets.QHBoxLayout()
         self.setLayout(self.mainLayout)
-        self.lineedit = QtGui.QLineEdit()
+        self.lineedit = QtWidgets.QLineEdit()
         self.lineedit.setMinimumWidth(300)
         self.lineedit.setText(text)
         self.mainLayout.addWidget(self.lineedit)
-        self.deleteButton = QtGui.QPushButton(u"削除")
+        self.deleteButton = QtWidgets.QPushButton(u"削除")
         #self.deleteButton.setParent(None)
         self.deleteButton.clicked.connect(self.pushSlot)
         self.mainLayout.addWidget(self.deleteButton)
@@ -185,23 +193,26 @@ class PathSettingWidget(QtGui.QWidget):
         self.dialog.deletePath(self)
         
     def getPath(self):
-        return str(self.lineedit.text().toLocal8Bit())
+        try:
+            return str(self.lineedit.text().toLocal8Bit())
+        except:
+            return self.lineedit.text()
         
         
 
-class PathDialog(QtGui.QDialog):
+class PathDialog(QtWidgets.QDialog):
     def __init__(self, path_lists, parent=None):
         super(PathDialog, self).__init__(parent)
         self.setMinimumWidth(500)
         self.setWindowTitle(u"パス設定ダイアログ")
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
 
-        self.addButton = QtGui.QPushButton(u"追加")
+        self.addButton = QtWidgets.QPushButton(u"追加")
         self.addButton.clicked.connect(self.addPathSlot)
         self.mainLayout.addWidget(self.addButton)
 
-        self.exitButton = QtGui.QPushButton(u"更新")
+        self.exitButton = QtWidgets.QPushButton(u"更新")
         self.exitButton.clicked.connect(self.exitSlot)
         self.mainLayout.addWidget(self.exitButton)
         
@@ -214,9 +225,13 @@ class PathDialog(QtGui.QDialog):
         self.accept()
         
     def addPathSlot(self):
-        dirName = QtGui.QFileDialog.getExistingDirectory(self,u"開く")
-        if dirName.isEmpty():
-            return ""
+        dirName = QtWidgets.QFileDialog.getExistingDirectory(self,u"開く")
+        try:
+            if dirName.isEmpty():
+                return ""
+        except:
+            if not dirName:
+                return ""
         self.addPath(dirName)
 
     def getPathList(self):
@@ -257,7 +272,7 @@ def readString(f):
 
 
 
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     
     def __init__(self, comp, file_arg, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -265,13 +280,13 @@ class MainWindow(QtGui.QMainWindow):
         self.path_list = []
         self.module_list = {}
         self.setWindowTitle(u"RTC開発ツール")
-        self.cw = QtGui.QWidget()
-        self.tab_widget = QtGui.QTabWidget(self)
+        self.cw = QtWidgets.QWidget()
+        self.tab_widget = QtWidgets.QTabWidget(self)
         
-        self.ml = QtGui.QVBoxLayout()
+        self.ml = QtWidgets.QVBoxLayout()
 
-        self.subLayout = QtGui.QHBoxLayout()
-        self.tabLayout = QtGui.QVBoxLayout()
+        self.subLayout = QtWidgets.QHBoxLayout()
+        self.tabLayout = QtWidgets.QVBoxLayout()
         self.subLayout.addLayout(self.tabLayout)
 
         
@@ -279,13 +294,13 @@ class MainWindow(QtGui.QMainWindow):
 
         self.tabLayout.addWidget(self.tab_widget)
 
-        self.rtcLayout = QtGui.QHBoxLayout()
+        self.rtcLayout = QtWidgets.QHBoxLayout()
         self.subLayout.addLayout(self.rtcLayout)
 
         self.vw = RTCViewWidget.RTCViewWidget(self)
         self.vw.setFixedWidth(350)
         
-        self.viewLayout = QtGui.QVBoxLayout()
+        self.viewLayout = QtWidgets.QVBoxLayout()
         self.viewLayout.addWidget(self.vw)
 
 
@@ -296,7 +311,7 @@ class MainWindow(QtGui.QMainWindow):
 
         
 
-        self.rtc_tab_widget = QtGui.QTabWidget(self)
+        self.rtc_tab_widget = QtWidgets.QTabWidget(self)
         self.rtc_tab_widget.setFixedWidth(350)
         self.rtcLayout.addWidget(self.rtc_tab_widget)
 
@@ -350,7 +365,7 @@ class MainWindow(QtGui.QMainWindow):
         self.tab_widget.addTab(self.global_tab, u"グローバル")
 
         self.tab_widget.setCurrentIndex(ActivityCode.ActivityCode.onExecute)
-        self.save_button = QtGui.QPushButton(u'更新')
+        self.save_button = QtWidgets.QPushButton(u'更新')
         self.tabLayout.addWidget(self.save_button)
         self.save_button.clicked.connect(self.save_button_slot)
 
@@ -371,61 +386,61 @@ class MainWindow(QtGui.QMainWindow):
 
     def createAction(self):
 
-        self.newAct = QtGui.QAction(QtGui.QIcon(':/images/new.png'),u"&新規作成...",self)
+        self.newAct = QtWidgets.QAction(QtGui.QIcon(':/images/new.png'),u"&新規作成...",self)
         self.newAct.setShortcuts(QtGui.QKeySequence.New)
         self.newAct.triggered.connect(self.newFile)
         
 
 
-        self.openAct = QtGui.QAction(QtGui.QIcon(':/images/open.png'),u"&開く...",self)
+        self.openAct = QtWidgets.QAction(QtGui.QIcon(':/images/open.png'),u"&開く...",self)
         self.openAct.setShortcuts(QtGui.QKeySequence.Open)
         self.openAct.triggered.connect(self.open)
 
 
-        self.saveAct = QtGui.QAction(QtGui.QIcon(':/images/save.png'),u"&保存",self)
+        self.saveAct = QtWidgets.QAction(QtGui.QIcon(':/images/save.png'),u"&保存",self)
         self.saveAct.setShortcuts(QtGui.QKeySequence.Save)
         self.saveAct.triggered.connect(self.save)
 
-        self.saveAsAct = QtGui.QAction(u"&名前を付けて保存",self)
+        self.saveAsAct = QtWidgets.QAction(u"&名前を付けて保存",self)
         self.saveAsAct.setShortcuts(QtGui.QKeySequence.SaveAs)
         self.saveAsAct.triggered.connect(self.saveAs)
 
-        self.savePythonFileAct = QtGui.QAction(u"&Python &File出力",self)
+        self.savePythonFileAct = QtWidgets.QAction(u"&Python &File出力",self)
         self.savePythonFileAct.triggered.connect(self.savePythonFile)
 
-        self.saveXMLFileAct = QtGui.QAction(u"&XML &File 出力",self)
+        self.saveXMLFileAct = QtWidgets.QAction(u"&XML &File 出力",self)
         self.saveXMLFileAct.triggered.connect(self.saveXMLFile)
 
         
-        self.size10Act = QtGui.QAction("&10",self,checkable=True)
+        self.size10Act = QtWidgets.QAction("&10",self,checkable=True)
         self.size10Act.triggered.connect(self.set10FontSize)
-        self.size12Act = QtGui.QAction("&12",self,checkable=True)
+        self.size12Act = QtWidgets.QAction("&12",self,checkable=True)
         self.size12Act.triggered.connect(self.set12FontSize)
-        self.size24Act = QtGui.QAction("&24",self,checkable=True)
+        self.size24Act = QtWidgets.QAction("&24",self,checkable=True)
         self.size24Act.triggered.connect(self.set24FontSize)
-        self.size48Act = QtGui.QAction("&48",self,checkable=True)
+        self.size48Act = QtWidgets.QAction("&48",self,checkable=True)
         self.size48Act.triggered.connect(self.set48FontSize)
         
-        self.sizeGroup = QtGui.QActionGroup(self)
+        self.sizeGroup = QtWidgets.QActionGroup(self)
         self.sizeGroup.addAction(self.size10Act)
         self.sizeGroup.addAction(self.size12Act)
         self.sizeGroup.addAction(self.size24Act)
         self.sizeGroup.addAction(self.size48Act)
         self.size12Act.setChecked(True)
 
-        self.pathAct = QtGui.QAction(u"&Path設定",self)
+        self.pathAct = QtWidgets.QAction(u"&Path設定",self)
         self.pathAct.triggered.connect(self.setPath)
 
-        self.moduleAct = QtGui.QAction(u"&インポートモジュール設定",self)
+        self.moduleAct = QtWidgets.QAction(u"&インポートモジュール設定",self)
         self.moduleAct.triggered.connect(self.setModule)
 
-        self.execStringAct = QtGui.QAction("&exec",self,checkable=True)
+        self.execStringAct = QtWidgets.QAction("&exec",self,checkable=True)
         self.execStringAct.triggered.connect(self.setExecString)
         
-        self.fileMethodAct = QtGui.QAction("&file",self,checkable=True)
+        self.fileMethodAct = QtWidgets.QAction("&file",self,checkable=True)
         self.fileMethodAct.triggered.connect(self.setFileMethod)
 
-        self.execGroup = QtGui.QActionGroup(self)
+        self.execGroup = QtWidgets.QActionGroup(self)
         self.execGroup.addAction(self.execStringAct)
         self.execGroup.addAction(self.fileMethodAct)
         self.execStringAct.setChecked(True)
@@ -521,11 +536,16 @@ class MainWindow(QtGui.QMainWindow):
         
         
         
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","XML File (*.xml);;All Files (*)")
-        if fileName.isEmpty():
-            return False
-
-        ba = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","XML File (*.xml);;All Files (*)")
+        
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
 
         with open(ba, "w") as f:
             #from wasanbon.core.rtc.rtcprofile import RTCProfile
@@ -579,11 +599,15 @@ class MainWindow(QtGui.QMainWindow):
             
         
     def savePythonFile(self):
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","Python File (*.py);;All Files (*)")
-        if fileName.isEmpty():
-            return False
-
-        ba = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","Python File (*.py);;All Files (*)")
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
         
         with codecs.open(ba, 'w', 'utf-8') as fh:
             ports = self.comp.get_ports()
@@ -917,20 +941,30 @@ class MainWindow(QtGui.QMainWindow):
 
         self.curFile = filepath
     def open(self):
-        fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","RTComponent File (*.rtc);;All Files (*)")
-        if fileName.isEmpty():
-            return ""
-        filepath = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","RTComponent File (*.rtc);;All Files (*)")
+        try:
+            if fileName.isEmpty():
+                return ""
+            filepath = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return ""
+            filepath = fileName
         self.openfile(filepath)
 
         
 
     def saveAs(self):
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","RTComponent File (*.rtc);;All Files (*)")
-        if fileName.isEmpty():
-            return False
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","RTComponent File (*.rtc);;All Files (*)")
 
-        ba = str(fileName.toLocal8Bit())
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
         
         self.saveFile(ba)
         self.curFile = ba
@@ -990,7 +1024,7 @@ class MainWindow(QtGui.QMainWindow):
                         s = p.profile["IDLPath"]
                         writeString(f, s)
                 config_params = self.vw.renderWindow.config_params
-                key_list = config_params.keys()
+                key_list = list(config_params.keys())
                 key_list.sort()
                 length = len(key_list)
                 length_data = struct.pack("i",length)

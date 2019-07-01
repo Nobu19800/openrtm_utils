@@ -5,13 +5,13 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore, QtGui
 
 
 
 
 
-class LogViewer(QtGui.QTextEdit):
+class LogViewer(QtWidgets.QTextEdit):
     def __init__(self, comp, parent=None):
         super(LogViewer,self).__init__(parent)
         self.comp = comp

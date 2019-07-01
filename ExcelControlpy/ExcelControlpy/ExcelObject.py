@@ -13,16 +13,15 @@ import pprint
 import datetime
 import msvcrt
 
-import thread
-
 
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
+
+import threading
 
 
 
@@ -154,14 +153,20 @@ class ExcelObject:
       
       if mt == True:
         self.initCom()
-        tid = str(thread.get_ident())
+        tid = str(threading.get_ident())
         xlWorksheet = self.comObjects[tid].xlWorksheet
 
       
-        
-        
       
-      if sn in xlWorksheet:
+      try:
+          sn_byte = sn.encode('utf-8')
+      except:
+          sn_byte = sn
+      
+      if sn in xlWorksheet or sn_byte in xlWorksheet:
+        c = int(c)
+        if sn_byte in xlWorksheet:
+           sn = sn_byte
         
         ws = xlWorksheet[sn]
         v = []
@@ -287,7 +292,7 @@ class ExcelObject:
     # @param self
     #
     def initCom(self):
-        tid = str(thread.get_ident())
+        tid = str(threading.get_ident())
         
         #if self.xlApplication == None:
         if tid in self.comObjects:

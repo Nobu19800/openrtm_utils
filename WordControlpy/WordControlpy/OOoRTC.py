@@ -26,7 +26,6 @@ elif os.name == 'nt':
 
 import time
 import random
-import commands
 import RTC
 import OpenRTM_aist
 
@@ -64,14 +63,20 @@ def SetCoding(m_str, m_code):
             return m_str
         else:
             try:
-                return m_str.decode(m_code).encode("utf-8")
+                return m_str.encode("utf-8")
             except:
-                return ""
+                try:
+                   return m_str.decode(m_code).encode("utf-8") 
+                except:
+                    return ""
     elif os.name == 'nt':
         try:
-            return m_str.decode(m_code).encode('cp932')
+            return m_str.encode('cp932')
         except:
-            return ""
+            try:
+                return m_str.decode(m_code).encode('cp932')
+            except:
+                return ""
 
 ##
 # @brief 文字、背景色の色をRGB形式から変換して返すクラス

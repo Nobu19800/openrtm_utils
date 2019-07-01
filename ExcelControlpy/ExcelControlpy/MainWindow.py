@@ -5,7 +5,7 @@
 # @file MainWindow.py
 # @brief ExcelRTCの操作GUIのメインウインドウ
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 import OOoRTC
 import CalcDataPort
 
@@ -14,7 +14,6 @@ import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 
 
@@ -70,13 +69,17 @@ class TreeNode:
     # @param self
     # @return 表示名
     def getDisplayValue(self):
-        return str(self.node.text(0).toLocal8Bit())
+        try:
+            currentText = str(self.node.text(0).toLocal8Bit())
+        except:
+            currentText = self.node.text(0)
+        return currentText
 
 ##
 # @class MainWindow
 # @brief メインウインドウのウィジェット
 #
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -93,31 +96,31 @@ class MainWindow(QtGui.QMainWindow):
         
 
         
-        self.layout = QtGui.QHBoxLayout()
+        self.layout = QtWidgets.QHBoxLayout()
 
 
         #self.UB.clicked.connect(self.UpdateComp)        
         
 
-        self.l_layout = QtGui.QVBoxLayout()
+        self.l_layout = QtWidgets.QVBoxLayout()
         
-        self.treeWidget = QtGui.QTreeWidget(self)
+        self.treeWidget = QtWidgets.QTreeWidget(self)
         self.treeWidget.itemClicked.connect(self.treeWidgetSlot)
         self.l_layout.addWidget(self.treeWidget)
         
         
-        self.portListcomboBox = QtGui.QComboBox()
-        self.portListcomboBox.setLineEdit(QtGui.QLineEdit())
+        self.portListcomboBox = QtWidgets.QComboBox()
+        self.portListcomboBox.setLineEdit(QtWidgets.QLineEdit())
         self.portListcomboBox.activated[str].connect(self.portListSlot)
         self.l_layout.addWidget(self.portListcomboBox)
         
-        self.sub_l_layout = QtGui.QHBoxLayout()
+        self.sub_l_layout = QtWidgets.QHBoxLayout()
         
-        self.addButton = QtGui.QPushButton(u"作成")
+        self.addButton = QtWidgets.QPushButton(u"作成")
         self.sub_l_layout.addWidget(self.addButton)
         self.addButton.clicked.connect(self.addSlot)  
         
-        self.deleteButton = QtGui.QPushButton(u"削除")
+        self.deleteButton = QtWidgets.QPushButton(u"削除")
         self.sub_l_layout.addWidget(self.deleteButton)
         self.deleteButton.clicked.connect(self.deleteSlot)
         
@@ -126,103 +129,107 @@ class MainWindow(QtGui.QMainWindow):
         self.layout.addLayout(self.l_layout)
         
 
-        self.m_layout = QtGui.QVBoxLayout()
+        self.m_layout = QtWidgets.QVBoxLayout()
 
-        self.infotextBox = QtGui.QLineEdit()
+        self.infotextBox = QtWidgets.QLineEdit()
         self.m_layout.addWidget(self.infotextBox)
         
-        self.collabel = QtGui.QLabel(u"行番号")
+        self.collabel = QtWidgets.QLabel(u"行番号")
         self.m_layout.addWidget(self.collabel)
 
-        self.coltextBox = QtGui.QLineEdit()
+        self.coltextBox = QtWidgets.QLineEdit()
         self.m_layout.addWidget(self.coltextBox)
         self.coltextBox.setText("2")
 
-        self.rawlabel = QtGui.QLabel(u"列番号")
+        self.rawlabel = QtWidgets.QLabel(u"列番号")
         self.m_layout.addWidget(self.rawlabel)
 
-        self.sub_m_layout = QtGui.QHBoxLayout()
+        self.sub_m_layout = QtWidgets.QHBoxLayout()
 
-        self.rawtextBox = QtGui.QLineEdit()
+        self.rawtextBox = QtWidgets.QLineEdit()
         self.sub_m_layout.addWidget(self.rawtextBox)
         self.rawtextBox.setText("A")
 
-        self.lentextBox = QtGui.QLineEdit()
+        self.lentextBox = QtWidgets.QLineEdit()
         self.sub_m_layout.addWidget(self.lentextBox)
         
 
         self.m_layout.addLayout(self.sub_m_layout)
 
-        self.sheetlabel = QtGui.QLabel(u"シート名")
+        self.sheetlabel = QtWidgets.QLabel(u"シート名")
         self.m_layout.addWidget(self.sheetlabel)
 
-        self.sheetcomboBox = QtGui.QComboBox()
+        self.sheetcomboBox = QtWidgets.QComboBox()
         self.m_layout.addWidget(self.sheetcomboBox)   
-        self.naneServerlabel = QtGui.QLabel(u"ネームサーバーのアドレス")
+        self.naneServerlabel = QtWidgets.QLabel(u"ネームサーバーのアドレス")
         self.m_layout.addWidget(self.naneServerlabel)
 
-        self.namingServertextBox = QtGui.QLineEdit()
+        self.namingServertextBox = QtWidgets.QLineEdit()
         self.m_layout.addWidget(self.namingServertextBox)
         self.namingServertextBox.setText("localhost")
         
-        self.namingServerButton = QtGui.QPushButton(u"ツリー表示")
+        self.namingServerButton = QtWidgets.QPushButton(u"ツリー表示")
         self.m_layout.addWidget(self.namingServerButton)
         self.namingServerButton.clicked.connect(self.namingServerSlot)
 
-        self.resetButton = QtGui.QPushButton(u"行番号初期化")
+        self.resetButton = QtWidgets.QPushButton(u"行番号初期化")
         self.m_layout.addWidget(self.resetButton)
         self.resetButton.clicked.connect(self.resetSlot)
 
-        self.allResetButton = QtGui.QPushButton(u"全ての行番号を初期化")
+        self.allResetButton = QtWidgets.QPushButton(u"全ての行番号を初期化")
         self.m_layout.addWidget(self.allResetButton)
         self.allResetButton.clicked.connect(self.allResetSlot)
 
-        self.loadButton = QtGui.QPushButton(u"読み込み")
+        self.loadButton = QtWidgets.QPushButton(u"読み込み")
         self.m_layout.addWidget(self.loadButton)
         self.loadButton.clicked.connect(self.loadSlot)
 
         self.layout.addLayout(self.m_layout)
         
-        self.r_layout = QtGui.QVBoxLayout()
+        self.r_layout = QtWidgets.QVBoxLayout()
 
         self.r_layout.addStretch()
         
-        self.inPortlabel = QtGui.QLabel(u"InPort")
+        self.inPortlabel = QtWidgets.QLabel(u"InPort")
         self.r_layout.addWidget(self.inPortlabel)
         
-        self.inPortcomboBox = QtGui.QComboBox()
+        self.inPortcomboBox = QtWidgets.QComboBox()
         self.r_layout.addWidget(self.inPortcomboBox)
         
-        self.portlabel = QtGui.QLabel(u"関連付けしたInPort")
+        self.portlabel = QtWidgets.QLabel(u"関連付けしたInPort")
         self.r_layout.addWidget(self.portlabel)
         
-        self.attachcomboBox = QtGui.QComboBox()
+        self.attachcomboBox = QtWidgets.QComboBox()
         self.r_layout.addWidget(self.attachcomboBox)
         
-        self.attachButton = QtGui.QPushButton(u"関連付け")
+        self.attachButton = QtWidgets.QPushButton(u"関連付け")
         self.r_layout.addWidget(self.attachButton)
         self.attachButton.clicked.connect(self.attachBSlot)
         
-        self.detachButton = QtGui.QPushButton(u"関連付け解除")
+        self.detachButton = QtWidgets.QPushButton(u"関連付け解除")
         self.r_layout.addWidget(self.detachButton)
         self.detachButton.clicked.connect(self.detachBSlot)
         
-        self.rowcheckBox = QtGui.QCheckBox(u"列を移動させるか")
+        self.rowcheckBox = QtWidgets.QCheckBox(u"列を移動させるか")
         self.r_layout.addWidget(self.rowcheckBox)
         self.rowcheckBox.setCheckState(QtCore.Qt.Checked)
 
-        self.datatypelabel = QtGui.QLabel(u"データ型")
+        self.datatypelabel = QtWidgets.QLabel(u"データ型")
         self.r_layout.addWidget(self.datatypelabel)
 
-        self.datatypecomboBox = QtGui.QComboBox()
+        self.datatypecomboBox = QtWidgets.QComboBox()
         self.r_layout.addWidget(self.datatypecomboBox)
         
         self.datatypecomboBox.addItem(u"")
         for d in CalcDataPort.DataType.DataTypeList:
-            self.datatypecomboBox.addItem(d.decode("utf-8"))
+            try:
+                d = d.decode("utf-8")
+            except:
+                pass
+            self.datatypecomboBox.addItem(d)
 
         
-        self.porttypecomboBox = QtGui.QComboBox()
+        self.porttypecomboBox = QtWidgets.QComboBox()
         self.r_layout.addWidget(self.porttypecomboBox)
         self.porttypecomboBox.addItem(u"DataInPort")
         self.porttypecomboBox.addItem(u"DataOutPort")
@@ -233,13 +240,13 @@ class MainWindow(QtGui.QMainWindow):
 
         #Button1.clicked.connect(SetButton)
         
-        """item1 = QtGui.QTreeWidgetItem(["test2"])
+        """item1 = QtWidgets.QTreeWidgetItem(["test2"])
         self.treeWidget.addTopLevelItem(item1)
-        item1_1 = QtGui.QTreeWidgetItem(["child"])
+        item1_1 = QtWidgets.QTreeWidgetItem(["child"])
         item1.addChild(item1_1)
-        item1 = QtGui.QTreeWidgetItem(self.treeWidget)
+        item1 = QtWidgets.QTreeWidgetItem(self.treeWidget)
         item1.setText(0, u"アイテム1")
-        item1_1 = QtGui.QTreeWidgetItem(["child"])
+        item1_1 = QtWidgets.QTreeWidgetItem(["child"])
         item1.addChild(item1_1)"""
         #self.layout.addStretch()
 	
@@ -249,7 +256,7 @@ class MainWindow(QtGui.QMainWindow):
 
 	#self.treeWidget.clear()
         
-        self.widget = QtGui.QWidget()
+        self.widget = QtWidgets.QWidget()
         self.widget.setLayout(self.layout)
         
         self.setCentralWidget(self.widget)
@@ -337,7 +344,10 @@ class MainWindow(QtGui.QMainWindow):
     #
     def portListSlot(self, string):
         self.updateInPortList()
-        pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        try:
+            pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        except:
+            pn = self.portListcomboBox.currentText()
         if (pn in self.rtc.InPorts) == True:
             self.updateTree(self.rtc.InPorts[pn])
         elif (pn in self.rtc.OutPorts) == True:
@@ -349,13 +359,20 @@ class MainWindow(QtGui.QMainWindow):
     # @param name データポート名
     # @param i_port 接続するデータポート
     def compAddOutPort(self, name, i_port, autoCon = True):
-        row = str(self.rawtextBox.text().toLocal8Bit())
-        sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
+        try:
+            row = str(self.rawtextBox.text().toLocal8Bit())
+            sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
+        except:
+            row = self.rawtextBox.text()
+            sn = self.sheetcomboBox.currentText()
         if sn == "":
             return False
-        col = str(self.coltextBox.text().toLocal8Bit())
-        
-        mlen = str(self.lentextBox.text().toLocal8Bit())
+        try:
+            col = str(self.coltextBox.text().toLocal8Bit())
+            mlen = str(self.lentextBox.text().toLocal8Bit())
+        except:
+            col = self.coltextBox.text()
+            mlen = self.lentextBox.text()
         
         mstate = int(self.rowcheckBox.checkState())
         mst = True
@@ -372,15 +389,21 @@ class MainWindow(QtGui.QMainWindow):
     # @param name データポート名
     # @param o_port 接続するデータポート
     def compAddInPort(self, name, o_port, autoCon = True):
-        row = str(self.rawtextBox.text().toLocal8Bit())
-        
-        sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
+        try:
+            row = str(self.rawtextBox.text().toLocal8Bit())
+            sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
+        except:
+            row = self.rawtextBox.text()
+            sn = self.sheetcomboBox.currentText()
         if sn == "":
             return False
-        col = str(self.coltextBox.text().toLocal8Bit())
-        
-        mlen = str(self.lentextBox.text().toLocal8Bit())
-        
+        try:
+            col = str(self.coltextBox.text().toLocal8Bit())
+            mlen = str(self.lentextBox.text().toLocal8Bit())
+        except:
+            col = self.coltextBox.text()
+            mlen = self.lentextBox.text()
+
         mstate = int(self.rowcheckBox.checkState())
         mst = True
         if mstate == QtCore.Qt.Unchecked:
@@ -434,7 +457,6 @@ class MainWindow(QtGui.QMainWindow):
         
 
         for p in PortList:
-
                     cell,sheet,m_len = self.rtc.m_excel.getCell(count,"A",'保存用',"",False)
                     pn = ''
                     for j in range(0, len(p._port_a[0])):
@@ -610,10 +632,16 @@ class MainWindow(QtGui.QMainWindow):
     # @param m_port データポートオブジェクト
     #
     def setPortParam(self, m_port):
-        m_port._row = str(self.rawtextBox.text().toLocal8Bit())
-        m_port._sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
-        m_port._col = int(self.coltextBox.text().toLocal8Bit())
-        m_port._length = str(self.lentextBox.text().toLocal8Bit())
+        try:
+            m_port._row = str(self.rawtextBox.text().toLocal8Bit())
+            m_port._sn = str(self.sheetcomboBox.currentText().toLocal8Bit())
+            m_port._col = int(self.coltextBox.text().toLocal8Bit())
+            m_port._length = str(self.lentextBox.text().toLocal8Bit())
+        except:
+            m_port._row = self.rawtextBox.text()
+            m_port._sn = self.sheetcomboBox.currentText()
+            m_port._col = int(self.coltextBox.text())
+            m_port._length = self.lentextBox.text()
         m_port.update_cellName(self.rtc)
         mstate = int(self.rowcheckBox.checkState())
         if mstate == QtCore.Qt.Unchecked:
@@ -656,8 +684,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     #
     def addSlot(self):
-        
-        pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        try:
+            pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        except:
+            pn = self.portListcomboBox.currentText()
         if (pn in self.rtc.InPorts) == True:
             self.setPortParam(self.rtc.InPorts[pn])
             self.updateSaveSheet()
@@ -666,17 +696,26 @@ class MainWindow(QtGui.QMainWindow):
             self.setPortParam(self.rtc.OutPorts[pn])
             self.updateSaveSheet()
             return
-
-        dt = str(self.datatypecomboBox.currentText().toLocal8Bit())
+        try:
+            dt = str(self.datatypecomboBox.currentText().toLocal8Bit())
+        except:
+            dt = self.datatypecomboBox.currentText()
         if dt != "":
             F_Name = dt + str(OpenRTM_aist.uuid1())
-            pt = str(self.porttypecomboBox.currentText().toLocal8Bit())
+            try:
+                pt = str(self.porttypecomboBox.currentText().toLocal8Bit())
+            except:
+                pt = self.porttypecomboBox.currentText()
+            try:
+                dt = dt.decode("utf-8")
+            except:
+                pass
             if pt == "DataOutPort":
                 if self.compAddOutPort(F_Name, [[pt,dt],dt], False):
-                    self.massageBoxFunc('',dt.decode("utf-8")+u"型のOutPortを作成しました。")
+                    self.massageBoxFunc('',dt+u"型のOutPortを作成しました。")
             else:
                 if self.compAddInPort(F_Name, [[pt,dt],dt], False):
-                    self.massageBoxFunc('',dt.decode("utf-8")+u"型のInPortを作成しました。")
+                    self.massageBoxFunc('',dt+u"型のInPortを作成しました。")
 
             self.updateInPortList()
             self.updateDataPortList()
@@ -752,7 +791,7 @@ class MainWindow(QtGui.QMainWindow):
     #
 
     def massageBoxFunc(self, title, mes):
-        msgbox = QtGui.QMessageBox(self)
+        msgbox = QtWidgets.QMessageBox(self)
         msgbox.setText(mes)
         msgbox.setModal(True)
         ret = msgbox.exec_()
@@ -775,7 +814,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     #
     def deleteSlot(self):
-        pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        try:
+            pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        except:
+            pn = self.portListcomboBox.currentText()
         if (pn in self.rtc.InPorts) == True:
             i = self.rtc.InPorts[pn]
             self.rtc.mRemoveInPort(i)
@@ -865,7 +907,7 @@ class MainWindow(QtGui.QMainWindow):
     def loadSlot(self):
         self.loadSheet()
         self.updateDataPortList()
-        #fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;Python File (*.py);;All Files (*)")
+        #fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;Python File (*.py);;All Files (*)")
 	
 
 	#ba = str(fileName.toLocal8Bit())
@@ -877,7 +919,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param m_port データポートオブジェクト
     #
     def attachTC(self, m_port):
-        iname = str(self.inPortcomboBox.currentText().toLocal8Bit())
+        try:
+            iname = str(self.inPortcomboBox.currentText().toLocal8Bit())
+        except:
+            iname = self.inPortcomboBox.currentText()
         if (iname in self.rtc.InPorts) == True:
                         
             m_port.attachports[iname] = iname
@@ -901,8 +946,11 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     #
     def attachBSlot(self):
-        pn = str(self.portListcomboBox.currentText().toLocal8Bit())
-        
+        try:
+            pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        except:
+            pn = self.portListcomboBox.currentText()
+
         if (pn in self.rtc.OutPorts) == True:
             o = self.rtc.OutPorts[pn]
             self.attachTC(o)
@@ -929,8 +977,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param m_port データポートオブジェクト
     #
     def detachTC(self, m_port):
-        iname = str(self.attachcomboBox.currentText().toLocal8Bit())
-
+        try:
+            iname = str(self.attachcomboBox.currentText().toLocal8Bit())
+        except:
+            iname = self.attachcomboBox.currentText()
         if (iname in m_port.attachports) == True:
             del m_port.attachports[iname]
             if (m_port._name in self.rtc.InPorts[iname].attachports) == True:
@@ -948,7 +998,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     #
     def detachBSlot(self):
-        pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        try:
+            pn = str(self.portListcomboBox.currentText().toLocal8Bit())
+        except:
+            pn = self.portListcomboBox.currentText()
         
         if (pn in self.rtc.OutPorts) == True:
             o = self.rtc.OutPorts[pn]
@@ -976,7 +1029,7 @@ class MainWindow(QtGui.QMainWindow):
     # @param sel 未使用
     #
     def createNode(self, name, sel):
-        tmp = TreeNode(QtGui.QTreeWidgetItem([name]), self)
+        tmp = TreeNode(QtWidgets.QTreeWidgetItem([name]), self)
         self.treeNodeList.append(tmp)
         return tmp
 
@@ -992,8 +1045,16 @@ class MainWindow(QtGui.QMainWindow):
             
             self.sheetcomboBox.clear()
             for i,j in self.rtc.m_excel.t_xlWorksheet.items():
-                self.sheetcomboBox.addItem(i.decode("utf-8"))
-            if str(self.sheetcomboBox.currentText().toLocal8Bit()) == u"保存用".encode("cp932"):
+                try:
+                    i = i.decode("utf-8")
+                except:
+                    pass
+                self.sheetcomboBox.addItem(i)
+            try:
+                currentText = str(self.sheetcomboBox.currentText().toLocal8Bit())
+            except:
+                currentText = self.sheetcomboBox.currentText()
+            if currentText == u"保存用".encode("cp932"):
                 self.sheetcomboBox.setCurrentIndex(1)
             address = str(self.namingServertextBox.text())
             orb = self.mgr._orb
@@ -1001,7 +1062,7 @@ class MainWindow(QtGui.QMainWindow):
             if namingserver == None:
                 return
             #print(namingserver)
-            tmp = QtGui.QTreeWidgetItem(["/"])
+            tmp = QtWidgets.QTreeWidgetItem(["/"])
             self.treeWidget.addTopLevelItem(tmp)
             root = TreeNode(tmp, self)
             self.treeNodeList.append(root)

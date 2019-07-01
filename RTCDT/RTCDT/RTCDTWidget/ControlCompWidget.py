@@ -5,7 +5,7 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore
 import tempfile
 import OpenRTM_aist
 
@@ -43,22 +43,25 @@ class ControlCompWidget(BaseTab.BaseTab):
         
             
 
-        self.activeButton = QtGui.QPushButton(u"アクティブ")
+        self.activeButton = QtWidgets.QPushButton(u"アクティブ")
         self.activeButton.clicked.connect(self.activeButtonSlot)
         self.subLayouts[-1].addWidget(self.activeButton)
         self.subLayouts[-1].addStretch()
 
-        self.deactiveButton = QtGui.QPushButton(u"非アクティブ")
+        self.deactiveButton = QtWidgets.QPushButton(u"非アクティブ")
         self.deactiveButton.clicked.connect(self.deactiveButtonSlot)
         self.subLayouts[-1].addWidget(self.deactiveButton)
         self.subLayouts[-1].addStretch()
 
-        self.resetButton = QtGui.QPushButton(u"リセット")
+        self.resetButton = QtWidgets.QPushButton(u"リセット")
         self.resetButton.clicked.connect(self.resetButtonSlot)
         self.subLayouts[-1].addWidget(self.resetButton)
         self.subLayouts[-1].addStretch()
     def getECNum(self):
-        s = str(self.ECCombox["Widget"].currentText().toLocal8Bit())
+        try:
+            s = str(self.ECCombox["Widget"].currentText().toLocal8Bit())
+        except:
+            s = self.ECCombox["Widget"].currentText()
         return int(s)
 
     def activeButtonSlot(self):

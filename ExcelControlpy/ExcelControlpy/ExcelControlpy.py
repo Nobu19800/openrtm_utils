@@ -6,16 +6,12 @@
 #   @brief ExcelControlpy Component
 
 
-
-import thread
-
-
+import threading
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 
 
@@ -29,7 +25,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from MainWindow import MainWindow
 
 from CalcControl import *
@@ -133,7 +129,7 @@ class ExcelPortObject(CalcDataPort.CalcPortObject):
     # @param m_cal ExcelRTC
     def update_cellName(self, m_cal):
 
-        cell, sheet, m_len = m_cal.m_excel.getCell(self._col, self._row, self._sn, self._length, False)
+        cell, sheet, m_len = m_cal.m_excel.getCell(int(self._col), self._row, self._sn, self._length, False)
         if cell:
           self.update_cellNameSub(cell, m_len)
 
@@ -147,7 +143,6 @@ class ExcelPortObject(CalcDataPort.CalcPortObject):
     # @param cell セルオブジェクト
     # @param m_len 行の範囲
     def update_cellNameSingle(self, cell, m_len):
-
         cell.Value2 = self._name
         
 
@@ -291,7 +286,6 @@ class ExcelInPort(CalcDataPort.CalcInPort, ExcelPortObject):
     def updateIn(self, b, m_cal):
         m_string = CalcDataPort.DataType.String
         m_value = CalcDataPort.DataType.Value
-        
         cell, sheet, m_len = self.getCell(m_cal)
         if cell != None:
           cell.Value2 = b
@@ -753,7 +747,7 @@ class ExcelControlpy(CalcControl):
     # 
   def addActionLock(self):
     return
-    """tid = str(thread.get_ident())
+    """tid = str(threading.get_ident())
     self.m_excel.comObjects[tid].xlApplication.ScreenUpdating = False"""
 
     ##
@@ -762,7 +756,7 @@ class ExcelControlpy(CalcControl):
     # 
   def removeActionLock(self):
     return
-    """tid = str(thread.get_ident())
+    """tid = str(threading.get_ident())
     self.m_excel.comObjects[tid].xlApplication.ScreenUpdating = True"""
 
     ##
@@ -898,7 +892,7 @@ def main():
         v.append(cell.Value2[0][i])
     cell.Value2 = v#"""
 
-    #print(thread.get_ident())
+    #print(threading.get_ident())
     
 
     mgr = OpenRTM_aist.Manager.init(sys.argv)
@@ -908,7 +902,7 @@ def main():
 
     global excel_comp
     
-    app = QtGui.QApplication([""])
+    app = QtWidgets.QApplication([""])
     mainWin = MainWindow(excel_comp, mgr)
     #mainWin = MainWindow(None, None)
     mainWin.show()

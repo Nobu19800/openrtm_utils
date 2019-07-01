@@ -3,17 +3,17 @@
 # -*- Python -*-
 
 import sys
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtCore, QtWidgets, QtGui
 import Highlighter, Editor
 from omniORB import CORBA
 
-class ActivityTab(QtGui.QWidget):
+class ActivityTab(QtWidgets.QWidget):
     def __init__(self, name, text, parent=None):
         super(ActivityTab, self).__init__(parent)
         self.name = name
         self.text = text
         
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         
         self.editor = Editor.Editor()
         self.mainLayout.addWidget(self.editor)
@@ -24,7 +24,7 @@ class ActivityTab(QtGui.QWidget):
         self.setLayout(self.mainLayout)
         self.editor.textCursor().setPosition(0, QtGui.QTextCursor.MoveAnchor)
 
-        #self.save_button = QtGui.QPushButton(u'保存')
+        #self.save_button = QtWidgets.QPushButton(u'保存')
         #self.mainLayout.addWidget(self.save_button)
         #self.save_button.clicked.connect(self.save_button_slot)
     def getText(self):

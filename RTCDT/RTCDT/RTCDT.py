@@ -18,6 +18,7 @@ import sys
 import time
 import os
 sys.path.append(".")
+sys.path.append("RTCDTWidget")
 
 if "PACKAGE_DIRECTORIY" in os.environ:
 	package_dir = os.environ["PACKAGE_DIRECTORIY"].replace("\"","")
@@ -34,7 +35,7 @@ import traceback
 import shutil
 import tempfile
 
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtCore,QtWidgets
 import RTCDTWidget.MainWindow
 from RTCDTWidget.ActivityCode import ActivityCode
 import RTCDTWidget.CreateDataObject
@@ -75,7 +76,7 @@ class Code:
 	def execute(self):
 		guard = OpenRTM_aist.ScopedLock(self.mutex)
 		ret = RTC.RTC_OK
-		exec self.text
+		exec(self.text)
 		return ret
 	def change(self, text):
 		guard = OpenRTM_aist.ScopedLock(self.mutex)
@@ -331,7 +332,7 @@ class RTCDT(OpenRTM_aist.DataFlowComponentBase):
 		guard = OpenRTM_aist.ScopedLock(self.exec_mutex)
 		ret = RTC.RTC_OK
 		try:
-			start = time.clock()
+			start = time.time()
 			
 			
 			if self.exexType == ExecType.ExecString:
@@ -339,7 +340,7 @@ class RTCDT(OpenRTM_aist.DataFlowComponentBase):
 			elif self.exexType == ExecType.FileMethod:
 				if self.module is not None:
 					ret = self.module.onExecute(self)
-			elapsed_time = time.clock() - start
+			elapsed_time = time.time() - start
 			#self.file.write(str(elapsed_time)+"\n")
 		except:
 			guard_log = OpenRTM_aist.ScopedLock(self.log_mutex)
@@ -772,7 +773,7 @@ def main():
 	
 	
 
-	app = QtGui.QApplication(sys.argv)
+	app = QtWidgets.QApplication(sys.argv)
 	
 	
 	sys.path.append("C:/Python27/Lib/site-packages")

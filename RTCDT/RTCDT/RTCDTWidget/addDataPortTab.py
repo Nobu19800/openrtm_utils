@@ -4,7 +4,7 @@
 
 import sys
 import os
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore
 import OpenRTM_aist
 import RTC
 
@@ -22,13 +22,13 @@ class addDataPortTab(BaseTab.BaseTab):
         self.listWidget = listWidget
 
     
-        key_list = CreateDataObject.CreateDataObject.dataTypeList.keys()
+        key_list = list(CreateDataObject.CreateDataObject.dataTypeList.keys())
         key_list.sort()
         
         self.portNameTextbox = self.addTextBox("portNameTextbox",u"ポート名",[], "port")
         self.portTypeCombox = self.addCombox("portTypeCombox",u"ポート",[],["DataOutPort","DataInPort"], "DataOutPort")
         self.dataTypeCombox = self.addCombox("dataTypeCombox",u"データ型",[],key_list, "RTC.TimedLong")
-        self.createButton = QtGui.QPushButton(u"作成")
+        self.createButton = QtWidgets.QPushButton(u"作成")
         self.createButton.clicked.connect(self.createButtonSlot)
         self.subLayouts[-1].addWidget(self.createButton)
         self.mainLayout.addStretch()
@@ -63,15 +63,22 @@ class addDataPortTab(BaseTab.BaseTab):
 
     def createButtonSlot(self):
         profile = {}
-        profile["portName"] = str(self.portNameTextbox["Widget"].text().toLocal8Bit())
+        try:
+            profile["portName"] = str(self.portNameTextbox["Widget"].text().toLocal8Bit())
+        except:
+            profile["portName"] = self.portNameTextbox["Widget"].text()
         p = profile["portName"].replace(" ","")
         p = p.replace("\t","")
         if p == "":
-             QtGui.QMessageBox.question(self, u"作成失敗", u"名前が入力されていません", QtGui.QMessageBox.Ok)
+             QtWidgets.QMessageBox.question(self, u"作成失敗", u"名前が入力されていません", QtWidgets.QMessageBox.Ok)
              return
-            
-        profile["portType"] = str(self.portTypeCombox["Widget"].currentText().toLocal8Bit())
-        profile["dataType"] = str(self.dataTypeCombox["Widget"].currentText().toLocal8Bit())
+
+        try:
+            profile["portType"] = str(self.portTypeCombox["Widget"].currentText().toLocal8Bit())
+            profile["dataType"] = str(self.dataTypeCombox["Widget"].currentText().toLocal8Bit())
+        except:
+            profile["portType"] = self.portTypeCombox["Widget"].currentText()
+            profile["dataType"] = self.dataTypeCombox["Widget"].currentText()
 
         self.addPort(profile)
 

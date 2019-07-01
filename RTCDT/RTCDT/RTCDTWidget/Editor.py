@@ -3,13 +3,13 @@
 # -*- Python -*-
 
 import sys
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore,QtGui
 
 
 
 
 
-class Editor(QtGui.QTextEdit):
+class Editor(QtWidgets.QTextEdit):
     tab_keywords = [
         'break', 'return'
     ]
@@ -30,7 +30,7 @@ class Editor(QtGui.QTextEdit):
         fontPxSize = QtGui.QFontMetrics(font).width('0')
         self.setFont(font)
         self.setWordWrapMode(QtGui.QTextOption.WrapAtWordBoundaryOrAnywhere)
-        self.setLineWrapMode(QtGui.QTextEdit.FixedPixelWidth)
+        self.setLineWrapMode(QtWidgets.QTextEdit.FixedPixelWidth)
         self.setLineWrapColumnOrWidth(fontSize * wrapColumn)
 
     def insertFromMimeData(self, source):
@@ -53,8 +53,10 @@ class Editor(QtGui.QTextEdit):
         
         if e.key() == QtCore.Qt.Key_Enter or e.key() == QtCore.Qt.Key_Return:
             
-            
-            s = str(self.document().findBlockByLineNumber(cu.blockNumber()-1).text().toLocal8Bit())
+            try:
+                s = str(self.document().findBlockByLineNumber(cu.blockNumber()-1).text().toLocal8Bit())
+            except:
+                s = self.document().findBlockByLineNumber(cu.blockNumber()-1).text()
             if len(s) > 0:
                 add_str = ""
                 for c in s:

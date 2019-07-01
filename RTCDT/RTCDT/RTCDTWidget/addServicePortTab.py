@@ -5,7 +5,7 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore
 import tempfile
 import OpenRTM_aist
 
@@ -30,31 +30,43 @@ class addServicePortTab(BaseTab.BaseTab):
         self.interfaceNameTextbox = self.addTextBox("interfaceName",u"インターフェース名",[], "")
         self.interfaceDirCombox = self.addCombox("interfaceDir",u"方向",[],["Required","Provided"], "Required")
         self.IDLTextbox = self.addTextBox("IDL",u"IDLファイル",[], "")
-        self.IDLFileButton = QtGui.QPushButton(u"開く")
+        self.IDLFileButton = QtWidgets.QPushButton(u"開く")
         self.IDLFileButton.clicked.connect(self.IDLFileButtonSlot)
         self.IDLTextbox["Layout"].addWidget(self.IDLFileButton)
         
         self.interfaceTypeCombox = self.addCombox("interfaceType",u"インターフェース型",[],[], "")
         self.IDLPathTextbox = self.addTextBox("IDLPath",u"IDLパス",[], "")
-        self.IDLPathButton = QtGui.QPushButton(u"開く")
+        self.IDLPathButton = QtWidgets.QPushButton(u"開く")
         self.IDLPathButton.clicked.connect(self.IDLPathButtonSlot)
         self.IDLPathTextbox["Layout"].addWidget(self.IDLPathButton)
-        self.createButton = QtGui.QPushButton(u"作成")
+        self.createButton = QtWidgets.QPushButton(u"作成")
         self.createButton.clicked.connect(self.createButtonSlot)
         self.subLayouts[-1].addWidget(self.createButton)
         self.mainLayout.addStretch()
 
     def IDLFileButtonSlot(self):
-        fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","IDL File (*.idl);;All Files (*)")
-        if fileName.isEmpty():
-            return ""
-        filepath = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","IDL File (*.idl);;All Files (*)")
+
+        try:
+            if fileName.isEmpty():
+                return ""
+            filepath = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return ""
+            filepath = fileName
         self.IDLTextbox["Widget"].setText(fileName)
-        s = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+        try:
+            s = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+        except:
+            s = self.IDLTextbox["Widget"].text()
         
         if self.comp is not None:
             self.interfaceTypeCombox["Widget"].clear()
-            filename = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+            try:
+                filename = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+            except:
+                filename = self.IDLTextbox["Widget"].text()
             filelist, classlist = self.comp.getServiceNameList(filename,"","")
             
             for k,v in classlist.items():
@@ -62,9 +74,13 @@ class addServicePortTab(BaseTab.BaseTab):
         
 
     def IDLPathButtonSlot(self):
-        dirName = QtGui.QFileDialog.getExistingDirectory(self,u"開く")
-        if dirName.isEmpty():
-            return ""
+        dirName = QtWidgets.QFileDialog.getExistingDirectory(self,u"開く")
+        try:
+            if dirName.isEmpty():
+                return ""
+        except:
+            if not dirName:
+                return ""
 
         self.IDLPathTextbox["Widget"].setText(dirName)
         
@@ -96,30 +112,39 @@ class addServicePortTab(BaseTab.BaseTab):
 
     def createButtonSlot(self):
         profile = {}
-        profile["portName"] = str(self.portNameTextbox["Widget"].text().toLocal8Bit())
+        try:
+            profile["portName"] = str(self.portNameTextbox["Widget"].text().toLocal8Bit())
+        except:
+            profile["portName"] = self.portNameTextbox["Widget"].text()
         p = profile["portName"].replace(" ","")
         p = p.replace("\t","")
         if p == "":
-             QtGui.QMessageBox.question(self, u"作成失敗", u"名前が入力されていません", QtGui.QMessageBox.Ok)
+             QtWidgets.QMessageBox.question(self, u"作成失敗", u"名前が入力されていません", QtWidgets.QMessageBox.Ok)
              return
-
-        profile["interfaceName"] = str(self.interfaceNameTextbox["Widget"].text().toLocal8Bit())
+        try:
+            profile["interfaceName"] = str(self.interfaceNameTextbox["Widget"].text().toLocal8Bit())
+        except:
+            profile["interfaceName"] = self.interfaceNameTextbox["Widget"].text()
         p = profile["interfaceName"].replace(" ","")
         p = p.replace("\t","")
         if p == "":
-             QtGui.QMessageBox.question(self, u"作成失敗", u"インターフェース名が入力されていません", QtGui.QMessageBox.Ok)
+             QtWidgets.QMessageBox.question(self, u"作成失敗", u"インターフェース名が入力されていません", QtWidgets.QMessageBox.Ok)
              return
-
-        profile["interfaceDir"] = str(self.interfaceDirCombox["Widget"].currentText().toLocal8Bit())
-        
-        profile["IDL"] = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+        try:
+            profile["interfaceDir"] = str(self.interfaceDirCombox["Widget"].currentText().toLocal8Bit())
+            profile["IDL"] = str(self.IDLTextbox["Widget"].text().toLocal8Bit())
+        except:
+            profile["interfaceDir"] = self.interfaceDirCombox["Widget"].currentText()
+            profile["IDL"] = self.IDLTextbox["Widget"].text()
         p = profile["IDL"].replace(" ","")
         p = p.replace("\t","")
         if p == "":
-             QtGui.QMessageBox.question(self, u"作成失敗", u"IDLファイル名が入力されていません", QtGui.QMessageBox.Ok)
+             QtWidgets.QMessageBox.question(self, u"作成失敗", u"IDLファイル名が入力されていません", QtWidgets.QMessageBox.Ok)
              return
-        profile["interfaceType"] = str(self.interfaceTypeCombox["Widget"].currentText().toLocal8Bit())
-        
-        profile["IDLPath"] = str(self.IDLPathTextbox["Widget"].text().toLocal8Bit())
-
+        try:
+            profile["interfaceType"] = str(self.interfaceTypeCombox["Widget"].currentText().toLocal8Bit())
+            profile["IDLPath"] = str(self.IDLPathTextbox["Widget"].text().toLocal8Bit())
+        except:
+            profile["interfaceType"] = self.interfaceTypeCombox["Widget"].currentText()
+            profile["IDLPath"] = self.IDLPathTextbox["Widget"].text()
         self.addPort(profile)

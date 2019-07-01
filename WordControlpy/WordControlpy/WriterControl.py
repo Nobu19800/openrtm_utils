@@ -10,7 +10,6 @@ import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 
 
@@ -144,14 +143,20 @@ def SetCoding(m_str, m_code):
             return m_str
         else:
             try:
-                return m_str.decode(m_code).encode("utf-8")
+                return m_str.encode("utf-8")
             except:
-                return ""
+                try:
+                    return m_str.decode(m_code).encode("utf-8")
+                except:
+                    return ""
     elif os.name == 'nt':
         try:
-            return m_str.decode(m_code).encode('cp932')
+            return m_str.encode('cp932')
         except:
-            return "" 
+            try:
+                return m_str.decode(m_code).encode('cp932')
+            except:
+                return "" 
 
 
 

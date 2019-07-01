@@ -5,13 +5,13 @@
 import sys
 import os
 import codecs
-from PyQt4 import QtGui,QtWebKit,QtCore
+from PyQt5 import QtWidgets,QtCore
 import tempfile
 
 
 
 
-class BaseTab(QtGui.QWidget):
+class BaseTab(QtWidgets.QWidget):
     TextBox = 1
     Combox = 2
     TextCombox = 3
@@ -19,18 +19,18 @@ class BaseTab(QtGui.QWidget):
     DoubleSpinBox = 5
     def __init__(self, parent=None):
         super(BaseTab, self).__init__(parent)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
 
         self.setLayout(self.mainLayout)
 
         self.WidList = {}
         self.widNum = 0
 
-        self.subLayouts = [QtGui.QVBoxLayout()]
+        self.subLayouts = [QtWidgets.QVBoxLayout()]
         self.mainLayout.addLayout(self.subLayouts[-1])
     def apendWidget(self, wid, name, label):
-        widget = QtGui.QGroupBox(label)
-        layout = QtGui.QVBoxLayout()
+        widget = QtWidgets.QGroupBox(label)
+        layout = QtWidgets.QVBoxLayout()
         widget.setLayout(layout)
 
         layout.addWidget(wid)
@@ -46,7 +46,7 @@ class BaseTab(QtGui.QWidget):
         return self.WidList[name]
     
     def addCombox(self, name, label, value, ls, default):
-        wid = QtGui.QComboBox()
+        wid = QtWidgets.QComboBox()
         for l in ls:
             if l != "":
                 wid.addItem(l)
@@ -67,7 +67,7 @@ class BaseTab(QtGui.QWidget):
 
 
     def addTextBox(self, name, label, value, default):
-        wid = QtGui.QLineEdit()
+        wid = QtWidgets.QLineEdit()
         if len(value) == 0:
             wid.setText(default)
         elif value[0] == "":
