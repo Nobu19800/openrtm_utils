@@ -202,7 +202,10 @@ def getDirList(dir):
 # @return 変換後の文字列
 def decodestr(s):
     if isinstance(s, str):
-        return s.decode('utf-8')
+        try:
+            return s.decode('utf-8')
+        except:
+            return s
     return s
 
 ##

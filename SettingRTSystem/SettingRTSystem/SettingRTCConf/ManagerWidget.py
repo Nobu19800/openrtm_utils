@@ -7,15 +7,11 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from MTabWidget import MTabWidget
 from ManagerControl import ManagerControl
@@ -52,31 +48,31 @@ class ManagerWidget(MTabWidget):
         MTabWidget.__init__(self, mgrc, parent)
         self.setGUI("manager")
         self.language = language
-        #self.addLangButton = QtGui.QPushButton(u"サポートする言語の追加")
+        #self.addLangButton = QtWidgets.QPushButton(u"サポートする言語の追加")
         #self.WidList["manager.supported_languages"]["Layout"].addWidget(self.addLangButton)
         #self.addLangButton.clicked.connect(self.addLangSlot)
-        #self.delLangButton = QtGui.QPushButton(u"サポートする言語の削除")
+        #self.delLangButton = QtWidgets.QPushButton(u"サポートする言語の削除")
         #self.WidList["manager.supported_languages"]["Layout"].addWidget(self.delLangButton)
         #self.delLangButton.clicked.connect(self.delLangSlot)
-        self.createCompButton = QtGui.QPushButton(u"RTC起動")
+        self.createCompButton = QtWidgets.QPushButton(u"RTC起動")
         self.WidList["manager.components.precreate"]["Layout"].addWidget(self.createCompButton)
         self.createCompButton.clicked.connect(self.createCompSlot)
-        self.delCompButton = QtGui.QPushButton(u"RTC終了")
+        self.delCompButton = QtWidgets.QPushButton(u"RTC終了")
         self.WidList["manager.components.precreate"]["Layout"].addWidget(self.delCompButton)
         self.delCompButton.clicked.connect(self.delCompSlot)
-        self.delModuleButton = QtGui.QPushButton(u"モジュール削除")
+        self.delModuleButton = QtWidgets.QPushButton(u"モジュール削除")
         self.WidList["manager.modules.preload"]["Layout"].addWidget(self.delModuleButton)
         self.delModuleButton.clicked.connect(self.delModuleSlot)
-        self.delPathButton = QtGui.QPushButton(u"パス削除")
+        self.delPathButton = QtWidgets.QPushButton(u"パス削除")
         self.WidList["manager.modules.load_path"]["Layout"].addWidget(self.delPathButton)
         self.delPathButton.clicked.connect(self.delPathSlot)
 
-        self.loadRTCButton = QtGui.QPushButton(u"RTコンポーネントをファイルから読み込み")
+        self.loadRTCButton = QtWidgets.QPushButton(u"RTコンポーネントをファイルから読み込み")
         self.subLayouts[-1].addWidget(self.loadRTCButton)
         self.loadRTCButton.clicked.connect(self.loadRTCSlot)
 
         self.addTextBox("filenameBox.sub", u"モジュール名を直接入力してください", [""] , "")
-        self.loadFileRTCButton = QtGui.QPushButton(u"RTコンポーネント読み込み")
+        self.loadFileRTCButton = QtWidgets.QPushButton(u"RTコンポーネント読み込み")
         self.WidList["filenameBox.sub"]["Layout"].addWidget(self.loadFileRTCButton)
         self.loadFileRTCButton.clicked.connect(self.loadFileRTCSlot)
 
@@ -86,7 +82,10 @@ class ManagerWidget(MTabWidget):
     # @param self 
     def loadFileRTCSlot(self):
         wid = self.WidList["filenameBox.sub"]["Widget"]
-        s = str(wid.text().toLocal8Bit())
+        try:
+            s = str(wid.text().toLocal8Bit())
+        except:
+            s = wid.text()
         if s == "":
             return
         self.loadRTC(s)
@@ -98,7 +97,10 @@ class ManagerWidget(MTabWidget):
         wid = self.WidList["manager.supported_languages"]["Widget"]
         
         if wid.findText(wid.currentText()) == -1:
-            s = str(wid.currentText().toLocal8Bit())
+            try:
+                s = str(wid.currentText().toLocal8Bit())
+            except:
+                s = wid.currentText()
             if s != "":
                 wid.addItem(s)
         
@@ -115,7 +117,10 @@ class ManagerWidget(MTabWidget):
     # @param self 
     def createCompSlot(self):
         wid = self.WidList["manager.components.precreate"]["Widget"]
-        s = str(wid.currentText().toLocal8Bit())
+        try:
+            s = str(wid.currentText().toLocal8Bit())
+        except:
+            s = wid.currentText()
         
         comp = self.mgrc.mgr.createComponent(s)
         if not comp:
@@ -130,7 +135,10 @@ class ManagerWidget(MTabWidget):
     # @param self 
     def delCompSlot(self):
         wid = self.WidList["manager.components.precreate"]["Widget"]
-        self.mgrc.deleteComp(str(wid.currentText().toLocal8Bit()))
+        try:
+            self.mgrc.deleteComp(str(wid.currentText().toLocal8Bit()))
+        except:
+            self.mgrc.deleteComp(wid.currentText())
         wid.removeItem(wid.findText(wid.currentText()))
 
         
@@ -218,13 +226,19 @@ class ManagerWidget(MTabWidget):
         allFilePath = "All Files (*)"
         if self.language == "Python":
             filepath = pyFilePath + cppFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
         else:
             filepath = cppFilePath + pyFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
 
-        if fileName.isEmpty():
-            return
-        ba = str(fileName.toLocal8Bit())
+
+        try:
+            if fileName.isEmpty():
+                return
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return
+            ba = fileName
 
         self.loadRTC(ba)

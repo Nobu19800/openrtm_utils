@@ -7,15 +7,11 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from SettingRTCConf.ConfigWidget import ConfigWidget
 from SettingRTCConf.CorbaWidget import CorbaWidget
@@ -46,7 +42,7 @@ from SettingRTCConf.TimerWidget import TimerWidget
 # @class MTabWidget
 # @brief 各言語の設定データ表示表示タブのウィジェット
 #
-class TabWidget(QtGui.QTabWidget):
+class TabWidget(QtWidgets.QTabWidget):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -102,19 +98,31 @@ class TabWidget(QtGui.QTabWidget):
                     d["name"] = k
                     d["value"] = ""
                     if j["Type"] == ManagerControl.TextBox:
-                        d["value"] = str(j["Widget"].text().toLocal8Bit())
+                        try:
+                            d["value"] = str(j["Widget"].text().toLocal8Bit())
+                        except:
+                            d["value"] = j["Widget"].text()
                     elif j["Type"] == ManagerControl.TextCombox or j["Type"] == ManagerControl.Combox:
                         
                         
                         if k == "manager.modules.load_path" or k == "manager.modules.preload" or k == "manager.components.precreate" or k == "corba.endpoints":
                             for c in range(0, j["Widget"].count()):
-                                d["value"] += str(j["Widget"].itemText(c).toLocal8Bit()).replace("\\","/")
+                                try:
+                                    d["value"] += str(j["Widget"].itemText(c).toLocal8Bit()).replace("\\","/")
+                                except:
+                                    d["value"] += j["Widget"].itemText(c).replace("\\","/")
                                 if c < j["Widget"].count()-1:
                                     d["value"] += ","
                         else:
-                            d["value"] = str(j["Widget"].currentText().toLocal8Bit())
+                            try:
+                                d["value"] = str(j["Widget"].currentText().toLocal8Bit())
+                            except:
+                                d["value"] = j["Widget"].currentText()
                     elif j["Type"] == ManagerControl.SpinBox or j["Type"] == ManagerControl.DoubleSpinBox:
-                        d["value"] = str(j["Widget"].text().toLocal8Bit())
+                        try:
+                            d["value"] = str(j["Widget"].text().toLocal8Bit())
+                        except:
+                            d["value"] = j["Widget"].text()
                     datas.append(d)
             
         return datas

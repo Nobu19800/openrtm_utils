@@ -12,7 +12,7 @@ import OpenRTM_aist
 
 pyqtExist = True
 try:
-    from PyQt4 import QtCore, QtGui
+    from PyQt5 import QtCore, QtWidgets
 except:
     pyqtExist = False
 
@@ -103,7 +103,7 @@ class GUITask(OpenRTM_aist.Task):
             GUITask.app_flag = True
             guard = OpenRTM_aist.ScopedLock(self.m_ec._workerthread._mutex)
 
-            app = QtGui.QApplication([""])
+            app = QtWidgets.QApplication([""])
             mainWin = MainWindow(self.m_ec)
             mainWin.show()
             

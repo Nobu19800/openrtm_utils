@@ -4,7 +4,7 @@
 #   @file AddButton.py
 #   @brief 直列ブロックの先頭にブロックを追加するボタン
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from FEComp import FEComp
 
 
@@ -12,7 +12,7 @@ from FEComp import FEComp
 # @class AddButton
 # @brief 直列ブロックの先頭にブロックを追加するボタン
 #
-class AddButton(QtGui.QWidget):
+class AddButton(QtWidgets.QWidget):
     clicked = QtCore.pyqtSignal(object)
     ##
     # @brief コンストラクタ
@@ -23,8 +23,8 @@ class AddButton(QtGui.QWidget):
         super(AddButton, self).__init__(parent)
         
         self.Fc = None
-        self.PB = QtGui.QPushButton(text)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.PB = QtWidgets.QPushButton(text)
+        self.mainLayout = QtWidgets.QVBoxLayout()
         
         #connect(PB, SIGNAL(clicked()),
         #    this, SLOT(clickedSlot()))

@@ -7,15 +7,11 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from MTabWidget import MTabWidget
 from ManagerControl import ManagerControl

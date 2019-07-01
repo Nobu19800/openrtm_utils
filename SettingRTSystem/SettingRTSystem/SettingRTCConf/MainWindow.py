@@ -7,7 +7,7 @@
 
 
 
-import thread
+
 
 
 import optparse
@@ -15,7 +15,6 @@ import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +29,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from ConfigWidget import ConfigWidget
 from CorbaWidget import CorbaWidget
@@ -46,7 +45,7 @@ from TimerWidget import TimerWidget
 # @class MainWindow
 # @brief メインウインドウ
 #
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -54,7 +53,7 @@ class MainWindow(QtGui.QMainWindow):
         super(MainWindow, self).__init__()
         self.setWindowTitle(u"RTC設定ファイル作成ツール")
 
-        self.tab_widget = QtGui.QTabWidget(self)
+        self.tab_widget = QtWidgets.QTabWidget(self)
         self.setCentralWidget(self.tab_widget)
 
         self.createAction()
@@ -74,18 +73,18 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     def createAction(self):
 
-        self.newAct = QtGui.QAction("&New...",self)
+        self.newAct = QtWidgets.QAction("&New...",self)
         self.newAct.setShortcuts(QtGui.QKeySequence.New)
         self.newAct.triggered.connect(self.newFile)
         
 
 
-        self.openAct = QtGui.QAction("&Open...",self)
+        self.openAct = QtWidgets.QAction("&Open...",self)
         self.openAct.setShortcuts(QtGui.QKeySequence.Open)
         self.openAct.triggered.connect(self.open)
 
 
-        self.saveAct = QtGui.QAction("&Save",self)
+        self.saveAct = QtWidgets.QAction("&Save",self)
         self.saveAct.setShortcuts(QtGui.QKeySequence.Save)
         self.saveAct.triggered.connect(self.save)
 
@@ -134,10 +133,16 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     def open(self):
         if self.mgrc == None:
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;All Files (*)")
-            if fileName.isEmpty():
-                return
-            ba = str(fileName.toLocal8Bit())
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;All Files (*)")
+
+            try:
+                if fileName.isEmpty():
+                    return
+                ba = str(fileName.toLocal8Bit())
+            except:
+                if not fileName:
+                    return
+                ba = fileName
             #ba = ba.replace("/","\\")
             self.mgrc = ManagerControl(ba)
             self.createTabs()
@@ -158,11 +163,16 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     def save(self):
 
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
-        if fileName.isEmpty():
-                return False
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
 
-        ba = str(fileName.toLocal8Bit())
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
         
         fname = os.path.basename(ba)
         name, ext = os.path.splitext(fname)
@@ -178,7 +188,10 @@ class MainWindow(QtGui.QMainWindow):
                         s = k + ": "
                         v = ""
                         if j["Type"] == ManagerControl.TextBox:
-                            text = str(j["Widget"].text().toLocal8Bit())
+                            try:
+                                text = str(j["Widget"].text().toLocal8Bit())
+                            except:
+                                text = j["Widget"].text()
                             if k == "exec_cxt.periodic.filename" and text == "":
                                 text = dname + "/order.conf"
                                 of = open(text, "wb")
@@ -190,11 +203,17 @@ class MainWindow(QtGui.QMainWindow):
                             
                             if k == "manager.modules.load_path" or k == "manager.modules.preload" or k == "manager.components.precreate" or k == "corba.endpoints":
                                 for c in range(0, j["Widget"].count()):
-                                    v += str(j["Widget"].itemText(c).toLocal8Bit()).replace("\\","/")
+                                    try:
+                                        v += str(j["Widget"].itemText(c).toLocal8Bit()).replace("\\","/")
+                                    except:
+                                        v += j["Widget"].itemText(c).toLocal8Bit().replace("\\","/")
                                     if c < j["Widget"].count()-1:
                                         v += ","
                             else:
-                                v += str(j["Widget"].currentText().toLocal8Bit())
+                                try:
+                                    v += str(j["Widget"].currentText().toLocal8Bit())
+                                except:
+                                    v += j["Widget"].currentText()
                         elif j["Type"] == ManagerControl.SpinBox or j["Type"] == ManagerControl.DoubleSpinBox:
                             v += str(j["Widget"].value())
                         if v != "":
@@ -291,7 +310,7 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     # @param mes 表示する文字列
     def mesBox(self, mes):
-        msgbox = QtGui.QMessageBox( self )
+        msgbox = QtWidgets.QMessageBox( self )
         msgbox.setText( mes )
         msgbox.setModal( True )
         ret = msgbox.exec_()

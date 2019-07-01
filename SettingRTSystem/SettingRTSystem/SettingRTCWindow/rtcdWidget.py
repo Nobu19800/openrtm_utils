@@ -7,16 +7,12 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import traceback
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -31,7 +27,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from SettingRTCConf.MTabWidget import MTabWidget
 
@@ -75,7 +71,10 @@ class TreeNode:
     # @param self
     # @return 表示名
     def getDisplayValue(self):
-        return str(self.node.text(0).toLocal8Bit())
+        try:
+            return str(self.node.text(0).toLocal8Bit())
+        except:
+            return self.node.text(0)
 
 ##
 # @class rtcdWidget
@@ -92,51 +91,51 @@ class rtcdWidget(MTabWidget):
         self.addTextBox("textBox", u"アドレス番号", ["localhost"] , "localhost")
         self.addTextBox("filepath", u"ファイル名を直接入力してください", [""] , "")
 
-        self.addFilePathButton = QtGui.QPushButton(u"ファイル名設定")
+        self.addFilePathButton = QtWidgets.QPushButton(u"ファイル名設定")
         self.WidList["filepath"]["Layout"].addWidget(self.addFilePathButton)
         self.addFilePathButton.clicked.connect(self.addFilePathSlot)
 
-        self.addLoadButton = QtGui.QPushButton(u"ファイル読み込み")
+        self.addLoadButton = QtWidgets.QPushButton(u"ファイル読み込み")
         self.WidList["filepath"]["Layout"].addWidget(self.addLoadButton)
         self.addLoadButton.clicked.connect(self.addLoadSlot)
 
 
-        self.newFileButton = QtGui.QPushButton(u"新規作成")
+        self.newFileButton = QtWidgets.QPushButton(u"新規作成")
         self.WidList["filepath"]["Layout"].addWidget(self.newFileButton)
         self.newFileButton.clicked.connect(self.newFileSlot)
 
 
-        self.saveFileButton = QtGui.QPushButton(u"ファイル保存")
+        self.saveFileButton = QtWidgets.QPushButton(u"ファイル保存")
         self.WidList["filepath"]["Layout"].addWidget(self.saveFileButton)
         self.saveFileButton.clicked.connect(self.saveFileSlot)
 
-        self.rtcdButton = QtGui.QPushButton(u"rtcd起動")
+        self.rtcdButton = QtWidgets.QPushButton(u"rtcd起動")
         self.WidList["filepath"]["Layout"].addWidget(self.rtcdButton)
         self.rtcdButton.clicked.connect(self.rtcdSlot)
 
         self.addTextBox("packagepath", u"パッケージ名を直接入力してください", [""] , "")
-        self.pkgButton = QtGui.QPushButton(u"パッケージ生成")
+        self.pkgButton = QtWidgets.QPushButton(u"パッケージ生成")
         self.WidList["packagepath"]["Layout"].addWidget(self.pkgButton)
         self.pkgButton.clicked.connect(self.pkgSlot)
 
         
-        self.treelayout = QtGui.QVBoxLayout()
+        self.treelayout = QtWidgets.QVBoxLayout()
         
-        self.treeWidget = QtGui.QTreeWidget(self)
+        self.treeWidget = QtWidgets.QTreeWidget(self)
         self.treelayout.addWidget(self.treeWidget)
         self.treeWidget.itemClicked.connect(self.treeWidgetSlot)
 
-        self.updateTreeButton = QtGui.QPushButton(u"RTCツリー更新")
+        self.updateTreeButton = QtWidgets.QPushButton(u"RTCツリー更新")
         self.treelayout.addWidget(self.updateTreeButton)
         self.updateTreeButton.clicked.connect(self.updateTreeSlot)
 
         self.addCombox("rtcList", u"システムに加える外部のRTC一覧", [], [] , "")
 
-        self.addRTCButton = QtGui.QPushButton(u"外部のRTCをシステムに追加")
+        self.addRTCButton = QtWidgets.QPushButton(u"外部のRTCをシステムに追加")
         self.treelayout.addWidget(self.addRTCButton)
         self.addRTCButton.clicked.connect(self.addRTCSlot)
 
-        self.remRTCButton = QtGui.QPushButton(u"外部のRTCをシステムから削除")
+        self.remRTCButton = QtWidgets.QPushButton(u"外部のRTCをシステムから削除")
         self.treelayout.addWidget(self.remRTCButton)
         self.remRTCButton.clicked.connect(self.remRTCSlot)
 
@@ -157,7 +156,10 @@ class rtcdWidget(MTabWidget):
     # @brief パッケージ作成ボタンのスロット
     # @param self 
     def pkgSlot(self):
-        filename = str(self.WidList["packagepath"]["Widget"].text().toLocal8Bit())
+        try:
+            filename = str(self.WidList["packagepath"]["Widget"].text().toLocal8Bit())
+        except:
+            filename = self.WidList["packagepath"]["Widget"].text()
         if filename != "":
             result = self.parent.createPack(filename)
             if result:
@@ -254,12 +256,15 @@ class rtcdWidget(MTabWidget):
         self.treeWidget.clear()
         self.treeNodeList = []
 
-        tmp = QtGui.QTreeWidgetItem(["/"])
+        tmp = QtWidgets.QTreeWidgetItem(["/"])
         self.treeWidget.addTopLevelItem(tmp)
         root = TreeNode(tmp, self)
         self.treeNodeList.append(root)
 
-        ipaddress = str(self.WidList["textBox"]["Widget"].text().toLocal8Bit())
+        try:
+            ipaddress = str(self.WidList["textBox"]["Widget"].text().toLocal8Bit())
+        except:
+            ipaddress = self.WidList["textBox"]["Widget"].text()
 
         self.compList = self.getRTCList(ipaddress, root)
         
@@ -284,7 +289,7 @@ class rtcdWidget(MTabWidget):
     # @param sel 
     # @return ツリーノード
     def createNode(self, name, sel):
-        tmp = TreeNode(QtGui.QTreeWidgetItem([name]), self)
+        tmp = TreeNode(QtWidgets.QTreeWidgetItem([name]), self)
         self.treeNodeList.append(tmp)
         return tmp
 
@@ -358,17 +363,20 @@ class rtcdWidget(MTabWidget):
     # @brief ファイル読み込みボタンのスロット
     # @param self
     def addLoadSlot(self):
-        text, ok = QtGui.QInputDialog.getText(self, u"アドレス入力",
-                u"アドレス", QtGui.QLineEdit.Normal,
+        text, ok = QtWidgets.QInputDialog.getText(self, u"アドレス入力",
+                u"アドレス", QtWidgets.QLineEdit.Normal,
                 self.WidList["textBox"]["Widget"].text())
         if ok and text != '':
             self.WidList["textBox"]["Widget"].setText(text)
-            filepath, ok2 = QtGui.QInputDialog.getText(self, u"ファイル名入力",
-                u"ファイル名", QtGui.QLineEdit.Normal,
+            filepath, ok2 = QtWidgets.QInputDialog.getText(self, u"ファイル名入力",
+                u"ファイル名", QtWidgets.QLineEdit.Normal,
                 self.WidList["filepath"]["Widget"].text())
             if ok2 and filepath != '':
                 self.WidList["filepath"]["Widget"].setText(filepath)
-                path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+                try:
+                    path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+                except:
+                    path = self.WidList["filepath"]["Widget"].text()
                 
                 self.parent.createTabs(path)
                 self.parent.curFile = path
@@ -396,15 +404,20 @@ class rtcdWidget(MTabWidget):
     # @brief ファイル保存ボタンのスロット
     # @param self 
     def saveFileSlot(self):
-        path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+        try:
+            path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+        except:
+            path = self.WidList["filepath"]["Widget"].text()
         if path == "":
-            filepath, ok = QtGui.QInputDialog.getText(self, u"ファイル名入力",
-                u"ファイル名", QtGui.QLineEdit.Normal,
+            filepath, ok = QtWidgets.QInputDialog.getText(self, u"ファイル名入力",
+                u"ファイル名", QtWidgets.QLineEdit.Normal,
                 self.WidList["filepath"]["Widget"].text())
             if ok and filepath != '':
                 self.WidList["filepath"]["Widget"].setText(filepath)
-
-        path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+        try:
+            path = str(self.WidList["filepath"]["Widget"].text().toLocal8Bit())
+        except:
+            path = self.WidList["filepath"]["Widget"].text()
         if path != "":
             result = self.parent.saveFile(path)
             if result:

@@ -6,16 +6,11 @@
 #   @brief CORBA関連設定ウインドウ
 
 
-
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +25,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from MTabWidget import MTabWidget
 from ManagerControl import ManagerControl
@@ -50,11 +45,11 @@ class CorbaWidget(MTabWidget):
         MTabWidget.__init__(self, mgrc, parent)
         self.setGUI("corba")
 
-        self.addEndpointsButton = QtGui.QPushButton(u"エンドポイント追加")
+        self.addEndpointsButton = QtWidgets.QPushButton(u"エンドポイント追加")
         self.WidList["corba.endpoints"]["Layout"].addWidget(self.addEndpointsButton)
         self.addEndpointsButton.clicked.connect(self.addEndpointsSlot)
 
-        self.delEndpointsButton = QtGui.QPushButton(u"エンドポイント削除")
+        self.delEndpointsButton = QtWidgets.QPushButton(u"エンドポイント削除")
         self.WidList["corba.endpoints"]["Layout"].addWidget(self.delEndpointsButton)
         self.delEndpointsButton.clicked.connect(self.delEndpointsSlot)
 
@@ -65,7 +60,10 @@ class CorbaWidget(MTabWidget):
         wid = self.WidList["corba.endpoints"]["Widget"]
         
         if wid.findText(wid.currentText()) == -1:
-            s = str(wid.currentText().toLocal8Bit())
+            try:
+                s = str(wid.currentText().toLocal8Bit())
+            except:
+                s = wid.currentText()
             if s != "":
                 wid.addItem(s)
         

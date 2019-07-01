@@ -15,7 +15,7 @@ import MPComp
 
 pyqtExist = True
 try:
-    from PyQt4 import QtCore, QtGui
+    from PyQt5 import QtCore, QtWidgets
 except:
     pyqtExist = False
 

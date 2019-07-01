@@ -4,7 +4,7 @@
 #   @file SetComp.py
 #   @brief 全実行順序のブロック表示ウィジェット
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from FrameComp import FrameComp
 import MPComp
 import OpenRTM_aist
@@ -18,7 +18,7 @@ import struct
 # @class SetComp
 # @brief 全実行順序のブロック表示ウィジェット
 #
-class SetComp(QtGui.QTabWidget):
+class SetComp(QtWidgets.QTabWidget):
     UpdateSizeSignal = QtCore.pyqtSignal(int,int)
     ##
     # @brief コンストラクタ

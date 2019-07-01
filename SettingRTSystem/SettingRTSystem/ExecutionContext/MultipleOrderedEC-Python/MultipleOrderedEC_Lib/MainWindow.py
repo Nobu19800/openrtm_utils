@@ -4,7 +4,7 @@
 #   @brief メインウィンドウ
 
 import os
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui
 from SetComp import SetComp
 
 
@@ -13,7 +13,7 @@ from SetComp import SetComp
 # @class MainWindow
 # @brief メインウィンドウ
 #
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -21,7 +21,7 @@ class MainWindow(QtGui.QMainWindow):
     def __init__(self, ec):
         super(MainWindow, self).__init__()
 
-        self.layout = QtGui.QVBoxLayout()
+        self.layout = QtWidgets.QVBoxLayout()
         self.m_ec = ec
         self.SC = SetComp(self.m_ec)
         
@@ -29,13 +29,13 @@ class MainWindow(QtGui.QMainWindow):
         self.layout.addWidget(self.SC)
 
         self.layout.addStretch()
-        self.UB = QtGui.QPushButton(u"更新")
+        self.UB = QtWidgets.QPushButton(u"更新")
         self.layout.addWidget(self.UB)
 
 
         self.UB.clicked.connect(self.UpdateComp)
 
-        self.DB = QtGui.QPushButton(u"追加")
+        self.DB = QtWidgets.QPushButton(u"追加")
         self.layout.addWidget(self.DB)
 
         self.DB.clicked.connect(self.SC.CreateComp)
@@ -43,9 +43,9 @@ class MainWindow(QtGui.QMainWindow):
 	
 	
 
-        self.widget = QtGui.QWidget()
+        self.widget = QtWidgets.QWidget()
         self.widget.setLayout(self.layout)
-        self.area = QtGui.QScrollArea()
+        self.area = QtWidgets.QScrollArea()
         self.area.setWidget(self.widget)
         self.setCentralWidget(self.area)
         self.setWindowTitle("MultipleOrderedECGUI")
@@ -88,22 +88,22 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     def createAction(self):
 
-        self.newAct = QtGui.QAction("&New...",self)
+        self.newAct = QtWidgets.QAction("&New...",self)
         self.newAct.setShortcuts(QtGui.QKeySequence.New)
         self.newAct.triggered.connect(self.newFile)
         
 
 
-        self.openAct = QtGui.QAction("&Open...",self)
+        self.openAct = QtWidgets.QAction("&Open...",self)
         self.openAct.setShortcuts(QtGui.QKeySequence.Open)
         self.openAct.triggered.connect(self.open)
 
 
-        self.saveAct = QtGui.QAction("&Save",self)
+        self.saveAct = QtWidgets.QAction("&Save",self)
         self.saveAct.setShortcuts(QtGui.QKeySequence.Save)
         self.saveAct.triggered.connect(self.save)
 
-        self.saveAsAct = QtGui.QAction("&Save &As",self)
+        self.saveAsAct = QtWidgets.QAction("&Save &As",self)
         self.saveAsAct.setShortcuts(QtGui.QKeySequence.SaveAs)
         self.saveAsAct.triggered.connect(self.saveAs)
         
@@ -129,10 +129,12 @@ class MainWindow(QtGui.QMainWindow):
     # @param self 
     def open(self):
 
-        fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;Python File (*.py);;All Files (*)")
+        fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;Python File (*.py);;All Files (*)")
         
-
-        ba = str(fileName.toLocal8Bit())
+        try:
+            ba = str(fileName.toLocal8Bit())
+        except:
+            ba = fileName
         self.SC.open(ba)
         self.m_ec.FileName = ba
 
@@ -156,11 +158,17 @@ class MainWindow(QtGui.QMainWindow):
     # @return 成功でTrue、失敗でFalse
     def saveAs(self):
 
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
-        if fileName.isEmpty():
-            return False
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
 
-        ba = str(fileName.toLocal8Bit())
+
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
         self.m_ec.FileName = ba
 
 

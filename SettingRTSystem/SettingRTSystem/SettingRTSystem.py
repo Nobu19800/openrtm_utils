@@ -6,16 +6,10 @@
 #   @brief 複合コンポーネント作成支援ツール
 
 
-
-import thread
-
-
-
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -32,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 import SettingRTCWindow.MainWindow
 
@@ -49,9 +43,9 @@ else:
 # @brief メイン関数
 def main():
     #mgrc = ManagerControl("")
-    app = QtGui.QApplication([""])
-    #splash_pix = QtGui.QPixmap(':/images/splash_loading.png')
-    #splash = QtGui.QSplashScreen(splash_pix, QtCore.Qt.WindowStaysOnTopHint)
+    app = QtWidgets.QApplication([""])
+    #splash_pix = QtWidgets.QPixmap(':/images/splash_loading.png')
+    #splash = QtWidgets.QSplashScreen(splash_pix, QtCore.Qt.WindowStaysOnTopHint)
     #splash.setMask(splash_pix.mask())
     #splash.show()
     #app.processEvents()

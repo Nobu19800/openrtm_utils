@@ -4,7 +4,7 @@
 #   @file FrameComp.py
 #   @brief 実行順序のブロックを表示するウィジェット
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui
 from ExComp import ExComp, CompLayout
 from FEComp import FEComp
 from Config import Configs
@@ -24,7 +24,7 @@ import struct
 # @class FrameComp
 # @brief 実行順序のブロックを表示するウィジェット
 #
-class FrameComp(QtGui.QWidget):
+class FrameComp(QtWidgets.QWidget):
     UpdateSizeSignal = QtCore.pyqtSignal()
     ##
     # @brief コンストラクタ
@@ -38,13 +38,13 @@ class FrameComp(QtGui.QWidget):
         self.Comps = []
         
         self.m_ec = ec
-        self.mainLayout = QtGui.QVBoxLayout()
-        self.TB = QtGui.QPushButton(u"追加")
+        self.mainLayout = QtWidgets.QVBoxLayout()
+        self.TB = QtWidgets.QPushButton(u"追加")
         
         self.TB.clicked.connect(self.AddCompsT)
         self.mainLayout.addWidget(self.TB)
         
-        self.DB = QtGui.QPushButton(u"削除")
+        self.DB = QtWidgets.QPushButton(u"削除")
         
         self.DB.clicked.connect(self.DeleteFrame)
         self.mainLayout.addWidget(self.DB)
@@ -99,13 +99,13 @@ class FrameComp(QtGui.QWidget):
         self.CLS.append(FC)
 
 
-        Vl = QtGui.QVBoxLayout()
+        Vl = QtWidgets.QVBoxLayout()
         c.VL.append(Vl)
 
 	
 
-        VD = QtGui.QWidget()
-        CP = QtGui.QHBoxLayout()
+        VD = QtWidgets.QWidget()
+        CP = QtWidgets.QHBoxLayout()
         CP.addWidget(AB2.PB)
         VD.setLayout(CP)
 
@@ -119,7 +119,7 @@ class FrameComp(QtGui.QWidget):
         Vl.addWidget(VD)
         Vl.addWidget(FC)
 
-        VW = QtGui.QWidget()
+        VW = QtWidgets.QWidget()
         VW.setLayout(Vl)
 
         mBT = AddButton3(u"削除")
@@ -139,10 +139,10 @@ class FrameComp(QtGui.QWidget):
 
 	
 
-        palette = QtGui.QPalette()
-        palette.setColor(QtGui.QPalette.Background, QtGui.QColor(0, 140, 140))
+        palette = QtWidgets.QPalette()
+        palette.setColor(QtWidgets.QPalette.Background, QtGui.QColor(0, 140, 140))
         VW.setPalette(palette)
-        VW.setForegroundRole(QtGui.QPalette.Dark)
+        VW.setForegroundRole(QtWidgets.QPalette.Dark)
 
         VW.setAutoFillBackground(True)
 
@@ -161,7 +161,7 @@ class FrameComp(QtGui.QWidget):
     # @param c 並列ブロックレイアウト
     def AddCompSlot2(self, c):
 
-        c.subLayout = QtGui.QHBoxLayout()
+        c.subLayout = QtWidgets.QHBoxLayout()
         self.AddCompSlot3(c)
 
 
@@ -192,21 +192,21 @@ class FrameComp(QtGui.QWidget):
 
 	
 
-        c.mainLayout = QtGui.QVBoxLayout()
-        c.mainWidget = QtGui.QWidget()
+        c.mainLayout = QtWidgets.QVBoxLayout()
+        c.mainWidget = QtWidgets.QWidget()
         c.mainWidget.setLayout(c.mainLayout)
 
-        sL = QtGui.QWidget()
+        sL = QtWidgets.QWidget()
         sL.setLayout(c.subLayout)
 
-        palette = QtGui.QPalette()
-        palette.setColor(QtGui.QPalette.Background, QtGui.QColor(140, 0, 140))
+        palette = QtWidgets.QPalette()
+        palette.setColor(QtWidgets.QPalette.Background, QtGui.QColor(140, 0, 140))
         sL.setPalette(palette)
-        sL.setForegroundRole(QtGui.QPalette.Dark)
+        sL.setForegroundRole(QtWidgets.QPalette.Dark)
 
         sL.setAutoFillBackground(True)
 
-        c.Lb = QtGui.QLabel()
+        c.Lb = QtWidgets.QLabel()
 
         c.mainLayout.addWidget(sL)
         c.mainLayout.addWidget(c.Lb)
@@ -302,7 +302,7 @@ class FrameComp(QtGui.QWidget):
 
 
         for i in range(0, len(self.Comps)):
-            self.Comps[i].Lb.setPixmap(QtGui.QPixmap(":/images/arrow.png").scaled(Ws*180,30))
+            self.Comps[i].Lb.setPixmap(QtWidgets.QPixmap(":/images/arrow.png").scaled(Ws*180,30))
 
     
     ##
@@ -575,8 +575,10 @@ class FrameComp(QtGui.QWidget):
 
                 for k in range(0, e):
                     fd_text = fd.ECS[k].CB.currentText()
-
-                    N = str(fd_text.toLocal8Bit())
+                    try:
+                        N = str(fd_text.toLocal8Bit())
+                    except:
+                        N = fd_text
                     MPComp.WriteString(N , ofs2 )
                     SR = MPComp.sub_Rule()
 
@@ -630,7 +632,7 @@ class FrameComp(QtGui.QWidget):
                         for k in range(0, len(rs[i].SR[j])):
                             if len(fd.ECS) > k:
 
-                                palette = QtGui.QPalette()
+                                palette = QtWidgets.QPalette()
 
                                 if rs[i].SR[j][k].s == 0:
                                     palette.setColor(QtGui.QPalette.Background, QtGui.QColor(140, 140, 140))

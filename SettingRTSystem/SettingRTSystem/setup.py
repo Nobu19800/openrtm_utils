@@ -36,7 +36,7 @@ if sys.platform == 'win32':
     PY2EXE_OPTIONS = {'compressed': 1,
                       'optimize': 2,
                       'bundle_files': 3,
-                      'includes': ["rtcprofile_plugin","rtcControl_idl","rtcconf_idl","lxml._elementpath", "PyQt4.QtNetwork","sip","ActArray_idl","AIO_idl","Bumper_idl","Camera_idl","DIO_idl","Fiducial_idl","GPS_idl","Gripper_idl","IMU_idl","INS_idl","Limb_idl","Map_idl","Multicamera_idl","PanTilt_idl","Paths_idl","PointCloud_idl","Position_idl","Ranger_idl","RFID_idl"],
+                      'includes': ["rtcprofile_plugin","rtcControl_idl","rtcconf_idl","lxml._elementpath", "PyQt5.QtNetwork","sip","ActArray_idl","AIO_idl","Bumper_idl","Camera_idl","DIO_idl","Fiducial_idl","GPS_idl","Gripper_idl","IMU_idl","INS_idl","Limb_idl","Map_idl","Multicamera_idl","PanTilt_idl","Paths_idl","PointCloud_idl","Position_idl","Ranger_idl","RFID_idl"],
                       'excludes': ["tcl", "Tkinter", "_ssl", "bz2"],
                       }
     

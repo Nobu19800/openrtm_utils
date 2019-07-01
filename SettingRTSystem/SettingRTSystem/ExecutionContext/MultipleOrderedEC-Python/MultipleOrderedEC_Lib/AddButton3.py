@@ -3,7 +3,7 @@
 #   @file AddButton3.py
 #   @brief 並列ブロック削除ボタンを含むウィジェット
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from ExComp import CompLayout
 
 
@@ -12,7 +12,7 @@ from ExComp import CompLayout
 # @class AddButton3
 # @brief 並列ブロック削除ボタンを含むウィジェット
 #
-class AddButton3(QtGui.QWidget):
+class AddButton3(QtWidgets.QWidget):
     clicked = QtCore.pyqtSignal(object, object)
     ##
     # @brief コンストラクタ
@@ -24,8 +24,8 @@ class AddButton3(QtGui.QWidget):
         
         self.Vl = None
         self.c = None
-        self.PB = QtGui.QPushButton(text)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.PB = QtWidgets.QPushButton(text)
+        self.mainLayout = QtWidgets.QVBoxLayout()
         
         #connect(PB, SIGNAL(clicked()),
         #    this, SLOT(clickedSlot()))

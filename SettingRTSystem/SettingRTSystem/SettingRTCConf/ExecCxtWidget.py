@@ -7,15 +7,11 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from MTabWidget import MTabWidget
 from ManagerControl import ManagerControl
@@ -52,7 +48,7 @@ class ExecCxtWidget(MTabWidget):
         self.setGUI("exec_cxt")
         self.language = language
 
-        self.loadECButton = QtGui.QPushButton(u"実行コンテキストをファイルから読み込み")
+        self.loadECButton = QtWidgets.QPushButton(u"実行コンテキストをファイルから読み込み")
         self.subLayouts[-1].addWidget(self.loadECButton)
         self.loadECButton.clicked.connect(self.loadECSlot)
 
@@ -64,13 +60,13 @@ class ExecCxtWidget(MTabWidget):
             pathList.append("../ExecutionContext/MultipleOrderedEC-C++/MultipleOrderedEC.so")
             
         self.addTextCombox("filenameBox.sub", u"モジュール名を直接入力してください", [""], pathList , "")
-        self.loadFileECButton = QtGui.QPushButton(u"実行コンテキスト読み込み")
+        self.loadFileECButton = QtWidgets.QPushButton(u"実行コンテキスト読み込み")
         self.WidList["filenameBox.sub"]["Layout"].addWidget(self.loadFileECButton)
         self.loadFileECButton.clicked.connect(self.loadFileECSlot)
 
         
 
-        self.setOrderFileButton = QtGui.QPushButton(u"実行順序設定をファイルから読み込み")
+        self.setOrderFileButton = QtWidgets.QPushButton(u"実行順序設定をファイルから読み込み")
         self.WidList["exec_cxt.periodic.filename"]["Layout"].addWidget(self.setOrderFileButton)
         self.setOrderFileButton.clicked.connect(self.setOrderFSlot)
 
@@ -115,7 +111,10 @@ class ExecCxtWidget(MTabWidget):
     # @param self 
     def loadFileECSlot(self):
         wid = self.WidList["filenameBox.sub"]["Widget"]
-        s = str(wid.currentText().toLocal8Bit())
+        try:
+            s = str(wid.currentText().toLocal8Bit())
+        except:
+            s = wid.currentText()
         if s == "":
             return
         self.loadEC(s)
@@ -129,17 +128,21 @@ class ExecCxtWidget(MTabWidget):
         allFilePath = "All Files (*)"
         if self.language == "Python":
             filepath = pyFilePath + cppFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
         else:
             filepath = cppFilePath + pyFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
 
-        #fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","Python File (*.py);;Dynamic Link Library (*.dll *.so);;All Files (*)")
+        #fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","Python File (*.py);;Dynamic Link Library (*.dll *.so);;All Files (*)")
 
-        if fileName.isEmpty():
-            return
-
-        ba = str(fileName.toLocal8Bit())
+        try:
+            if fileName.isEmpty():
+                return
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return
+            ba = fileName
 
         self.loadEC(ba)
 
@@ -156,15 +159,21 @@ class ExecCxtWidget(MTabWidget):
         allFilePath = "All Files (*)"
         if self.language == "Python":
             filepath = pyFilePath + confFilePath + cppFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
         else:
             filepath = cppFilePath + confFilePath + pyFilePath + allFilePath
-            fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","",filepath)
+            fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","",filepath)
         
-        if fileName.isEmpty():
-            return
 
-        ba = str(fileName.toLocal8Bit())
+
+        try:
+            if fileName.isEmpty():
+                return
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return
+            ba = fileName
 
         dname = [ba]
         self.mgrc.createEC(dname)

@@ -7,16 +7,12 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import traceback
 import re
 import time
 import random
-import commands
 import math
 import imp
 import webbrowser
@@ -32,7 +28,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui, QtWebKit
+from PyQt5 import QtCore, QtWidgets, QtWebKit, QtGui
 
 
 import imp
@@ -279,7 +275,7 @@ class RTComponentProfile():
 
 
 """
-class RenderPath_s(QtGui.QWidget):
+class RenderPath_s(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(RenderPath_s, self).__init__(parent)
         self.path = QtGui.QPainterPath()
@@ -294,7 +290,7 @@ class RenderPath_s(QtGui.QWidget):
         self.pos_x = 0
         self.pos_y = 0
 
-        self.setBackgroundRole(QtGui.QPalette.Base)
+        self.setBackgroundRole(QtWidgets.QPalette.Base)
         
 
 
@@ -341,12 +337,12 @@ class RenderPath_s(QtGui.QWidget):
 
         painter.translate(self.pos_x, self.pos_y)
 
-        painter.setPen(QtGui.QPen(self.penColor, self.penWidth,
+        painter.setPen(QtWidgets.QPen(self.penColor, self.penWidth,
                 QtCore.Qt.SolidLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
-        gradient = QtGui.QLinearGradient(0, 0, 0, 100)
+        gradient = QtWidgets.QLinearGradient(0, 0, 0, 100)
         gradient.setColorAt(0.0, self.fillColor1)
         gradient.setColorAt(1.0, self.fillColor2)
-        painter.setBrush(QtGui.QBrush(gradient))
+        painter.setBrush(QtWidgets.QBrush(gradient))
         painter.drawPath(self.path)
 """
 
@@ -356,7 +352,7 @@ class RenderPath_s(QtGui.QWidget):
 # @class RenderPath
 # @brief ペインターパス描画
 #
-class RenderPath(QtGui.QGraphicsItem):
+class RenderPath(QtWidgets.QGraphicsItem):
     ##
     # @brief コンストラクタ
     # @param self
@@ -531,12 +527,12 @@ class RenderPath(QtGui.QGraphicsItem):
 
         painter.translate(self.pos_x, self.pos_y)
 
-        painter.setPen(QtGui.QPen(self.penColor, self.penWidth,
+        painter.setPen(QtWidgets.QPen(self.penColor, self.penWidth,
                 QtCore.Qt.SolidLine, QtCore.Qt.RoundCap, QtCore.Qt.RoundJoin))
-        gradient = QtGui.QLinearGradient(0, 0, 0, 100)
+        gradient = QtWidgets.QLinearGradient(0, 0, 0, 100)
         gradient.setColorAt(0.0, self.fillColor1)
         gradient.setColorAt(1.0, self.fillColor2)
-        painter.setBrush(QtGui.QBrush(gradient))
+        painter.setBrush(QtWidgets.QBrush(gradient))
         painter.drawPath(self.path)
         
     
@@ -604,11 +600,11 @@ class ServiceInterfaceProvided:
         self.position = position
         self.posx = 0
         self.posy = 0
-        self.m_obj = QtGui.QGraphicsEllipseItem(self.posx,self.posy,self.size,self.size)
+        self.m_obj = QtWidgets.QGraphicsEllipseItem(self.posx,self.posy,self.size,self.size)
         self.m_obj.setBrush( QtGui.QColor( 0, 0, 0 ) )
         self.scene.addItem( self.m_obj )
-        self.m_line = QtGui.QGraphicsLineItem( self.posx,self.posy,self.posx,self.posy )
-        pen = QtGui.QPen( QtGui.QColor( 0, 0, 0 ) )
+        self.m_line = QtWidgets.QGraphicsLineItem( self.posx,self.posy,self.posx,self.posy )
+        pen = QtWidgets.QPen( QtGui.QColor( 0, 0, 0 ) )
         pen.setWidth( 12 )
         self.m_line.setPen( pen )
         self.scene.addItem( self.m_line )
@@ -661,8 +657,8 @@ class ServiceInterfaceRequired(RenderPath):
         color2 = QtGui.QColor("white")
         self.m_obj.setFillGradient(color1,color2)
         self.m_obj.setPenWidth(2)
-        self.m_line = QtGui.QGraphicsLineItem( self.posx,self.posy,self.posx,self.posy )
-        pen = QtGui.QPen( QtGui.QColor( 0, 0, 0 ) )
+        self.m_line = QtWidgets.QGraphicsLineItem( self.posx,self.posy,self.posx,self.posy )
+        pen = QtWidgets.QPen( QtGui.QColor( 0, 0, 0 ) )
         pen.setWidth( 12 )
         self.m_line.setPen( pen )
         self.scene.addItem( self.m_line )
@@ -1416,13 +1412,13 @@ class RenderRTC(RenderPath):
 # @param text 初期のテキスト
 # @param layout 追加するレイアウト
 def addLineEditBox(name, text, layout):
-    nameLabel = QtGui.QLabel(name)
-    nameEdit = QtGui.QLineEdit()
+    nameLabel = QtWidgets.QLabel(name)
+    nameEdit = QtWidgets.QLineEdit()
     nameLabel.setBuddy(nameEdit)
 
     nameEdit.setText(text)
 
-    subLayout = QtGui.QHBoxLayout()
+    subLayout = QtWidgets.QHBoxLayout()
     subLayout.addWidget(nameLabel)
     subLayout.addWidget(nameEdit)
         
@@ -1433,7 +1429,10 @@ def addLineEditBox(name, text, layout):
 # @brief ウェブブラウザで指定したウェブページを開く
 # @param url URL
 def openWeb(url):
-    webbrowser.open(str(url.toString().toLocal8Bit()))
+    try:
+        webbrowser.open(str(url.toString().toLocal8Bit()))
+    except:
+        webbrowser.open(url.toString())
 
 
 ##
@@ -1442,7 +1441,7 @@ def openWeb(url):
 # @param text HTML
 # @param layout 追加するレイアウト
 def addWebView(name, text, layout):
-    nameLabel = QtGui.QLabel(name)
+    nameLabel = QtWidgets.QLabel(name)
     nameEdit = QtWebKit.QWebView()
     nameEdit.page().setLinkDelegationPolicy(QtWebKit.QWebPage.DelegateAllLinks)
     nameLabel.setBuddy(nameEdit)
@@ -1450,7 +1449,7 @@ def addWebView(name, text, layout):
     nameEdit.setHtml(text)
     nameEdit.linkClicked.connect(openWeb)
 
-    subLayout = QtGui.QHBoxLayout()
+    subLayout = QtWidgets.QHBoxLayout()
     subLayout.addWidget(nameLabel)
     subLayout.addWidget(nameEdit)
         
@@ -1462,13 +1461,13 @@ def addWebView(name, text, layout):
 # @param text 初期のテキスト
 # @param layout 追加するレイアウト
 def addTextEditBox(name, text, layout):
-    nameLabel = QtGui.QLabel(name)
-    nameEdit = QtGui.QTextEdit()
+    nameLabel = QtWidgets.QLabel(name)
+    nameEdit = QtWidgets.QTextEdit()
     nameLabel.setBuddy(nameEdit)
 
     nameEdit.setText(text)
 
-    subLayout = QtGui.QHBoxLayout()
+    subLayout = QtWidgets.QHBoxLayout()
     subLayout.addWidget(nameLabel)
     subLayout.addWidget(nameEdit)
         
@@ -1479,7 +1478,7 @@ def addTextEditBox(name, text, layout):
 # @class ViewConfiguration
 # @brief コンフィギュレーションパラメータ表示ダイアログ
 #
-class ViewConfiguration(QtGui.QDialog):
+class ViewConfiguration(QtWidgets.QDialog):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1489,13 +1488,13 @@ class ViewConfiguration(QtGui.QDialog):
         super(ViewConfiguration, self).__init__(parent)
         
         self.setWindowTitle(u"コンフィギュレーションパラメータ")
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
 
         self.profile = profile
 
         count = len(profile.confs)
-        self.table = QtGui.QTableWidget(count,3)
+        self.table = QtWidgets.QTableWidget(count,3)
         
         self.table.setHorizontalHeaderLabels([u"名前", u"デフォルト値", u"データ型"])
 
@@ -1506,7 +1505,7 @@ class ViewConfiguration(QtGui.QDialog):
 
         self.mainLayout.addWidget(self.table)
 
-        self.descriptionEdit = QtGui.QTextEdit()
+        self.descriptionEdit = QtWidgets.QTextEdit()
         self.mainLayout.addWidget(self.descriptionEdit)
 
     ##
@@ -1526,9 +1525,9 @@ class ViewConfiguration(QtGui.QDialog):
     # @param conf コンフィギュレーションパラメータ
     # @param num 位置
     def addTable(self, conf, num):
-        name = QtGui.QTableWidgetItem(conf.name)
-        defaultValue = QtGui.QTableWidgetItem(conf.defaultValue)
-        detaType = QtGui.QTableWidgetItem(conf.dataType)
+        name = QtWidgets.QTableWidgetItem(conf.name)
+        defaultValue = QtWidgets.QTableWidgetItem(conf.defaultValue)
+        detaType = QtWidgets.QTableWidgetItem(conf.dataType)
             
         self.table.setItem(num, 0, name)
         self.table.setItem(num, 1, defaultValue)
@@ -1539,7 +1538,7 @@ class ViewConfiguration(QtGui.QDialog):
 # @class ViewServicePort
 # @brief サービスポート表示ダイアログ
 #
-class ViewServicePort(QtGui.QDialog):
+class ViewServicePort(QtWidgets.QDialog):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1549,7 +1548,7 @@ class ViewServicePort(QtGui.QDialog):
         super(ViewServicePort, self).__init__(parent)
         name = profile.name
         self.setWindowTitle(name)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.profile = profile
 
@@ -1564,7 +1563,7 @@ class ViewServicePort(QtGui.QDialog):
        
         count = len(profile.interfaces)
         
-        self.table = QtGui.QTableWidget(count,3)
+        self.table = QtWidgets.QTableWidget(count,3)
         
         self.table.setHorizontalHeaderLabels([u"名前", u"方向", u"IDLファイル"])
 
@@ -1575,7 +1574,7 @@ class ViewServicePort(QtGui.QDialog):
 
         self.mainLayout.addWidget(self.table)
 
-        self.descriptionEdit = QtGui.QTextEdit()
+        self.descriptionEdit = QtWidgets.QTextEdit()
         self.mainLayout.addWidget(self.descriptionEdit)
 
     ##
@@ -1596,9 +1595,9 @@ class ViewServicePort(QtGui.QDialog):
     # @param conf コンフィギュレーションパラメータ
     # @param num 位置
     def addTable(self, interface, num):
-        name = QtGui.QTableWidgetItem(interface.name)
-        direction = QtGui.QTableWidgetItem(interface.direction)
-        idlFile = QtGui.QTableWidgetItem(interface.idlFile)
+        name = QtWidgets.QTableWidgetItem(interface.name)
+        direction = QtWidgets.QTableWidgetItem(interface.direction)
+        idlFile = QtWidgets.QTableWidgetItem(interface.idlFile)
             
         self.table.setItem(num, 0, name)
         self.table.setItem(num, 1, direction)
@@ -1608,7 +1607,7 @@ class ViewServicePort(QtGui.QDialog):
 # @class ViewDataPort
 # @brief データポート表示ダイアログ
 #
-class ViewDataPort(QtGui.QDialog):
+class ViewDataPort(QtWidgets.QDialog):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1618,7 +1617,7 @@ class ViewDataPort(QtGui.QDialog):
         super(ViewDataPort, self).__init__(parent)
         name = profile.name
         self.setWindowTitle(name)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.profile = profile
         addLineEditBox(u"名前",profile.name,self.mainLayout)
@@ -1630,7 +1629,7 @@ class ViewDataPort(QtGui.QDialog):
 # @class ViewWindow
 # @brief RTCの詳細表示ダイアログ
 #
-class ViewWindow(QtGui.QDialog):
+class ViewWindow(QtWidgets.QDialog):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1641,14 +1640,14 @@ class ViewWindow(QtGui.QDialog):
         name = profile.name
         self.setWindowTitle(name)
         
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
          
         self.setLayout(self.mainLayout)
         self.profile = profile
-        self.scene = QtGui.QGraphicsScene(0, 0, 600, 600)
+        self.scene = QtWidgets.QGraphicsScene(0, 0, 600, 600)
         
         self.view = GraphicsView(self.scene)
-        self.view.setViewportUpdateMode(QtGui.QGraphicsView.BoundingRectViewportUpdate)
+        self.view.setViewportUpdateMode(QtWidgets.QGraphicsView.BoundingRectViewportUpdate)
         self.view.setBackgroundBrush(QtGui.QColor(255, 255, 255))
         self.view.scale(0.25, 0.25)
         self.view.setMinimumHeight(200)
@@ -1665,7 +1664,7 @@ class ViewWindow(QtGui.QDialog):
         addLineEditBox(u"モジュール概要",profile.info.description,self.mainLayout)
         addWebView(u"概要",profile.info.abstracts,self.mainLayout)
         
-        self.showConfigurationButton = QtGui.QPushButton(u"コンフィギュレーションパラメータ表示")
+        self.showConfigurationButton = QtWidgets.QPushButton(u"コンフィギュレーションパラメータ表示")
         self.showConfigurationButton.clicked.connect(self.showConfigurationSlot)
         self.mainLayout.addWidget(self.showConfigurationButton)
         
@@ -1684,7 +1683,7 @@ class ViewWindow(QtGui.QDialog):
 # @class GraphicsView
 # @brief グラフィクスビューウィジェット
 #
-class GraphicsView(QtGui.QGraphicsView):
+class GraphicsView(QtWidgets.QGraphicsView):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1724,7 +1723,7 @@ class GraphicsView(QtGui.QGraphicsView):
 # @class RTCViewWindow
 # @brief リストで表示するRTC
 #
-class RTCViewWindow(QtGui.QDialog):
+class RTCViewWindow(QtWidgets.QDialog):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1736,14 +1735,14 @@ class RTCViewWindow(QtGui.QDialog):
         self.profile = profile
         name = profile.name
         self.setWindowTitle(name)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         
-        self.scene = QtGui.QGraphicsScene(0, 0, 600, 600)
+        self.scene = QtWidgets.QGraphicsScene(0, 0, 600, 600)
         
         self.view = GraphicsView(self.scene)
         self.view.scale(0.25, 0.25)
-        self.view.setViewportUpdateMode(QtGui.QGraphicsView.BoundingRectViewportUpdate)
+        self.view.setViewportUpdateMode(QtWidgets.QGraphicsView.BoundingRectViewportUpdate)
         self.view.setBackgroundBrush(QtGui.QColor(255, 255, 255))
         self.mainLayout.addWidget(self.view)
         self.renderWindow = RenderRTC(profile, self.scene, False)
@@ -1761,7 +1760,7 @@ class RTCViewWindow(QtGui.QDialog):
 # @class RTCItem
 # @brief リストで表示するRTC
 #
-class RTCItem(QtGui.QGroupBox):
+class RTCItem(QtWidgets.QGroupBox):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1770,20 +1769,20 @@ class RTCItem(QtGui.QGroupBox):
     def __init__(self, profile, m_window=None, name="", parent=None):
         super(RTCItem, self).__init__(name, parent)
         self.profile = profile
-        #self.groupBox = QtGui.QGroupBox("")
+        #self.groupBox = QtWidgets.QGroupBox("")
         self.m_window = m_window
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         #self.groupBox.setLayout(self.mainLayout)
 
-        self.scene = QtGui.QGraphicsScene(0, 0, 600, 600)
+        self.scene = QtWidgets.QGraphicsScene(0, 0, 600, 600)
         #bar = self.scene.verticalScrollBar()
         #bar.valueChanged.connect(self.valueChanged)
         #self.scene.changed.connect(self.valueChanged)
 
         self.view = GraphicsView(self.scene)
         self.view.scale(0.25, 0.25)
-        self.view.setViewportUpdateMode(QtGui.QGraphicsView.BoundingRectViewportUpdate)
+        self.view.setViewportUpdateMode(QtWidgets.QGraphicsView.BoundingRectViewportUpdate)
         self.view.setBackgroundBrush(QtGui.QColor(255, 255, 255))
         self.mainLayout.addWidget(self.view)
         self.renderWindow = RenderRTC(profile, self.scene)
@@ -1793,17 +1792,17 @@ class RTCItem(QtGui.QGroupBox):
 
         
 
-        self.showProfileButton = QtGui.QPushButton(u"詳細")
+        self.showProfileButton = QtWidgets.QPushButton(u"詳細")
         self.showProfileButton.clicked.connect(self.showProfileSlot)
         self.mainLayout.addWidget(self.showProfileButton)
 
         
 
-        self.runButton = QtGui.QPushButton(u"rtcdで起動")
+        self.runButton = QtWidgets.QPushButton(u"rtcdで起動")
         self.runButton.clicked.connect(self.runSlot)
         self.mainLayout.addWidget(self.runButton)
 
-        self.runexeButton = QtGui.QPushButton(u"別プロセスで起動")
+        self.runexeButton = QtWidgets.QPushButton(u"別プロセスで起動")
         self.runexeButton.clicked.connect(self.runexeSlot)
         self.mainLayout.addWidget(self.runexeButton)
         
@@ -1856,15 +1855,15 @@ def encodestr(s):
 # @class RTC_Window
 # @brief RTCのリスト表示ウィジェット
 #
-class RTC_Window(QtGui.QWidget):
+class RTC_Window(QtWidgets.QWidget):
     ##
     # @brief コンストラクタ
     # @param self
     # @param parent 親ウィジェット
     def __init__(self, parent=None):
         super(RTC_Window, self).__init__(parent)
-        self.tab_widget = QtGui.QTabWidget(self)
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.tab_widget = QtWidgets.QTabWidget(self)
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         self.mainLayout.addWidget(self.tab_widget)
         self.parent = parent
@@ -1893,7 +1892,7 @@ class RTC_Window(QtGui.QWidget):
 # @class Category_Window
 # @brief カテゴリ表示ウィジェット
 #
-class Category_Window(QtGui.QWidget):
+class Category_Window(QtWidgets.QWidget):
     ##
     # @brief コンストラクタ
     # @param self
@@ -1901,7 +1900,7 @@ class Category_Window(QtGui.QWidget):
     def __init__(self, parent=None):
         super(Category_Window, self).__init__(parent)
         self.parent = parent
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.setLayout(self.mainLayout)
         """rp = RTComponentProfile()
         item1 = RTCItem(rp.getProfile("testXML")[1],"testXML")
@@ -1918,7 +1917,7 @@ class Category_Window(QtGui.QWidget):
     def loadList(self, data):
         for i in range(len(data)):
             if i%3 == 0:
-                self.layouts.append(QtGui.QHBoxLayout())
+                self.layouts.append(QtWidgets.QHBoxLayout())
                 self.mainLayout.addLayout(self.layouts[-1])
                 
             self.items[data[i].name] = RTCItem(data[i],self.parent.parent,data[i].name)
@@ -1933,7 +1932,7 @@ class Category_Window(QtGui.QWidget):
 # @class ScrollArea
 # @brief スクロールエリア
 #
-class ScrollArea(QtGui.QScrollArea):
+class ScrollArea(QtWidgets.QScrollArea):
     ##
     # @brief コンストラクタ
     # @param self

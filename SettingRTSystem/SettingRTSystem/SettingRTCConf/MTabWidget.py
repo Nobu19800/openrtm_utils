@@ -7,15 +7,11 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -30,7 +26,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 from ManagerControl import ManagerControl
 
@@ -38,7 +34,7 @@ from ManagerControl import ManagerControl
 # @class MTabWidget
 # @brief タブの基本ウィジェット
 #
-class MTabWidget(QtGui.QWidget):
+class MTabWidget(QtWidgets.QWidget):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -47,14 +43,14 @@ class MTabWidget(QtGui.QWidget):
     def __init__(self, mgrc, parent=None):
         super(MTabWidget, self).__init__(parent)
         self.mgrc = mgrc
-        self.mainLayout = QtGui.QHBoxLayout()
+        self.mainLayout = QtWidgets.QHBoxLayout()
 
         self.setLayout(self.mainLayout)
 
         self.WidList = {}
         self.widNum = 0
 
-        self.subLayouts = [QtGui.QVBoxLayout()]
+        self.subLayouts = [QtWidgets.QVBoxLayout()]
         self.mainLayout.addLayout(self.subLayouts[-1])
 
     ##
@@ -65,11 +61,11 @@ class MTabWidget(QtGui.QWidget):
     # @param label 表示する文字列
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def apendWidget(self, wid, name, label):
-        #widget = QtGui.QWidget(self)
-        widget = QtGui.QGroupBox(label)
-        layout = QtGui.QVBoxLayout()
+        #widget = QtWidgets.QWidget(self)
+        widget = QtWidgets.QGroupBox(label)
+        layout = QtWidgets.QVBoxLayout()
         widget.setLayout(layout)
-        #Lb = QtGui.QLabel(label)
+        #Lb = QtWidgets.QLabel(label)
         
         
         #layout.addWidget(Lb)
@@ -77,7 +73,7 @@ class MTabWidget(QtGui.QWidget):
 
         self.widNum += 1
         if self.widNum%7 == 0:
-            self.subLayouts.append(QtGui.QVBoxLayout())
+            self.subLayouts.append(QtWidgets.QVBoxLayout())
             self.mainLayout.addLayout(self.subLayouts[-1])
             
         self.subLayouts[-1].addWidget(widget)
@@ -98,7 +94,7 @@ class MTabWidget(QtGui.QWidget):
     # @param default デフォルト値
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def addCombox(self, name, label, value, ls, default):
-        wid = QtGui.QComboBox()
+        wid = QtWidgets.QComboBox()
         for l in ls:
             if l != "":
                 wid.addItem(l)
@@ -134,7 +130,7 @@ class MTabWidget(QtGui.QWidget):
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def addTextCombox(self, name, label, value, ls, default):
         wl = self.addCombox(name, label, value, ls, default)
-        wl["Widget"].setLineEdit(QtGui.QLineEdit())
+        wl["Widget"].setLineEdit(QtWidgets.QLineEdit())
         if len(value) == 0:
             wl["Widget"].lineEdit().setText(default)
         elif value[0] == "":
@@ -157,7 +153,7 @@ class MTabWidget(QtGui.QWidget):
     # @param default デフォルト値
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def addSpinBox(self, name, label, value, default):
-        wid = QtGui.QSpinBox()
+        wid = QtWidgets.QSpinBox()
         wid.setRange(0,10000)
         if len(value) == 0:
             wid.setValue(int(default))
@@ -181,7 +177,7 @@ class MTabWidget(QtGui.QWidget):
     # @param default デフォルト値
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def addDoubleSpinBox(self, name, label, value, default):
-        wid = QtGui.QDoubleSpinBox()
+        wid = QtWidgets.QDoubleSpinBox()
         wid.setRange(0,10000)
         if len(value) == 0:
             wid.setValue(float(default))
@@ -205,7 +201,7 @@ class MTabWidget(QtGui.QWidget):
     # @param default デフォルト値
     # @return 追加したウィジェットの情報(Widget:ウィジェット、Layout：レイアウト、Type：ウィジェットの種類)
     def addTextBox(self, name, label, value, default):
-        wid = QtGui.QLineEdit()
+        wid = QtWidgets.QLineEdit()
         if len(value) == 0:
             wid.setText(default)
         elif value[0] == "":
@@ -242,7 +238,7 @@ class MTabWidget(QtGui.QWidget):
     # @param self 
     # @param mes 表示する文字列
     def mesBox(self, mes):
-        msgbox = QtGui.QMessageBox( self )
+        msgbox = QtWidgets.QMessageBox( self )
         msgbox.setText( mes )
         msgbox.setModal( True )
         ret = msgbox.exec_()

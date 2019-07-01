@@ -5,7 +5,7 @@
 #   @brief RTCのブロックのウィジェット
 
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui
 from FEComp import FEComp
 
 
@@ -33,8 +33,8 @@ class CompLayout:
 # @class ExComp
 # @brief RTCのブロックのウィジェット
 #
-class ExComp(QtGui.QWidget):
-    AddCompSignal = QtCore.pyqtSignal(QtGui.QWidget, QtGui.QWidget)
+class ExComp(QtWidgets.QWidget):
+    AddCompSignal = QtCore.pyqtSignal(QtWidgets.QWidget, QtWidgets.QWidget)
     ##
     # @brief コンストラクタ
     # @param self 
@@ -42,28 +42,28 @@ class ExComp(QtGui.QWidget):
     def __init__(self, parent=None):
         super(ExComp, self).__init__(parent)
         self.Fc = None
-        self.CB = QtGui.QComboBox()
+        self.CB = QtWidgets.QComboBox()
         self.setMaximumSize(100, 160)
         self.setMinimumSize(100, 160)
-        self.subLayout = QtGui.QVBoxLayout()
-        self.subWidget = QtGui.QWidget(self)
+        self.subLayout = QtWidgets.QVBoxLayout()
+        self.subWidget = QtWidgets.QWidget(self)
         self.subWidget.setLayout(self.subLayout)
-        self.palette = QtGui.QPalette()
-        self.palette.setColor(QtGui.QPalette.Background, QtGui.QColor(140, 140, 140))
+        self.palette = QtWidgets.QPalette()
+        self.palette.setColor(QtWidgets.QPalette.Background, QtGui.QColor(140, 140, 140))
         self.subWidget.setPalette(self.palette)
-        self.subWidget.setForegroundRole(QtGui.QPalette.Dark)
+        self.subWidget.setForegroundRole(QtWidgets.QPalette.Dark)
 
         self.subWidget.setAutoFillBackground(True)
 
-        self.BT = QtGui.QPushButton(u"削除")
+        self.BT = QtWidgets.QPushButton(u"削除")
         self.BT.clicked.connect(self.DeleteComp)
 
-        self.DT = QtGui.QPushButton(u"追加")
+        self.DT = QtWidgets.QPushButton(u"追加")
         self.DT.clicked.connect(self.AddCompSlot)
 
-        self.Lb = QtGui.QLabel()
+        self.Lb = QtWidgets.QLabel()
 
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.subLayout.addStretch()
         self.subLayout.addWidget(self.CB)
         self.subLayout.addWidget(self.BT)
@@ -73,7 +73,7 @@ class ExComp(QtGui.QWidget):
         self.mainLayout.addWidget(self.DT)
         self.mainLayout.addStretch()
 
-        self.Lb.setPixmap(QtGui.QPixmap(":/images/arrow.png").scaled(self.DT.sizeHint()))
+        self.Lb.setPixmap(QtWidgets.QPixmap(":/images/arrow.png").scaled(self.DT.sizeHint()))
 
         self.setLayout(self.mainLayout)
 

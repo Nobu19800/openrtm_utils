@@ -4,7 +4,7 @@
 # @brief 実行条件のウィジェット
 #
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 
 
 ##
@@ -43,7 +43,7 @@ class CompList:
 # @class Configs
 # @brief 実行条件のウィジェット
 #
-class Configs(QtGui.QWidget):
+class Configs(QtWidgets.QWidget):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -52,45 +52,45 @@ class Configs(QtGui.QWidget):
         super(Configs, self).__init__(parent)
         self.Cl = []
         
-        self.componentName = QtGui.QLabel(u"コンポーネント")
-        self.noneName = QtGui.QLabel(u"条件なし")
-        self.createdName = QtGui.QLabel(u"CREATED")
-        self.inactiveName = QtGui.QLabel(u"INACTIVE")
-        self.activeName = QtGui.QLabel(u"ACTIVE")
-        self.errorName = QtGui.QLabel(u"ERROR")
+        self.componentName = QtWidgets.QLabel(u"コンポーネント")
+        self.noneName = QtWidgets.QLabel(u"条件なし")
+        self.createdName = QtWidgets.QLabel(u"CREATED")
+        self.inactiveName = QtWidgets.QLabel(u"INACTIVE")
+        self.activeName = QtWidgets.QLabel(u"ACTIVE")
+        self.errorName = QtWidgets.QLabel(u"ERROR")
 
-        self.componentName.setFrameStyle( QtGui.QFrame.Box)
-        self.noneName.setFrameStyle( QtGui.QFrame.Box)
-        self.createdName.setFrameStyle( QtGui.QFrame.Box)
-        self.inactiveName.setFrameStyle( QtGui.QFrame.Box)
-        self.activeName.setFrameStyle( QtGui.QFrame.Box)
-        self.errorName.setFrameStyle( QtGui.QFrame.Box)
+        self.componentName.setFrameStyle( QtWidgets.QFrame.Box)
+        self.noneName.setFrameStyle( QtWidgets.QFrame.Box)
+        self.createdName.setFrameStyle( QtWidgets.QFrame.Box)
+        self.inactiveName.setFrameStyle( QtWidgets.QFrame.Box)
+        self.activeName.setFrameStyle( QtWidgets.QFrame.Box)
+        self.errorName.setFrameStyle( QtWidgets.QFrame.Box)
 
-        self.Nlist = QtGui.QVBoxLayout()
+        self.Nlist = QtWidgets.QVBoxLayout()
         self.Nlist.addWidget(self.componentName)
 
-        self.Dl = QtGui.QHBoxLayout()
+        self.Dl = QtWidgets.QHBoxLayout()
         self.Dl.addWidget(self.noneName)
         self.Dl.addWidget(self.createdName)
         self.Dl.addWidget(self.inactiveName)
         self.Dl.addWidget(self.activeName)
         self.Dl.addWidget(self.errorName)
 
-        self.Dw = QtGui.QWidget()
+        self.Dw = QtWidgets.QWidget()
         self.Dw.setLayout(self.Dl)
 
         
 
 
-        self.CRlist = QtGui.QVBoxLayout()
+        self.CRlist = QtWidgets.QVBoxLayout()
 
         self.CRlist.addWidget(self.Dw)
 
-        self.subLayout = QtGui.QHBoxLayout()
+        self.subLayout = QtWidgets.QHBoxLayout()
         self.subLayout.addLayout(self.Nlist);
         self.subLayout.addLayout(self.CRlist);
 
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
         self.mainLayout.addLayout(self.subLayout)
         self.mainLayout.addStretch()
 
@@ -105,17 +105,17 @@ class Configs(QtGui.QWidget):
     def addComp(self, name):
         self.cl = CompList()
         self.cl.Name = name
-        self.cl.name = QtGui.QLabel(name)
-        self.cl.c_none = QtGui.QRadioButton()
-        self.cl.c_created = QtGui.QRadioButton()
-        self.cl.c_inactive = QtGui.QRadioButton()
-        self.cl.c_active = QtGui.QRadioButton()
-        self.cl.c_error = QtGui.QRadioButton()
+        self.cl.name = QtWidgets.QLabel(name)
+        self.cl.c_none = QtWidgets.QRadioButton()
+        self.cl.c_created = QtWidgets.QRadioButton()
+        self.cl.c_inactive = QtWidgets.QRadioButton()
+        self.cl.c_active = QtWidgets.QRadioButton()
+        self.cl.c_error = QtWidgets.QRadioButton()
 
         self.cl.c_none.setChecked(True)
         
-        self.cl.Lo = QtGui.QHBoxLayout()
-        self.cl.Lw = QtGui.QWidget()
+        self.cl.Lo = QtWidgets.QHBoxLayout()
+        self.cl.Lw = QtWidgets.QWidget()
         
 
 

@@ -7,16 +7,12 @@
 
 
 
-import thread
-
-
 import optparse
 import sys,os,platform
 import traceback
 import re
 import time
 import random
-import commands
 import math
 import imp
 
@@ -31,7 +27,7 @@ from OpenRTM_aist import CorbaConsumer
 from omniORB import CORBA
 import CosNaming
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui
 
 
 
@@ -84,7 +80,7 @@ def connectServicePort(obj1, obj2, c_name):
 # @class MainWindow
 # @brief メインウインドウ
 #
-class MainWindow(QtGui.QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     ##
     # @brief コンストラクタ
     # @param self 
@@ -113,7 +109,7 @@ class MainWindow(QtGui.QMainWindow):
 
         
 
-        self.tab_widget = QtGui.QTabWidget(self)
+        self.tab_widget = QtWidgets.QTabWidget(self)
         self.rtcd_widget = rtcdWidget(self)
 
         self.tab_widget.addTab(self.rtcd_widget, u"RTCD")
@@ -185,29 +181,29 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     def createAction(self):
 
-        self.newAct = QtGui.QAction(QtGui.QIcon(':/images/new.png'),"&New...",self)
+        self.newAct = QtWidgets.QAction(QtGui.QIcon(':/images/new.png'),"&New...",self)
         self.newAct.setShortcuts(QtGui.QKeySequence.New)
         self.newAct.triggered.connect(self.newFile)
         
 
 
-        self.openAct = QtGui.QAction(QtGui.QIcon(':/images/open.png'),"&Open...",self)
+        self.openAct = QtWidgets.QAction(QtGui.QIcon(':/images/open.png'),"&Open...",self)
         self.openAct.setShortcuts(QtGui.QKeySequence.Open)
         self.openAct.triggered.connect(self.open)
 
 
-        self.saveAct = QtGui.QAction(QtGui.QIcon(':/images/save.png'),"&Save",self)
+        self.saveAct = QtWidgets.QAction(QtGui.QIcon(':/images/save.png'),"&Save",self)
         self.saveAct.setShortcuts(QtGui.QKeySequence.Save)
         self.saveAct.triggered.connect(self.save)
 
-        self.saveAsAct = QtGui.QAction("&Save &As",self)
+        self.saveAsAct = QtWidgets.QAction("&Save &As",self)
         self.saveAsAct.setShortcuts(QtGui.QKeySequence.SaveAs)
         self.saveAsAct.triggered.connect(self.saveAs)
 
-        self.createPackageAct = QtGui.QAction("&Create &Package",self)
+        self.createPackageAct = QtWidgets.QAction("&Create &Package",self)
         self.createPackageAct.triggered.connect(self.createPackage)
 
-        self.rtcdAct = QtGui.QAction(QtGui.QIcon(':/images/run.png'),"&rtcd &Start",self)
+        self.rtcdAct = QtWidgets.QAction(QtGui.QIcon(':/images/run.png'),"&rtcd &Start",self)
         self.rtcdAct.triggered.connect(self.rtcdRun)
 
     ##
@@ -254,7 +250,10 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     # @param filapath 読み込むファイル名
     def createTabs(self, filapath):
-        ipaddress = str(self.rtcd_widget.WidList["textBox"]["Widget"].text().toLocal8Bit())
+        try:
+            ipaddress = str(self.rtcd_widget.WidList["textBox"]["Widget"].text().toLocal8Bit())
+        except:
+            ipaddress = self.rtcd_widget.WidList["textBox"]["Widget"].text()
         confsetComp = self.searchRTC("rtcConfSet0.rtc",ipaddress)
         confsetPort = confsetComp[0].get_port_by_name("rtcconf")
         #print(confsetPort)
@@ -380,10 +379,15 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     # @return ファイルパス
     def getFilePath(self):
-        fileName = QtGui.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;All Files (*)")
-        if fileName.isEmpty():
-            return ""
-        ba = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getOpenFileName(self,u"開く","","Config File (*.conf);;All Files (*)")
+        try:
+            if fileName.isEmpty():
+                return ""
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return ""
+            ba = fileName
         #ba = ba.replace("/","\\")
         
 
@@ -451,7 +455,10 @@ class MainWindow(QtGui.QMainWindow):
             wid = self.rtcd_widget.WidList["rtcList"]["Widget"]
             clist = []
             for c in range(0, wid.count()):
-                clist.append(str(wid.itemText(c).toLocal8Bit()))
+                try:
+                    clist.append(str(wid.itemText(c).toLocal8Bit()))
+                except:
+                    clist.append(wid.itemText(c))
             self.control_comp._rtcconf._ptr().setExRTCList(clist)
             result = self.control_comp._rtcconf._ptr().save(filename)
         except:
@@ -488,10 +495,16 @@ class MainWindow(QtGui.QMainWindow):
     # @brief パッケージを作成、保存のスロット
     # @param self           
     def createPackage(self):
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
-        if fileName.isEmpty():
-            return False
-        ba = str(fileName.toLocal8Bit())
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
+
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
 
         self.createPack(ba)
 
@@ -501,11 +514,16 @@ class MainWindow(QtGui.QMainWindow):
     # @param self   
     def saveAs(self):
         
-        fileName = QtGui.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
-        if fileName.isEmpty():
-            return False
+        fileName = QtWidgets.QFileDialog.getSaveFileName(self,u"保存", "","Config File (*.conf);;All Files (*)")
 
-        ba = str(fileName.toLocal8Bit())
+        try:
+            if fileName.isEmpty():
+                return False
+            ba = str(fileName.toLocal8Bit())
+        except:
+            if not fileName:
+                return False
+            ba = fileName
         
         self.saveFile(ba)
         self.curFile = ba
@@ -576,8 +594,8 @@ class MainWindow(QtGui.QMainWindow):
     # @brief 初期化のスロット
     # @param self
     def newFile(self):
-        text, ok = QtGui.QInputDialog.getText(self, u"アドレス入力",
-                u"アドレス", QtGui.QLineEdit.Normal,
+        text, ok = QtWidgets.QInputDialog.getText(self, u"アドレス入力",
+                u"アドレス", QtWidgets.QLineEdit.Normal,
                 self.rtcd_widget.WidList["textBox"]["Widget"].text())
         if ok and text != '':
             self.rtcd_widget.WidList["textBox"]["Widget"].setText(text)
@@ -597,7 +615,7 @@ class MainWindow(QtGui.QMainWindow):
     # @param self
     # @param mes 表示する文字列
     def mesBox(self, mes):
-        msgbox = QtGui.QMessageBox( self )
+        msgbox = QtWidgets.QMessageBox( self )
         msgbox.setText( mes )
         msgbox.setModal( True )
         ret = msgbox.exec_()
