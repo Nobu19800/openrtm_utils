@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef GLBOX_H
 #define GLBOX_H
 
@@ -12,7 +12,7 @@
 
 
 
-/*3D•`‰æ*/
+/*3Dæç”»*/
 
 class GLBox : public QGLWidget
 {

@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
  * @file  RTMath.h
- * @brief ”’lŒvZŠÖ˜A‚ÌŠÖ”
+ * @brief æ•°å€¤è¨ˆç®—é–¢é€£ã®é–¢æ•°
  *
  */
 
@@ -20,17 +20,17 @@
 
 /**
  * @class ValueAndTime
-*@brief ŠÔ‚Æ‚»‚ÌŠÔ‚Å‚Ìƒf[ƒ^‚ğŠi”[‚·‚éƒNƒ‰ƒX
-*T‚ÍŠi”[‚·‚éƒf[ƒ^‚ÌŒ^
+*@brief æ™‚é–“ã¨ãã®æ™‚é–“ã§ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´ã™ã‚‹ã‚¯ãƒ©ã‚¹
+*Tã¯æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
 */
 template <class T>
 class ValueAndTime
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param tm ŠÔ
-	* @param value ƒf[ƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param tm æ™‚é–“
+	* @param value ãƒ‡ãƒ¼ã‚¿
 	*/
 	ValueAndTime(coil::TimeValue tm, T value)
 	{
@@ -44,15 +44,15 @@ public:
 
 /**
  * @class RTMath
-*@brief ˜A‘±“I‚É“ü—Í‚³‚ê‚éƒf[ƒ^AŠÔ‚ğŠÇ—‚·‚éƒNƒ‰ƒX
-*T‚ÍŠi”[‚·‚éƒf[ƒ^‚ÌŒ^
+*@brief é€£ç¶šçš„ã«å…¥åŠ›ã•ã‚Œã‚‹ãƒ‡ãƒ¼ã‚¿ã€æ™‚é–“ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
+*Tã¯æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
 */
 template <class T>
 class RTMath
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTMath()
 	{
@@ -62,8 +62,8 @@ public:
 		resetTime();
 	};
 	/**
-	*@brief ‚İ•İ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	virtual void setSamplingTime(double s)
 	{
@@ -79,17 +79,17 @@ public:
 		
 	};
 	/**
-	*@brief ÀŠÔ‚Åƒf[ƒ^‚ğ•Û‘¶‚·‚é‚©AƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Å•Û‘¶‚·‚é‚©İ’è
-	* @param s true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief å®Ÿæ™‚é–“ã§ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ã‹ã€ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã§ä¿å­˜ã™ã‚‹ã‹è¨­å®š
+	* @param s trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	virtual void setConfig(bool c)
 	{
 		realTime = c;
 	};
 	/**
-	*@brief ÅV‚Ìƒf[ƒ^‚Æ‘O‰ñ“ü—Í‚µ‚½ƒf[ƒ^‚Æ‚ÌŠÔ·‚ğæ“¾
-	* @param ans ŠÔ·(ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Ì‚Íİ’è‚µ‚½‚İ•)
-	* @return ‘O‰ñ‚Ìƒf[ƒ^‚ª‘¶İ‚µ‚È‚¢ê‡‚ÍfalseA‚»‚êˆÈŠO‚Íture
+	*@brief æœ€æ–°ã®ãƒ‡ãƒ¼ã‚¿ã¨å‰å›å…¥åŠ›ã—ãŸãƒ‡ãƒ¼ã‚¿ã¨ã®æ™‚é–“å·®ã‚’å–å¾—
+	* @param ans æ™‚é–“å·®(ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã®æ™‚ã¯è¨­å®šã—ãŸåˆ»ã¿å¹…)
+	* @return å‰å›ã®ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯falseã€ãã‚Œä»¥å¤–ã¯ture
 	*/
 	virtual bool getDiffTime(double &ans)
 	{
@@ -111,7 +111,7 @@ public:
 		return true;
 	};
 	/**
-	*@brief ŠÔAƒf[ƒ^ƒŠƒXƒg‚ğ‰Šú‰»‚·‚é
+	*@brief æ™‚é–“ã€ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆã‚’åˆæœŸåŒ–ã™ã‚‹
 	*/
 	virtual void resetTime()
 	{
@@ -120,8 +120,8 @@ public:
 		now_time = 0;
 	};
 	/**
-	*@brief ƒf[ƒ^‚ğ’Ç‰Á
-	* @param data ƒf[ƒ^
+	*@brief ãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ 
+	* @param data ãƒ‡ãƒ¼ã‚¿
 	*/
 	virtual void addData(T data)
 	{
@@ -129,8 +129,8 @@ public:
 		dataList.push_back(ValueAndTime<T>(t0,data));
 	};
 	/**
-	*@brief Œ»İ‚ÌŠÔ‚ğæ“¾
-	* @return ŠÔ
+	*@brief ç¾åœ¨ã®æ™‚é–“ã‚’å–å¾—
+	* @return æ™‚é–“
 	*/
 	virtual double getTime()
 	{
@@ -156,15 +156,15 @@ public:
 
 /**
  * @class RTIntegrator
-*@brief ƒf[ƒ^‚ğÏ•ª‚ğ‚·‚é
-*T‚ÍŠi”[‚·‚éƒf[ƒ^‚ÌŒ^
+*@brief ãƒ‡ãƒ¼ã‚¿ã‚’ç©åˆ†ã‚’ã™ã‚‹
+*Tã¯æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
 */
 template <class T>
 class RTIntegrator : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTIntegrator()
 	{
@@ -172,7 +172,7 @@ public:
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -180,8 +180,8 @@ public:
 		intValue = initialCondition;
 	};
 	/**
-	*@brief Ï•ª’l‚Ì‰Šú’l‚ğİ’è
-	* @param c ‰Šú’l
+	*@brief ç©åˆ†å€¤ã®åˆæœŸå€¤ã‚’è¨­å®š
+	* @param c åˆæœŸå€¤
 	*/
 	void setInitialCondition(T c)
 	{
@@ -189,9 +189,9 @@ public:
 		intValue = initialCondition;
 	};
 	/**
-	*@brief Ï•ª’l‚ğæ“¾
-	* @param ans Ï•ª’l
-	* @return ‘O‰ñ‚Ìƒf[ƒ^‚ª‘¶İ‚µ‚È‚¢ê‡‚ÍfalseA‚»‚êˆÈŠO‚Íture
+	*@brief ç©åˆ†å€¤ã‚’å–å¾—
+	* @param ans ç©åˆ†å€¤
+	* @return å‰å›ã®ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯falseã€ãã‚Œä»¥å¤–ã¯ture
 	*/
 	bool calc(T &ans)
 	{
@@ -218,31 +218,31 @@ public:
 
 /**
  * @class RTDerivative
-*@brief ƒf[ƒ^‚ğ”÷•ª‚ğ‚·‚é
-*T‚ÍŠi”[‚·‚éƒf[ƒ^‚ÌŒ^
+*@brief ãƒ‡ãƒ¼ã‚¿ã‚’å¾®åˆ†ã‚’ã™ã‚‹
+*Tã¯æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
 */
 template <class T>
 class RTDerivative : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTDerivative()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		RTMath<T>::resetTime();
 	};
 	/**
-	*@brief ”÷•ª’l‚ğæ“¾
-	* @param ans ”÷•ª’l
-	* @return ‘O‰ñ‚Ìƒf[ƒ^‚ª‘¶İ‚µ‚È‚¢ê‡‚ÍfalseA‚»‚êˆÈŠO‚Íture
+	*@brief å¾®åˆ†å€¤ã‚’å–å¾—
+	* @param ans å¾®åˆ†å€¤
+	* @return å‰å›ã®ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯falseã€ãã‚Œä»¥å¤–ã¯ture
 	*/
 	bool calc(T &ans)
 	{
@@ -265,38 +265,38 @@ public:
 
 /**
  * @class RTBacklash
-*@brief —V‚Ñ‚ğ‚ÂƒVƒXƒeƒ€(Œ»İ’l‚Ì•sŠ´‘Ñ‚Ì•“à‚Å‚ ‚ê‚Îo—Í‚Í•Ï‰»‚µ‚Ü‚¹‚ñ)
-*T‚ÍŠi”[‚·‚éƒf[ƒ^‚ÌŒ^
+*@brief éŠã³ã‚’æŒã¤ã‚·ã‚¹ãƒ†ãƒ (ç¾åœ¨å€¤ã®ä¸æ„Ÿå¸¯ã®å¹…å†…ã§ã‚ã‚Œã°å‡ºåŠ›ã¯å¤‰åŒ–ã—ã¾ã›ã‚“)
+*Tã¯æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
 */
 template <class T>
 class RTBacklash
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTBacklash()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		now_Output = m_initialOutput;
 	};
 	/**
-	*@brief •sŠ´‘Ñ‚Ì•‚ğİ’è
-	* @param io —V‚Ñ‚Ì—Ê
+	*@brief ä¸æ„Ÿå¸¯ã®å¹…ã‚’è¨­å®š
+	* @param io éŠã³ã®é‡
 	*/
 	void setDeadbandWidth(T width)
 	{
 		m_width = width;
 	};
 	/**
-	*@brief ‰Šú’l‚ğİ’è
-	* @param io ‰Šú’l
+	*@brief åˆæœŸå€¤ã‚’è¨­å®š
+	* @param io åˆæœŸå€¤
 	*/
 	void setInitialOutput(T io)
 	{
@@ -304,9 +304,9 @@ public:
 		//now_Output = io;
 	};
 	/**
-	*@brief —V‚Ñ‚Ì‚ ‚éƒVƒXƒeƒ€‚É“ü—Í‚µ‚½‚Æ‚«‚Ìo—Í‚ğæ“¾
-	* @param input “ü—Í’l
-	* @return o—Í’l
+	*@brief éŠã³ã®ã‚ã‚‹ã‚·ã‚¹ãƒ†ãƒ ã«å…¥åŠ›ã—ãŸã¨ãã®å‡ºåŠ›ã‚’å–å¾—
+	* @param input å…¥åŠ›å€¤
+	* @return å‡ºåŠ›å€¤
 	*/
 	T calc(T input)
 	{
@@ -336,12 +336,12 @@ public:
 
 
 /**
-*@brief İ’è‚µ‚½”ÍˆÍ“à‚Éo—Í‚ğ§ŒÀ‚µ‚Ü‚·
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^‚ÌŒ^
-* @param input “ü—Í
-* @param upperLimit Å‘å’l
-* @param lowerLimit Å¬’l
-* @return o—Í
+*@brief è¨­å®šã—ãŸç¯„å›²å†…ã«å‡ºåŠ›ã‚’åˆ¶é™ã—ã¾ã™
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input å…¥åŠ›
+* @param upperLimit æœ€å¤§å€¤
+* @param lowerLimit æœ€å°å€¤
+* @return å‡ºåŠ›
 */
 template <class T>
 T RTSaturation(T input, T upperLimit, T lowerLimit)
@@ -359,11 +359,11 @@ T RTSaturation(T input, T upperLimit, T lowerLimit)
 };
 
 /**
-*@brief “ü—Í‚µ‚½•¶š—ñ‚ğ","‚Å•ªŠ„‚µ‚ÄA•ªŠ„‚µ‚½•¶š—ñ‚ğİ’è‚µ‚½ƒf[ƒ^Œ^‚É•ÏŠ·‚µ‚Äo—Í
-*T‚Ío—Í‚·‚éƒf[ƒ^ƒŠƒXƒg‚ÌŠeƒf[ƒ^‚ÌŒ^
-* @param str “ü—Í•¶š—ñ
-* @param ans o—Í‚·‚éƒf[ƒ^ƒŠƒXƒg
-* @return true‚Å¬Œ÷Afalse‚Å¸”s
+*@brief å…¥åŠ›ã—ãŸæ–‡å­—åˆ—ã‚’","ã§åˆ†å‰²ã—ã¦ã€åˆ†å‰²ã—ãŸæ–‡å­—åˆ—ã‚’è¨­å®šã—ãŸãƒ‡ãƒ¼ã‚¿å‹ã«å¤‰æ›ã—ã¦å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆã®å„ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param str å…¥åŠ›æ–‡å­—åˆ—
+* @param ans å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆ
+* @return trueã§æˆåŠŸã€falseã§å¤±æ•—
 */
 template <class T>
 bool getValueInString(std::string str, std::vector<T> &ans)
@@ -394,12 +394,12 @@ bool getValueInString(std::string str, std::vector<T> &ans)
 
 
 /**
-*@brief “ü—Í‚µ‚½ƒf[ƒ^ƒŠƒXƒg‚©‚çw’è‚·‚é”Ô†‚Ì’l‚ğo—Í
-*T‚Í“ü—Í‚·‚éƒf[ƒ^ƒŠƒXƒg‚ÌŠeƒf[ƒ^‚ÌŒ^
-* @param input ƒf[ƒ^ƒŠƒXƒg
-* @param num ”Ô†
-* @param ans o—Í
-* @return ƒf[ƒ^”‚ª0‚Ì‚ÍfalseA‚»‚êˆÈŠO‚Ítrue
+*@brief å…¥åŠ›ã—ãŸãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆã‹ã‚‰æŒ‡å®šã™ã‚‹ç•ªå·ã®å€¤ã‚’å‡ºåŠ›
+*Tã¯å…¥åŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆã®å„ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input ãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆ
+* @param num ç•ªå·
+* @param ans å‡ºåŠ›
+* @return ãƒ‡ãƒ¼ã‚¿æ•°ãŒ0ã®æ™‚ã¯falseã€ãã‚Œä»¥å¤–ã¯true
 */
 template <class T>
 bool getValueInList(std::vector<T> input, int num, T &ans)
@@ -421,12 +421,12 @@ bool getValueInList(std::vector<T> input, int num, T &ans)
 };
 
 /**
-*@brief —ë“_‚Å•s˜A‘±A‚»‚êˆÈŠO‚ÍüŒ`ƒQƒCƒ“‚Ìo—Í
-*T‚Í“ü—ÍAo—Í‚·‚éƒf[ƒ^‚ÌŒ^
-* @param input “ü—Íƒf[ƒ^
-* @param offset ƒIƒtƒZƒbƒg
-* @param gain ƒQƒCƒ“
-* @return o—Í
+*@brief é›¶ç‚¹ã§ä¸é€£ç¶šã€ãã‚Œä»¥å¤–ã¯ç·šå½¢ã‚²ã‚¤ãƒ³ã®å‡ºåŠ›
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input å…¥åŠ›ãƒ‡ãƒ¼ã‚¿
+* @param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+* @param gain ã‚²ã‚¤ãƒ³
+* @return å‡ºåŠ›
 */
 template <class T>
 T RTCoulombAndViscousFriction(T input, T offset, T gain)
@@ -447,12 +447,12 @@ T RTCoulombAndViscousFriction(T input, T offset, T gain)
 
 
 /**
-*@brief •sŠ´‘Ñ‚Å‚Í0‚ğo—Í
-*T‚Í“ü—ÍAo—Í‚·‚éƒf[ƒ^‚ÌŒ^
-* @param input “ü—Íƒf[ƒ^
-* @param start •sŠ´‘Ñ‚ÌÅ¬’l
-* @param end •s‰õ‘Ñ‚ÌÅ‘å’l
-* @return o—Í
+*@brief ä¸æ„Ÿå¸¯ã§ã¯0ã‚’å‡ºåŠ›
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input å…¥åŠ›ãƒ‡ãƒ¼ã‚¿
+* @param start ä¸æ„Ÿå¸¯ã®æœ€å°å€¤
+* @param end ä¸å¿«å¸¯ã®æœ€å¤§å€¤
+* @return å‡ºåŠ›
 */
 template <class T>
 T RTDeadZone(T input, T start, T end)
@@ -474,24 +474,24 @@ T RTDeadZone(T input, T start, T end)
 
 /**
  * @class RTRateLimiter
-*@brief •Ï‰»—¦‚ğ§ŒÀ‚µ‚Äo—Í
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief å¤‰åŒ–ç‡ã‚’åˆ¶é™ã—ã¦å‡ºåŠ›
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTRateLimiter : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTRateLimiter()
 	{
 		reset();
 	};
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param rsr •Ï‰»—¦‚ÌÅ‘å’l
-	* @param fsr •Ï‰»—¦‚ÌÅ¬’l
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param rsr å¤‰åŒ–ç‡ã®æœ€å¤§å€¤
+	* @param fsr å¤‰åŒ–ç‡ã®æœ€å°å€¤
 	*/
 	void setSlewRate(T rsr, T fsr)
 	{
@@ -499,16 +499,16 @@ public:
 		fallingSlewRate = fsr;
 	};
 	/**
-	*@brief ‰Šú’l
+	*@brief åˆæœŸå€¤
 	*/
 	void reset()
 	{
 		RTMath<T>::resetTime();
 	};
 	/**
-	*@brief •Ï‰»—¦‚ğ§ŒÀ‚µ‚Äo—Í
-	* @param ans o—Í
-	* @return ‘O‰ñ‚Ìƒf[ƒ^‚ª‘¶İ‚µ‚È‚¢ê‡‚ÍfalseA‚»‚êˆÈŠO‚Íture
+	*@brief å¤‰åŒ–ç‡ã‚’åˆ¶é™ã—ã¦å‡ºåŠ›
+	* @param ans å‡ºåŠ›
+	* @return å‰å›ã®ãƒ‡ãƒ¼ã‚¿ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯falseã€ãã‚Œä»¥å¤–ã¯ture
 	*/
 	bool calc(T &ans)
 	{
@@ -551,33 +551,33 @@ public:
 
 /**
  * @class RTRelay
-*@brief İ’è‚µ‚½ƒIƒ“‚ÆƒIƒt‚Ì’l‚Ì2‚Â‚Ì’l‚Åo—Í‚ğØ‚è‘Ö‚¦‚é
-*o—Í‚ªƒIƒt‚ÌA“ü—Í‚ªİ’è‚µ‚½ƒXƒCƒbƒ`ƒ“ƒOƒIƒ“ƒ|ƒCƒ“ƒg‚ğã‰ñ‚é‚Æo—Í‚ªƒIƒ“‚É‚È‚é
-*o—Í‚ªƒIƒ“‚ÌA“ü—Í‚ªİ’è‚µ‚½ƒXƒCƒbƒ`ƒ“ƒOƒIƒtƒ|ƒCƒ“ƒg‚ğ‰º‰ñ‚é‚Æo—Í‚ªƒIƒt‚É‚È‚é
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief è¨­å®šã—ãŸã‚ªãƒ³ã¨ã‚ªãƒ•ã®å€¤ã®2ã¤ã®å€¤ã§å‡ºåŠ›ã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
+*å‡ºåŠ›ãŒã‚ªãƒ•ã®æ™‚ã€å…¥åŠ›ãŒè¨­å®šã—ãŸã‚¹ã‚¤ãƒƒãƒãƒ³ã‚°ã‚ªãƒ³ãƒã‚¤ãƒ³ãƒˆã‚’ä¸Šå›ã‚‹ã¨å‡ºåŠ›ãŒã‚ªãƒ³ã«ãªã‚‹
+*å‡ºåŠ›ãŒã‚ªãƒ³ã®æ™‚ã€å…¥åŠ›ãŒè¨­å®šã—ãŸã‚¹ã‚¤ãƒƒãƒãƒ³ã‚°ã‚ªãƒ•ãƒã‚¤ãƒ³ãƒˆã‚’ä¸‹å›ã‚‹ã¨å‡ºåŠ›ãŒã‚ªãƒ•ã«ãªã‚‹
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTRelay
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTRelay()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		state = false;
 	};
 	/**
-	*@brief ƒXƒCƒbƒ`ƒ“ƒOƒ|ƒCƒ“ƒg‚ğİ’è
-	* @param on ƒXƒCƒbƒ`ƒ“ƒOƒIƒ“ƒ|ƒCƒ“ƒg
-	* @param off ƒXƒCƒbƒ`ƒ“ƒOƒIƒtƒ|ƒCƒ“ƒg
+	*@brief ã‚¹ã‚¤ãƒƒãƒãƒ³ã‚°ãƒã‚¤ãƒ³ãƒˆã‚’è¨­å®š
+	* @param on ã‚¹ã‚¤ãƒƒãƒãƒ³ã‚°ã‚ªãƒ³ãƒã‚¤ãƒ³ãƒˆ
+	* @param off ã‚¹ã‚¤ãƒƒãƒãƒ³ã‚°ã‚ªãƒ•ãƒã‚¤ãƒ³ãƒˆ
 	*/
 	void setSwitchPoint(T on, T off)
 	{
@@ -585,9 +585,9 @@ public:
 		switchOffPoint = off;
 	};
 	/**
-	*@brief o—Í‚ğİ’è
-	* @param on ƒIƒ“‚Ì‚Ìo—Í
-	* @param off ƒIƒt‚Ì‚Ìo—Í
+	*@brief å‡ºåŠ›ã‚’è¨­å®š
+	* @param on ã‚ªãƒ³ã®æ™‚ã®å‡ºåŠ›
+	* @param off ã‚ªãƒ•ã®æ™‚ã®å‡ºåŠ›
 	*/
 	void setOutput(T on, T off)
 	{
@@ -595,9 +595,9 @@ public:
 		outputWhenOff = off;
 	};
 	/**
-	*@brief ƒIƒ“‚©ƒIƒt‚©‚ğ”»’è‚µ‚Äo—Í
-	* @param input “ü—Í
-	* @return o—Í
+	*@brief ã‚ªãƒ³ã‹ã‚ªãƒ•ã‹ã‚’åˆ¤å®šã—ã¦å‡ºåŠ›
+	* @param input å…¥åŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc(T input)
 	{
@@ -672,10 +672,10 @@ float RTPow(float x, float y);
 
 
 /**
-*@brief •„†‚ğo—Í
-*T‚Í“ü—ÍAo—Í‚·‚éƒf[ƒ^‚ÌŒ^
-* @param input “ü—Íƒf[ƒ^
-* @return o—Í
+*@brief ç¬¦å·ã‚’å‡ºåŠ›
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input å…¥åŠ›ãƒ‡ãƒ¼ã‚¿
+* @return å‡ºåŠ›
 */
 template <class T>
 T RTSign(T input)
@@ -696,10 +696,10 @@ T RTSign(T input)
 
 
 /**
-*@brief •½•ûª‚ğo—Í(•„†‚Í“ü—Í’l‚Ì•„†)
-*T‚Í“ü—ÍAo—Í‚·‚éƒf[ƒ^‚ÌŒ^
-* @param input “ü—Íƒf[ƒ^
-* @return o—Í
+*@brief å¹³æ–¹æ ¹ã‚’å‡ºåŠ›(ç¬¦å·ã¯å…¥åŠ›å€¤ã®ç¬¦å·)
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹
+* @param input å…¥åŠ›ãƒ‡ãƒ¼ã‚¿
+* @return å‡ºåŠ›
 */
 template <class T>
 T RTSignedSqrt(T input)
@@ -711,30 +711,30 @@ T RTSignedSqrt(T input)
 
 /**
  * @class RTSineWave
-*@brief ³Œ·”g‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief æ­£å¼¦æ³¢ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTSineWave : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTSineWave()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		RTMath<T>::resetTime();
 	};
 	/**
-	*@brief ³Œ·”g‚ğo—Í
-	* @return o—Í
+	*@brief æ­£å¼¦æ³¢ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
@@ -743,8 +743,8 @@ public:
 	};
 
 	/**
-	*@brief U•‚ğİ’è
-	* @param input U•
+	*@brief æŒ¯å¹…ã‚’è¨­å®š
+	* @param input æŒ¯å¹…
 	*/
 	void setAmplitude(T input)
 	{
@@ -752,8 +752,8 @@ public:
 	};
 
 	/**
-	*@brief ƒoƒCƒAƒX‚ğİ’è
-	* @param input ƒoƒCƒAƒX
+	*@brief ãƒã‚¤ã‚¢ã‚¹ã‚’è¨­å®š
+	* @param input ãƒã‚¤ã‚¢ã‚¹
 	*/
 	void setBias(T input)
 	{
@@ -761,8 +761,8 @@ public:
 	};
 
 	/**
-	*@brief ü”g”‚ğİ’è
-	* @param input ü”g”
+	*@brief å‘¨æ³¢æ•°ã‚’è¨­å®š
+	* @param input å‘¨æ³¢æ•°
 	*/
 	void setFrequency(T input)
 	{
@@ -770,8 +770,8 @@ public:
 	};
 
 	/**
-	*@brief ˆÊ‘Š‚ğİ’è
-	* @param input ˆÊ‘Š
+	*@brief ä½ç›¸ã‚’è¨­å®š
+	* @param input ä½ç›¸
 	*/
 	void setPhase(T input)
 	{
@@ -788,22 +788,22 @@ public:
 
 /**
  * @class RTRampFunction
-*@brief ƒ‰ƒ“ƒvŠÖ”‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief ãƒ©ãƒ³ãƒ—é–¢æ•°ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTRampFunction : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTRampFunction()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -811,8 +811,8 @@ public:
 	};
 	
 	/**
-	*@brief ƒ‰ƒ“ƒvŠÖ”‚ğo—Í
-	* @return o—Í
+	*@brief ãƒ©ãƒ³ãƒ—é–¢æ•°ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
@@ -827,24 +827,24 @@ public:
 		}
 	};
 	/**
-	*@brief Œù”z‚ğİ’è
-	* @param input Œù”z
+	*@brief å‹¾é…ã‚’è¨­å®š
+	* @param input å‹¾é…
 	*/
 	void setSlope(T input)
 	{
 		slope = input;
 	};
 	/**
-	*@brief ŠJnŠÔ‚ğİ’è
-	* @param input ŠJnŠÔ
+	*@brief é–‹å§‹æ™‚é–“ã‚’è¨­å®š
+	* @param input é–‹å§‹æ™‚é–“
 	*/
 	void setStartTime(T input)
 	{
 		startTime = input;
 	};
 	/**
-	*@brief ‰Šúo—Í‚ğİ’è
-	* @param input ‰Šúo—Í
+	*@brief åˆæœŸå‡ºåŠ›ã‚’è¨­å®š
+	* @param input åˆæœŸå‡ºåŠ›
 	*/
 	void setInitialOutput(T input)
 	{
@@ -859,22 +859,22 @@ public:
 
 /**
  * @class RTPulseGenerator
-*@brief ‹éŒ`”gƒpƒ‹ƒX‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief çŸ©å½¢æ³¢ãƒ‘ãƒ«ã‚¹ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTPulseGenerator : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTPulseGenerator()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -882,8 +882,8 @@ public:
 	};
 	
 	/**
-	*@brief ‹éŒ`”gƒpƒ‹ƒX‚ğo—Í
-	* @return o—Í
+	*@brief çŸ©å½¢æ³¢ãƒ‘ãƒ«ã‚¹ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
@@ -908,32 +908,32 @@ public:
 		}
 	};
 	/**
-	*@brief U•‚ğİ’è
-	* @param input U•
+	*@brief æŒ¯å¹…ã‚’è¨­å®š
+	* @param input æŒ¯å¹…
 	*/
 	void setAmplitude(T input)
 	{
 		amplitude = input;
 	};
 	/**
-	*@brief üŠú‚ğİ’è
-	* @param input üŠú
+	*@brief å‘¨æœŸã‚’è¨­å®š
+	* @param input å‘¨æœŸ
 	*/
 	void setPeriod(T input)
 	{
 		period = input;
 	};
 	/**
-	*@brief ƒpƒ‹ƒX•‚ğİ’è
-	* @param input ƒpƒ‹ƒX•
+	*@brief ãƒ‘ãƒ«ã‚¹å¹…ã‚’è¨­å®š
+	* @param input ãƒ‘ãƒ«ã‚¹å¹…
 	*/
 	void setPulseWidth(T input)
 	{
 		pulseWidth = input;
 	};
 	/**
-	*@brief ˆÊ‘Š’x‚ê‚ğİ’è
-	* @param input ˆÊ‘Š’x‚ê
+	*@brief ä½ç›¸é…ã‚Œã‚’è¨­å®š
+	* @param input ä½ç›¸é…ã‚Œ
 	*/
 	void setPhaseDelay(T input)
 	{
@@ -949,15 +949,15 @@ public:
 
 /**
  * @class RTUniformRandomNumber
-*@brief ˆê—l•ª•z‚·‚é—”‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief ä¸€æ§˜åˆ†å¸ƒã™ã‚‹ä¹±æ•°ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T, class T2>
 class RTUniformRandomNumber
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTUniformRandomNumber() : m_rand(-1,1), m_mt(0)
 	{
@@ -969,7 +969,7 @@ public:
 		//setMt();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -977,7 +977,7 @@ public:
 		m_rand = T2(m_maximum,m_minimum);
 	};
 	/**
-	*@brief —”ƒGƒ“ƒWƒ“‚Ì‰Šú‰»
+	*@brief ä¹±æ•°ã‚¨ãƒ³ã‚¸ãƒ³ã®åˆæœŸåŒ–
 	*/
 	void setMt()
 	{
@@ -995,16 +995,16 @@ public:
 	};
 	
 	/**
-	*@brief ˆê—l•ª•z‚·‚é—”‚ğo—Í
-	* @return o—Í
+	*@brief ä¸€æ§˜åˆ†å¸ƒã™ã‚‹ä¹±æ•°ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
 		return m_rand(m_mt);
 	};
 	/**
-	*@brief Å‘å’l‚Ìİ’è
-	* @param input Å‘å’l
+	*@brief æœ€å¤§å€¤ã®è¨­å®š
+	* @param input æœ€å¤§å€¤
 	*/
 	void setMaximum(T input)
 	{
@@ -1012,8 +1012,8 @@ public:
 		m_rand = T2(m_maximum,m_minimum);
 	};
 	/**
-	*@brief Å¬’l‚Ìİ’è
-	* @param input Å¬’l
+	*@brief æœ€å°å€¤ã®è¨­å®š
+	* @param input æœ€å°å€¤
 	*/
 	void setMinimum(T input)
 	{
@@ -1021,8 +1021,8 @@ public:
 		m_rand = T2(m_maximum,m_minimum);
 	};
 	/**
-	*@brief ƒV[ƒh‚ğİ’è
-	* @param input ƒV[ƒh
+	*@brief ã‚·ãƒ¼ãƒ‰ã‚’è¨­å®š
+	* @param input ã‚·ãƒ¼ãƒ‰
 	*/
 	void setSeed(unsigned int input)
 	{
@@ -1030,8 +1030,8 @@ public:
 		setMt();
 	};
 	/**
-	*@brief —”‚ÅƒV[ƒh‚ğ¶¬‚·‚é‚©Aİ’è‚µ‚½ƒV[ƒh‚ğg‚¤‚©‚ğİ’è
-	* @param input true‚Å—”‚ğ—˜—pAfalse‚Åİ’è’l‚ğ—˜—p
+	*@brief ä¹±æ•°ã§ã‚·ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã™ã‚‹ã‹ã€è¨­å®šã—ãŸã‚·ãƒ¼ãƒ‰ã‚’ä½¿ã†ã‹ã‚’è¨­å®š
+	* @param input trueã§ä¹±æ•°ã‚’åˆ©ç”¨ã€falseã§è¨­å®šå€¤ã‚’åˆ©ç”¨
 	*/
 	void setRandomSeedGenerator(bool input)
 	{
@@ -1052,15 +1052,15 @@ public:
 
 /**
  * @class RTRandomNumber
-*@brief ³‹K•ª•z‚³‚ê‚½—”‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief æ­£è¦åˆ†å¸ƒã•ã‚ŒãŸä¹±æ•°ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTRandomNumber
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTRandomNumber() : m_rand(-1,1), m_mt(0)
 	{
@@ -1071,7 +1071,7 @@ public:
 
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -1079,7 +1079,7 @@ public:
 		m_rand = std::normal_distribution<T>(m_mean,m_variable);
 	};
 	/**
-	*@brief —”ƒGƒ“ƒWƒ“‚Ì‰Šú‰»
+	*@brief ä¹±æ•°ã‚¨ãƒ³ã‚¸ãƒ³ã®åˆæœŸåŒ–
 	*/
 	void setMt()
 	{
@@ -1097,16 +1097,16 @@ public:
 	};
 	
 	/**
-	*@brief ³‹K•ª•z‚³‚ê‚½—”‚ğo—Í
-	* @return o—Í
+	*@brief æ­£è¦åˆ†å¸ƒã•ã‚ŒãŸä¹±æ•°ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
 		return m_rand(m_mt);
 	};
 	/**
-	*@brief •½‹Ï‚ğİ’è
-	* @param input •½‹Ï
+	*@brief å¹³å‡ã‚’è¨­å®š
+	* @param input å¹³å‡
 	*/
 	void setMean(T input)
 	{
@@ -1114,8 +1114,8 @@ public:
 		m_rand = std::normal_distribution<T>(m_mean,m_variable);
 	};
 	/**
-	*@brief •ªU‚ğİ’è
-	* @param input •ªU
+	*@brief åˆ†æ•£ã‚’è¨­å®š
+	* @param input åˆ†æ•£
 	*/
 	void setVariable(T input)
 	{
@@ -1123,8 +1123,8 @@ public:
 		m_rand = std::normal_distribution<T>(m_mean,m_variable);
 	};
 	/**
-	*@brief ƒV[ƒh‚ğİ’è
-	* @param input ƒV[ƒh
+	*@brief ã‚·ãƒ¼ãƒ‰ã‚’è¨­å®š
+	* @param input ã‚·ãƒ¼ãƒ‰
 	*/
 	void setSeed(unsigned int input)
 	{
@@ -1132,8 +1132,8 @@ public:
 		setMt();
 	};
 	/**
-	*@brief —”‚ÅƒV[ƒh‚ğ¶¬‚·‚é‚©Aİ’è‚µ‚½ƒV[ƒh‚ğg‚¤‚©‚ğİ’è
-	* @param input true‚Å—”‚ğ—˜—pAfalse‚Åİ’è’l‚ğ—˜—p
+	*@brief ä¹±æ•°ã§ã‚·ãƒ¼ãƒ‰ã‚’ç”Ÿæˆã™ã‚‹ã‹ã€è¨­å®šã—ãŸã‚·ãƒ¼ãƒ‰ã‚’ä½¿ã†ã‹ã‚’è¨­å®š
+	* @param input trueã§ä¹±æ•°ã‚’åˆ©ç”¨ã€falseã§è¨­å®šå€¤ã‚’åˆ©ç”¨
 	*/
 	void setRandomSeedGenerator(bool input)
 	{
@@ -1153,22 +1153,22 @@ public:
 
 /**
  * @class RTStepFunction
-*@brief ƒXƒeƒbƒvŠÖ”‚ğo—Í
-*T‚Ío—Í‚Ìƒf[ƒ^Œ^
+*@brief ã‚¹ãƒ†ãƒƒãƒ—é–¢æ•°ã‚’å‡ºåŠ›
+*Tã¯å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTStepFunction : public RTMath<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTStepFunction()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -1176,8 +1176,8 @@ public:
 	};
 	
 	/**
-	*@brief ƒXƒeƒbƒvŠÖ”‚ğo—Í
-	* @return o—Í
+	*@brief ã‚¹ãƒ†ãƒƒãƒ—é–¢æ•°ã‚’å‡ºåŠ›
+	* @return å‡ºåŠ›
 	*/
 	T calc()
 	{
@@ -1193,24 +1193,24 @@ public:
 		}
 	};
 	/**
-	*@brief ‰Šú’l‚ğİ’è
-	* @param input ‰Šú’l
+	*@brief åˆæœŸå€¤ã‚’è¨­å®š
+	* @param input åˆæœŸå€¤
 	*/
 	void setInitialValue(T input)
 	{
 		initialValue = input;
 	};
 	/**
-	*@brief ÅI’l‚ğİ’è
-	* @param input ÅI’l
+	*@brief æœ€çµ‚å€¤ã‚’è¨­å®š
+	* @param input æœ€çµ‚å€¤
 	*/
 	void setFinalValue(T input)
 	{
 		finalValue = input;
 	};
 	/**
-	*@brief ƒXƒeƒbƒvŠÔ‚ğİ’è
-	* @param input ƒXƒeƒbƒvŠÔ
+	*@brief ã‚¹ãƒ†ãƒƒãƒ—æ™‚é–“ã‚’è¨­å®š
+	* @param input ã‚¹ãƒ†ãƒƒãƒ—æ™‚é–“
 	*/
 	void setStepTime(T input)
 	{
@@ -1226,15 +1226,15 @@ public:
 
 /**
  * @class RTController
-*@brief §ŒäƒRƒ“ƒgƒ[ƒ‰[‚ÌŠî–{ƒNƒ‰ƒX
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief åˆ¶å¾¡ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTController
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTController()
 	{
@@ -1245,74 +1245,74 @@ public:
 		m_beta = 0;
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	virtual void reset()
 	{
 
 	};
 	/**
-	*@brief ”ä—ágƒQƒCƒ“‚ğİ’è
-	* @param value ”ä—áƒQƒCƒ“
+	*@brief æ¯”ä¾‹gã‚²ã‚¤ãƒ³ã‚’è¨­å®š
+	* @param value æ¯”ä¾‹ã‚²ã‚¤ãƒ³
 	*/
 	virtual void setProportionalValue(T value)
 	{
 		m_proportional = value;
 	};
 	/**
-	*@brief ”÷•ªƒQƒCƒ“‚ğİ’è
-	* @param value ”÷•ªƒQƒCƒ“
+	*@brief å¾®åˆ†ã‚²ã‚¤ãƒ³ã‚’è¨­å®š
+	* @param value å¾®åˆ†ã‚²ã‚¤ãƒ³
 	*/
 	virtual void setIntegralValue(T value)
 	{
 		m_integral = value;
 	};
 	/**
-	*@brief Ï•ªƒQƒCƒ“‚ğİ’è
-	* @param value Ï•ªƒQƒCƒ“
+	*@brief ç©åˆ†ã‚²ã‚¤ãƒ³ã‚’è¨­å®š
+	* @param value ç©åˆ†ã‚²ã‚¤ãƒ³
 	*/
 	virtual void setDerivativeValue(T value)
 	{
 		m_derivative = value;
 	};
 	/**
-	*@brief 2©—R“x§ŒäŒn‚Ì–Ú•W’l‚ÉŠ|‚©‚éŒW”
-	* @param value ŒW”
+	*@brief 2è‡ªç”±åº¦åˆ¶å¾¡ç³»ã®ç›®æ¨™å€¤ã«æ›ã‹ã‚‹ä¿‚æ•°
+	* @param value ä¿‚æ•°
 	*/
 	virtual void setAlpha(T value)
 	{
 		m_alpha = value;
 	};
 	/**
-	*@brief 2©—R“x§ŒäŒn‚Ì–Ú•W’l‚Ì”÷•ª’l‚ÉŠ|‚©‚éŒW”
-	* @param value ŒW”
+	*@brief 2è‡ªç”±åº¦åˆ¶å¾¡ç³»ã®ç›®æ¨™å€¤ã®å¾®åˆ†å€¤ã«æ›ã‹ã‚‹ä¿‚æ•°
+	* @param value ä¿‚æ•°
 	*/
 	virtual void setBeta(T value)
 	{
 		m_beta = value;
 	};
 	/**
-	*@brief §ŒäŒn‚©‚ço—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief åˆ¶å¾¡ç³»ã‹ã‚‰å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	virtual bool calc(T input, T value, T &ans)
 	{
 		return true;
 	};
 	/**
-	*@brief ‚İ•‚ğİ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…ã‚’è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	virtual void setSamplingTime(double s)
 	{
 		
 	};
 	/**
-	*@brief true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Éİ’è
-	* @param c true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã«è¨­å®š
+	* @param c trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	virtual void setConfig(bool c)
 	{
@@ -1328,26 +1328,26 @@ public:
 
 /**
  * @class RTPController
-*@brief P§Œä
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief Påˆ¶å¾¡
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTPController : public RTController<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTPController()
 	{
 
 	};
 	/**
-	*@brief P§Œä‚Åo—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief Påˆ¶å¾¡ã§å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	bool calc(T input, T value, T &ans)
 	{
@@ -1358,33 +1358,33 @@ public:
 
 /**
  * @class RTPDController
-*@brief PD§Œä
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief PDåˆ¶å¾¡
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTPDController : public RTController<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTPDController()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		d_func.reset();
 	};
 	/**
-	*@brief PD§Œä‚Åo—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief PDåˆ¶å¾¡ã§å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	bool calc(T input, T value, T &ans)
 	{
@@ -1396,16 +1396,16 @@ public:
 		return true;
 	};
 	/**
-	*@brief ‚İ•‚ğİ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…ã‚’è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	void setSamplingTime(double s)
 	{
 		d_func.setSamplingTime(s);
 	};
 	/**
-	*@brief true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Éİ’è
-	* @param c true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã«è¨­å®š
+	* @param c trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	void setConfig(bool c)
 	{
@@ -1416,33 +1416,33 @@ public:
 
 /**
  * @class RTPIController
-*@brief PI§Œä
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief PIåˆ¶å¾¡
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTPIController : public RTController<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTPIController()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		i_func.reset();
 	};
 	/**
-	*@brief PI§Œä‚Åo—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief PIåˆ¶å¾¡ã§å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	bool calc(T input, T value, T &ans)
 	{
@@ -1454,16 +1454,16 @@ public:
 		return true;
 	};
 	/**
-	*@brief ‚İ•‚ğİ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…ã‚’è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	void setSamplingTime(double s)
 	{
 		i_func.setSamplingTime(s);
 	};
 	/**
-	*@brief true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Éİ’è
-	* @param c true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã«è¨­å®š
+	* @param c trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	void setConfig(bool c)
 	{
@@ -1474,33 +1474,33 @@ public:
 
 /**
  * @class RTIController
-*@brief I§Œä
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief Iåˆ¶å¾¡
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTIController : public RTController<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTIController()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
 		i_func.reset();
 	};
 	/**
-	*@brief I§Œä‚Åo—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief Iåˆ¶å¾¡ã§å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	bool calc(T input, T value, T &ans)
 	{
@@ -1512,16 +1512,16 @@ public:
 		return true;
 	};
 	/**
-	*@brief ‚İ•‚ğİ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…ã‚’è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	void setSamplingTime(double s)
 	{
 		i_func.setSamplingTime(s);
 	};
 	/**
-	*@brief true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Éİ’è
-	* @param c true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã«è¨­å®š
+	* @param c trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	void setConfig(bool c)
 	{
@@ -1532,22 +1532,22 @@ public:
 
 /**
  * @class RTPIDController
-*@brief PID§Œä
-*T‚Í“ü—ÍAo—Í‚Ìƒf[ƒ^Œ^
+*@brief PIDåˆ¶å¾¡
+*Tã¯å…¥åŠ›ã€å‡ºåŠ›ã®ãƒ‡ãƒ¼ã‚¿å‹
 */
 template <class T>
 class RTPIDController : public RTController<T>
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RTPIDController()
 	{
 		reset();
 	};
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	*/
 	void reset()
 	{
@@ -1555,11 +1555,11 @@ public:
 		i_func.reset();
 	};
 	/**
-	*@brief PID§Œä‚Åo—Í‚ğŒvZ
-	* @param input –Ú•W’l
-	* @param value §Œä—Ê
-	* @param ans o—Í
-	* @return false‚È‚ç‚ÎŒvZ¸”s
+	*@brief PIDåˆ¶å¾¡ã§å‡ºåŠ›ã‚’è¨ˆç®—
+	* @param input ç›®æ¨™å€¤
+	* @param value åˆ¶å¾¡é‡
+	* @param ans å‡ºåŠ›
+	* @return falseãªã‚‰ã°è¨ˆç®—å¤±æ•—
 	*/
 	bool calc(T input, T value, T &ans)
 	{
@@ -1575,8 +1575,8 @@ public:
 		return true;
 	};
 	/**
-	*@brief ‚İ•‚ğİ’è
-	* @param s ‚İ•
+	*@brief åˆ»ã¿å¹…ã‚’è¨­å®š
+	* @param s åˆ»ã¿å¹…
 	*/
 	void setSamplingTime(double s)
 	{
@@ -1584,8 +1584,8 @@ public:
 		i_func.setSamplingTime(s);
 	};
 	/**
-	*@brief true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ‚Éİ’è
-	* @param c true‚ÅÀŠÔAfalse‚ÅƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÔ
+	*@brief trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“ã«è¨­å®š
+	* @param c trueã§å®Ÿæ™‚é–“ã€falseã§ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æ™‚é–“
 	*/
 	void setConfig(bool c)
 	{

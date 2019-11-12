@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  graphicsview.h
- * @brief ‰æ‘œ•\¦ƒEƒBƒWƒFƒbƒg
+ * @brief ç”»åƒè¡¨ç¤ºã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
  */
 
 
@@ -23,61 +23,61 @@
 
 /*!
  * @class QGraphicsView
- * @brief ‰æ‘œ•\¦ƒEƒBƒWƒFƒbƒg
+ * @brief ç”»åƒè¡¨ç¤ºã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
  *
  */
 class GraphicsView : public QGraphicsView {
 	Q_OBJECT
 private:
-	class QTimer * my_timer;	/**<@@brief  */
-	IplImage* iplimage;	/**<@@brief  */
-	IplImage* resizeimage;	/**<@@brief  */
-	CvVideoWriter *vw;	/**<@@brief  */
+	class QTimer * my_timer;	/**<ã€€@brief  */
+	IplImage* iplimage;	/**<ã€€@brief  */
+	IplImage* resizeimage;	/**<ã€€@brief  */
+	CvVideoWriter *vw;	/**<ã€€@brief  */
 
 public:
 	/*!
-     * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+     * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
      */
 	GraphicsView(QWidget *parent);
 	/*!
-     * @brief ƒfƒXƒgƒ‰ƒNƒ^
+     * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
      */
 	~GraphicsView();
 
 	/*!
-     * @brief “®‰æ‚Ì•Û‘¶‚ğŠJn
+     * @brief å‹•ç”»ã®ä¿å­˜ã‚’é–‹å§‹
 	 * @param fps FPS
-	 * @param fn ƒtƒ@ƒCƒ‹ƒpƒX
+	 * @param fn ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
      */
 	void startSaveVideo(int fps, const char* fn);
 
-	bool saveVideo;	/**<@@brief  */
-	int m_rate;	/**<@@brief  */
-	std::string file_path;	/**<@@brief  */
-	std::vector<int> posList;	/**<@@brief  */
-	float m_scale;	/**<@@brief  */
+	bool saveVideo;	/**<ã€€@brief  */
+	int m_rate;	/**<ã€€@brief  */
+	std::string file_path;	/**<ã€€@brief  */
+	std::vector<int> posList;	/**<ã€€@brief  */
+	float m_scale;	/**<ã€€@brief  */
 	
 	/*!
-     * @brief •`‰æƒCƒxƒ“ƒg
+     * @brief æç”»ã‚¤ãƒ™ãƒ³ãƒˆ
      */
 	void paintEvent(QPaintEvent *);
 	
 protected:
 	/*!
-     * @brief ƒ}ƒEƒXƒ{ƒ^ƒ“ƒNƒŠƒbƒN‚ÌƒCƒxƒ“ƒg
+     * @brief ãƒã‚¦ã‚¹ãƒœã‚¿ãƒ³ã‚¯ãƒªãƒƒã‚¯æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆ
      */
 	void mousePressEvent(QMouseEvent *e);
 	/*!
-     * @brief ƒ}ƒEƒXƒ{ƒ^ƒ“ƒŠƒŠ[ƒX‚ÌƒCƒxƒ“ƒg
+     * @brief ãƒã‚¦ã‚¹ãƒœã‚¿ãƒ³ãƒªãƒªãƒ¼ã‚¹æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆ
      */
 	void mouseReleaseEvent(QMouseEvent *e);
 	/*!
-     * @brief ƒ}ƒEƒXˆÚ“®‚ÌƒCƒxƒ“ƒg
+     * @brief ãƒã‚¦ã‚¹ç§»å‹•æ™‚ã®ã‚¤ãƒ™ãƒ³ãƒˆ
      */
 	void mouseMoveEvent(QMouseEvent *e);
 public slots:
 	/*!
-     * @brief ˆê’èüŠú‚ÅŒÄ‚Ño‚³‚ê‚éƒXƒƒbƒg
+     * @brief ä¸€å®šå‘¨æœŸã§å‘¼ã³å‡ºã•ã‚Œã‚‹ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	 void show_time();
 };

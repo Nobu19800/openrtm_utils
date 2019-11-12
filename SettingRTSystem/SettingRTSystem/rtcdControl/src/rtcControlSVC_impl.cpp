@@ -1,7 +1,7 @@
-// -*-C++-*-
+ï»¿// -*-C++-*-
 /*!
  * @file  rtcControlSVC_impl.cpp
- * @brief RTC‹N“®ŠÖ˜A‚ÌƒT[ƒrƒXƒCƒ“ƒ^[ƒtƒF[ƒX
+ * @brief RTCèµ·å‹•é–¢é€£ã®ã‚µãƒ¼ãƒ“ã‚¹ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
  *
  */
 
@@ -12,8 +12,8 @@
 
 
 /**
-*@brief RTC‹N“®ŠÖ˜A‚ÌƒT[ƒrƒXƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param manager ƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+*@brief RTCèµ·å‹•é–¢é€£ã®ã‚µãƒ¼ãƒ“ã‚¹ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param manager ãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 RTCDataInterfaceSVC_impl::RTCDataInterfaceSVC_impl(RTC::Manager* manager)
 {
@@ -24,7 +24,7 @@ RTCDataInterfaceSVC_impl::RTCDataInterfaceSVC_impl(RTC::Manager* manager)
 }
 
 /**
-*@brief RTC‹N“®ŠÖ˜A‚ÌƒT[ƒrƒXƒCƒ“ƒ^[ƒtƒF[ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^
+*@brief RTCèµ·å‹•é–¢é€£ã®ã‚µãƒ¼ãƒ“ã‚¹ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 RTCDataInterfaceSVC_impl::~RTCDataInterfaceSVC_impl()
 {
@@ -33,9 +33,9 @@ RTCDataInterfaceSVC_impl::~RTCDataInterfaceSVC_impl()
 
 
 /**
-*@brief Às’†‚ÌRTC‚ÌƒpƒX‚ÌƒŠƒXƒg‚ğæ“¾
-* @param paths RTC‚ÌƒpƒX‚ÌƒŠƒXƒg
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief å®Ÿè¡Œä¸­ã®RTCã®ãƒ‘ã‚¹ã®ãƒªã‚¹ãƒˆã‚’å–å¾—
+* @param paths RTCã®ãƒ‘ã‚¹ã®ãƒªã‚¹ãƒˆ
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 CORBA::Boolean RTCDataInterfaceSVC_impl::getRTC(rtcControl::rtcPathSeq_out paths)
 {
@@ -74,11 +74,11 @@ CORBA::Boolean RTCDataInterfaceSVC_impl::getRTC(rtcControl::rtcPathSeq_out paths
 
 
 /**
-*@brief RTC‹N“®
-* @param name RTC–¼
-* @param filename ƒtƒ@ƒCƒ‹–¼
-* @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief RTCèµ·å‹•
+* @param name RTCå
+* @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+* @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 CORBA::Boolean RTCDataInterfaceSVC_impl::createComp(const char* name, const char* filename, const char* filepath)
 {
@@ -95,9 +95,9 @@ CORBA::Boolean RTCDataInterfaceSVC_impl::createComp(const char* name, const char
 }
 
 /**
-*@brief RTCíœ
-* @param name RTC–¼
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief RTCå‰Šé™¤
+* @param name RTCå
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 CORBA::Boolean RTCDataInterfaceSVC_impl::removeComp(const char* name)
 {
@@ -111,9 +111,9 @@ CORBA::Boolean RTCDataInterfaceSVC_impl::removeComp(const char* name)
 }
 
 /**
-*@brief ‹N“®‚µ‚½RTC‚ÌƒŠƒXƒg
-* @param names ‹N“®‚µ‚½RTC‚ÌƒŠƒXƒg
-* @return¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief èµ·å‹•ã—ãŸRTCã®ãƒªã‚¹ãƒˆ
+* @param names èµ·å‹•ã—ãŸRTCã®ãƒªã‚¹ãƒˆ
+* @returnæˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 CORBA::Boolean RTCDataInterfaceSVC_impl::getCompList(rtcControl::RTC_List_out names)
 {

@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Four_legged_Robot.h
-* @brief l‘«•àsƒƒ{ƒbƒg§ŒäƒNƒ‰ƒX
+* @brief å››è¶³æ­©è¡Œãƒ­ãƒœãƒƒãƒˆåˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -31,191 +31,191 @@ using namespace Eigen;
 
 /**
 * @class Four_legged_Robot
-*@brief l‘«•àsƒƒ{ƒbƒg§ŒäƒNƒ‰ƒX
+*@brief å››è¶³æ­©è¡Œãƒ­ãƒœãƒƒãƒˆåˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class Four_legged_Robot
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Four_legged_Robot();
 	/**
-	*@brief ƒRƒs[ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Four_legged_Robot(Four_legged_Robot &fo);
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~Four_legged_Robot();
 	/**
-	*@brief ‹ræˆÊ’u‚©‚çŠÖßŠp“xæ“¾
-	*@param the ‹ræˆÊ’u
-	* @return ŠÖßŠp“x
+	*@brief è„šå…ˆä½ç½®ã‹ã‚‰é–¢ç¯€è§’åº¦å–å¾—
+	*@param the è„šå…ˆä½ç½®
+	* @return é–¢ç¯€è§’åº¦
 	*/
 	std::vector<double> inverseKinematics(Vector3d pos, int num);
 	/**
-	*@brief ‹ræˆÊ’uæ“¾
-	*@param the ŠÖßŠp“x
-	* @return ‹ræˆÊ’u
+	*@brief è„šå…ˆä½ç½®å–å¾—
+	*@param the é–¢ç¯€è§’åº¦
+	* @return è„šå…ˆä½ç½®
 	*/
 	Vector3d calcKinematics(std::vector<double> the, int num);
 	/**
-	*@brief ŠÖßŠp“x‚ğ“ü—Í
-	* @param the ŠÖßŠp“x
+	*@brief é–¢ç¯€è§’åº¦ã‚’å…¥åŠ›
+	* @param the é–¢ç¯€è§’åº¦
 	*/
 	void setAngle(std::vector<double> the[4]);
 	/**
-	*@brief ‹ræ‘¬“x‚©‚çŠÖßŠp‘¬“x‚ğæ“¾
-	* @param v ‹ræ‘¬“x
-	* @return ŠÖßŠp‘¬“x
+	*@brief è„šå…ˆé€Ÿåº¦ã‹ã‚‰é–¢ç¯€è§’é€Ÿåº¦ã‚’å–å¾—
+	* @param v è„šå…ˆé€Ÿåº¦
+	* @return é–¢ç¯€è§’é€Ÿåº¦
 	*/
 	Vector3d calcJointVel(std::vector<double> the[4]);
 	/**
-	*@brief ŠÖßŠp‘¬“x‚Ì“ü—Í‚©‚çŠÖßŠp“x‚ğXV
-	* @param the ŠÖßŠp‘¬“x
+	*@brief é–¢ç¯€è§’é€Ÿåº¦ã®å…¥åŠ›ã‹ã‚‰é–¢ç¯€è§’åº¦ã‚’æ›´æ–°
+	* @param the é–¢ç¯€è§’é€Ÿåº¦
 	*/
 	void updatePos(std::vector<double> the[4]);
 	/**
-	*@brief –¢À‘•
+	*@brief æœªå®Ÿè£…
 	*/
 	void update();
 	/**
-	*@brief ƒNƒ[ƒ‹•à—e‚Ì‘«æˆÊ’uŒvZ
-	* @param vx ‘¬“x(X²•ûŒü)
-	* @param vy ‘¬“x(Y²•ûŒü)
-	* @param dthe ‰ñ“]‘¬“x
-	* @param stride •à•
+	*@brief ã‚¯ãƒ­ãƒ¼ãƒ«æ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+	* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+	* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+	* @param dthe å›è»¢é€Ÿåº¦
+	* @param stride æ­©å¹…
 	*/
 	void crawl_gait(double vx, double vy, double dthe, double stride);
 	/**
-	*@brief ŠÔŸ[ƒNƒ[ƒ‹•à—e‚Ì‘«æˆÊ’uŒvZ
-	* @param vx ‘¬“x(X²•ûŒü)
-	* @param vy ‘¬“x(Y²•ûŒü)
-	* @param dthe ‰ñ“]‘¬“x
-	* @param stride •à•
+	*@brief é–“æ­‡ã‚¯ãƒ­ãƒ¼ãƒ«æ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+	* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+	* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+	* @param dthe å›è»¢é€Ÿåº¦
+	* @param stride æ­©å¹…
 	*/
 	void intermittent_crawl_gait(double vx, double vy, double dthe, double stride);
 	/**
-	*@brief ƒgƒƒbƒg•à—e‚Ì‘«æˆÊ’uŒvZ
-	* @param vx ‘¬“x(X²•ûŒü)
-	* @param vy ‘¬“x(Y²•ûŒü)
-	* @param dthe ‰ñ“]‘¬“x
-	* @param stride •à•
+	*@brief ãƒˆãƒ­ãƒƒãƒˆæ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+	* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+	* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+	* @param dthe å›è»¢é€Ÿåº¦
+	* @param stride æ­©å¹…
 	*/
 	void trot_gait(double vx, double vy, double dthe, double stride);
 	/**
-	*@brief ‚İ•İ’è
-	* @param st ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+	*@brief åˆ»ã¿å¹…è¨­å®š
+	* @param st ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 	*/
 	void setSamplingTime(double st);
 	/**
-	*@brief ‘«æŠî€ˆÊ’uİ’è
-	* @param pos_x ˆÊ’u(X)
-	* @param pos_y ˆÊ’u(Y)
-	* @param pos_z ˆÊ’u(Z)
+	*@brief è¶³å…ˆåŸºæº–ä½ç½®è¨­å®š
+	* @param pos_x ä½ç½®(X)
+	* @param pos_y ä½ç½®(Y)
+	* @param pos_z ä½ç½®(Z)
 	*/
 	void setCenterPosition(double pos_x, double pos_y, double pos_z);
 	/**
-	*@brief Å’áˆÀ’è—]—Tİ’è
-	* @param msm ˆÀ’è—]—T
+	*@brief æœ€ä½å®‰å®šä½™è£•è¨­å®š
+	* @param msm å®‰å®šä½™è£•
 	*/
 	void setMinMargin(double msm);
 
 	/**
-	*@brief —V‹r‚‚³İ’èİ’è
-	* @param h ‚‚³
+	*@brief éŠè„šé«˜ã•è¨­å®šè¨­å®š
+	* @param h é«˜ã•
 	*/
 	void setLiftHeight(double h);
 	/**
-	*@brief ƒƒ{ƒbƒg‚ÌŒ»İˆÊ’uİ’è
-	* @param pos Œ»İˆÊ’u
-	* @param rot Œ»İ‚Ìp¨
+	*@brief ãƒ­ãƒœãƒƒãƒˆã®ç¾åœ¨ä½ç½®è¨­å®š
+	* @param pos ç¾åœ¨ä½ç½®
+	* @param rot ç¾åœ¨ã®å§¿å‹¢
 	*/
 	void setCurrentPosition(Vector3d pos, Vector3d rot);
 
 	/**
-	*@brief ˆÀ’è—]—Tæ“¾
-	*@return ˆÀ’è—]—T
+	*@brief å®‰å®šä½™è£•å–å¾—
+	*@return å®‰å®šä½™è£•
 	*/
 	double getStabilityMargin();
 	/**
-	*@brief NEˆÀ’è—]—Tæ“¾
-	*@return NEˆÀ’è—]—T
+	*@brief NEå®‰å®šä½™è£•å–å¾—
+	*@return NEå®‰å®šä½™è£•
 	*/
 	double getNEStabilityMargin();
 
 	/**
-	*@brief ƒ{ƒfƒB‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param pos ’†SˆÊ’u
-	*@param mass d—Ê
+	*@brief ãƒœãƒ‡ã‚£ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param pos ä¸­å¿ƒä½ç½®
+	*@param mass é‡é‡
 	*/
 	void setBodyParam(Vector3d size, Vector3d pos, double mass);
 	/**
-	*@brief ƒŠƒ“ƒN‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param offset ƒIƒtƒZƒbƒg
-	*@param mass d—Ê
-	*@param num ”Ô†
+	*@brief ãƒªãƒ³ã‚¯ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param mass é‡é‡
+	*@param num ç•ªå·
 	*/
 	void setLinkParam(Vector3d size, Vector3d offset, double mass, int num);
 	/**
-	*@brief ƒŠƒ“ƒN0‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param offset ƒIƒtƒZƒbƒg
-	*@param mass d—Ê
+	*@brief ãƒªãƒ³ã‚¯0ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param mass é‡é‡
 	*/
 	void setLink0Param(Vector3d size, Vector3d offset, double mass);
 	/**
-	*@brief ƒŠƒ“ƒN1‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param offset ƒIƒtƒZƒbƒg
-	*@param mass d—Ê
+	*@brief ãƒªãƒ³ã‚¯1ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param mass é‡é‡
 	*/
 	void setLink1Param(Vector3d size, Vector3d offset, double mass);
 	/**
-	*@brief ƒŠƒ“ƒN2‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param offset ƒIƒtƒZƒbƒg
-	*@param mass d—Ê
+	*@brief ãƒªãƒ³ã‚¯2ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param mass é‡é‡
 	*/
 	void setLink2Param(Vector3d size, Vector3d offset, double mass);
 	/**
-	*@brief ‘«— ‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param size ¡–@
-	*@param offset ƒIƒtƒZƒbƒg
-	*@param mass d—Ê
+	*@brief è¶³è£ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param size å¯¸æ³•
+	*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param mass é‡é‡
 	*/
 	void setFootParam(Vector3d size, Vector3d offset, double mass);
 	/**
-	*@brief İ’è‚µ‚½ƒŠƒ“ƒNƒpƒ‰ƒ[ƒ^‚©‚çˆÊ’uAp¨‚ğÄŒvZ
+	*@brief è¨­å®šã—ãŸãƒªãƒ³ã‚¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‹ã‚‰ä½ç½®ã€å§¿å‹¢ã‚’å†è¨ˆç®—
 	*/
 	void setPose();
 	/**
-	*@brief ŠÖßƒIƒtƒZƒbƒgİ’è
-	*@param offset0 ŠÖß0‚ÌƒIƒtƒZƒbƒg
-	*@param offset1 ŠÖß1‚ÌƒIƒtƒZƒbƒg
-	*@param offset2 ŠÖß2‚ÌƒIƒtƒZƒbƒg
+	*@brief é–¢ç¯€ã‚ªãƒ•ã‚»ãƒƒãƒˆè¨­å®š
+	*@param offset0 é–¢ç¯€0ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param offset1 é–¢ç¯€1ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	*@param offset2 é–¢ç¯€2ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	*/
 	void setMotorOffset(double offset0, double offset1, double offset2);
 	/**
-	*@brief ‘«— ‚Ìƒpƒ‰ƒ[ƒ^İ’è
-	*@param upper_limit0 ŠÖß0‚ÌãŒÀ
-	*@param upper_limit1 ŠÖß1‚ÌãŒÀ
-	*@param upper_limit2 ŠÖß2‚ÌãŒÀ
-	*@param lower_limit0 ŠÖß0‚Ì‰ºŒÀ
-	*@param lower_limit1 ŠÖß1‚Ì‰ºŒÀ
-	*@param lower_limit2 ŠÖß2‚Ì‰ºŒÀ
+	*@brief è¶³è£ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+	*@param upper_limit0 é–¢ç¯€0ã®ä¸Šé™
+	*@param upper_limit1 é–¢ç¯€1ã®ä¸Šé™
+	*@param upper_limit2 é–¢ç¯€2ã®ä¸Šé™
+	*@param lower_limit0 é–¢ç¯€0ã®ä¸‹é™
+	*@param lower_limit1 é–¢ç¯€1ã®ä¸‹é™
+	*@param lower_limit2 é–¢ç¯€2ã®ä¸‹é™
 	*/
 	void setMotorLimit(double upper_limit0, double upper_limit1, double upper_limit2, double lower_limit0, double lower_limit1, double lower_limit2);
 	/**
-	*@brief ŠÖßŠp“x‚ª‰Â“®”ÍˆÍ“à‚©‚Ì”»’è
-	*@param t0 ‹r0‚ÌŠÖßŠp“x
-	*@param t1 ‹r1‚ÌŠÖßŠp“x
-	*@param t2 ‹r2‚ÌŠÖßŠp“x
-	*@param t3 ‹r3‚ÌŠÖßŠp“x
-	*@return true‚Ìê‡‚Í‰Â“®”ÍˆÍŠO
+	*@brief é–¢ç¯€è§’åº¦ãŒå¯å‹•ç¯„å›²å†…ã‹ã®åˆ¤å®š
+	*@param t0 è„š0ã®é–¢ç¯€è§’åº¦
+	*@param t1 è„š1ã®é–¢ç¯€è§’åº¦
+	*@param t2 è„š2ã®é–¢ç¯€è§’åº¦
+	*@param t3 è„š3ã®é–¢ç¯€è§’åº¦
+	*@return trueã®å ´åˆã¯å¯å‹•ç¯„å›²å¤–
 	*/
 	bool limitOver(std::vector<double> &t0, std::vector<double> &t1, std::vector<double> &t2, std::vector<double> &t3);
 	Leg_Object legs[4];

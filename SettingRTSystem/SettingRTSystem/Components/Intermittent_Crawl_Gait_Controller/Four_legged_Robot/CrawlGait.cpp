@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  CrawlGait.cpp
-* @brief ƒNƒ[ƒ‹•à—e§ŒäƒNƒ‰ƒX
+* @brief ã‚¯ãƒ­ãƒ¼ãƒ«æ­©å®¹åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -28,8 +28,8 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param ls ‹r‚ÌƒŠƒXƒg
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param ls è„šã®ãƒªã‚¹ãƒˆ
 */
 CrawlGait::CrawlGait(Leg_Object *ls, Body_Object *bo) : GaitBase(ls, bo)
 {
@@ -47,11 +47,11 @@ CrawlGait::CrawlGait(Leg_Object *ls, Body_Object *bo) : GaitBase(ls, bo)
 
 
 /**
-*@brief •àsXV
-* @param vx ‘¬“x(X)
-* @param vy ‘¬“x(Y)
-* @param dthe ‰ñ“]‘¬“x
-* @param sd •à•
+*@brief æ­©è¡Œæ›´æ–°
+* @param vx é€Ÿåº¦(X)
+* @param vy é€Ÿåº¦(Y)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param sd æ­©å¹…
 */
 void CrawlGait::walk(double vx, double vy, double dthe, double sd)
 {

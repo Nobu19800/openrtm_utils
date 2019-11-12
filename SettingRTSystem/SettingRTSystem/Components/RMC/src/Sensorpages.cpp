@@ -1,4 +1,4 @@
-#include <QtWidgets> 
+ï»¿#include <QtWidgets> 
 #include <QtGui>
 #include <qtextcodec.h>
 
@@ -9,7 +9,7 @@ SensorPage::SensorPage(int def_num, QWidget *parent)
 {
 	tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -17,7 +17,7 @@ SensorPage::SensorPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -28,12 +28,12 @@ SensorPage::SensorPage(int def_num, QWidget *parent)
 
 
 	
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -56,7 +56,7 @@ SensorPage::SensorPage(int def_num, QWidget *parent)
 
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -97,7 +97,7 @@ SensorPage::SensorPage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("•ûŒü"));
+        geomGroup = new QGroupBox(tc->toUnicode("æ–¹å‘"));
 
 
 

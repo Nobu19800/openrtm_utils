@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef JOINTPAGES_H
 #define JOINTPAGES_H
 
@@ -9,7 +9,7 @@
 class QSpinBox;
 class QDoubleSpinBox;
 
-/*ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚Ìƒpƒ‰ƒ[ƒ^İ’è‚Ìƒy[ƒW*/
+/*ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒšãƒ¼ã‚¸*/
 
 class HingePage : public QWidget
 {
@@ -66,7 +66,7 @@ private:
 
 };
 
-/*•ÀiƒWƒ‡ƒCƒ“ƒg‚Ìƒpƒ‰ƒ[ƒ^İ’è‚Ìƒy[ƒW*/
+/*ä¸¦é€²ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒšãƒ¼ã‚¸*/
 
 class SliderPage : public QWidget
 {
@@ -124,7 +124,7 @@ private:
 };
 
 
-/*ŒÅ’èƒWƒ‡ƒCƒ“ƒg‚Ìƒpƒ‰ƒ[ƒ^İ’è‚Ìƒy[ƒW*/
+/*å›ºå®šã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒšãƒ¼ã‚¸*/
 
 class FixPage : public QWidget
 {

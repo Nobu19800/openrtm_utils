@@ -1,6 +1,6 @@
-/*!
+﻿/*!
  * @file  RTMath.cpp
- * @brief ���l�v�Z�֘A�̊֐�
+ * @brief 数値計算関連の関数
  *
  */
 

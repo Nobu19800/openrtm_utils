@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  rtcdControl.h
- * @brief RTCD‘€ì‚ÌRTC
+ * @brief RTCDæ“ä½œã®RTC
  *
  */
 
@@ -37,7 +37,7 @@ using namespace RTC;
 
 /*!
  * @class rtcdControl
- * @brief RTCD‘€ì‚ÌRTC
+ * @brief RTCDæ“ä½œã®RTC
  *
  */
 class rtcdControl
@@ -45,13 +45,13 @@ class rtcdControl
 {
  public:
   /*!
-   * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-   * @param manager ƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+   * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+   * @param manager ãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
    */
   rtcdControl(RTC::Manager* manager);
 
   /*!
-   * @brief ƒfƒXƒgƒ‰ƒNƒ^
+   * @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
    */
   ~rtcdControl();
 
@@ -65,7 +65,7 @@ class rtcdControl
   // </rtc-template>
 
   /**
-  *@brief ‰Šú‰»ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+  *@brief åˆæœŸåŒ–å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
   * @return RTC::ReturnCode_t
   */
    virtual RTC::ReturnCode_t onInitialize();
@@ -108,21 +108,21 @@ class rtcdControl
   // virtual RTC::ReturnCode_t onShutdown(RTC::UniqueId ec_id);
 
    /**
-   *@brief Šˆ«‰»‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+   *@brief æ´»æ€§åŒ–æ™‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
    * @param ec_id target ExecutionContext Id
    * @return
    */
    virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id);
 
    /**
-   *@brief •sŠˆ«‰»‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+   *@brief ä¸æ´»æ€§åŒ–æ™‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
    * @param ec_id target ExecutionContext Id
    * @return RTC::ReturnCode_t
    */
    virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id);
 
    /**
-   *@brief üŠúˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+   *@brief å‘¨æœŸå‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
    * @param ec_id target ExecutionContext Id
    * @return RTC::ReturnCode_t
    */

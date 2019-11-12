@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef SensorItem_H
 #define SensorItem_H
 
@@ -33,17 +33,17 @@ public:
 
 	SensorItem(SensorData *sd, QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
 
-	void setData(SensorData *sd);	//ƒpƒ‰ƒ[ƒ^İ’è
+	void setData(SensorData *sd);	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
 	void setParam(SensorParam cp);
-	void setName(QString Name);	//–¼‘O‚Ìİ’è
-	int returnType();	//í—Ş‚ğ•Ô‚·
-	SensorData* ReturnParam();	//ƒpƒ‰ƒ[ƒ^‚ğ•Ô‚·
-	int ReturnID();	//ID‚ğ•Ô‚·
-	BodyData* ReturnBodyNUM();	//Ú‘±‚·‚éƒ{ƒfƒB‚Ì”Ô†‚ğ•Ô‚·
-	QString ReturnName();	//–¼‘O‚ğ•Ô‚·
+	void setName(QString Name);	//åå‰ã®è¨­å®š
+	int returnType();	//ç¨®é¡ã‚’è¿”ã™
+	SensorData* ReturnParam();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
+	int ReturnID();	//IDã‚’è¿”ã™
+	BodyData* ReturnBodyNUM();	//æ¥ç¶šã™ã‚‹ãƒœãƒ‡ã‚£ã®ç•ªå·ã‚’è¿”ã™
+	QString ReturnName();	//åå‰ã‚’è¿”ã™
 	int returnGeom();
-	void setBodyNum(BodyData* bd); //”Ô†‚ğİ’è
-	int NUM;	//”Ô†
+	void setBodyNum(BodyData* bd); //ç•ªå·ã‚’è¨­å®š
+	int NUM;	//ç•ªå·
 
 	SensorData *m_param;
 	QGraphicsLineItem* m_line;

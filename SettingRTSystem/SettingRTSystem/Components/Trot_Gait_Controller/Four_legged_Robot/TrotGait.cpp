@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  TrotGait.cpp
-* @brief ƒgƒƒbƒg•à—e§ŒäƒNƒ‰ƒX
+* @brief ãƒˆãƒ­ãƒƒãƒˆæ­©å®¹åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -23,8 +23,8 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param ls ‹r‚ÌƒŠƒXƒg
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param ls è„šã®ãƒªã‚¹ãƒˆ
 */
 TrotGait::TrotGait(Leg_Object *ls, Body_Object *bo) : GaitBase(ls, bo)
 {
@@ -47,11 +47,11 @@ TrotGait::TrotGait(Leg_Object *ls, Body_Object *bo) : GaitBase(ls, bo)
 
 
 /**
-*@brief •àsXV
-* @param vx ‘¬“x(X)
-* @param vy ‘¬“x(Y)
-* @param dthe ‰ñ“]‘¬“x
-* @param sd •à•
+*@brief æ­©è¡Œæ›´æ–°
+* @param vx é€Ÿåº¦(X)
+* @param vy é€Ÿåº¦(Y)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param sd æ­©å¹…
 */
 void TrotGait::walk(double vx, double vy, double dthe, double sd)
 {
@@ -201,11 +201,11 @@ void TrotGait::walk(double vx, double vy, double dthe, double sd)
 
 
 /**
-*@brief •â³•ûŒüŒvZ
-* @param pos0 ‹r0‚ÌˆÊ’u
-* @param pos1 ‹r1‚ÌˆÊ’u
-* @param vec “·‘Ì‘¬“xƒxƒNƒgƒ‹
-* @return Å’Z‹——£ƒxƒNƒgƒ‹
+*@brief è£œæ­£æ–¹å‘è¨ˆç®—
+* @param pos0 è„š0ã®ä½ç½®
+* @param pos1 è„š1ã®ä½ç½®
+* @param vec èƒ´ä½“é€Ÿåº¦ãƒ™ã‚¯ãƒˆãƒ«
+* @return æœ€çŸ­è·é›¢ãƒ™ã‚¯ãƒˆãƒ«
 */
 Vector2d TrotGait::calcDistance(Vector2d &pos0, Vector2d &pos1, Vector2d &vec)
 {
@@ -256,9 +256,9 @@ Vector2d TrotGait::calcDistance(Vector2d &pos0, Vector2d &pos1, Vector2d &vec)
 
 
 /**
-*@brief dSˆÊ’u‚ª‘ÎŠpüã‚Éæ‚é‚æ‚¤‚É‹ræÚ’n“_‚ğ•â³
-* @param vx “·‘Ì‘¬“x(X)
-* @param vy “·‘Ì‘¬“x(Y)
+*@brief é‡å¿ƒä½ç½®ãŒå¯¾è§’ç·šä¸Šã«ä¹—ã‚‹ã‚ˆã†ã«è„šå…ˆæ¥åœ°ç‚¹ã‚’è£œæ­£
+* @param vx èƒ´ä½“é€Ÿåº¦(X)
+* @param vy èƒ´ä½“é€Ÿåº¦(Y)
 */
 void TrotGait::correctlyOnGroundPos(double vx, double vy)
 {
@@ -304,9 +304,9 @@ void TrotGait::correctlyOnGroundPos(double vx, double vy)
 	}
 }
 /**
-*@brief dSˆÊ’u‚ª‘ÎŠpüã‚Éæ‚é‚æ‚¤‚É–Ú•W’…’n“_‚ğ•â³
-* @param vx “·‘Ì‘¬“x(X)
-* @param vy “·‘Ì‘¬“x(Y)
+*@brief é‡å¿ƒä½ç½®ãŒå¯¾è§’ç·šä¸Šã«ä¹—ã‚‹ã‚ˆã†ã«ç›®æ¨™ç€åœ°ç‚¹ã‚’è£œæ­£
+* @param vx èƒ´ä½“é€Ÿåº¦(X)
+* @param vy èƒ´ä½“é€Ÿåº¦(Y)
 */
 void TrotGait::correctlyOffGroundPos(double vx, double vy)
 {

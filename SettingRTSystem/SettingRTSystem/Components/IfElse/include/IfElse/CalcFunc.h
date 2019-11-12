@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  DyPortBase.h
  * @brief 
@@ -22,7 +22,7 @@ using namespace boost;
 
 template<typename Iterator, class dataType>
 struct bool_grammar : qi::grammar<Iterator, bool(), ascii::space_type>{
-	bool_grammar() : bool_grammar::base_type(expr){ // formula‚©‚çŠJŽn
+	bool_grammar() : bool_grammar::base_type(expr){ // formulaã‹ã‚‰é–‹å§‹
     using qi::lit;
 	expr = b0[_val = _1] >> *("||" >> b0[_val |= _1]);
 	b0 = b1[_val = _1] >> *("&&" >> b1[_val &= _1]);

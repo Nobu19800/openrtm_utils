@@ -1,4 +1,4 @@
-#include <QtWidgets>
+ï»¿#include <QtWidgets>
 #include <QtGui>
 #include "Jointpages.h"
 
@@ -7,7 +7,7 @@ HingePage::HingePage(int def_num, QWidget *parent)
 {
         tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -15,7 +15,7 @@ HingePage::HingePage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -23,12 +23,12 @@ HingePage::HingePage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -37,7 +37,7 @@ HingePage::HingePage(int def_num, QWidget *parent)
 	NumGroup->setLayout(NumLayout);
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u:"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®:"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -81,7 +81,7 @@ HingePage::HingePage(int def_num, QWidget *parent)
 
 
 
-        axisGroup = new QGroupBox(tc->toUnicode("Ž²:"));
+        axisGroup = new QGroupBox(tc->toUnicode("è»¸:"));
 
 	axisxLabel = new QLabel(tc->toUnicode("X:"));
     axisxCombo = new QDoubleSpinBox;
@@ -119,14 +119,14 @@ HingePage::HingePage(int def_num, QWidget *parent)
 
 	
 	
-        anotherGroup = new QGroupBox(tc->toUnicode("‚»‚Ì‘¼:"));
+        anotherGroup = new QGroupBox(tc->toUnicode("ãã®ä»–:"));
 
-        ulimitHLabel = new QLabel(tc->toUnicode("Šp“xÅ‘å’l[rad]:"));
+        ulimitHLabel = new QLabel(tc->toUnicode("è§’åº¦æœ€å¤§å€¤[rad]:"));
     ulimitHCombo = new QDoubleSpinBox;
     ulimitHCombo->setValue(1000.0);
 
 
-        ulimitLLabel = new QLabel(tc->toUnicode("Šp“xÅ¬’l[rad]:"));
+        ulimitLLabel = new QLabel(tc->toUnicode("è§’åº¦æœ€å°å€¤[rad]:"));
     ulimitLCombo = new QDoubleSpinBox;
     ulimitLCombo->setValue(-1000.0);
 
@@ -145,12 +145,12 @@ HingePage::HingePage(int def_num, QWidget *parent)
 	ulimitLayout->addLayout(ulimitHLayout);
 	ulimitLayout->addLayout(ulimitLLayout);
 
-        uvlimitHLabel = new QLabel(tc->toUnicode("Šp‘¬“xÅ¬’l[rad/s]:"));
+        uvlimitHLabel = new QLabel(tc->toUnicode("è§’é€Ÿåº¦æœ€å°å€¤[rad/s]:"));
     uvlimitHCombo = new QDoubleSpinBox;
     uvlimitHCombo->setValue(1000.0);
 
 
-        uvlimitLLabel = new QLabel(tc->toUnicode("Šp‘¬“xÅ‘å’l[rad/s]:"));
+        uvlimitLLabel = new QLabel(tc->toUnicode("è§’é€Ÿåº¦æœ€å¤§å€¤[rad/s]:"));
     uvlimitLCombo = new QDoubleSpinBox;
     uvlimitLCombo->setValue(-1000.0);
 
@@ -173,12 +173,12 @@ HingePage::HingePage(int def_num, QWidget *parent)
 	
 	
 	
-        rotorInertiaLabel = new QLabel(tc->toUnicode("Šµ«ƒ‚[ƒƒ“ƒg[kgm^2]:"));
+        rotorInertiaLabel = new QLabel(tc->toUnicode("æ…£æ€§ãƒ¢ãƒ¼ãƒ¡ãƒ³ãƒˆ[kgm^2]:"));
     rotorInertiaCombo = new QDoubleSpinBox;
     rotorInertiaCombo->setValue(0.0);
 
 
-        rotorResistorLabel = new QLabel(tc->toUnicode("“à•”’ïR[Ohm]:"));
+        rotorResistorLabel = new QLabel(tc->toUnicode("å†…éƒ¨æŠµæŠ—[Ohm]:"));
     rotorResistorCombo = new QDoubleSpinBox;
     rotorResistorCombo->setValue(0.0);
 
@@ -196,7 +196,7 @@ HingePage::HingePage(int def_num, QWidget *parent)
 
 
 
-        torqueConstLabel = new QLabel(tc->toUnicode("ƒgƒ‹ƒN’è”[Nm/A]:"));
+        torqueConstLabel = new QLabel(tc->toUnicode("ãƒˆãƒ«ã‚¯å®šæ•°[Nm/A]:"));
     torqueConstCombo = new QDoubleSpinBox;
     torqueConstCombo->setValue(0.0);
 
@@ -308,7 +308,7 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 {
         tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -316,7 +316,7 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -324,12 +324,12 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -338,7 +338,7 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 	NumGroup->setLayout(NumLayout);
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -382,7 +382,7 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 
 
 
-        axisGroup = new QGroupBox(tc->toUnicode("Ž²"));
+        axisGroup = new QGroupBox(tc->toUnicode("è»¸"));
 
 	axisxLabel = new QLabel(tc->toUnicode("X:"));
     axisxCombo = new QDoubleSpinBox;
@@ -420,14 +420,14 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 
 	
 	
-        anotherGroup = new QGroupBox(tc->toUnicode("‚»‚Ì‘¼"));
+        anotherGroup = new QGroupBox(tc->toUnicode("ãã®ä»–"));
 
-        ulimitHLabel = new QLabel(tc->toUnicode("ˆÚ“®—ÊÅ‘å’l[m]:"));
+        ulimitHLabel = new QLabel(tc->toUnicode("ç§»å‹•é‡æœ€å¤§å€¤[m]:"));
     ulimitHCombo = new QDoubleSpinBox;
     ulimitHCombo->setValue(0.0);
 
 
-        ulimitLLabel = new QLabel(tc->toUnicode("ˆÚ“®—ÊÅ¬’l[m]:"));
+        ulimitLLabel = new QLabel(tc->toUnicode("ç§»å‹•é‡æœ€å°å€¤[m]:"));
     ulimitLCombo = new QDoubleSpinBox;
     ulimitLCombo->setValue(0.0);
 
@@ -446,12 +446,12 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 	ulimitLayout->addLayout(ulimitHLayout);
 	ulimitLayout->addLayout(ulimitLLayout);
 
-        uvlimitHLabel = new QLabel(tc->toUnicode("‘¬“xÅ‘å’l[m/s]:"));
+        uvlimitHLabel = new QLabel(tc->toUnicode("é€Ÿåº¦æœ€å¤§å€¤[m/s]:"));
     uvlimitHCombo = new QDoubleSpinBox;
     uvlimitHCombo->setValue(0.0);
 
 
-        uvlimitLLabel = new QLabel(tc->toUnicode("‘¬“xÅ¬’l[m/s]:"));
+        uvlimitLLabel = new QLabel(tc->toUnicode("é€Ÿåº¦æœ€å°å€¤[m/s]:"));
     uvlimitLCombo = new QDoubleSpinBox;
     uvlimitLCombo->setValue(0.0);
 
@@ -474,12 +474,12 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 	
 	
 	
-        rotorInertiaLabel = new QLabel(tc->toUnicode("Šµ«ƒ‚[ƒƒ“ƒg[kgm^2]:"));
+        rotorInertiaLabel = new QLabel(tc->toUnicode("æ…£æ€§ãƒ¢ãƒ¼ãƒ¡ãƒ³ãƒˆ[kgm^2]:"));
     rotorInertiaCombo = new QDoubleSpinBox;
     rotorInertiaCombo->setValue(0.0);
 
 
-        rotorResistorLabel = new QLabel(tc->toUnicode("“à•”’ïR[Ohm]:"));
+        rotorResistorLabel = new QLabel(tc->toUnicode("å†…éƒ¨æŠµæŠ—[Ohm]:"));
     rotorResistorCombo = new QDoubleSpinBox;
     rotorResistorCombo->setValue(0.0);
 
@@ -497,7 +497,7 @@ SliderPage::SliderPage(int def_num, QWidget *parent)
 
 
 
-        torqueConstLabel = new QLabel(tc->toUnicode("ƒgƒ‹ƒN’è”[Nm/A]:"));
+        torqueConstLabel = new QLabel(tc->toUnicode("ãƒˆãƒ«ã‚¯å®šæ•°[Nm/A]:"));
     torqueConstCombo = new QDoubleSpinBox;
     torqueConstCombo->setValue(0.0);
 
@@ -605,7 +605,7 @@ FixPage::FixPage(int def_num, QWidget *parent)
 {
         tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -613,7 +613,7 @@ FixPage::FixPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -621,12 +621,12 @@ FixPage::FixPage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -635,7 +635,7 @@ FixPage::FixPage(int def_num, QWidget *parent)
 	NumGroup->setLayout(NumLayout);
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;

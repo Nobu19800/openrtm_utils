@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  settings.h
-* @brief ƒvƒƒbƒgŠÖ˜A‚Ìİ’è
+* @brief ãƒ—ãƒ­ãƒƒãƒˆé–¢é€£ã®è¨­å®š
 *
 */
 
@@ -12,13 +12,13 @@
 
 /**
 * @class Settings
-*@brief ƒvƒƒbƒgŠÖ˜A‚Ìİ’è
+*@brief ãƒ—ãƒ­ãƒƒãƒˆé–¢é€£ã®è¨­å®š
 */
 class Settings
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Settings()
 	{

@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  graphicsview.cpp
- * @brief ‰æ‘œ•\¦ƒEƒBƒWƒFƒbƒg
+ * @brief ç”»åƒè¡¨ç¤ºã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
  */
 
 #include "graphicsview.h"

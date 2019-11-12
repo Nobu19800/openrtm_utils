@@ -1,4 +1,4 @@
-
+﻿
 #ifndef SENSORDIALOG_H
 #define SENSORDIALOG_H
 
@@ -20,7 +20,7 @@ QT_END_NAMESPACE
 
 
 
-/*�Z���T�[�p�����[�^�ݒ�̃_�C�A���O*/
+/*センサーパラメータ設定のダイアログ*/
 
 class SensorDialog : public QDialog
 {

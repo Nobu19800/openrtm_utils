@@ -1,4 +1,4 @@
-#include <QtWidgets>
+ï»¿#include <QtWidgets>
 #include <QtGui>
 #include "SensorMenu.h"
 #include <qtextcodec.h>
@@ -42,7 +42,7 @@ void SensorDialog::createButtons()
 
     closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     helpButton = buttonBox->addButton(QDialogButtonBox::Help);
-	createButton = buttonBox->addButton(tc->toUnicode("ì¬"),QDialogButtonBox::ActionRole);
+	createButton = buttonBox->addButton(tc->toUnicode("ä½œæˆ"),QDialogButtonBox::ActionRole);
     connect(createButton, SIGNAL(clicked()), this, SLOT(createitems()));
     connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
 
@@ -52,7 +52,7 @@ void SensorDialog::createitems()
 {
         if(sensorpage->returnParam().NAME == tc->toUnicode(""))
         {
-            QMessageBox::about(this, "Error", tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+            QMessageBox::about(this, "Error", tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
         }
         else
         {

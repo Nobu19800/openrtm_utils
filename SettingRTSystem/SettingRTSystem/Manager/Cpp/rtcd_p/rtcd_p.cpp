@@ -1,4 +1,4 @@
-
+ï»¿
 
 #include <iostream>
 #include <rtm/Manager.h>
@@ -7,10 +7,10 @@
 
 
 /**
-*@brief ƒvƒƒpƒeƒB‚©‚çw’è‚µ‚½ƒL[‚Ì’l‚ğæ“¾
-* @param prop ƒvƒƒpƒeƒB
-* @param key ƒL[
-* @param value ’l
+*@brief ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‹ã‚‰æŒ‡å®šã—ãŸã‚­ãƒ¼ã®å€¤ã‚’å–å¾—
+* @param prop ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
+* @param key ã‚­ãƒ¼
+* @param value å€¤
 */
 template <class T>
 void getProperty(coil::Properties& prop, const char* key, T& value)
@@ -26,9 +26,9 @@ void getProperty(coil::Properties& prop, const char* key, T& value)
 }
 
 /**
-*@brief w’è‚µ‚½ƒL[‚Ì’l‚ğæ“¾
-* @param name ƒL[
-* @return ’l
+*@brief æŒ‡å®šã—ãŸã‚­ãƒ¼ã®å€¤ã‚’å–å¾—
+* @param name ã‚­ãƒ¼
+* @return å€¤
 */
 std::string getParam(std::string name)
 {
@@ -41,9 +41,9 @@ std::string getParam(std::string name)
 
 
 /**
-*@brief ƒƒCƒ“ŠÖ”
-* @param argc ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚Ì”
-* @param argv ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”
+*@brief ãƒ¡ã‚¤ãƒ³é–¢æ•°
+* @param argc ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã®æ•°
+* @param argv ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°
 * @return 0
 */
 int main(int argc, char** argv)

@@ -1,7 +1,7 @@
-// -*-C++-*-
+ï»¿// -*-C++-*-
 /*!
  * @file  ManipulatorCommonInterface_CommonSVC_impl.cpp
- * @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’áƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh
+ * @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä½ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰
  *
  */
 
@@ -9,8 +9,8 @@
 #include "defreturnid.h"
 
 /*!
-* @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’áƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param ra ƒƒ{ƒbƒgƒA[ƒ€§ŒäƒIƒuƒWƒFƒNƒg
+* @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä½ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param ra ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ åˆ¶å¾¡ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 ManipulatorCommonInterface_CommonSVC_impl::ManipulatorCommonInterface_CommonSVC_impl(RobotArm *ra)
 {
@@ -18,7 +18,7 @@ ManipulatorCommonInterface_CommonSVC_impl::ManipulatorCommonInterface_CommonSVC_
 }
 
 /*!
-* @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’áƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ÌƒfƒXƒgƒ‰ƒNƒ^
+* @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä½ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 ManipulatorCommonInterface_CommonSVC_impl::~ManipulatorCommonInterface_CommonSVC_impl()
 {
@@ -27,7 +27,7 @@ ManipulatorCommonInterface_CommonSVC_impl::~ManipulatorCommonInterface_CommonSVC
 
 
 /*!
-* @brief ƒAƒ‰[ƒ€ƒNƒŠƒA
+* @brief ã‚¢ãƒ©ãƒ¼ãƒ ã‚¯ãƒªã‚¢
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::clearAlarms()
@@ -36,8 +36,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::clearAlarms()
 	RETURNID_OK;
 }
 /*!
-* @brief ƒAƒ‰[ƒ€î•ñ‚Ìæ“¾
-* @param alarms ƒAƒ‰[ƒ€î•ñ‚Ì”z—ñ
+* @brief ã‚¢ãƒ©ãƒ¼ãƒ æƒ…å ±ã®å–å¾—
+* @param alarms ã‚¢ãƒ©ãƒ¼ãƒ æƒ…å ±ã®é…åˆ—
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getActiveAlarm(JARA_ARM::AlarmSeq_out alarms)
@@ -53,8 +53,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getActiveAlarm(J
 	RETURNID_OK;
 }
 /*!
-* @brief ŠÖßÀ•WŒn‚ÌˆÊ’uƒtƒB[ƒhƒoƒbƒNî•ñ‚Ìæ“¾
-* @param pos ˆÊ’uƒtƒB[ƒhƒoƒbƒNî•ñ(ƒV[ƒPƒ“ƒXŒ^)
+* @brief é–¢ç¯€åº§æ¨™ç³»ã®ä½ç½®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯æƒ…å ±ã®å–å¾—
+* @param pos ä½ç½®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯æƒ…å ±(ã‚·ãƒ¼ã‚±ãƒ³ã‚¹å‹)
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getFeedbackPosJoint(JARA_ARM::JointPos_out pos)
@@ -69,8 +69,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getFeedbackPosJo
 	RETURNID_OK;
 }
 /*!
-* @brief ƒ}ƒjƒsƒ…ƒŒ[ƒ^î•ñ‚Ìæ“¾
-* @param mInfo ƒ}ƒjƒsƒ…ƒŒ[ƒ^î•ñ
+* @brief ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿æƒ…å ±ã®å–å¾—
+* @param mInfo ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿æƒ…å ±
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getManipInfo(JARA_ARM::ManipInfo_out mInfo)
@@ -85,8 +85,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getManipInfo(JAR
 	RETURNID_OK;
 }
 /*!
-* @brief ŠÖßÀ•WŒn‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l‚ğæ“¾
-* @param softLimit Še²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:rad]
+* @brief é–¢ç¯€åº§æ¨™ç³»ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤ã‚’å–å¾—
+* @param softLimit å„è»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getSoftLimitJoint(JARA_ARM::LimitSeq_out softLimit)
@@ -102,8 +102,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getSoftLimitJoin
 	RETURNID_OK;
 }
 /*!
-* @brief ƒ†ƒjƒbƒg‚Ìó‘Ôæ“¾
-* @param state ƒ†ƒjƒbƒg‚Ìó‘Ô‚ğ•\‚·ƒrƒbƒgƒR[ƒh
+* @brief ãƒ¦ãƒ‹ãƒƒãƒˆã®çŠ¶æ…‹å–å¾—
+* @param state ãƒ¦ãƒ‹ãƒƒãƒˆã®çŠ¶æ…‹ã‚’è¡¨ã™ãƒ“ãƒƒãƒˆã‚³ãƒ¼ãƒ‰
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getState(JARA_ARM::ULONG& state)
@@ -128,7 +128,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::getState(JARA_AR
 	RETURNID_OK;
 }
 /*!
-* @brief ‘S²ƒT[ƒ{ OFF
+* @brief å…¨è»¸ã‚µãƒ¼ãƒœ OFF
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::servoOFF()
@@ -137,7 +137,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::servoOFF()
 	RETURNID_OK;
 }
 /*!
-* @brief ‘S²ƒT[ƒ{ ON
+* @brief å…¨è»¸ã‚µãƒ¼ãƒœ ON
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::servoON()
@@ -146,8 +146,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::servoON()
 	RETURNID_OK;
 }
 /*!
-* @brief ŠÖßÀ•WŒn‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’lİ’è
-* @param softLimit Še²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:rad]
+* @brief é–¢ç¯€åº§æ¨™ç³»ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤è¨­å®š
+* @param softLimit å„è»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_CommonSVC_impl::setSoftLimitJoint(const JARA_ARM::LimitSeq &softLimit)

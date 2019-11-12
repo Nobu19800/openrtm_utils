@@ -1,4 +1,4 @@
-
+﻿
 #ifndef BODYDIALOG_H
 #define BODYDIALOG_H
 
@@ -20,7 +20,7 @@ QT_END_NAMESPACE
 
 
 
-/*�{�f�B�̃p�����[�^�ݒ�_�C�A���O*/
+/*ボディのパラメータ設定ダイアログ*/
 
 
 class BodyDialog : public QDialog

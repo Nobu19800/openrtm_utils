@@ -1,4 +1,4 @@
-#include <QtWidgets>
+ï»¿#include <QtWidgets>
 #include <QtGui>
 #include <qtextcodec.h>
 #include "Bodypages.h"
@@ -9,7 +9,7 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 {
 	tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -17,7 +17,7 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -26,12 +26,12 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 	NameGroup->setLayout(NameLayout);
 
 	
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -41,7 +41,7 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -82,18 +82,18 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("Œ`óEŽp¨"));
+        geomGroup = new QGroupBox(tc->toUnicode("å½¢çŠ¶ãƒ»å§¿å‹¢"));
 
-        lengthLabel = new QLabel(tc->toUnicode("’·‚³(X)[m]:"));
+        lengthLabel = new QLabel(tc->toUnicode("é•·ã•(X)[m]:"));
     lengthCombo = new QDoubleSpinBox;
     lengthCombo->setValue(1.0);
 
-        widthLabel = new QLabel(tc->toUnicode("•(Y)[m]:"));
+        widthLabel = new QLabel(tc->toUnicode("å¹…(Y)[m]:"));
     widthCombo = new QDoubleSpinBox;
     widthCombo->setValue(1.0);
 
 
-        heightLabel = new QLabel(tc->toUnicode("‚‚³(Z)[m]:"));
+        heightLabel = new QLabel(tc->toUnicode("é«˜ã•(Z)[m]:"));
     heightCombo = new QDoubleSpinBox;
     heightCombo->setValue(1.0);
 
@@ -115,21 +115,21 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 	LWHLayout->addLayout(widthLayout);
 	LWHLayout->addLayout(heightLayout);
 
-        slxLabel = new QLabel(tc->toUnicode("ŒX‚«(X)[rad]:"));
+        slxLabel = new QLabel(tc->toUnicode("å‚¾ã(X)[rad]:"));
     slxCombo = new QDoubleSpinBox;
     slxCombo->setValue(0.0);
 	slxCombo->setMaximum(3.14);
 	slxCombo->setMinimum(-3.14);
 
 
-        slyLabel = new QLabel(tc->toUnicode("ŒX‚«(Y)[rad]:"));
+        slyLabel = new QLabel(tc->toUnicode("å‚¾ã(Y)[rad]:"));
     slyCombo = new QDoubleSpinBox;
     slyCombo->setValue(0.0);
 	slyCombo->setMaximum(3.14);
 	slyCombo->setMinimum(-3.14);
 
 
-        slzLabel = new QLabel(tc->toUnicode("ŒX‚«(Z)[rad]:"));
+        slzLabel = new QLabel(tc->toUnicode("å‚¾ã(Z)[rad]:"));
     slzCombo = new QDoubleSpinBox;
     slzCombo->setValue(0.0);
 	slzCombo->setMaximum(3.14);
@@ -153,7 +153,7 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 	SlLayout->addLayout(slyLayout);
 	SlLayout->addLayout(slzLayout);
 
-        MassLabel = new QLabel(tc->toUnicode("Ž¿—Ê[kg]:"));
+        MassLabel = new QLabel(tc->toUnicode("è³ªé‡[kg]:"));
     MassCombo = new QDoubleSpinBox;
     MassCombo->setValue(1.0);
 
@@ -175,20 +175,20 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 
 	
 
-        ColorGroup = new QGroupBox(tc->toUnicode("F"));
+        ColorGroup = new QGroupBox(tc->toUnicode("è‰²"));
 
-        RedLabel = new QLabel(tc->toUnicode("Ô:"));
+        RedLabel = new QLabel(tc->toUnicode("èµ¤:"));
     RedCombo = new QDoubleSpinBox;
     RedCombo->setValue(0.0);
 
 
 
 
-        GreenLabel = new QLabel(tc->toUnicode("—Î:"));
+        GreenLabel = new QLabel(tc->toUnicode("ç·‘:"));
     GreenCombo = new QDoubleSpinBox;
     GreenCombo->setValue(0.0);
 
-        BlueLabel = new QLabel(tc->toUnicode("Â:"));
+        BlueLabel = new QLabel(tc->toUnicode("é’:"));
     BlueCombo = new QDoubleSpinBox;
     BlueCombo->setValue(0.0);
 
@@ -216,7 +216,7 @@ BoxPage::BoxPage(int def_num, QWidget *parent)
 
 
 
-        IGroup = new QGroupBox(tc->toUnicode("Šµ«ƒeƒ“ƒ\ƒ‹"));
+        IGroup = new QGroupBox(tc->toUnicode("æ…£æ€§ãƒ†ãƒ³ã‚½ãƒ«"));
 
     I1Combo = new QDoubleSpinBox;
     I1Combo->setValue(1.0);
@@ -359,7 +359,7 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
     : QWidget(parent)
 {
 	tc = QTextCodec::codecForLocale();
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -367,7 +367,7 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -375,12 +375,12 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -388,7 +388,7 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 
 	NumGroup->setLayout(NumLayout);
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -432,19 +432,19 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("Œ`óEŽp¨"));
+        geomGroup = new QGroupBox(tc->toUnicode("å½¢çŠ¶ãƒ»å§¿å‹¢"));
 
-        lengthLabel = new QLabel(tc->toUnicode("’·‚³[m]:"));
+        lengthLabel = new QLabel(tc->toUnicode("é•·ã•[m]:"));
     lengthCombo = new QDoubleSpinBox;
     lengthCombo->setValue(1.0);
 
 
-        radLabel = new QLabel(tc->toUnicode("”¼Œa[m]:"));
+        radLabel = new QLabel(tc->toUnicode("åŠå¾„[m]:"));
     radCombo = new QDoubleSpinBox;
     radCombo->setValue(1.0);
 
 
-        axisLabel = new QLabel(tc->toUnicode("Ž²:"));
+        axisLabel = new QLabel(tc->toUnicode("è»¸:"));
     axisCombo = new QComboBox;
 	axisCombo->addItem(tc->toUnicode("x"));
 	axisCombo->addItem(tc->toUnicode("y"));
@@ -468,21 +468,21 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 	LWHLayout->addLayout(radLayout);
 	LWHLayout->addLayout(axisLayout);
 
-        slxLabel = new QLabel(tc->toUnicode("ŒX‚«(X)[rad]:"));
+        slxLabel = new QLabel(tc->toUnicode("å‚¾ã(X)[rad]:"));
     slxCombo = new QDoubleSpinBox;
     slxCombo->setValue(0.0);
 	slxCombo->setMaximum(3.14);
 	slxCombo->setMinimum(-3.14);
 
 
-        slyLabel = new QLabel(tc->toUnicode("ŒX‚«(Y)[rad]:"));
+        slyLabel = new QLabel(tc->toUnicode("å‚¾ã(Y)[rad]:"));
     slyCombo = new QDoubleSpinBox;
     slyCombo->setValue(0.0);
 	slyCombo->setMaximum(3.14);
 	slyCombo->setMinimum(-3.14);
 
 
-        slzLabel = new QLabel(tc->toUnicode("ŒX‚«(Z)[rad]:"));
+        slzLabel = new QLabel(tc->toUnicode("å‚¾ã(Z)[rad]:"));
     slzCombo = new QDoubleSpinBox;
     slzCombo->setValue(0.0);
 	slzCombo->setMaximum(3.14);
@@ -506,7 +506,7 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 	SlLayout->addLayout(slyLayout);
 	SlLayout->addLayout(slzLayout);
 
-        MassLabel = new QLabel(tc->toUnicode("Ž¿—Ê[kg]:"));
+        MassLabel = new QLabel(tc->toUnicode("è³ªé‡[kg]:"));
     MassCombo = new QDoubleSpinBox;
     MassCombo->setValue(1.0);
 
@@ -528,19 +528,19 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 
 	
 
-        ColorGroup = new QGroupBox(tc->toUnicode("F"));
+        ColorGroup = new QGroupBox(tc->toUnicode("è‰²"));
 
-        RedLabel = new QLabel(tc->toUnicode("Ô:"));
+        RedLabel = new QLabel(tc->toUnicode("èµ¤:"));
     RedCombo = new QDoubleSpinBox;
     RedCombo->setValue(0.0);
 
 
-        BlueLabel = new QLabel(tc->toUnicode("Â:"));
+        BlueLabel = new QLabel(tc->toUnicode("é’:"));
     BlueCombo = new QDoubleSpinBox;
     BlueCombo->setValue(0.0);
 
 
-        GreenLabel = new QLabel(tc->toUnicode("—Î:"));
+        GreenLabel = new QLabel(tc->toUnicode("ç·‘:"));
     GreenCombo = new QDoubleSpinBox;
     GreenCombo->setValue(0.0);
 
@@ -564,7 +564,7 @@ CylinderPage::CylinderPage(int def_num, QWidget *parent)
 
 	ColorGroup->setLayout(ColorLayout);
 
-        IGroup = new QGroupBox(tc->toUnicode("Šµ«ƒeƒ“ƒ\ƒ‹"));
+        IGroup = new QGroupBox(tc->toUnicode("æ…£æ€§ãƒ†ãƒ³ã‚½ãƒ«"));
 
     I1Combo = new QDoubleSpinBox;
     I1Combo->setValue(1.0);
@@ -712,7 +712,7 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
     : QWidget(parent)
 {
 	tc = QTextCodec::codecForLocale();
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -720,7 +720,7 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -728,12 +728,12 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -741,7 +741,7 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 	NumGroup->setLayout(NumLayout);
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -785,11 +785,11 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("Œ`óEŽp¨"));
+        geomGroup = new QGroupBox(tc->toUnicode("å½¢çŠ¶ãƒ»å§¿å‹¢"));
 
 
 
-        radLabel = new QLabel(tc->toUnicode("”¼Œa(Y)[m]:"));
+        radLabel = new QLabel(tc->toUnicode("åŠå¾„(Y)[m]:"));
     radCombo = new QDoubleSpinBox;
     radCombo->setValue(1.0);
 
@@ -807,7 +807,7 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 
 
-        MassLabel = new QLabel(tc->toUnicode("Ž¿—Ê[kg]:"));
+        MassLabel = new QLabel(tc->toUnicode("è³ªé‡[kg]:"));
     MassCombo = new QDoubleSpinBox;
     MassCombo->setValue(1.0);
 
@@ -828,19 +828,19 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 	
 
-        ColorGroup = new QGroupBox(tc->toUnicode("F"));
+        ColorGroup = new QGroupBox(tc->toUnicode("è‰²"));
 
-        RedLabel = new QLabel(tc->toUnicode("Ô:"));
+        RedLabel = new QLabel(tc->toUnicode("èµ¤:"));
     RedCombo = new QDoubleSpinBox;
     RedCombo->setValue(0.0);
 
 
-        BlueLabel = new QLabel(tc->toUnicode("Â:"));
+        BlueLabel = new QLabel(tc->toUnicode("é’:"));
     BlueCombo = new QDoubleSpinBox;
     BlueCombo->setValue(0.0);
 
 
-        GreenLabel = new QLabel(tc->toUnicode("—Î:"));
+        GreenLabel = new QLabel(tc->toUnicode("ç·‘:"));
     GreenCombo = new QDoubleSpinBox;
     GreenCombo->setValue(0.0);
 
@@ -865,7 +865,7 @@ SpherePage::SpherePage(int def_num, QWidget *parent)
 
 	ColorGroup->setLayout(ColorLayout);
 
-        IGroup = new QGroupBox(tc->toUnicode("Šµ«ƒeƒ“ƒ\ƒ‹"));
+        IGroup = new QGroupBox(tc->toUnicode("æ…£æ€§ãƒ†ãƒ³ã‚½ãƒ«"));
 
     I1Combo = new QDoubleSpinBox;
     I1Combo->setValue(1.0);
@@ -1000,7 +1000,7 @@ ConePage::ConePage(int def_num, QWidget *parent)
 {
 	tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -1008,7 +1008,7 @@ ConePage::ConePage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -1016,12 +1016,12 @@ ConePage::ConePage(int def_num, QWidget *parent)
 
 	NameGroup->setLayout(NameLayout);
 
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -1029,7 +1029,7 @@ ConePage::ConePage(int def_num, QWidget *parent)
 
 	NumGroup->setLayout(NumLayout);
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -1073,19 +1073,19 @@ ConePage::ConePage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("Œ`óEŽp¨"));
+        geomGroup = new QGroupBox(tc->toUnicode("å½¢çŠ¶ãƒ»å§¿å‹¢"));
 
-        lengthLabel = new QLabel(tc->toUnicode("’·‚³(X)[m]:"));
+        lengthLabel = new QLabel(tc->toUnicode("é•·ã•(X)[m]:"));
     lengthCombo = new QDoubleSpinBox;
     lengthCombo->setValue(1.0);
 
 
-        radLabel = new QLabel(tc->toUnicode("”¼Œa(Y)[m]:"));
+        radLabel = new QLabel(tc->toUnicode("åŠå¾„(Y)[m]:"));
     radCombo = new QDoubleSpinBox;
     radCombo->setValue(1.0);
 
 
-        axisLabel = new QLabel(tc->toUnicode("Ž²(Z)[m]:"));
+        axisLabel = new QLabel(tc->toUnicode("è»¸(Z)[m]:"));
     axisCombo = new QComboBox;
 	axisCombo->addItem(tc->toUnicode("x"));
 	axisCombo->addItem(tc->toUnicode("y"));
@@ -1109,21 +1109,21 @@ ConePage::ConePage(int def_num, QWidget *parent)
 	LWHLayout->addLayout(radLayout);
 	LWHLayout->addLayout(axisLayout);
 
-        slxLabel = new QLabel(tc->toUnicode("ŒX‚«(X)[rad]:"));
+        slxLabel = new QLabel(tc->toUnicode("å‚¾ã(X)[rad]:"));
     slxCombo = new QDoubleSpinBox;
     slxCombo->setValue(0.0);
 	slxCombo->setMaximum(3.14);
 	slxCombo->setMinimum(-3.14);
 
 
-        slyLabel = new QLabel(tc->toUnicode("ŒX‚«(Y)[rad]:"));
+        slyLabel = new QLabel(tc->toUnicode("å‚¾ã(Y)[rad]:"));
     slyCombo = new QDoubleSpinBox;
     slyCombo->setValue(0.0);
 	slyCombo->setMaximum(3.14);
 	slyCombo->setMinimum(-3.14);
 
 
-        slzLabel = new QLabel(tc->toUnicode("ŒX‚«(Z)[rad]:"));
+        slzLabel = new QLabel(tc->toUnicode("å‚¾ã(Z)[rad]:"));
     slzCombo = new QDoubleSpinBox;
     slzCombo->setValue(0.0);
 	slzCombo->setMaximum(3.14);
@@ -1146,7 +1146,7 @@ ConePage::ConePage(int def_num, QWidget *parent)
 	SlLayout->addLayout(slyLayout);
 	SlLayout->addLayout(slzLayout);
 
-        MassLabel = new QLabel(tc->toUnicode("Ž¿—Ê[kg]:"));
+        MassLabel = new QLabel(tc->toUnicode("è³ªé‡[kg]:"));
     MassCombo = new QDoubleSpinBox;
     MassCombo->setValue(1.0);
 
@@ -1168,19 +1168,19 @@ ConePage::ConePage(int def_num, QWidget *parent)
 
 	
 
-        ColorGroup = new QGroupBox(tc->toUnicode("F"));
+        ColorGroup = new QGroupBox(tc->toUnicode("è‰²"));
 
-        RedLabel = new QLabel(tc->toUnicode("Ô:"));
+        RedLabel = new QLabel(tc->toUnicode("èµ¤:"));
     RedCombo = new QDoubleSpinBox;
     RedCombo->setValue(0.0);
 
 
-        BlueLabel = new QLabel(tc->toUnicode("Â:"));
+        BlueLabel = new QLabel(tc->toUnicode("é’:"));
     BlueCombo = new QDoubleSpinBox;
 	BlueCombo->setValue(0.0);
 
 
-        GreenLabel = new QLabel(tc->toUnicode("—Î:"));
+        GreenLabel = new QLabel(tc->toUnicode("ç·‘:"));
     GreenCombo = new QDoubleSpinBox;
     GreenCombo->setValue(0.0);
 
@@ -1205,7 +1205,7 @@ ConePage::ConePage(int def_num, QWidget *parent)
 
 	ColorGroup->setLayout(ColorLayout);
 
-        IGroup = new QGroupBox(tc->toUnicode("Šµ«ƒeƒ“ƒ\ƒ‹"));
+        IGroup = new QGroupBox(tc->toUnicode("æ…£æ€§ãƒ†ãƒ³ã‚½ãƒ«"));
 
     I1Combo = new QDoubleSpinBox;
     I1Combo->setValue(1.0);
@@ -1353,7 +1353,7 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
     : QWidget(parent)
 {
 	tc = QTextCodec::codecForLocale();
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -1361,7 +1361,7 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -1370,12 +1370,12 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
 	NameGroup->setLayout(NameLayout);
 
 	
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -1385,7 +1385,7 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
 
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -1426,25 +1426,25 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("Žp¨"));
+        geomGroup = new QGroupBox(tc->toUnicode("å§¿å‹¢"));
 
 
 
-        slxLabel = new QLabel(tc->toUnicode("ŒX‚«(X)[rad]:"));
+        slxLabel = new QLabel(tc->toUnicode("å‚¾ã(X)[rad]:"));
     slxCombo = new QDoubleSpinBox;
     slxCombo->setValue(0.0);
 	slxCombo->setMaximum(3.14);
 	slxCombo->setMinimum(-3.14);
 
 
-        slyLabel = new QLabel(tc->toUnicode("ŒX‚«(Y)[rad]:"));
+        slyLabel = new QLabel(tc->toUnicode("å‚¾ã(Y)[rad]:"));
     slyCombo = new QDoubleSpinBox;
     slyCombo->setValue(0.0);
 	slyCombo->setMaximum(3.14);
 	slyCombo->setMinimum(-3.14);
 
 
-        slzLabel = new QLabel(tc->toUnicode("ŒX‚«(Z)[rad]:"));
+        slzLabel = new QLabel(tc->toUnicode("å‚¾ã(Z)[rad]:"));
     slzCombo = new QDoubleSpinBox;
     slzCombo->setValue(0.0);
 	slzCombo->setMaximum(3.14);
@@ -1468,7 +1468,7 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
 	SlLayout->addLayout(slyLayout);
 	SlLayout->addLayout(slzLayout);
 
-        MassLabel = new QLabel(tc->toUnicode("Ž¿—Ê[kg]:"));
+        MassLabel = new QLabel(tc->toUnicode("è³ªé‡[kg]:"));
     MassCombo = new QDoubleSpinBox;
     MassCombo->setValue(1.0);
 
@@ -1486,7 +1486,7 @@ PolygonPage::PolygonPage(int def_num, QWidget *parent)
 
 	geomGroup->setLayout(geomLayout);
 
-        IGroup = new QGroupBox(tc->toUnicode("Šµ«ƒeƒ“ƒ\ƒ‹"));
+        IGroup = new QGroupBox(tc->toUnicode("æ…£æ€§ãƒ†ãƒ³ã‚½ãƒ«"));
 
     I1Combo = new QDoubleSpinBox;
     I1Combo->setValue(1.0);

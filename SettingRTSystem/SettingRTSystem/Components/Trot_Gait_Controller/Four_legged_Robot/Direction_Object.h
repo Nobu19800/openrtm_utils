@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Direction_Object.h
-* @brief is•ûŒü§ŒäƒNƒ‰ƒX
+* @brief é€²è¡Œæ–¹å‘åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -33,17 +33,17 @@ enum CrawlGaitDir
 
 /**
 * @class Direction_Object
-*@brief is•ûŒü§ŒäƒNƒ‰ƒX
+*@brief é€²è¡Œæ–¹å‘åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class Direction_Object
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	*@param vx ‘¬“x(X)
-	*@param vy ‘¬“x(Y)
-	*@param dthe ‰ñ“]‘¬“x
-	*@param legs ‹r‚ÌƒŠƒXƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	*@param vx é€Ÿåº¦(X)
+	*@param vy é€Ÿåº¦(Y)
+	*@param dthe å›è»¢é€Ÿåº¦
+	*@param legs è„šã®ãƒªã‚¹ãƒˆ
 	*/
 	Direction_Object(double vx, double vy, double dthe, Leg_Object *legs);
 	Vector3d pos;

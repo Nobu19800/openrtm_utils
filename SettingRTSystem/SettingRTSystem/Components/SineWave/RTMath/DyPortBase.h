@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
  * @file  RTMath.h
- * @brief ƒf[ƒ^ƒ|[ƒgŠÖ˜A‚ÌŠÖ”
+ * @brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆé–¢é€£ã®é–¢æ•°
  *
  */
 
@@ -16,22 +16,22 @@
 
 /**
  * @class DynamicComponentBase
-*@brief ƒRƒ“ƒtƒBƒMƒ…ƒŒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^‚ÌƒR[ƒ‹ƒoƒbƒN‚ÉconfigUpdateŠÖ”‚ğŒÄ‚Ño‚·ƒRƒ“ƒ|[ƒlƒ“ƒg
+*@brief ã‚³ãƒ³ãƒ•ã‚£ã‚®ãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯æ™‚ã«configUpdateé–¢æ•°ã‚’å‘¼ã³å‡ºã™ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 */
 class DynamicComponentBase
   : public RTC::DataFlowComponentBase
 {
  public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param managerƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param managerãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	DynamicComponentBase(RTC::Manager* manager) : RTC::DataFlowComponentBase(manager)
 	{
 		
 	};
 	/**
-	*@brief ƒRƒ“ƒtƒBƒMƒ…ƒŒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^XV‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
+	*@brief ã‚³ãƒ³ãƒ•ã‚£ã‚®ãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ›´æ–°æ™‚ã«å‘¼ã³å‡ºã•ã‚Œã‚‹é–¢æ•°
 	*/
 	virtual void configUpdate(){};
 };
@@ -39,84 +39,84 @@ class DynamicComponentBase
 
 /**
  * @class RTCLogicBase
-*@brief RTC‚ÉÀ‘•‚·‚éƒƒWƒbƒN‚ÌŠî–{ƒNƒ‰ƒX
-*ŠeƒR[ƒ‹ƒoƒbƒN‚ÍRTC‚ÌŠY“–‚·‚éƒR[ƒ‹ƒoƒbƒN‚ÉŒÄ‚Ño‚³‚ê‚é‚æ‚¤‚É‹Lq‚·‚é
+*@brief RTCã«å®Ÿè£…ã™ã‚‹ãƒ­ã‚¸ãƒƒã‚¯ã®åŸºæœ¬ã‚¯ãƒ©ã‚¹
+*å„ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã¯RTCã®è©²å½“ã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯æ™‚ã«å‘¼ã³å‡ºã•ã‚Œã‚‹ã‚ˆã†ã«è¨˜è¿°ã™ã‚‹
 */
 class RTCLogicBase
 {
 public:
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	virtual ~RTCLogicBase()
 	{
 	}
 	/**
-	*@brief ‰Šú‰»ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief åˆæœŸåŒ–å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onInitialize(){return RTC::RTC_OK;};
 	/**
-	*@brief I—¹ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief çµ‚äº†å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onFinalize(){return RTC::RTC_OK;};
 	/**
-	*@brief ŠJnˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief é–‹å§‹å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onStartup(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ’â~ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief åœæ­¢å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onShutdown(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief Šˆ«‰»ƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief æ´»æ€§åŒ–æ™‚ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onActivated(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief •sŠˆ«‰»ƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief ä¸æ´»æ€§åŒ–æ™‚ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onDeactivated(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief üŠúˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief å‘¨æœŸå‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onExecute(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ’†’fˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief ä¸­æ–­å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onAborting(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ƒGƒ‰[ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief ã‚¨ãƒ©ãƒ¼å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onError(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ƒŠƒZƒbƒgˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief ãƒªã‚»ãƒƒãƒˆå‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onReset(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ó‘Ô•ÏXˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief çŠ¶æ…‹å¤‰æ›´å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
 	virtual RTC::ReturnCode_t onStateUpdate(RTC::UniqueId ec_id){return RTC::RTC_OK;};
 	/**
-	*@brief ÀsüŠú•ÏXƒR[ƒ‹ƒoƒbƒNŠÖ”
+	*@brief å®Ÿè¡Œå‘¨æœŸå¤‰æ›´æ™‚ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 	* @param ec_id target ExecutionContext Id
 	* @return RTC::ReturnCode_t
 	*/
@@ -126,20 +126,20 @@ public:
 
 /**
  * @class DynamicDataPortBase
-*@brief “®“I‚É¶¬‚·‚éƒf[ƒ^ƒ|[ƒg‚ÌŠî–{ƒNƒ‰ƒX
+*@brief å‹•çš„ã«ç”Ÿæˆã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®åŸºæœ¬ã‚¯ãƒ©ã‚¹
 */
 class DynamicDataPortBase
 {
 public:
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	virtual ~DynamicDataPortBase()
 	{
 	}
 	/**
-	*@brief ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É—­‚Ü‚Á‚Ä‚¢‚é‚©‚ğ”»’è
-	* @return ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É1‚ÂˆÈã‚ ‚éê‡‚ÍtrueA‚È‚¢ê‡‚Ífalse
+	*@brief ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
+	* @return ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«1ã¤ä»¥ä¸Šã‚ã‚‹å ´åˆã¯trueã€ãªã„å ´åˆã¯false
 	*/
 	virtual bool isNew()
 	{
@@ -150,17 +150,17 @@ public:
 
 /**
  * @class DataTypeInPort
-*@brief “®“I‚É¶¬‚·‚éƒCƒ“ƒ|[ƒg
-*T‚Íƒf[ƒ^ƒ|[ƒg‚Ìƒf[ƒ^Œ^(TimedDouble“™)AT2‚Íæ“¾‚·‚éƒf[ƒ^‚ÌŒ^(double“™)
+*@brief å‹•çš„ã«ç”Ÿæˆã™ã‚‹ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
+*Tã¯ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ‡ãƒ¼ã‚¿å‹(TimedDoubleç­‰)ã€T2ã¯å–å¾—ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹(doubleç­‰)
 */
 template <class T, class T2>
 class DataTypeInPort : public DynamicDataPortBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param name ƒf[ƒ^ƒ|[ƒg–¼
-	* @param rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param name ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+	* @param rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	*/
 	DataTypeInPort(std::string name, RTC::DataFlowComponentBase *rtc)
 	{
@@ -170,23 +170,23 @@ public:
 		m_rtc->addInPort(name.c_str(), *inIn);
 	};
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~DataTypeInPort()
 	{
 		m_rtc->removePort(*inIn);
 	};
 	/**
-	*@brief ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É—­‚Ü‚Á‚Ä‚¢‚é‚©‚ğ”»’è
-	* @return ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É1‚ÂˆÈã‚ ‚éê‡‚ÍtrueA‚È‚¢ê‡‚Ífalse
+	*@brief ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
+	* @return ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«1ã¤ä»¥ä¸Šã‚ã‚‹å ´åˆã¯trueã€ãªã„å ´åˆã¯false
 	*/
 	bool isNew()
 	{
 		return inIn->isNew();
 	};
 	/**
-	*@brief ƒf[ƒ^ƒ|[ƒg‚Ì“ü—Íƒf[ƒ^æ“¾
-	* @return ƒf[ƒ^
+	*@brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®å…¥åŠ›ãƒ‡ãƒ¼ã‚¿å–å¾—
+	* @return ãƒ‡ãƒ¼ã‚¿
 	*/
 	T2 getData()
 	{
@@ -200,17 +200,17 @@ public:
 
 /**
  * @class DataTypeOutPort
-*@brief “®“I‚É¶¬‚·‚éƒAƒEƒgƒ|[ƒg
-*T‚Íƒf[ƒ^ƒ|[ƒg‚Ìƒf[ƒ^Œ^(TimedDouble“™)AT2‚Íæ“¾‚·‚éƒf[ƒ^‚ÌŒ^(double“™)
+*@brief å‹•çš„ã«ç”Ÿæˆã™ã‚‹ã‚¢ã‚¦ãƒˆãƒãƒ¼ãƒˆ
+*Tã¯ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ‡ãƒ¼ã‚¿å‹(TimedDoubleç­‰)ã€T2ã¯å–å¾—ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹(doubleç­‰)
 */
 template <class T, class T2>
 class DataTypeOutPort : public DynamicDataPortBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param name ƒf[ƒ^ƒ|[ƒg–¼
-	* @param rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param name ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+	* @param rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	*/
 	DataTypeOutPort(std::string name, RTC::DataFlowComponentBase *rtc)
 	{
@@ -220,15 +220,15 @@ public:
 		m_rtc->addOutPort(name.c_str(), *outOut);
 	};
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~DataTypeOutPort()
 	{
 		m_rtc->removePort(*outOut);
 	};
 	/**
-	*@brief ƒf[ƒ^ƒ|[ƒg‚©‚çƒf[ƒ^‚ğo—Í
-	* @param v ƒf[ƒ^
+	*@brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›
+	* @param v ãƒ‡ãƒ¼ã‚¿
 	*/
 	void setData(T2 v)
 	{
@@ -243,17 +243,17 @@ public:
 
 /**
  * @class DataTypeInPortSeq
-*@brief “®“I‚É¶¬‚·‚éƒCƒ“ƒ|[ƒg(”z—ñ)
-*T‚Íƒf[ƒ^ƒ|[ƒg‚Ìƒf[ƒ^Œ^(TimedDouble“™)AT2‚Íæ“¾‚·‚éƒf[ƒ^‚ÌŒ^(double“™)
+*@brief å‹•çš„ã«ç”Ÿæˆã™ã‚‹ã‚¤ãƒ³ãƒãƒ¼ãƒˆ(é…åˆ—)
+*Tã¯ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ‡ãƒ¼ã‚¿å‹(TimedDoubleç­‰)ã€T2ã¯å–å¾—ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹(doubleç­‰)
 */
 template <class T, class T2>
 class DataTypeInPortSeq : public DynamicDataPortBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param name ƒf[ƒ^ƒ|[ƒg–¼
-	* @param rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param name ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+	* @param rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	*/
 	DataTypeInPortSeq(std::string name, RTC::DataFlowComponentBase *rtc)
 	{
@@ -263,23 +263,23 @@ public:
 		m_rtc->addInPort(name.c_str(), *inIn);
 	};
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~DataTypeInPortSeq()
 	{
 		m_rtc->removePort(*inIn);
 	};
 	/**
-	*@brief ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É—­‚Ü‚Á‚Ä‚¢‚é‚©‚ğ”»’è
-	* @return ƒf[ƒ^‚ªƒoƒbƒtƒ@‚É1‚ÂˆÈã‚ ‚éê‡‚ÍtrueA‚È‚¢ê‡‚Ífalse
+	*@brief ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«æºœã¾ã£ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
+	* @return ãƒ‡ãƒ¼ã‚¿ãŒãƒãƒƒãƒ•ã‚¡ã«1ã¤ä»¥ä¸Šã‚ã‚‹å ´åˆã¯trueã€ãªã„å ´åˆã¯false
 	*/
 	bool isNew()
 	{
 		return inIn->isNew();
 	};
 	/**
-	*@brief ƒf[ƒ^ƒ|[ƒg‚Ì“ü—Íƒf[ƒ^æ“¾
-	* @return ƒf[ƒ^‚ÌƒŠƒXƒg
+	*@brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®å…¥åŠ›ãƒ‡ãƒ¼ã‚¿å–å¾—
+	* @return ãƒ‡ãƒ¼ã‚¿ã®ãƒªã‚¹ãƒˆ
 	*/
 	std::vector<T2> getData()
 	{
@@ -298,17 +298,17 @@ public:
 
 /**
  * @class DataTypeOutPortSeq
-*@brief “®“I‚É¶¬‚·‚éƒCƒ“ƒ|[ƒg(”z—ñ)
-*T‚Íƒf[ƒ^ƒ|[ƒg‚Ìƒf[ƒ^Œ^(TimedDouble“™)AT2‚Íæ“¾‚·‚éƒf[ƒ^‚ÌŒ^(double“™)
+*@brief å‹•çš„ã«ç”Ÿæˆã™ã‚‹ã‚¤ãƒ³ãƒãƒ¼ãƒˆ(é…åˆ—)
+*Tã¯ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ‡ãƒ¼ã‚¿å‹(TimedDoubleç­‰)ã€T2ã¯å–å¾—ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã®å‹(doubleç­‰)
 */
 template <class T, class T2>
 class DataTypeOutPortSeq : public DynamicDataPortBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param name ƒf[ƒ^ƒ|[ƒg–¼
-	* @param rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param name ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+	* @param rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	*/
 	DataTypeOutPortSeq(std::string name, RTC::DataFlowComponentBase *rtc)
 	{
@@ -318,15 +318,15 @@ public:
 		m_rtc->addOutPort(name.c_str(), *outOut);
 	};
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~DataTypeOutPortSeq()
 	{
 		m_rtc->removePort(*outOut);
 	};
 	/**
-	*@brief ƒf[ƒ^ƒ|[ƒg‚©‚çƒf[ƒ^‚ğo—Í
-	* @param v ƒf[ƒ^‚Ì”z—ñ
+	*@brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å‡ºåŠ›
+	* @param v ãƒ‡ãƒ¼ã‚¿ã®é…åˆ—
 	*/
 	void setData(std::vector<T2> v)
 	{
@@ -346,22 +346,22 @@ public:
 
 /**
  * @class DynamicPortConfigUpdateParam
-*@brief ƒRƒ“ƒtƒBƒMƒ…ƒŒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^XV‚ÌƒŠƒXƒi
+*@brief ã‚³ãƒ³ãƒ•ã‚£ã‚®ãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ›´æ–°æ™‚ã®ãƒªã‚¹ãƒŠ
 */
 class DynamicPortConfigUpdateParam
     : public RTC::ConfigurationSetListener
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param e_rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param e_rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 	*/
     DynamicPortConfigUpdateParam(DynamicComponentBase *rtc)
     {
 		m_rtc = rtc;
     }
 	/**
-	*@brief ƒRƒ“ƒtƒBƒMƒ…ƒŒ[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^•ÏX‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
+	*@brief ã‚³ãƒ³ãƒ•ã‚£ã‚®ãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å¤‰æ›´æ™‚ã«å‘¼ã³å‡ºã•ã‚Œã‚‹é–¢æ•°
 	* @param config_set 
 	*/
     void operator()(const coil::Properties& config_set)
@@ -370,18 +370,18 @@ public:
 		m_rtc->configUpdate();
 		
     }
-	DynamicComponentBase *m_rtc; /**<@@brief  */
+	DynamicComponentBase *m_rtc; /**<ã€€@brief  */
 
 };
 
 
 /**
-*@brief ƒf[ƒ^ƒ|[ƒg‚ÌƒŠƒXƒgXV
-*T‚Íƒf[ƒ^ƒ|[ƒg‚Ìƒf[ƒ^Œ^
-* @param v ƒf[ƒ^ƒ|[ƒg‚ÌƒŠƒXƒg
-* @param num V‹K‚Éİ’è‚·‚éƒf[ƒ^ƒ|[ƒg‚Ì”
-* @param id ƒf[ƒ^ƒ|[ƒg–¼
-* @param rtc RTƒRƒ“ƒ|[ƒlƒ“ƒg
+*@brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒªã‚¹ãƒˆæ›´æ–°
+*Tã¯ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ‡ãƒ¼ã‚¿å‹
+* @param v ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒªã‚¹ãƒˆ
+* @param num æ–°è¦ã«è¨­å®šã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®æ•°
+* @param id ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+* @param rtc RTã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 */
 template <class T>
 void updatePortList(std::vector<T*> &v, int num, std::string id, RTC::DataFlowComponentBase* rtc)

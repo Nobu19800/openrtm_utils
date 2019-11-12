@@ -1,4 +1,4 @@
-#include <QtWidgets> 
+ï»¿#include <QtWidgets> 
 #include <QtGui>
 #include <qtextcodec.h>
 
@@ -9,7 +9,7 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
 {
         tc = QTextCodec::codecForLocale();
 
-        NameGroup = new QGroupBox(tc->toUnicode("–¼‘O"));
+        NameGroup = new QGroupBox(tc->toUnicode("åå‰"));
 
 	geomNameComboBox = new QComboBox;
 
@@ -17,7 +17,7 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
     geomNameComboBox->setSizePolicy(QSizePolicy::Expanding,
                                     QSizePolicy::Preferred);
 	geomNameComboBox->lineEdit()->setText("test");
-        geomNameLabel = new QLabel(tc->toUnicode("–¼‘O:"));
+        geomNameLabel = new QLabel(tc->toUnicode("åå‰:"));
 
 	QHBoxLayout *NameLayout = new QHBoxLayout;
     NameLayout->addWidget(geomNameLabel);
@@ -28,12 +28,12 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
 
 
 	
-        NumGroup = new QGroupBox(tc->toUnicode("”Ô†"));
+        NumGroup = new QGroupBox(tc->toUnicode("ç•ªå·"));
 	
 	NumComboBox = new QSpinBox;
 
 	NumComboBox->setValue(def_num);
-        NumLabel = new QLabel(tc->toUnicode("”Ô†:"));
+        NumLabel = new QLabel(tc->toUnicode("ç•ªå·:"));
 
 	QHBoxLayout *NumLayout = new QHBoxLayout;
     NumLayout->addWidget(NumLabel);
@@ -56,7 +56,7 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
 
 
 
-    posGroup = new QGroupBox(tc->toUnicode("ˆÊ’u"));
+    posGroup = new QGroupBox(tc->toUnicode("ä½ç½®"));
 
 	posxLabel = new QLabel(tc->toUnicode("X[m]:"));
     posxCombo = new QDoubleSpinBox;
@@ -97,7 +97,7 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
 
 	
 	
-        geomGroup = new QGroupBox(tc->toUnicode("•ûŒü"));
+        geomGroup = new QGroupBox(tc->toUnicode("æ–¹å‘"));
 
 
 
@@ -141,37 +141,37 @@ CameraPage::CameraPage(int def_num, QWidget *parent)
 
 
 
-        fieldOfViewLabel = new QLabel(tc->toUnicode("Ž‹–ìŠp“x[rad]:"));
+        fieldOfViewLabel = new QLabel(tc->toUnicode("è¦–é‡Žè§’åº¦[rad]:"));
     fieldOfViewCombo = new QDoubleSpinBox;
     fieldOfViewCombo->setValue(0.78);
 	fieldOfViewCombo->setMaximum(3.14);
 	fieldOfViewCombo->setMinimum(0.0);
 
-        frontClipDistanceLabel = new QLabel(tc->toUnicode("‘OƒNƒŠƒbƒv–Ê‚Ü‚Å‚Ì‹——£[m]:"));
+        frontClipDistanceLabel = new QLabel(tc->toUnicode("å‰ã‚¯ãƒªãƒƒãƒ—é¢ã¾ã§ã®è·é›¢[m]:"));
     frontClipDistanceCombo = new QDoubleSpinBox;
     frontClipDistanceCombo->setValue(0.01);
 	frontClipDistanceCombo->setMinimum(0.0);
 
-	backClipDistanceLabel = new QLabel(tc->toUnicode("ŒãƒNƒŠƒbƒv–Ê‚Ü‚Å‚Ì‹——£[m]:"));
+	backClipDistanceLabel = new QLabel(tc->toUnicode("å¾Œã‚¯ãƒªãƒƒãƒ—é¢ã¾ã§ã®è·é›¢[m]:"));
     backClipDistanceCombo = new QDoubleSpinBox;
     backClipDistanceCombo->setValue(10.0);
 	backClipDistanceCombo->setMinimum(0.0);
 
-        typeLabel = new QLabel(tc->toUnicode("î•ñ‚ÌŽí—Þ:"));
+        typeLabel = new QLabel(tc->toUnicode("æƒ…å ±ã®ç¨®é¡ž:"));
 
 	typeCombo = new QComboBox;
-        typeCombo->addItem(tc->toUnicode("F"));
-        typeCombo->addItem(tc->toUnicode("[‚³"));
-        typeCombo->addItem(tc->toUnicode("F‚Æ[‚³"));
-        typeCombo->addItem(tc->toUnicode("Žæ“¾‚µ‚È‚¢"));
+        typeCombo->addItem(tc->toUnicode("è‰²"));
+        typeCombo->addItem(tc->toUnicode("æ·±ã•"));
+        typeCombo->addItem(tc->toUnicode("è‰²ã¨æ·±ã•"));
+        typeCombo->addItem(tc->toUnicode("å–å¾—ã—ãªã„"));
 
-        widthLabel = new QLabel(tc->toUnicode("•[m]:"));
+        widthLabel = new QLabel(tc->toUnicode("å¹…[m]:"));
     widthCombo = new QDoubleSpinBox;
     widthCombo->setValue(320);
 	widthCombo->setMinimum(0.0);
 	widthCombo->setMaximum(1000.0);
 
-        heightLabel = new QLabel(tc->toUnicode("‚‚³[m]:"));
+        heightLabel = new QLabel(tc->toUnicode("é«˜ã•[m]:"));
     heightCombo = new QDoubleSpinBox;
     heightCombo->setValue(240);
 	heightCombo->setMinimum(0.0);

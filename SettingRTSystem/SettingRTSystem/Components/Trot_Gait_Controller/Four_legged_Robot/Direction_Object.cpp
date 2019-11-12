@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Direction_Object.cpp
-* @brief is•ûŒü§ŒäƒNƒ‰ƒX
+* @brief é€²è¡Œæ–¹å‘åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -13,11 +13,11 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-*@param vx ‘¬“x(X)
-*@param vy ‘¬“x(Y)
-*@param dthe ‰ñ“]‘¬“x
-*@param legs ‹r‚ÌƒŠƒXƒg
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+*@param vx é€Ÿåº¦(X)
+*@param vy é€Ÿåº¦(Y)
+*@param dthe å›è»¢é€Ÿåº¦
+*@param legs è„šã®ãƒªã‚¹ãƒˆ
 */
 Direction_Object::Direction_Object(double vx, double vy, double dthe, Leg_Object *legs)
 {

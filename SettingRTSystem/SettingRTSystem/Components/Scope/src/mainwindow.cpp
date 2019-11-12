@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  mainwindow.cpp
-* @brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+* @brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
 *
 */
 
@@ -17,8 +17,8 @@
 
 
 /**
-*@brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param parent eƒEƒBƒWƒFƒbƒg
+*@brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 */
 MainWindow::MainWindow( QWidget *parent ):
     QMainWindow( parent )
@@ -45,8 +45,8 @@ MainWindow::MainWindow( QWidget *parent ):
 }
 
 /**
-*@brief İ’è”½‰f‚ÌƒXƒƒbƒg
-* @param settings İ’èƒIƒuƒWƒFƒNƒg
+*@brief è¨­å®šåæ˜ æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
+* @param settings è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void MainWindow::applySettings( const Settings &settings )
 {

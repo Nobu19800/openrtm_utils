@@ -1,7 +1,7 @@
-// -*-C++-*-
+ï»¿// -*-C++-*-
 /*!
  * @file  ManipulatorCommonInterface_MiddleLevelSVC_impl.cpp
- * @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’†ƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh
+ * @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä¸­ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰
  *
  */
 
@@ -9,8 +9,8 @@
 #include "defreturnid.h"
 
 /*!
-* @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’†ƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param ra ƒƒ{ƒbƒgƒA[ƒ€§ŒäƒIƒuƒWƒFƒNƒg
+* @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä¸­ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param ra ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ åˆ¶å¾¡ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 ManipulatorCommonInterface_MiddleSVC_impl::ManipulatorCommonInterface_MiddleSVC_impl(RobotArm *ra)
 {
@@ -20,7 +20,7 @@ ManipulatorCommonInterface_MiddleSVC_impl::ManipulatorCommonInterface_MiddleSVC_
 
 
 /*!
-* @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€—p’†ƒŒƒxƒ‹ƒ‚[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ÌƒfƒXƒgƒ‰ƒNƒ^
+* @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ ç”¨ä¸­ãƒ¬ãƒ™ãƒ«ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 ManipulatorCommonInterface_MiddleSVC_impl::~ManipulatorCommonInterface_MiddleSVC_impl()
 {
@@ -29,7 +29,7 @@ ManipulatorCommonInterface_MiddleSVC_impl::~ManipulatorCommonInterface_MiddleSVC
 
 
 /*!
-* @brief ƒOƒŠƒbƒp‚ğŠ®‘S‚É•Â‚¶‚é
+* @brief ã‚°ãƒªãƒƒãƒ‘ã‚’å®Œå…¨ã«é–‰ã˜ã‚‹
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::closeGripper()
@@ -40,8 +40,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::closeGripper()
 }
 
 /*!
-* @brief ƒA[ƒ€À•WŒn‚©‚çƒƒ{ƒbƒgÀ•WŒn‚Ü‚Å‚Ìƒx[ƒXƒIƒtƒZƒbƒg‚ğæ“¾‚·‚é(–¢À‘•)
-* @param offset ƒIƒtƒZƒbƒg—Ê
+* @brief ã‚¢ãƒ¼ãƒ åº§æ¨™ç³»ã‹ã‚‰ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã¾ã§ã®ãƒ™ãƒ¼ã‚¹ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’å–å¾—ã™ã‚‹(æœªå®Ÿè£…)
+* @param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆé‡
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getBaseOffset(JARA_ARM::HgMatrix offset)
@@ -50,8 +50,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getBaseOffset(JA
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚ÌˆÊ’uƒtƒB[ƒhƒoƒbƒNî•ñ‚ğæ“¾‚·‚é
-* @param pos ˆÊ’uƒtƒB[ƒhƒoƒbƒNî•ñ[’PˆÊ:m¤rad]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®ä½ç½®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯æƒ…å ±ã‚’å–å¾—ã™ã‚‹
+* @param pos ä½ç½®ãƒ•ã‚£ãƒ¼ãƒ‰ãƒãƒƒã‚¯æƒ…å ±[å˜ä½:mã€rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getFeedbackPosCartesian(JARA_ARM::CarPosWithElbow_out pos)
@@ -73,8 +73,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getFeedbackPosCa
 }
 
 /*!
-* @brief ’¼Œğ‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å‘¬“x‚ğæ“¾‚·‚é(–¢À‘•)
-* @param speed Å‘å•Ài‘¬“x[’PˆÊ:mm/s]AÅ‘å‰ñ“]‘¬“x[’PˆÊ:degree/s]‚©‚ç‚È‚éÅ‘å‘¬“xî•ñ
+* @brief ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã‚’å–å¾—ã™ã‚‹(æœªå®Ÿè£…)
+* @param speed æœ€å¤§ä¸¦é€²é€Ÿåº¦[å˜ä½:mm/s]ã€æœ€å¤§å›è»¢é€Ÿåº¦[å˜ä½:degree/s]ã‹ã‚‰ãªã‚‹æœ€å¤§é€Ÿåº¦æƒ…å ±
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMaxSpeedCartesian(JARA_ARM::CartesianSpeed_out speed)
@@ -83,8 +83,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMaxSpeedCarte
 }
 
 /*!
-* @brief ŠÖß‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å‘¬“x‚ğæ“¾‚·‚é(–¢À‘•)
-* @param speed Še²‚ÌÅ‘å“®ì‘¬“x[’PˆÊ:degree/s]
+* @brief é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã‚’å–å¾—ã™ã‚‹(æœªå®Ÿè£…)
+* @param speed å„è»¸ã®æœ€å¤§å‹•ä½œé€Ÿåº¦[å˜ä½:degree/s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMaxSpeedJoint(JARA_ARM::DoubleSeq_out speed)
@@ -95,8 +95,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMaxSpeedJoint
 
 
 /*!
-* @brief ’¼Œğ“®ì‚ÌÅ‘å‘¬“x‚Ü‚Å‚ÌÅ¬‰Á‘¬ŠÔ‚ğæ“¾‚·‚é(–¢À‘•)
-* @param aclTime Å¬‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief ç›´äº¤å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã¾ã§ã®æœ€å°åŠ é€Ÿæ™‚é–“ã‚’å–å¾—ã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime æœ€å°åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMinAccelTimeCartesian(CORBA::Double& aclTime)
@@ -105,8 +105,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMinAccelTimeC
 }
 
 /*!
-* @brief ŠÖß“®ì‚ÌÅ‘å‘¬“x‚Ü‚Å‚ÌÅ¬“®ì‰Á‘¬ŠÔ‚ğæ“¾‚·‚é(–¢À‘•)
-* @param aclTime Å¬‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief é–¢ç¯€å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã¾ã§ã®æœ€å°å‹•ä½œåŠ é€Ÿæ™‚é–“ã‚’å–å¾—ã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime æœ€å°åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMinAccelTimeJoint(CORBA::Double& aclTime)
@@ -115,10 +115,10 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getMinAccelTimeJ
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Å‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l‚ğæ“¾‚·‚é
-* @param xLimit X²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
-* @param yLimit Y²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
-* @param zLimit Z²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã§ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤ã‚’å–å¾—ã™ã‚‹
+* @param xLimit Xè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
+* @param yLimit Yè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
+* @param zLimit Zè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getSoftLimitCartesian(JARA_ARM::LimitValue_out xLimit, JARA_ARM::LimitValue_out yLimit, JARA_ARM::LimitValue_out zLimit)
@@ -145,8 +145,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getSoftLimitCart
 }
 
 /*!
-* @brief ƒOƒŠƒbƒp‚ğw’è‚µ‚½ŠJ•ÂŠp“x‚Æ‚·‚é(–¢À‘•)
-* @param angleRatio ƒOƒŠƒbƒp‚ÌŠJ•ÂŠp“xŠ„‡[%]
+* @brief ã‚°ãƒªãƒƒãƒ‘ã‚’æŒ‡å®šã—ãŸé–‹é–‰è§’åº¦ã¨ã™ã‚‹(æœªå®Ÿè£…)
+* @param angleRatio ã‚°ãƒªãƒƒãƒ‘ã®é–‹é–‰è§’åº¦å‰²åˆ[%]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveGripper(JARA_ARM::ULONG angleRatio)
@@ -155,8 +155,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveGripper(JARA
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ìâ‘Î’l‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤’¼Œğ‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é
-* @param carPoint â‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mArad]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹
+* @param carPoint çµ¶å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveLinearCartesianAbs(const JARA_ARM::CarPosWithElbow& carPoint)
@@ -173,8 +173,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveLinearCartes
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ì‘Š‘Î’l‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤’¼Œğ‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é
-* @param carPoint ‘Š‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mArad]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®ç›¸å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹
+* @param carPoint ç›¸å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveLinearCartesianRel(const JARA_ARM::CarPosWithElbow& carPoint)
@@ -192,8 +192,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveLinearCartes
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ìâ‘Î’l‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤ŠÖß‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é(–¢À‘•)
-* @param carPoint â‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mArad]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹(æœªå®Ÿè£…)
+* @param carPoint çµ¶å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPCartesianAbs(const JARA_ARM::CarPosWithElbow& carPoint)
@@ -202,8 +202,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPCartesian
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ì‘Š‘Î’l‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤ŠÖß‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é(–¢À‘•)
-* @param carPoint ‘Š‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mArad]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®ç›¸å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹(æœªå®Ÿè£…)
+* @param carPoint ç›¸å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPCartesianRel(const JARA_ARM::CarPosWithElbow& carPoint)
@@ -212,8 +212,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPCartesian
 }
 
 /*!
-* @brief â‘ÎŠÖßÀ•W‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤ŠÖß‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é
-* @param jointPoints â‘Î–Ú•WˆÊ’u[’PˆÊ rad]
+* @brief çµ¶å¯¾é–¢ç¯€åº§æ¨™ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹
+* @param jointPoints çµ¶å¯¾ç›®æ¨™ä½ç½®[å˜ä½ rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPJointAbs(const JARA_ARM::JointPos& jointPoints)
@@ -232,8 +232,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPJointAbs(
 }
 
 /*!
-* @brief ‘Š‘ÎŠÖßÀ•W‚Åw’è‚³‚ê‚½–Ú•WˆÊ’u‚É‘Î‚µ¤ŠÖß‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é
-* @param jointPoints ‘Š‘Î–Ú•WˆÊ’u[’PˆÊ rad]
+* @brief ç›¸å¯¾é–¢ç¯€åº§æ¨™ã§æŒ‡å®šã•ã‚ŒãŸç›®æ¨™ä½ç½®ã«å¯¾ã—ã€é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹
+* @param jointPoints ç›¸å¯¾ç›®æ¨™ä½ç½®[å˜ä½ rad]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPJointRel(const JARA_ARM::JointPos& jointPoints)
@@ -253,7 +253,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::movePTPJointRel(
 }
 
 /*!
-* @brief ƒOƒŠƒbƒp‚ğŠ®‘S‚ÉŠJ‚­
+* @brief ã‚°ãƒªãƒƒãƒ‘ã‚’å®Œå…¨ã«é–‹ã
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::openGripper()
@@ -263,7 +263,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::openGripper()
 }
 
 /*!
-* @brief ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚Ì‘S‚Ä‚Ì²‚ğˆê’â~‚·‚é
+* @brief ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ã®å…¨ã¦ã®è»¸ã‚’ä¸€æ™‚åœæ­¢ã™ã‚‹
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::pause()
@@ -275,7 +275,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::pause()
 }
 
 /*!
-* @brief ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚Ì“®ì‚ğÄŠJ‚·‚é
+* @brief ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ã®å‹•ä½œã‚’å†é–‹ã™ã‚‹
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::resume()
@@ -287,7 +287,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::resume()
 }
 
 /*!
-* @brief ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚Ì“®ì‚ğ’â~‚·‚é
+* @brief ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ã®å‹•ä½œã‚’åœæ­¢ã™ã‚‹
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::stop()
@@ -299,8 +299,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::stop()
 }
 
 /*!
-* @brief ’¼Œğ‹óŠÔ‚É‚¨‚¯‚é“®ì‚Ì‰Á‘¬ŠÔ‚ğİ’è‚·‚é(–¢À‘•)
-* @param aclTime ‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®åŠ é€Ÿæ™‚é–“ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setAccelTimeCartesian(CORBA::Double aclTime)
@@ -309,8 +309,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setAccelTimeCart
 }
 
 /*!
-* @brief ŠÖß‹óŠÔ‚É‚¨‚¯‚é“®ì‚Ì‰Á‘¬ŠÔ‚ğİ’è‚·‚é(–¢À‘•)
-* @param aclTime ‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®åŠ é€Ÿæ™‚é–“ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setAccelTimeJoint(CORBA::Double aclTime)
@@ -319,8 +319,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setAccelTimeJoin
 }
 
 /*!
-* @brief ƒIƒtƒZƒbƒg—Ê‚ğİ’è‚·‚é(–¢À‘•)
-* @param offset ƒIƒtƒZƒbƒg—Ê
+* @brief ã‚ªãƒ•ã‚»ãƒƒãƒˆé‡ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆé‡
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setBaseOffset(const JARA_ARM::HgMatrix offset)
@@ -338,8 +338,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setBaseOffset(co
 }
 
 /*!
-* @brief §Œä“_‚Ìƒtƒ‰ƒ“ƒW–Ê‚©‚ç‚ÌƒIƒtƒZƒbƒg—Ê‚ğİ’è‚·‚é(–¢À‘•)
-* @param offset ƒIƒtƒZƒbƒg—Ê
+* @brief åˆ¶å¾¡ç‚¹ã®ãƒ•ãƒ©ãƒ³ã‚¸é¢ã‹ã‚‰ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆé‡ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆé‡
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setControlPointOffset(const JARA_ARM::HgMatrix offset)
@@ -348,8 +348,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setControlPointO
 }
 
 /*!
-* @brief ’¼Œğ‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å“®ì‘¬“x‚ğİ’è‚·‚é
-* @param speed Å‘å•Ài‘¬“x[’PˆÊ:m/s]AÅ‘å‰ñ“]‘¬“x[’PˆÊ:rad/s]‚©‚ç‚È‚éÅ‘å‘¬“xî•ñ
+* @brief ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§å‹•ä½œé€Ÿåº¦ã‚’è¨­å®šã™ã‚‹
+* @param speed æœ€å¤§ä¸¦é€²é€Ÿåº¦[å˜ä½:m/s]ã€æœ€å¤§å›è»¢é€Ÿåº¦[å˜ä½:rad/s]ã‹ã‚‰ãªã‚‹æœ€å¤§é€Ÿåº¦æƒ…å ±
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMaxSpeedCartesian(const JARA_ARM::CartesianSpeed& speed)
@@ -361,8 +361,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMaxSpeedCarte
 }
 
 /*!
-* @brief ŠÖß‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å“®ì‘¬“x‚ğİ’è‚·‚é
-* @param speed Še²‚ÌÅ‘å“®ì‘¬“x[’PˆÊ:rad/s]
+* @brief é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§å‹•ä½œé€Ÿåº¦ã‚’è¨­å®šã™ã‚‹
+* @param speed å„è»¸ã®æœ€å¤§å‹•ä½œé€Ÿåº¦[å˜ä½:rad/s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMaxSpeedJoint(const JARA_ARM::DoubleSeq& speed)
@@ -376,8 +376,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMaxSpeedJoint
 }
 
 /*!
-* @brief ’¼Œğ‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å‘¬“x‚Ü‚Å‚ÌÅ¬‰Á‘¬ŠÔ‚ğİ’è‚·‚é(–¢À‘•)
-* @param aclTime Å¬‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã¾ã§ã®æœ€å°åŠ é€Ÿæ™‚é–“ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime æœ€å°åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMinAccelTimeCartesian(CORBA::Double aclTime)
@@ -386,8 +386,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMinAccelTimeC
 }
 
 /*!
-* @brief ŠÖß‹óŠÔ‚É‚¨‚¯‚é“®ì‚ÌÅ‘å‘¬“x‚Ü‚Å‚ÌÅ¬‰Á‘¬ŠÔ‚ğİ’è‚·‚é(–¢À‘•)
-* @param aclTime Å¬‰Á‘¬ŠÔ[’PˆÊ:s]
+* @brief é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®æœ€å¤§é€Ÿåº¦ã¾ã§ã®æœ€å°åŠ é€Ÿæ™‚é–“ã‚’è¨­å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param aclTime æœ€å°åŠ é€Ÿæ™‚é–“[å˜ä½:s]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMinAccelTimeJoint(CORBA::Double aclTime)
@@ -396,10 +396,10 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setMinAccelTimeJ
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Å‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l‚ğİ’è‚·‚é
-* @param xLimit X²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
-* @param yLimit Y²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
-* @param zLimit Z²‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l[’PˆÊ:m]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã§ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤ã‚’è¨­å®šã™ã‚‹
+* @param xLimit Xè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
+* @param yLimit Yè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
+* @param zLimit Zè»¸ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤[å˜ä½:m]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSoftLimitCartesian(const JARA_ARM::LimitValue& xLimit, const JARA_ARM::LimitValue& yLimit, const JARA_ARM::LimitValue& zLimit)
@@ -412,8 +412,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSoftLimitCart
 }
 
 /*!
-* @brief ’¼Œğ‹óŠÔ‚É‚¨‚¯‚é“®ì‚Ì‘¬“x‚ğ“w’è‚·‚é(–¢À‘•)
-* @param spdRatio Å‘å‘¬“x‚É‘Î‚·‚éŠ„‡w’è[’PˆÊ:%]
+* @brief ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®é€Ÿåº¦ã‚’ï¼…æŒ‡å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param spdRatio æœ€å¤§é€Ÿåº¦ã«å¯¾ã™ã‚‹å‰²åˆæŒ‡å®š[å˜ä½:%]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSpeedCartesian(JARA_ARM::ULONG spdRatio)
@@ -422,8 +422,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSpeedCartesia
 }
 
 /*!
-* @brief ŠÖß‹óŠÔ‚É‚¨‚¯‚é“®ì‚Ì‘¬“x‚ğ“w’è‚·‚é(–¢À‘•)
-* @param spdRatio Å‘å‘¬“x‚É‘Î‚·‚éŠ„‡w’è[’PˆÊ:%]
+* @brief é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹å‹•ä½œæ™‚ã®é€Ÿåº¦ã‚’ï¼…æŒ‡å®šã™ã‚‹(æœªå®Ÿè£…)
+* @param spdRatio æœ€å¤§é€Ÿåº¦ã«å¯¾ã™ã‚‹å‰²åˆæŒ‡å®š[å˜ä½:%]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSpeedJoint(JARA_ARM::ULONG spdRatio)
@@ -432,9 +432,9 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setSpeedJoint(JA
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ìâ‘Î’l‚Åw’è‚³‚ê‚½’†ŒpˆÊ’uE–Ú•WˆÊ’u‚É‘Î‚µA’¼Œğ‹óŠÔ‚É‚¨‚¯‚é‰~ŒÊ•âŠÔ‚Å“®ì‚·‚é(–¢À‘•)
-* @param carPointR â‘Î’†ŒpˆÊ’uEp¨[’PˆÊ:mAradian]
-* @param carPointT â‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mAradian]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸä¸­ç¶™ä½ç½®ãƒ»ç›®æ¨™ä½ç½®ã«å¯¾ã—ã€ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å††å¼§è£œé–“ã§å‹•ä½œã™ã‚‹(æœªå®Ÿè£…)
+* @param carPointR çµ¶å¯¾ä¸­ç¶™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€radian]
+* @param carPointT çµ¶å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€radian]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveCircularCartesianAbs(const JARA_ARM::CarPosWithElbow& carPointR, const JARA_ARM::CarPosWithElbow& carPointT)
@@ -443,9 +443,9 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveCircularCart
 }
 
 /*!
-* @brief ƒƒ{ƒbƒgÀ•WŒn‚Ì‘Š‘Î’l‚Åw’è‚³‚ê‚½’†ŒpˆÊ’uE–Ú•WˆÊ’u‚É‘Î‚µA’¼Œğ‹óŠÔ‚É‚¨‚¯‚é‰~ŒÊ•âŠÔ‚Å“®ì‚·‚é(–¢À‘•)
-* @param carPointR ‘Š‘Î’†ŒpˆÊ’uEp¨[’PˆÊ:mAradian]
-* @param carPointT ‘Š‘Î–Ú•WˆÊ’uEp¨[’PˆÊ:mAradian]
+* @brief ãƒ­ãƒœãƒƒãƒˆåº§æ¨™ç³»ã®ç›¸å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸä¸­ç¶™ä½ç½®ãƒ»ç›®æ¨™ä½ç½®ã«å¯¾ã—ã€ç›´äº¤ç©ºé–“ã«ãŠã‘ã‚‹å††å¼§è£œé–“ã§å‹•ä½œã™ã‚‹(æœªå®Ÿè£…)
+* @param carPointR ç›¸å¯¾ä¸­ç¶™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€radian]
+* @param carPointT ç›¸å¯¾ç›®æ¨™ä½ç½®ãƒ»å§¿å‹¢[å˜ä½:mã€radian]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveCircularCartesianRel(const JARA_ARM::CarPosWithElbow& carPointR, const JARA_ARM::CarPosWithElbow& carPointT)
@@ -454,8 +454,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::moveCircularCart
 }
 
 /*!
-* @brief Œ´“_•œ‹A‚ÌˆÊ’u‚ğŠÖßÀ•WŒn‚Ìâ‘Î’l‚Åİ’è‚·‚é
-* @param jointPoint â‘ÎˆÊ’u[’PˆÊ:radian or m]
+* @brief åŸç‚¹å¾©å¸°æ™‚ã®ä½ç½®ã‚’é–¢ç¯€åº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§è¨­å®šã™ã‚‹
+* @param jointPoint çµ¶å¯¾ä½ç½®[å˜ä½:radian or m]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setHome(const JARA_ARM::JointPos& jointPoint)
@@ -470,8 +470,8 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::setHome(const JA
 }
 
 /*!
-* @brief ŠÖßÀ•WŒn‚Ìâ‘Î’l‚Å’è‹`‚³‚ê‚½Œ´“_•œ‹AˆÊ’u‚ğæ“¾‚·‚é
-* @param jointPoint â‘ÎˆÊ’u[’PˆÊ:radian or m]
+* @brief é–¢ç¯€åº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§å®šç¾©ã•ã‚ŒãŸåŸç‚¹å¾©å¸°ä½ç½®ã‚’å–å¾—ã™ã‚‹
+* @param jointPoint çµ¶å¯¾ä½ç½®[å˜ä½:radian or m]
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getHome(JARA_ARM::JointPos_out jointPoint)
@@ -484,7 +484,7 @@ JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::getHome(JARA_ARM
 }
 
 /*!
-* @brief ŠÖßÀ•WŒn‚Ìâ‘Î’l‚Åw’è‚³‚ê‚½Œ´“_•œ‹AˆÊ’u‚É‘Î‚µAŠÖß‹óŠÔ‚É‚¨‚¯‚é’¼ü•âŠÔ‚Å“®ì‚·‚é
+* @brief é–¢ç¯€åº§æ¨™ç³»ã®çµ¶å¯¾å€¤ã§æŒ‡å®šã•ã‚ŒãŸåŸç‚¹å¾©å¸°ä½ç½®ã«å¯¾ã—ã€é–¢ç¯€ç©ºé–“ã«ãŠã‘ã‚‹ç›´ç·šè£œé–“ã§å‹•ä½œã™ã‚‹
 * @return JARA_ARM::RETURN_ID
 */
 JARA_ARM::RETURN_ID *ManipulatorCommonInterface_MiddleSVC_impl::goHome()

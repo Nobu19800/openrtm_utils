@@ -1,7 +1,7 @@
-// -*-C++-*-
+ï»¿// -*-C++-*-
 /*!
  * @file  SubFunction.h
- * @brief •¶š—ñ‚Ì‘€ì“™
+ * @brief æ–‡å­—åˆ—ã®æ“ä½œç­‰
  */
 #ifndef SubFunction_H
 #define SubFunction_H
@@ -13,20 +13,20 @@
 
 
 /**
-*@brief ƒZƒ‹‚Ì”Ô†‚ğ”’l‚É•ÏŠ·‚·‚éŠÖ”
-* @param m_str ƒZƒ‹‚Ì”Ô†(ƒAƒ‹ƒtƒ@ƒxƒbƒg)
-* @return ‘Î‰‚·‚é”’l
+*@brief ã‚»ãƒ«ã®ç•ªå·ã‚’æ•°å€¤ã«å¤‰æ›ã™ã‚‹é–¢æ•°
+* @param m_str ã‚»ãƒ«ã®ç•ªå·(ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ)
+* @return å¯¾å¿œã™ã‚‹æ•°å€¤
 */
 int convertStrToVal(std::string m_str);
 
 
 
 /**
-*@brief •¶š‚ğ’uŠ·‚·‚éŠÖ”
-* @param String1 •ÏŠ·Œ³‚Ì•¶š—ñ
-* @param String2 ’uŠ·‘O‚Ì•¶š
-* @param String3 ’uŠ·Œã‚Ì•¶š
-* @return •ÏŠ·Œã‚Ì•¶š—ñ
+*@brief æ–‡å­—ã‚’ç½®æ›ã™ã‚‹é–¢æ•°
+* @param String1 å¤‰æ›å…ƒã®æ–‡å­—åˆ—
+* @param String2 ç½®æ›å‰ã®æ–‡å­—
+* @param String3 ç½®æ›å¾Œã®æ–‡å­—
+* @return å¤‰æ›å¾Œã®æ–‡å­—åˆ—
 */
 std::string Replace( std::string String1, std::string String2, std::string String3 );
 
@@ -34,21 +34,21 @@ std::string Replace( std::string String1, std::string String2, std::string Strin
 
 /**
 * @class TreeObject
-*@brief RTC‚Ìƒf[ƒ^ƒ|[ƒg‚ÌƒcƒŠ[‚ÌŠeƒIƒuƒWƒFƒNƒgƒNƒ‰ƒX
+*@brief RTCã®ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®ãƒ„ãƒªãƒ¼ã®å„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒ©ã‚¹
 */
 class TreeObject
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param n ƒcƒŠ[–¼
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param n ãƒ„ãƒªãƒ¼å
 	*/
 	TreeObject(std::string n)
 	{
 		name = n;
 	};
-	std::string name; /**<@@brief  */
-	std::vector<TreeObject*> to; /**<@@brief  */
+	std::string name; /**<ã€€@brief  */
+	std::vector<TreeObject*> to; /**<ã€€@brief  */
 };
 
 
@@ -56,19 +56,19 @@ public:
 
 
 /**
-*@brief •¶š—ñ‚ğ“Á’è‚Ì•¶š‚Å•ªŠ„‚·‚éŠÖ”
-* @param str •ªŠ„‘O‚Ì•¶š—ñ
-* @param delim •ªŠ„‚·‚é•¶š
+*@brief æ–‡å­—åˆ—ã‚’ç‰¹å®šã®æ–‡å­—ã§åˆ†å‰²ã™ã‚‹é–¢æ•°
+* @param str åˆ†å‰²å‰ã®æ–‡å­—åˆ—
+* @param delim åˆ†å‰²ã™ã‚‹æ–‡å­—
 * @return
 */
 std::vector<std::string> split(const std::string &str, const std::string &delim);
 
 
 /**
-*@brief •¶š—ñ‚ğ”’l‚É•ÏŠ·‚·‚éŠÖ”
-* @param text •ÏŠ·Œã‚Ì•¶š—ñ
-* @param base ’ê
-* @return •ÏŠ·Œã‚Ì”’l
+*@brief æ–‡å­—åˆ—ã‚’æ•°å€¤ã«å¤‰æ›ã™ã‚‹é–¢æ•°
+* @param text å¤‰æ›å¾Œã®æ–‡å­—åˆ—
+* @param base åº•
+* @return å¤‰æ›å¾Œã®æ•°å€¤
 */
 template<typename T>
 T string2binary(const std::string& text, int base) {

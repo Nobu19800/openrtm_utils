@@ -1,4 +1,4 @@
- 
+ï»¿ 
 #include <QtWidgets>
 #include <QtGui>
 #include "BodyMenu.h"
@@ -164,7 +164,7 @@ void BodyDialog::createButtons()
 
     closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     helpButton = buttonBox->addButton(QDialogButtonBox::Help);
-    createButton = buttonBox->addButton(tc->toUnicode("ì¬"),
+    createButton = buttonBox->addButton(tc->toUnicode("ä½œæˆ"),
                                                QDialogButtonBox::ActionRole);
 	LoadButton = buttonBox->addButton(tc->toUnicode("Load VRML"),
                                                QDialogButtonBox::ActionRole);
@@ -185,27 +185,27 @@ void BodyDialog::createitems()
 		if(m_bp.m_length<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("—§•û‘Ì‚Ì’·‚³‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("ç«‹æ–¹ä½“ã®é•·ã•ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_width<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("—§•û‘Ì‚Ì•‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("ç«‹æ–¹ä½“ã®å¹…ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_height<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("—§•û‘Ì‚Ì‚‚³‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("ç«‹æ–¹ä½“ã®é«˜ã•ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_mass<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("¿—Ê‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("è³ªé‡ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -219,17 +219,17 @@ void BodyDialog::createitems()
 		if(m_bp.m_rad<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("‹…‚Ì”¼Œa‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("çƒã®åŠå¾„ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_mass<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("¿—Ê‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("è³ªé‡ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -243,22 +243,22 @@ void BodyDialog::createitems()
 		if(m_bp.m_length<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("‰~’Œ‚Ì’·‚³‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("å††æŸ±ã®é•·ã•ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_rad<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("‰~’Œ‚Ì”¼Œa‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("å††æŸ±ã®åŠå¾„ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_mass<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("¿—Ê‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("è³ªé‡ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -272,22 +272,22 @@ void BodyDialog::createitems()
 		if(m_bp.m_length<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("‰~‚Ì’·‚³‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("å††éŒã®é•·ã•ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_rad<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("‰~‚Ì”¼Œa‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("å††éŒã®åŠå¾„ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.m_mass<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("¿—Ê‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("è³ªé‡ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -302,12 +302,12 @@ void BodyDialog::createitems()
 		if(m_bp.m_mass<=0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("¿—Ê‚Í0ˆÈã‚É‚·‚é•K—v‚ª‚ ‚è‚Ü‚·D"));
+                        tc->toUnicode("è³ªé‡ã¯0ä»¥ä¸Šã«ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ï¼"));
 		}
 		else if(m_bp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{

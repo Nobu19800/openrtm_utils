@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  GaitBase.cpp
-* @brief •à—eŠî–{ƒNƒ‰ƒX
+* @brief æ­©å®¹åŸºæœ¬ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -17,8 +17,8 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-*@param ls ‹r‚ÌƒŠƒXƒg
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+*@param ls è„šã®ãƒªã‚¹ãƒˆ
 */
 GaitBase::GaitBase(Leg_Object *ls, Body_Object *bo)
 {
@@ -36,8 +36,8 @@ GaitBase::GaitBase(Leg_Object *ls, Body_Object *bo)
 }
 
 /**
-*@brief ‚İ•İ’è
-* @param st ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+*@brief åˆ»ã¿å¹…è¨­å®š
+* @param st ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 */
 void GaitBase::setSamplingTime(double st)
 {
@@ -45,11 +45,11 @@ void GaitBase::setSamplingTime(double st)
 }
 
 /**
-*@brief •àsXV
-* @param vx ‘¬“x(X)
-* @param vy ‘¬“x(Y)
-* @param dthe ‰ñ“]‘¬“x
-* @param sd •à•
+*@brief æ­©è¡Œæ›´æ–°
+* @param vx é€Ÿåº¦(X)
+* @param vy é€Ÿåº¦(Y)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param sd æ­©å¹…
 */
 void GaitBase::walk(double vx, double vy, double dthe, double sd)
 {
@@ -57,8 +57,8 @@ void GaitBase::walk(double vx, double vy, double dthe, double sd)
 }
 
 /**
-*@brief Å’áˆÀ’è‚Ìİ’è
-* @param msm ˆÀ’è—]—T
+*@brief æœ€ä½å®‰å®šã®è¨­å®š
+* @param msm å®‰å®šä½™è£•
 */
 void GaitBase::set_Min_Margin(double msm)
 {
@@ -66,9 +66,9 @@ void GaitBase::set_Min_Margin(double msm)
 }
 
 /**
-*@brief Å’áˆÀ’è‚ğ–‚½‚µ‚Ä‚¢‚é‚©‚Ì”»’è
-* –‚½‚µ‚Ä‚¢‚È‚¢ê‡‚ÍdS‚ğˆÚ“®‚³‚¹‚é
-* @param mc ˆÚ“®‚É‚©‚©‚éƒXƒeƒbƒv”
+*@brief æœ€ä½å®‰å®šã‚’æº€ãŸã—ã¦ã„ã‚‹ã‹ã®åˆ¤å®š
+* æº€ãŸã—ã¦ã„ãªã„å ´åˆã¯é‡å¿ƒã‚’ç§»å‹•ã•ã›ã‚‹
+* @param mc ç§»å‹•ã«ã‹ã‹ã‚‹ã‚¹ãƒ†ãƒƒãƒ—æ•°
 */
 void GaitBase::judge_Stability(int mc)
 {

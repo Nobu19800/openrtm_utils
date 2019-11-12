@@ -1,11 +1,11 @@
-
+ï»¿
 #ifndef CAMERAPAGES_H
 #define CAMERAPAGES_H
 
 #include <QWidget>
 #include "ObjectData.h"
 
-/*ƒJƒƒ‰‚Ìƒpƒ‰ƒ[ƒ^İ’è‚Ìƒy[ƒW*/
+/*ã‚«ãƒ¡ãƒ©ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒšãƒ¼ã‚¸*/
 
 class CameraPage : public QWidget
 {

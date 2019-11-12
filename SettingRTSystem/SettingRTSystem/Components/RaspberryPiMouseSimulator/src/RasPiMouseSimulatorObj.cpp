@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  RasPiMouseSimulatorObj.cpp
-* @brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÖ˜A‚ÌƒNƒ‰ƒX
+* @brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢é€£ã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -171,7 +171,7 @@ void RasPiMouseObj::setCurrentPosition(double px, double py, double pa)
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì‘€ì‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æ“ä½œã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 RasPiMouseSimulatorObj::RasPiMouseSimulatorObj()
 {
@@ -203,7 +203,7 @@ RasPiMouseSimulatorObj::RasPiMouseSimulatorObj()
 }
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì‘€ì‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æ“ä½œã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 RasPiMouseSimulatorObj::~RasPiMouseSimulatorObj()
 {
@@ -213,8 +213,8 @@ RasPiMouseSimulatorObj::~RasPiMouseSimulatorObj()
 }
 
 /**
-*@brief Šeƒpƒ‰ƒ[ƒ^‚Ì‰Šú‰»‚ğs‚¤
-*@param offset_z ‚‚³‚ğ’²®
+*@brief å„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ã‚’è¡Œã†
+*@param offset_z é«˜ã•ã‚’èª¿æ•´
 */
 void RasPiMouseSimulatorObj::makeParam(double offset_z)
 {
@@ -370,8 +370,8 @@ void RasPiMouseSimulatorObj::makeParam(double offset_z)
 }
 
 /**
-*@brief ’¼•û‘Ìì¬
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief ç›´æ–¹ä½“ä½œæˆ
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void RasPiMouseSimulatorObj::setBox(MyLink *body)
 {
@@ -386,8 +386,8 @@ void RasPiMouseSimulatorObj::setBox(MyLink *body)
 }
 
 /**
-*@brief ‰~’Œì¬
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief å††æŸ±ä½œæˆ
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void RasPiMouseSimulatorObj::setCylinder(MyLink *body)
 {
@@ -402,8 +402,8 @@ void RasPiMouseSimulatorObj::setCylinder(MyLink *body)
 }
 
 /**
-*@brief ‹…ì¬
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief çƒä½œæˆ
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void RasPiMouseSimulatorObj::setSphere(MyLink *body)
 {
@@ -418,9 +418,9 @@ void RasPiMouseSimulatorObj::setSphere(MyLink *body)
 }
 
 /**
-*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void RasPiMouseSimulatorObj::setHinge(MyLink *body1, MyLink *body2)
 {
@@ -431,9 +431,9 @@ void RasPiMouseSimulatorObj::setHinge(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void RasPiMouseSimulatorObj::setSlider(MyLink *body1, MyLink *body2)
 {
@@ -444,9 +444,9 @@ void RasPiMouseSimulatorObj::setSlider(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ŒÅ’èƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief å›ºå®šã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void RasPiMouseSimulatorObj::setFixed(MyLink *body1, MyLink *body2)
 {
@@ -457,9 +457,9 @@ void RasPiMouseSimulatorObj::setFixed(MyLink *body1, MyLink *body2)
 
 
 /**
-*@brief ƒ{[ƒ‹ƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief ãƒœãƒ¼ãƒ«ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void RasPiMouseSimulatorObj::setBall(MyLink *body1, MyLink *body2)
 {
@@ -470,7 +470,7 @@ void RasPiMouseSimulatorObj::setBall(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒg¶¬
+*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆç”Ÿæˆ
 */
 void RasPiMouseSimulatorObj::makeRobot()
 {
@@ -528,9 +528,9 @@ void RasPiMouseSimulatorObj::makeRobot()
 }
 
 /**
-*@brief ÚGƒR[ƒ‹ƒoƒbƒN
-* @param o1 ƒWƒIƒƒgƒŠ1
-* @param o2 ƒWƒIƒƒgƒŠ2
+*@brief æ¥è§¦ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+* @param o1 ã‚¸ã‚ªãƒ¡ãƒˆãƒª1
+* @param o2 ã‚¸ã‚ªãƒ¡ãƒˆãƒª2
 */
 void RasPiMouseSimulatorObj::m_nearCallback(dGeomID o1, dGeomID o2)
 {
@@ -597,10 +597,10 @@ void RasPiMouseSimulatorObj::m_nearCallback(dGeomID o1, dGeomID o2)
 }
 
 /**
-*@brief ÚGƒR[ƒ‹ƒoƒbƒN
-* @param data ƒf[ƒ^
-* @param o1 ƒWƒIƒƒgƒŠ1
-* @param o2 ƒWƒIƒƒgƒŠ2
+*@brief æ¥è§¦ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+* @param data ãƒ‡ãƒ¼ã‚¿
+* @param o1 ã‚¸ã‚ªãƒ¡ãƒˆãƒª1
+* @param o2 ã‚¸ã‚ªãƒ¡ãƒˆãƒª2
 */
 static void nearCallback(void *data, dGeomID o1, dGeomID o2) {
 	
@@ -613,9 +613,9 @@ static void nearCallback(void *data, dGeomID o1, dGeomID o2) {
 }
 
 /**
-*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg§Œä
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-* @param theta ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param theta ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 */
 void RasPiMouseSimulatorObj::controlHinge(MyLink *body, dReal theta)
 {
@@ -629,10 +629,10 @@ void RasPiMouseSimulatorObj::controlHinge(MyLink *body, dReal theta)
 }
 
 /**
-*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg§Œä
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-* @param theta ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
-* @param vel ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚Ì‘¬“x
+*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param theta ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
+* @param vel ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®é€Ÿåº¦
 */
 void RasPiMouseSimulatorObj::controlHinge(MyLink *body, dReal theta, dReal vel)
 {
@@ -650,9 +650,9 @@ void RasPiMouseSimulatorObj::controlHinge(MyLink *body, dReal theta, dReal vel)
 }
 
 /**
-*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg§Œä
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-* @param length ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param length ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 */
 void RasPiMouseSimulatorObj::controlSlider(MyLink *body, dReal length)
 {
@@ -666,7 +666,7 @@ void RasPiMouseSimulatorObj::controlSlider(MyLink *body, dReal length)
 }
 
 /**
-*@brief ‘SƒWƒ‡ƒCƒ“ƒg§Œä
+*@brief å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
 */
 void RasPiMouseSimulatorObj::control()
 {
@@ -717,7 +717,7 @@ void RasPiMouseSimulatorObj::control()
 }
 
 /**
-*@brief ‹——£ƒZƒ“ƒT‚ğİ’è
+*@brief è·é›¢ã‚»ãƒ³ã‚µã‚’è¨­å®š
 */
 void RasPiMouseSimulatorObj::setIRSensorRay()
 {
@@ -760,7 +760,7 @@ void RasPiMouseSimulatorObj::setIRSensorRay()
 
 
 /**
-*@brief XV
+*@brief æ›´æ–°
 */
 void RasPiMouseSimulatorObj::update()
 {
@@ -780,7 +780,7 @@ void RasPiMouseSimulatorObj::update()
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒgÁ‹
+*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆæ¶ˆå»
 */
 void RasPiMouseSimulatorObj::destroyRobot()
 {
@@ -899,7 +899,7 @@ void RasPiMouseSimulatorObj::makePlane(double lx, double ly, double lz)
 }
 
 /**
-*@brief áŠQ•¨¶¬
+*@brief éšœå®³ç‰©ç”Ÿæˆ
 */
 void RasPiMouseSimulatorObj::makeBlock(double x, double y, double z, double lx, double ly, double lz, double r)
 {
@@ -932,8 +932,8 @@ void RasPiMouseSimulatorObj::makeBlock(double x, double y, double z, double lx, 
 
 
 /**
-*@brief ƒtƒ@ƒCƒ‹‚©‚çáŠQ•¨‚ÍˆÊ’u“Ç‚İ‚İ
-*@return “Ç‚İ‚İ¬Œ÷(true)A¸”s(false)
+*@brief ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰éšœå®³ç‰©ã¯ä½ç½®èª­ã¿è¾¼ã¿
+*@return èª­ã¿è¾¼ã¿æˆåŠŸ(true)ã€å¤±æ•—(false)
 */
 bool RasPiMouseSimulatorObj::loadBlocksData(std::string fname)
 {
@@ -978,8 +978,8 @@ bool RasPiMouseSimulatorObj::loadBlocksData(std::string fname)
 
 
 /**
-*@brief ‚İ•İ’è
-* @param s ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+*@brief åˆ»ã¿å¹…è¨­å®š
+* @param s ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 */
 void RasPiMouseSimulatorObj::setSamplingTime(double s)
 {

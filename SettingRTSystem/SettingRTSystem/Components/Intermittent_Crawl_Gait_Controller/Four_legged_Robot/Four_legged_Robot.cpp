@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Four_legged_Robot.cpp
-* @brief l‘«•àsƒƒ{ƒbƒg§ŒäƒNƒ‰ƒX
+* @brief å››è¶³æ­©è¡Œãƒ­ãƒœãƒƒãƒˆåˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -63,7 +63,7 @@
 
 
 /**
-*@brief l‘«•àsƒƒ{ƒbƒg§ŒäƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief å››è¶³æ­©è¡Œãƒ­ãƒœãƒƒãƒˆåˆ¶å¾¡ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 Four_legged_Robot::Four_legged_Robot()
 {
@@ -161,7 +161,7 @@ Four_legged_Robot::Four_legged_Robot()
 }
 
 /**
-*@brief ƒfƒXƒgƒ‰ƒNƒ^
+*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 Four_legged_Robot::~Four_legged_Robot()
 {
@@ -172,9 +172,9 @@ Four_legged_Robot::~Four_legged_Robot()
 
 
 /**
-*@brief ‹ræˆÊ’u‚©‚çŠÖßŠp“xæ“¾
-*@param the ‹ræˆÊ’u
-* @return ŠÖßŠp“x
+*@brief è„šå…ˆä½ç½®ã‹ã‚‰é–¢ç¯€è§’åº¦å–å¾—
+*@param the è„šå…ˆä½ç½®
+* @return é–¢ç¯€è§’åº¦
 */
 std::vector<double> Four_legged_Robot::inverseKinematics(Vector3d pos, int num)
 {
@@ -240,9 +240,9 @@ std::vector<double> Four_legged_Robot::inverseKinematics(Vector3d pos, int num)
 }
 
 /**
-*@brief ‹ræˆÊ’uæ“¾
-*@param the ŠÖßŠp“x
-* @return ‹ræˆÊ’u
+*@brief è„šå…ˆä½ç½®å–å¾—
+*@param the é–¢ç¯€è§’åº¦
+* @return è„šå…ˆä½ç½®
 */
 Vector3d Four_legged_Robot::calcKinematics(std::vector<double> the, int num)
 {
@@ -279,8 +279,8 @@ Vector3d Four_legged_Robot::calcKinematics(std::vector<double> the, int num)
 	return pos;
 }
 /**
-*@brief ŠÖßŠp“x‚ğ“ü—Í
-* @param the ŠÖßŠp“x
+*@brief é–¢ç¯€è§’åº¦ã‚’å…¥åŠ›
+* @param the é–¢ç¯€è§’åº¦
 */
 void Four_legged_Robot::setAngle(std::vector<double> the[4])
 {
@@ -288,9 +288,9 @@ void Four_legged_Robot::setAngle(std::vector<double> the[4])
 
 }
 /**
-*@brief ‹ræ‘¬“x‚©‚çŠÖßŠp‘¬“x‚ğæ“¾
-* @param v ‹ræ‘¬“x
-* @return ŠÖßŠp‘¬“x
+*@brief è„šå…ˆé€Ÿåº¦ã‹ã‚‰é–¢ç¯€è§’é€Ÿåº¦ã‚’å–å¾—
+* @param v è„šå…ˆé€Ÿåº¦
+* @return é–¢ç¯€è§’é€Ÿåº¦
 */
 Vector3d Four_legged_Robot::calcJointVel(std::vector<double> the[4])
 {
@@ -299,8 +299,8 @@ Vector3d Four_legged_Robot::calcJointVel(std::vector<double> the[4])
 
 }
 /**
-*@brief ŠÖßŠp‘¬“x‚Ì“ü—Í‚©‚çŠÖßŠp“x‚ğXV
-* @param the ŠÖßŠp‘¬“x
+*@brief é–¢ç¯€è§’é€Ÿåº¦ã®å…¥åŠ›ã‹ã‚‰é–¢ç¯€è§’åº¦ã‚’æ›´æ–°
+* @param the é–¢ç¯€è§’é€Ÿåº¦
 */
 void Four_legged_Robot::updatePos(std::vector<double> the[4])
 {
@@ -308,7 +308,7 @@ void Four_legged_Robot::updatePos(std::vector<double> the[4])
 }
 
 /**
-*@brief –¢À‘•
+*@brief æœªå®Ÿè£…
 */
 void Four_legged_Robot::update()
 {
@@ -316,11 +316,11 @@ void Four_legged_Robot::update()
 }
 
 /**
-*@brief ƒNƒ[ƒ‹•à—e‚Ì‘«æˆÊ’uŒvZ
-* @param vx ‘¬“x(X²•ûŒü)
-* @param vy ‘¬“x(Y²•ûŒü)
-* @param dthe ‰ñ“]‘¬“x
-* @param stride •à•
+*@brief ã‚¯ãƒ­ãƒ¼ãƒ«æ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param stride æ­©å¹…
 */
 void Four_legged_Robot::crawl_gait(double vx, double vy, double dthe, double stride)
 {
@@ -331,11 +331,11 @@ void Four_legged_Robot::crawl_gait(double vx, double vy, double dthe, double str
 }
 
 /**
-*@brief ŠÔŸ[ƒNƒ[ƒ‹•à—e‚Ì‘«æˆÊ’uŒvZ
-* @param vx ‘¬“x(X²•ûŒü)
-* @param vy ‘¬“x(Y²•ûŒü)
-* @param dthe ‰ñ“]‘¬“x
-* @param stride •à•
+*@brief é–“æ­‡ã‚¯ãƒ­ãƒ¼ãƒ«æ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param stride æ­©å¹…
 */
 void Four_legged_Robot::intermittent_crawl_gait(double vx, double vy, double dthe, double stride)
 {
@@ -343,11 +343,11 @@ void Four_legged_Robot::intermittent_crawl_gait(double vx, double vy, double dth
 }
 
 /**
-*@brief ƒgƒƒbƒg•à—e‚Ì‘«æˆÊ’uŒvZ
-* @param vx ‘¬“x(X²•ûŒü)
-* @param vy ‘¬“x(Y²•ûŒü)
-* @param dthe ‰ñ“]‘¬“x
-* @param stride •à•
+*@brief ãƒˆãƒ­ãƒƒãƒˆæ­©å®¹ã®è¶³å…ˆä½ç½®è¨ˆç®—
+* @param vx é€Ÿåº¦(Xè»¸æ–¹å‘)
+* @param vy é€Ÿåº¦(Yè»¸æ–¹å‘)
+* @param dthe å›è»¢é€Ÿåº¦
+* @param stride æ­©å¹…
 */
 void Four_legged_Robot::trot_gait(double vx, double vy, double dthe, double stride)
 {
@@ -355,8 +355,8 @@ void Four_legged_Robot::trot_gait(double vx, double vy, double dthe, double stri
 }
 
 /**
-*@brief ‚İ•İ’è
-* @param st ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+*@brief åˆ»ã¿å¹…è¨­å®š
+* @param st ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 */
 void Four_legged_Robot::setSamplingTime(double st)
 {
@@ -366,10 +366,10 @@ void Four_legged_Robot::setSamplingTime(double st)
 }
 
 /**
-*@brief ‘«æŠî€ˆÊ’uİ’è
-* @param pos_x ˆÊ’u(X)
-* @param pos_y ˆÊ’u(Y)
-* @param pos_z ˆÊ’u(Z)
+*@brief è¶³å…ˆåŸºæº–ä½ç½®è¨­å®š
+* @param pos_x ä½ç½®(X)
+* @param pos_y ä½ç½®(Y)
+* @param pos_z ä½ç½®(Z)
 */
 void Four_legged_Robot::setCenterPosition(double pos_x, double pos_y, double pos_z)
 {
@@ -409,8 +409,8 @@ void Four_legged_Robot::setCenterPosition(double pos_x, double pos_y, double pos
 }
 
 /**
-*@brief Å’áˆÀ’è—]—Tİ’è
-* @param msm ˆÀ’è—]—T
+*@brief æœ€ä½å®‰å®šä½™è£•è¨­å®š
+* @param msm å®‰å®šä½™è£•
 */
 void Four_legged_Robot::setMinMargin(double msm)
 {
@@ -420,9 +420,9 @@ void Four_legged_Robot::setMinMargin(double msm)
 }
 
 /**
-*@brief ƒƒ{ƒbƒg‚ÌŒ»İˆÊ’uİ’è
-* @param pos Œ»İˆÊ’u
-* @param rot Œ»İ‚Ìp¨
+*@brief ãƒ­ãƒœãƒƒãƒˆã®ç¾åœ¨ä½ç½®è¨­å®š
+* @param pos ç¾åœ¨ä½ç½®
+* @param rot ç¾åœ¨ã®å§¿å‹¢
 */
 void Four_legged_Robot::setCurrentPosition(Vector3d pos, Vector3d rot)
 {
@@ -431,8 +431,8 @@ void Four_legged_Robot::setCurrentPosition(Vector3d pos, Vector3d rot)
 }
 
 /**
-*@brief ˆÀ’è—]—Tæ“¾
-*@return ˆÀ’è—]—T
+*@brief å®‰å®šä½™è£•å–å¾—
+*@return å®‰å®šä½™è£•
 */
 double Four_legged_Robot::getStabilityMargin()
 {
@@ -440,8 +440,8 @@ double Four_legged_Robot::getStabilityMargin()
 	return sm.distance;
 }
 /**
-*@brief NEˆÀ’è—]—Tæ“¾
-*@return NEˆÀ’è—]—T
+*@brief NEå®‰å®šä½™è£•å–å¾—
+*@return NEå®‰å®šä½™è£•
 */
 double Four_legged_Robot::getNEStabilityMargin()
 {
@@ -451,8 +451,8 @@ double Four_legged_Robot::getNEStabilityMargin()
 
 
 /**
-*@brief —V‹r‚‚³İ’èİ’è
-* @param h ‚‚³
+*@brief éŠè„šé«˜ã•è¨­å®šè¨­å®š
+* @param h é«˜ã•
 */
 void Four_legged_Robot::setLiftHeight(double h)
 {
@@ -466,10 +466,10 @@ void Four_legged_Robot::setLiftHeight(double h)
 
 
 /**
-*@brief ƒ{ƒfƒB‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param pos ’†SˆÊ’u
-*@param mass d—Ê
+*@brief ãƒœãƒ‡ã‚£ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param pos ä¸­å¿ƒä½ç½®
+*@param mass é‡é‡
 */
 void Four_legged_Robot::setBodyParam(Vector3d size, Vector3d pos, double mass)
 {
@@ -483,11 +483,11 @@ void Four_legged_Robot::setBodyParam(Vector3d size, Vector3d pos, double mass)
 
 
 /**
-*@brief ƒŠƒ“ƒN‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param offset ƒIƒtƒZƒbƒg
-*@param mass d—Ê
-*@param num ”Ô†
+*@brief ãƒªãƒ³ã‚¯ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param mass é‡é‡
+*@param num ç•ªå·
 */
 void Four_legged_Robot::setLinkParam(Vector3d size, Vector3d offset, double mass, int num)
 {
@@ -516,10 +516,10 @@ void Four_legged_Robot::setLinkParam(Vector3d size, Vector3d offset, double mass
 
 
 /**
-*@brief ‘«— ‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param offset ƒIƒtƒZƒbƒg
-*@param mass d—Ê
+*@brief è¶³è£ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param mass é‡é‡
 */
 void Four_legged_Robot::setFootParam(Vector3d size, Vector3d offset, double mass)
 {
@@ -534,10 +534,10 @@ void Four_legged_Robot::setFootParam(Vector3d size, Vector3d offset, double mass
 }
 
 /**
-*@brief ƒŠƒ“ƒN0‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param offset ƒIƒtƒZƒbƒg
-*@param mass d—Ê
+*@brief ãƒªãƒ³ã‚¯0ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param mass é‡é‡
 */
 void Four_legged_Robot::setLink0Param(Vector3d size, Vector3d offset, double mass)
 {
@@ -545,10 +545,10 @@ void Four_legged_Robot::setLink0Param(Vector3d size, Vector3d offset, double mas
 }
 
 /**
-*@brief ƒŠƒ“ƒN1‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param offset ƒIƒtƒZƒbƒg
-*@param mass d—Ê
+*@brief ãƒªãƒ³ã‚¯1ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param mass é‡é‡
 */
 void Four_legged_Robot::setLink1Param(Vector3d size, Vector3d offset, double mass)
 {
@@ -556,10 +556,10 @@ void Four_legged_Robot::setLink1Param(Vector3d size, Vector3d offset, double mas
 }
 
 /**
-*@brief ƒŠƒ“ƒN2‚Ìƒpƒ‰ƒ[ƒ^İ’è
-*@param size ¡–@
-*@param offset ƒIƒtƒZƒbƒg
-*@param mass d—Ê
+*@brief ãƒªãƒ³ã‚¯2ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®š
+*@param size å¯¸æ³•
+*@param offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param mass é‡é‡
 */
 void Four_legged_Robot::setLink2Param(Vector3d size, Vector3d offset, double mass)
 {
@@ -568,7 +568,7 @@ void Four_legged_Robot::setLink2Param(Vector3d size, Vector3d offset, double mas
 
 
 /**
-*@brief İ’è‚µ‚½ƒŠƒ“ƒNƒpƒ‰ƒ[ƒ^‚©‚çˆÊ’uAp¨‚ğÄŒvZ
+*@brief è¨­å®šã—ãŸãƒªãƒ³ã‚¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‹ã‚‰ä½ç½®ã€å§¿å‹¢ã‚’å†è¨ˆç®—
 */
 void Four_legged_Robot::setPose()
 {
