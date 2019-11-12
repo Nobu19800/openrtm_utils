@@ -1,6 +1,4 @@
-set(subfile_path ../RTMath)
-
-set(comp_srcs SineWave.cpp ${subfile_path}/RTMath.cpp )
+set(comp_srcs SineWave.cpp ${PROJECT_SOURCE_DIR}/RTMath/RTMath.cpp )
 set(standalone_srcs SineWaveComp.cpp)
 
 
@@ -36,13 +34,14 @@ if (DEFINED OPENRTM_LIBRARIES)
     OPENRTM_LIBRARIES "${OPENRTM_LIBRARIES}")
 endif (DEFINED OPENRTM_LIBRARIES)
 
+
+include_directories(${PROJECT_SOURCE_DIR}/RTMath)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME})
 include_directories(${PROJECT_BINARY_DIR})
 include_directories(${PROJECT_BINARY_DIR}/idl)
 include_directories(${OPENRTM_INCLUDE_DIRS})
 include_directories(${OMNIORB_INCLUDE_DIRS})
-include_directories(${subfile_path})
 add_definitions(${OPENRTM_CFLAGS})
 add_definitions(${OMNIORB_CFLAGS})
 
