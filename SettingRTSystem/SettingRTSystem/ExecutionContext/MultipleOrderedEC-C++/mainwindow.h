@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  mainwindow.h
 * @brief メインウインドウ
 *

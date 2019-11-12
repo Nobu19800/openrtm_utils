@@ -1,4 +1,4 @@
-﻿// -*- C++ -*-
+// -*- C++ -*-
 /*!
  * @file RaspberryPiMouseSimulatorComp.cpp
  * @brief Standalone component

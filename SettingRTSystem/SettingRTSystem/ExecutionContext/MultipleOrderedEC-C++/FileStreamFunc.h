@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  FileStreamFunc.h
 * @brief ファイル操作関連の関数
 *

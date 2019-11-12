@@ -1661,7 +1661,7 @@ int DiagramScene::LoadFile(const QString &fileName)
 		JointItem *ji = getJointItem(jnum);
 		createCamera(cp,QPointF(px,py),ji->m_param);
 	}
-	file.close();
+	file.close();
 	
 
 	return 0;

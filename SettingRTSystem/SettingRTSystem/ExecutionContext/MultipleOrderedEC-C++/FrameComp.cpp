@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  FrameComp.cpp
 * @brief 実行順序のブロックを表示するウィジェット
 *

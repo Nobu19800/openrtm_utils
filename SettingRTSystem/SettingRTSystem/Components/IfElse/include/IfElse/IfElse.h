@@ -1,4 +1,4 @@
-﻿// -*- C++ -*-
+// -*- C++ -*-
 /*!
  * @file  IfElse.h
  * @brief If Else

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  MultipleOrderedEC.cpp
 * @brief 実行順序の設定ができる実行コンテキスト
 *

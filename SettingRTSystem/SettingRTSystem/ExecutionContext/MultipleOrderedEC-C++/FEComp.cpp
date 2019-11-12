@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  FEComp.cpp
 * @brief 直列ブロックのウィジェット
 *
