@@ -9,14 +9,14 @@
 #define RTMATH_H
 
 #define _USE_MATH_DEFINES
-#include <math.h>
+#include <cmath>
+#include <chrono>
 #include <vector>
 #include <coil/stringutil.h>
-#include <coil/Time.h>
-#include <coil/TimeMeasure.h>
 #include <cmath>
 #include <random>
 
+using Duration = std::chrono::nanoseconds;
 
 /**
  * @class ValueAndTime
@@ -27,17 +27,9 @@ template <class T>
 class ValueAndTime
 {
 public:
-	/**
-	*@brief コンストラクタ
-	* @param tm 時間
-	* @param value データ
-	*/
-	ValueAndTime(coil::TimeValue tm, T value)
-	{
-		m_tm = tm;
-		m_value = value;
-	};
-	coil::TimeValue m_tm;
+	ValueAndTime(std::chrono::time_point<std::chrono::system_clock> tp,
+				 T value) : m_tp(tp), m_value(value){}
+	std::chrono::time_point<std::chrono::system_clock> m_tp;
 	T m_value;
 };
 
@@ -56,8 +48,8 @@ public:
 	*/
 	RTMath()
 	{
-		samplingTime_low = 0.000001;
-		setSamplingTime(0.01);
+		samplingTime_low = std::chrono::microseconds(1);
+		setSamplingTime(std::chrono::milliseconds(10));
 		realTime = false;
 		resetTime();
 	};
@@ -65,18 +57,16 @@ public:
 	*@brief 刻み幅設定
 	* @param s 刻み幅
 	*/
-	virtual void setSamplingTime(double s)
+	virtual void setSamplingTime(Duration s)
 	{
 		if(samplingTime_low < s)
 		{
 			samplingTime = s;
-			
 		}
 		else
 		{
 			samplingTime = samplingTime_low;
 		}
-		
 	};
 	/**
 	*@brief 実時間でデータを保存するか、シミュレーション時間で保存するか設定
@@ -91,7 +81,7 @@ public:
 	* @param ans 時間差(シミュレーション時間の時は設定した刻み幅)
 	* @return 前回のデータが存在しない場合はfalse、それ以外はture
 	*/
-	virtual bool getDiffTime(double &ans)
+	virtual bool getDiffTime(Duration &ans)
 	{
 		if(realTime)
 		{
@@ -101,7 +91,7 @@ public:
 			}
 			else
 			{
-				ans = (double)(dataList[dataList.size()-1].m_tm - dataList[dataList.size()-2].m_tm);
+				ans = dataList[dataList.size()-1].m_tp - dataList[dataList.size()-2].m_tp;
 			}
 		}
 		else
@@ -116,8 +106,8 @@ public:
 	virtual void resetTime()
 	{
 		dataList.clear();
-		first_time = coil::TimeValue(coil::gettimeofday());
-		now_time = 0;
+		first_time = std::chrono::system_clock::now();
+		now_time = std::chrono::seconds(0);
 	};
 	/**
 	*@brief データを追加
@@ -125,19 +115,17 @@ public:
 	*/
 	virtual void addData(T data)
 	{
-		coil::TimeValue t0(coil::gettimeofday());
-		dataList.push_back(ValueAndTime<T>(t0,data));
+		dataList.emplace_back(std::chrono::system_clock::now(), data);
 	};
 	/**
 	*@brief 現在の時間を取得
 	* @return 時間
 	*/
-	virtual double getTime()
+	virtual Duration getTime()
 	{
 		if(realTime)
 		{
-			coil::TimeValue t0(coil::gettimeofday());
-			now_time = (double)(t0-first_time);
+			now_time = std::chrono::system_clock::now() - first_time;
 		}
 		else
 		{
@@ -145,11 +133,11 @@ public:
 		}
 		return now_time;
 	};
-	double samplingTime_low;
-	coil::TimeValue first_time;
-	double now_time;
+	Duration samplingTime_low;
+	std::chrono::time_point<std::chrono::system_clock> first_time;
+	Duration now_time;
 	bool realTime;
-	double samplingTime;
+	Duration samplingTime;
 	std::vector<ValueAndTime<T>> dataList;
 };
 
@@ -199,7 +187,7 @@ public:
 		{
 			return false;
 		}
-		double stepTime;
+		Duration stepTime;
 		if(!RTMath<T>::getDiffTime(stepTime))
 		{
 			return false;
@@ -250,7 +238,7 @@ public:
 		{
 			return false;
 		}
-		double stepTime;
+		Duration stepTime;
 		if(!RTMath<T>::getDiffTime(stepTime))
 		{
 			return false;
@@ -320,12 +308,10 @@ public:
 		else if(input > high_output)
 		{
 			now_Output = input - m_width/(T)2.0;
-			
 		}
 		else if(input < low_output)
 		{
 			now_Output = input + m_width/(T)2.0;
-			
 		}
 		return now_Output;
 	};
@@ -346,16 +332,7 @@ public:
 template <class T>
 T RTSaturation(T input, T upperLimit, T lowerLimit)
 {
-	T val = input;
-	if(val > upperLimit)
-	{
-		val = upperLimit;
-	}
-	else if(val < lowerLimit)
-	{
-		val = lowerLimit;
-	}
-	return val;
+	return std::min(upperLimit, std::max(lowerLimit, input));
 };
 
 /**
@@ -368,27 +345,26 @@ T RTSaturation(T input, T upperLimit, T lowerLimit)
 template <class T>
 bool getValueInString(std::string str, std::vector<T> &ans)
 {
-	coil::eraseBlank(str);
+	str = coil::eraseBlank(std::move(str));
 	ans.clear();
 	coil::vstring va = coil::split(str, ",");
 	if(va.size() == 0)
 	{
 		return false;
 	}
-	for (coil::vstring::iterator it = va.begin(); it != va.end(); ++it)
+	for (auto const& it : va)
 	{
 		T value;
-		bool result = coil::stringTo<T>(value, (*it).c_str());
+		bool result = coil::stringTo<T>(value, it.c_str());
 		if(result)
 		{
-			ans.push_back(value);
+			ans.push_back(std::move(value));
 		}
 		else
 		{
 			return false;
 		}
 	}
-	
 	return true;
 };
 
@@ -521,13 +497,12 @@ public:
 
 			return false;
 		}
-		double stepTime;
+		Duration stepTime;
 		if(!RTMath<T>::getDiffTime(stepTime))
 		{
 			return false;
 		};
-		
-		
+
 		T rate = (RTMath<T>::dataList[RTMath<T>::dataList.size()-1].m_value - last_value)/stepTime;
 		if(rate > risingSlewRate)
 		{
@@ -738,8 +713,8 @@ public:
 	*/
 	T calc()
 	{
-		double nt = RTMath<T>::getTime();
-		return amplitude*std::sin(2*M_PI*frequency*nt + phase) + bias;
+		std::chrono::duration<double> nt = RTMath<T>::getTime();
+		return amplitude*std::sin(2*M_PI*frequency*nt.count() + phase) + bias;
 	};
 
 	/**
@@ -816,7 +791,7 @@ public:
 	*/
 	T calc()
 	{
-		double nt = RTMath<T>::getTime();
+		auto nt = RTMath<T>::getTime();
 		if(startTime < nt)
 		{
 			return slope*(nt - startTime) + initialOutput;
@@ -838,7 +813,7 @@ public:
 	*@brief 開始時間を設定
 	* @param input 開始時間
 	*/
-	void setStartTime(T input)
+	void setStartTime(Duration input)
 	{
 		startTime = input;
 	};
@@ -850,10 +825,9 @@ public:
 	{
 		initialOutput = input;
 	};
-	
-	
+
 	T slope;
-	T startTime;
+	Duration startTime;
 	T initialOutput;
 };
 
@@ -880,23 +854,21 @@ public:
 	{
 		RTMath<T>::resetTime();
 	};
-	
+
 	/**
 	*@brief 矩形波パルスを出力
 	* @return 出力
 	*/
 	T calc()
 	{
-		double nt = RTMath<T>::getTime();
-		T st = nt - phaseDelay;
+		auto st = RTMath<T>::getTime() - phaseDelay;
 		if(st < 0)
 		{
 			return 0;
 		}
 		else
 		{
-			T fmodValue = std::fmod(st, period);
-			//std::cout << fmodValue << "\t" << period*(1-pulseWidth/100.0) << std::endl;
+			auto fmodValue = st % period;
 			if(fmodValue < period*(1-pulseWidth/100.0))
 			{
 				return 0;
@@ -919,7 +891,7 @@ public:
 	*@brief 周期を設定
 	* @param input 周期
 	*/
-	void setPeriod(T input)
+	void setPeriod(Duration input)
 	{
 		period = input;
 	};
@@ -935,16 +907,15 @@ public:
 	*@brief 位相遅れを設定
 	* @param input 位相遅れ
 	*/
-	void setPhaseDelay(T input)
+	void setPhaseDelay(Duration input)
 	{
 		phaseDelay = input;
 	};
-	
-	
+
 	T amplitude;
-	T period;
+	Duration period;
 	T pulseWidth;
-	T phaseDelay;
+	Duration phaseDelay;
 };
 
 /**
@@ -1089,7 +1060,7 @@ public:
 			std::random_device rnd;
 			t_seed = rnd();
 		}
-		else if(m_randomSeedGenerator)
+		else
 		{
 			t_seed = m_seed;
 		}
@@ -1140,8 +1111,7 @@ public:
 		m_randomSeedGenerator = input;
 		setMt();
 	};
-	
-	
+
 	T m_mean;
 	T m_variable;
 	unsigned int m_seed;
@@ -1174,15 +1144,14 @@ public:
 	{
 		RTMath<T>::resetTime();
 	};
-	
+
 	/**
 	*@brief ステップ関数を出力
 	* @return 出力
 	*/
 	T calc()
 	{
-		double nt = RTMath<T>::getTime();
-		//std::cout << nt << std::endl;
+		auto nt = RTMath<T>::getTime();
 		if(nt < stepTime)
 		{
 			return initialValue;
@@ -1212,16 +1181,14 @@ public:
 	*@brief ステップ時間を設定
 	* @param input ステップ時間
 	*/
-	void setStepTime(T input)
+	void setStepTime(Duration input)
 	{
 		stepTime = input;
 	};
-	
-	
-	
+
 	T initialValue;
 	T finalValue;
-	T stepTime;
+	Duration stepTime;
 };
 
 /**
@@ -1306,7 +1273,7 @@ public:
 	*@brief 刻み幅を設定
 	* @param s 刻み幅
 	*/
-	virtual void setSamplingTime(double s)
+	virtual void setSamplingTime(Duration s)
 	{
 		
 	};
@@ -1399,7 +1366,7 @@ public:
 	*@brief 刻み幅を設定
 	* @param s 刻み幅
 	*/
-	void setSamplingTime(double s)
+	void setSamplingTime(Duration s)
 	{
 		d_func.setSamplingTime(s);
 	};
@@ -1457,7 +1424,7 @@ public:
 	*@brief 刻み幅を設定
 	* @param s 刻み幅
 	*/
-	void setSamplingTime(double s)
+	void setSamplingTime(Duration s)
 	{
 		i_func.setSamplingTime(s);
 	};
@@ -1515,7 +1482,7 @@ public:
 	*@brief 刻み幅を設定
 	* @param s 刻み幅
 	*/
-	void setSamplingTime(double s)
+	void setSamplingTime(Duration s)
 	{
 		i_func.setSamplingTime(s);
 	};
@@ -1578,7 +1545,7 @@ public:
 	*@brief 刻み幅を設定
 	* @param s 刻み幅
 	*/
-	void setSamplingTime(double s)
+	void setSamplingTime(Duration s)
 	{
 		d_func.setSamplingTime(s);
 		i_func.setSamplingTime(s);
