@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  plot.h
-* @brief ƒvƒƒbƒg‘€ì‚ÌƒNƒ‰ƒX
+* @brief ãƒ—ãƒ­ãƒƒãƒˆæ“ä½œã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -17,7 +17,7 @@ class QwtPlotCurve;
 
 /**
 * @class Plot
-*@brief ƒvƒƒbƒg‘€ì‚ÌƒNƒ‰ƒX
+*@brief ãƒ—ãƒ­ãƒƒãƒˆæ“ä½œã®ã‚¯ãƒ©ã‚¹
 */
 class Plot: public QwtPlot
 {
@@ -25,29 +25,29 @@ class Plot: public QwtPlot
 
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param parent eƒEƒBƒWƒFƒbƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 	*/
     Plot( QWidget* = NULL );
 
 public Q_SLOTS:
 	/**
-	*@brief İ’è•ÏX‚ÌƒXƒƒbƒg
+	*@brief è¨­å®šå¤‰æ›´æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
 	*/
     void setSettings( const Settings & );
 
 protected:
 	/**
-	*@brief ƒ^ƒCƒ}[ƒCƒxƒ“ƒg
-	* @param e ƒCƒxƒ“ƒgƒIƒuƒWƒFƒNƒg
+	*@brief ã‚¿ã‚¤ãƒãƒ¼ã‚¤ãƒ™ãƒ³ãƒˆ
+	* @param e ã‚¤ãƒ™ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
     virtual void timerEvent( QTimerEvent *e );
 
 private:
 	/**
-	*@brief •`‰æ‚·‚éƒf[ƒ^’Ç‰Á
-	* @param num ƒf[ƒ^”
-	* @param id ƒf[ƒ^–¼
+	*@brief æç”»ã™ã‚‹ãƒ‡ãƒ¼ã‚¿è¿½åŠ 
+	* @param num ãƒ‡ãƒ¼ã‚¿æ•°
+	* @param id ãƒ‡ãƒ¼ã‚¿å
 	*/
 	void setPlotCurve(int num, std::string id);
     QwtPlotGrid *d_grid;

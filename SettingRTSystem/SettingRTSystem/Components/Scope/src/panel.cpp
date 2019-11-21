@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  panel.cpp
-* @brief ‘€ìƒpƒlƒ‹
+* @brief æ“ä½œãƒ‘ãƒãƒ«
 *
 */
 
@@ -17,8 +17,8 @@
 
 
 /**
-*@brief ‘€ìƒpƒlƒ‹‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param parent eƒEƒBƒWƒFƒbƒg
+*@brief æ“ä½œãƒ‘ãƒãƒ«ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 */
 Panel::Panel( QWidget *parent ):
     QTabWidget( parent )
@@ -64,10 +64,10 @@ Panel::Panel( QWidget *parent ):
 }
 
 /**
-*@brief ƒ‰ƒxƒ‹•tƒEƒBƒWƒFƒbƒgì¬
-* @param wd ƒEƒBƒWƒFƒbƒg
-* @param layout ƒEƒBƒWƒFƒbƒg‚ğ’Ç‰Á‚·‚éƒŒƒCƒAƒEƒg
-* @param name •\¦‚·‚é•¶š—ñ
+*@brief ãƒ©ãƒ™ãƒ«ä»˜ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆä½œæˆ
+* @param wd ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
+* @param layout ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆã‚’è¿½åŠ ã™ã‚‹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
+* @param name è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
 */
 void Panel::addWidgetWithLabel(QWidget *wd, QBoxLayout *layout, const char* name)
 {
@@ -83,8 +83,8 @@ void Panel::addWidgetWithLabel(QWidget *wd, QBoxLayout *layout, const char* name
 }*/
 
 /**
-*@brief Šeíİ’è—pƒ^ƒu‚ğ¶¬
-* @param parent eƒEƒBƒWƒFƒbƒg
+*@brief å„ç¨®è¨­å®šç”¨ã‚¿ãƒ–ã‚’ç”Ÿæˆ
+* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 */
 QWidget *Panel::createPlotTab( QWidget *parent )
 {
@@ -117,7 +117,7 @@ QWidget *Panel::createPlotTab( QWidget *parent )
 	d_dataType = new QComboBox(page);
 	
 
-	addWidgetWithLabel(d_dataType, layout, "ƒf[ƒ^Œ^");
+	addWidgetWithLabel(d_dataType, layout, "ãƒ‡ãƒ¼ã‚¿å‹");
 
 	d_dataType->addItem("TimedDouble");
 	d_dataType->addItem("TimedLong");
@@ -135,47 +135,47 @@ QWidget *Panel::createPlotTab( QWidget *parent )
     //layout->setRowStretch( row, 10 );
 
 	d_timeRange = new QDoubleSpinBox();
-	addWidgetWithLabel(d_timeRange, layout, "X²ƒf[ƒ^”ÍˆÍ");
+	addWidgetWithLabel(d_timeRange, layout, "Xè»¸ãƒ‡ãƒ¼ã‚¿ç¯„å›²");
 	d_timeRange->setValue(10);
 	d_timeRange->setRange(0.01, 1000);
 	d_timeRange->setSingleStep(1);
 
 	d_valueRange_high = new QDoubleSpinBox();
-	addWidgetWithLabel(d_valueRange_high, layout, "Y²ƒf[ƒ^”ÍˆÍ(ãŒÀ)");
+	addWidgetWithLabel(d_valueRange_high, layout, "Yè»¸ãƒ‡ãƒ¼ã‚¿ç¯„å›²(ä¸Šé™)");
 	d_valueRange_high->setValue(5);
 	d_valueRange_high->setRange(-1000, 1000);
 	d_valueRange_high->setSingleStep(1);
 
 	d_valueRange_low = new QDoubleSpinBox();
-	addWidgetWithLabel(d_valueRange_low, layout, "Y²ƒf[ƒ^”ÍˆÍ(‰ºŒÀ)");
+	addWidgetWithLabel(d_valueRange_low, layout, "Yè»¸ãƒ‡ãƒ¼ã‚¿ç¯„å›²(ä¸‹é™)");
 	d_valueRange_low->setValue(-5);
 	d_valueRange_low->setRange(-1000, 1000);
 	d_valueRange_low->setSingleStep(1);
 
 	d_samplingNum = new QSpinBox();
-	addWidgetWithLabel(d_samplingNum, layout, "ŠÔˆø‚«");
+	addWidgetWithLabel(d_samplingNum, layout, "é–“å¼•ã");
 	d_samplingNum->setValue(1);
 	d_samplingNum->setRange(1, 1000);
 
 	d_XAxis = new QLineEdit();
-	addWidgetWithLabel(d_XAxis, layout, "X²ƒ‰ƒxƒ‹");
+	addWidgetWithLabel(d_XAxis, layout, "Xè»¸ãƒ©ãƒ™ãƒ«");
 
 	d_YAxis = new QLineEdit();
-	addWidgetWithLabel(d_YAxis, layout, "Y²ƒ‰ƒxƒ‹");
+	addWidgetWithLabel(d_YAxis, layout, "Yè»¸ãƒ©ãƒ™ãƒ«");
 	
 	d_max_pointNum = new QSpinBox();
-	addWidgetWithLabel(d_max_pointNum, layout, "•\¦‚·‚é“_‚ÌÅ‘å‚Ì”");
+	addWidgetWithLabel(d_max_pointNum, layout, "è¡¨ç¤ºã™ã‚‹ç‚¹ã®æœ€å¤§ã®æ•°");
 	d_max_pointNum->setValue(100);
 	d_max_pointNum->setRange(1, 10000);
 
 	d_samplingTime = new QDoubleSpinBox();
-	addWidgetWithLabel(d_samplingTime, layout, "ƒXƒeƒbƒv•[ms]");
+	addWidgetWithLabel(d_samplingTime, layout, "ã‚¹ãƒ†ãƒƒãƒ—å¹…[ms]");
 	d_samplingTime->setValue(10);
 	d_samplingTime->setRange(0, 10000);
 	//d_samplingTime->setSingleStep(1);
 
 	d_realTime = new QCheckBox();
-	addWidgetWithLabel(d_realTime, layout, "ÀŠÔ");
+	addWidgetWithLabel(d_realTime, layout, "å®Ÿæ™‚é–“");
 	d_realTime->setCheckable(true);
 
     return page;
@@ -183,7 +183,7 @@ QWidget *Panel::createPlotTab( QWidget *parent )
 
 
 /**
-*@brief İ’è•ÏX‚ÌƒXƒƒbƒg
+*@brief è¨­å®šå¤‰æ›´æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
 */
 void Panel::edited()
 {
@@ -192,8 +192,8 @@ void Panel::edited()
 }
 
 /**
-*@brief İ’èæ“¾
-* @return İ’èƒIƒuƒWƒFƒNƒg
+*@brief è¨­å®šå–å¾—
+* @return è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 Settings Panel::settings() const
 {
@@ -214,8 +214,8 @@ Settings Panel::settings() const
 }
 
 /**
-*@brief İ’è”½‰f
-* @param s İ’èƒIƒuƒWƒFƒNƒg
+*@brief è¨­å®šåæ˜ 
+* @param s è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void Panel::setSettings( const Settings &s )
 {

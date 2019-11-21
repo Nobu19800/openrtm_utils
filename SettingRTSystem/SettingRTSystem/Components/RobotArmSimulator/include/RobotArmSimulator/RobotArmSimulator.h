@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  RobotArmSimulator.h
  * @brief Robot Arm Simulator
@@ -276,14 +276,14 @@ class RobotArmSimulator
   // Configuration variable declaration
   // <rtc-template block="config_declare">
   /*!
-  * 1‚Ìê‡‚Í•`‰æƒEƒCƒ“ƒhƒE‚ğ•\¦‚·‚é
+  * 1ã®å ´åˆã¯æç”»ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤ºã™ã‚‹
   * - Name: drawWindow drawWindow
   * - DefaultValue: 1
   * - Constraint: (0,1)
   */
   int m_drawWindow;
   /*!
-  * •`‰æ‚ÌüŠú
+  * æç”»ã®å‘¨æœŸ
   * - Name: draw_time draw_time
   * - DefaultValue: 0.01
   * - Unit: s

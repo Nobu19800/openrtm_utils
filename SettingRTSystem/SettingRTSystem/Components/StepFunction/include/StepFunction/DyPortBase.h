@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  DyPortBase.h
  * @brief 
@@ -192,7 +192,7 @@ class DynamicPortConfigUpdateParam
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	* @param e_rtc ExcelRTC
 	*/
     DynamicPortConfigUpdateParam(DynamicComponentBase *rtc)
@@ -209,7 +209,7 @@ public:
 		m_rtc->configUpdate();
 		
     }
-	DynamicComponentBase *m_rtc; /**<@@brief  */
+	DynamicComponentBase *m_rtc; /**<ã€€@brief  */
 
 };
 

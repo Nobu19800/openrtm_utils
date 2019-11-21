@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -32,7 +32,7 @@ class QAbstractButton;
 class QGraphicsView;
 QT_END_NAMESPACE
 
-/*ƒƒCƒ“ƒEƒBƒ“ƒhƒE*/
+/*ãƒ¡ã‚¤ãƒ³ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦*/
 
 class MainWindow : public QMainWindow
 {

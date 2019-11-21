@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Leg_Object.cpp
-* @brief ‹r§ŒäƒNƒ‰ƒX
+* @brief è„šåˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -15,7 +15,7 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 Leg_Object::Leg_Object()
 {
@@ -62,10 +62,10 @@ Leg_Object::Leg_Object()
 }
 
 /**
-*@brief ‹r‚ª‘S‚Ä’â~‚µ‚Ä‚¢‚é‚©‚ğ”»’è
-*@param legs ‹r‚ÌƒŠƒXƒg
-*@param len ‹r‚ÌƒŠƒXƒg‚ÌƒTƒCƒY
-*@return ’â~‚µ‚Ä‚¢‚È‚¢‹r‚Ì”A‘S‚Ä’â~‚µ‚Ä‚¢‚éê‡‚Í0
+*@brief è„šãŒå…¨ã¦åœæ­¢ã—ã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
+*@param legs è„šã®ãƒªã‚¹ãƒˆ
+*@param len è„šã®ãƒªã‚¹ãƒˆã®ã‚µã‚¤ã‚º
+*@return åœæ­¢ã—ã¦ã„ãªã„è„šã®æ•°ã€å…¨ã¦åœæ­¢ã—ã¦ã„ã‚‹å ´åˆã¯0
 */
 int Leg_Object::LegsStop(Leg_Object *legs, int len)
 {
@@ -81,7 +81,7 @@ int Leg_Object::LegsStop(Leg_Object *legs, int len)
 }
 
 /**
-*@brief ƒIƒtƒZƒbƒg‚ğ0‚É‚·‚é
+*@brief ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’0ã«ã™ã‚‹
 */
 void Leg_Object::reset_offset()
 {
@@ -97,8 +97,8 @@ void Leg_Object::reset_offset()
 }
 
 /**
-*@brief ‘«æŠî€ˆÊ’uİ’è
-*@param cs Šî€ˆÊ’u
+*@brief è¶³å…ˆåŸºæº–ä½ç½®è¨­å®š
+*@param cs åŸºæº–ä½ç½®
 */
 void Leg_Object::set_center_pos(Vector3d cs)
 {
@@ -109,7 +109,7 @@ void Leg_Object::set_center_pos(Vector3d cs)
 
 
 /**
-*@brief XV
+*@brief æ›´æ–°
 */
 void Leg_Object::update()
 {
@@ -224,13 +224,13 @@ void Leg_Object::setTargetPos(Vector3d tp, int mc)
 }
 
 /**
-*@brief ‰ñ“]’†SˆÊ’uA‰ñ“]‘¬“x‚È‚Ç‚Ìİ’è
-*@param p ‰ñ“]’†SˆÊ’u
-*@param rv ‰ñ“]‘¬“x
-*@param mc ƒXƒeƒbƒv”
-*@param sampling ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
-*@param target_position_update true‚Ìê‡‚Í–Ú•WˆÊ’u‚ğÄİ’è‚·‚é
-*@param targetpos_rate Äİ’è‚·‚é–Ú•WˆÊ’u
+*@brief å›è»¢ä¸­å¿ƒä½ç½®ã€å›è»¢é€Ÿåº¦ãªã©ã®è¨­å®š
+*@param p å›è»¢ä¸­å¿ƒä½ç½®
+*@param rv å›è»¢é€Ÿåº¦
+*@param mc ã‚¹ãƒ†ãƒƒãƒ—æ•°
+*@param sampling ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
+*@param target_position_update trueã®å ´åˆã¯ç›®æ¨™ä½ç½®ã‚’å†è¨­å®šã™ã‚‹
+*@param targetpos_rate å†è¨­å®šã™ã‚‹ç›®æ¨™ä½ç½®
 */
 void Leg_Object::setRotateStatus(Vector3d p, double rv, int mc, double sampling, bool target_position_update, double targetpos_rate)
 {
@@ -327,8 +327,8 @@ void Leg_Object::setRotateStatus(Vector3d p, double rv, int mc, double sampling,
 }
 
 /**
-*@brief Ú’n‚µ‚Ä‚¢‚é‚©‚Ì”»’è
-*@return Ú’n‚µ‚Ä‚¢‚éê‡‚Ítrue
+*@brief æ¥åœ°ã—ã¦ã„ã‚‹ã‹ã®åˆ¤å®š
+*@return æ¥åœ°ã—ã¦ã„ã‚‹å ´åˆã¯true
 */
 bool Leg_Object::onGround()
 {
@@ -340,9 +340,9 @@ bool Leg_Object::onGround()
 }
 
 /**
-*@brief ‹t‰^“®Šw‚É‚æ‚èŠÖßŠp“x‚ğŒvZ
-*@param pos ‹ræˆÊ’u
-*@return ŠÖßŠp“x
+*@brief é€†é‹å‹•å­¦ã«ã‚ˆã‚Šé–¢ç¯€è§’åº¦ã‚’è¨ˆç®—
+*@param pos è„šå…ˆä½ç½®
+*@return é–¢ç¯€è§’åº¦
 */
 std::vector<double> Leg_Object::inverseKinematics(Vector3d pos)
 {
@@ -372,9 +372,9 @@ std::vector<double> Leg_Object::inverseKinematics(Vector3d pos)
 
 
 /**
-*@brief ‡‰^“®Šw‚É‚æ‚è‹ræˆÊ’u‚ğŒvZ
-*@param the ŠÖßŠp“x
-*@return ‹ræˆÊ’u
+*@brief é †é‹å‹•å­¦ã«ã‚ˆã‚Šè„šå…ˆä½ç½®ã‚’è¨ˆç®—
+*@param the é–¢ç¯€è§’åº¦
+*@return è„šå…ˆä½ç½®
 */
 Vector3d Leg_Object::calcKinematics(std::vector<double> the)
 {
@@ -388,10 +388,10 @@ Vector3d Leg_Object::calcKinematics(std::vector<double> the)
 }
 
 /**
-*@brief ‰ñ“]‘¬“xAƒXƒeƒbƒv”‚ÌÄİ’è
-*@param rv ‰ñ“]‘¬“x
-*@param len ‰ñ“]’†S‚Ü‚Å‚Ì’·‚³
-*@param mc ƒXƒeƒbƒv”
+*@brief å›è»¢é€Ÿåº¦ã€ã‚¹ãƒ†ãƒƒãƒ—æ•°ã®å†è¨­å®š
+*@param rv å›è»¢é€Ÿåº¦
+*@param len å›è»¢ä¸­å¿ƒã¾ã§ã®é•·ã•
+*@param mc ã‚¹ãƒ†ãƒƒãƒ—æ•°
 */
 void Leg_Object::update_status(double rv, int mc)
 {
@@ -412,8 +412,8 @@ void Leg_Object::update_status(double rv, int mc)
 }
 
 /**
-*@brief —V‹r‚‚³‚Ìİ’è
-*@param lh ‚‚³
+*@brief éŠè„šé«˜ã•ã®è¨­å®š
+*@param lh é«˜ã•
 */
 void Leg_Object::setLiftHeight(double lh)
 {
@@ -422,10 +422,10 @@ void Leg_Object::setLiftHeight(double lh)
 
 
 /**
-*@brief ƒWƒ‡ƒCƒ“ƒg‚ÌƒIƒtƒZƒbƒgİ’è
-*@param o1 ƒWƒ‡ƒCƒ“ƒg0‚ÌƒIƒtƒZƒbƒg
-*@param o1 ƒWƒ‡ƒCƒ“ƒg1‚ÌƒIƒtƒZƒbƒg
-*@param o1 ƒWƒ‡ƒCƒ“ƒg2‚ÌƒIƒtƒZƒbƒg
+*@brief ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ã‚ªãƒ•ã‚»ãƒƒãƒˆè¨­å®š
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ0ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ1ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ2ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 */
 void Leg_Object::setJointOffset(double o0, double o1, double o2)
 {
@@ -434,10 +434,10 @@ void Leg_Object::setJointOffset(double o0, double o1, double o2)
 	jointOffset[2] = o2;
 }
 /**
-*@brief ƒWƒ‡ƒCƒ“ƒg‚Ì‰Â“®”ÍˆÍãŒÀ‚Ìİ’è
-*@param o1 ƒWƒ‡ƒCƒ“ƒg0‚Ì‰Â“®”ÍˆÍãŒÀ’l
-*@param o1 ƒWƒ‡ƒCƒ“ƒg1‚Ì‰Â“®”ÍˆÍãŒÀ’l
-*@param o1 ƒWƒ‡ƒCƒ“ƒg2‚Ì‰Â“®”ÍˆÍãŒÀ’l
+*@brief ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®å¯å‹•ç¯„å›²ä¸Šé™ã®è¨­å®š
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ0ã®å¯å‹•ç¯„å›²ä¸Šé™å€¤
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ1ã®å¯å‹•ç¯„å›²ä¸Šé™å€¤
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ2ã®å¯å‹•ç¯„å›²ä¸Šé™å€¤
 */
 void Leg_Object::setUpperLimitJoint(double l0, double l1, double l2)
 {
@@ -446,10 +446,10 @@ void Leg_Object::setUpperLimitJoint(double l0, double l1, double l2)
 	UpperLimitJoint[2] = l2;
 }
 /**
-*@brief ƒWƒ‡ƒCƒ“ƒg‚Ì‰Â“®”ÍˆÍ‰ºŒÀ‚Ìİ’è
-*@param o1 ƒWƒ‡ƒCƒ“ƒg0‚Ì‰Â“®”ÍˆÍ‰ºŒÀ’l
-*@param o1 ƒWƒ‡ƒCƒ“ƒg1‚Ì‰Â“®”ÍˆÍ‰ºŒÀ’l
-*@param o1 ƒWƒ‡ƒCƒ“ƒg2‚Ì‰Â“®”ÍˆÍ‰ºŒÀ’l
+*@brief ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®å¯å‹•ç¯„å›²ä¸‹é™ã®è¨­å®š
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ0ã®å¯å‹•ç¯„å›²ä¸‹é™å€¤
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ1ã®å¯å‹•ç¯„å›²ä¸‹é™å€¤
+*@param o1 ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ2ã®å¯å‹•ç¯„å›²ä¸‹é™å€¤
 */
 void Leg_Object::setLowerLimitJoint(double l0, double l1, double l2)
 {
@@ -460,9 +460,9 @@ void Leg_Object::setLowerLimitJoint(double l0, double l1, double l2)
 
 
 /**
-*@brief ŠÖßŠp“x‚Ìİ’è
-*@param t ŠÖßŠp“x
-*@return true‚Ìê‡‚Í‰Â“®”ÍˆÍŠO
+*@brief é–¢ç¯€è§’åº¦ã®è¨­å®š
+*@param t é–¢ç¯€è§’åº¦
+*@return trueã®å ´åˆã¯å¯å‹•ç¯„å›²å¤–
 */
 bool Leg_Object::setAngle(std::vector<double> t)
 {

@@ -1,6 +1,6 @@
-/*!
+﻿/*!
  * @file  SubFunction.cpp
- * @brief ������̑��쓙
+ * @brief 文字列の操作等
  *
  */
 

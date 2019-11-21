@@ -1,4 +1,4 @@
-#include <QtWidgets>
+ï»¿#include <QtWidgets>
 #include <QtGui>
 #include <QLabel>
 #include <iostream>
@@ -99,12 +99,12 @@ MainWindow::MainWindow()
 
 	tabWidget = new QTabWidget;
 	
-	tabWidget->addTab(SliderWidget, tc->toUnicode("ƒp[ƒc‘I‘ðƒ{ƒ^ƒ“"));
-	tabWidget->addTab(SliderArrowWidget, tc->toUnicode("ƒXƒP[ƒ‹’²®(ƒZƒ“ƒTEƒWƒ‡ƒCƒ“ƒg‚ÌƒTƒCƒY)"));
+	tabWidget->addTab(SliderWidget, tc->toUnicode("ãƒ‘ãƒ¼ãƒ„é¸æŠžãƒœã‚¿ãƒ³"));
+	tabWidget->addTab(SliderArrowWidget, tc->toUnicode("ã‚¹ã‚±ãƒ¼ãƒ«èª¿æ•´(ã‚»ãƒ³ã‚µãƒ»ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ã‚µã‚¤ã‚º)"));
 	//QHBoxLayout *layout = new QHBoxLayout;
 	//ParamWidget = new QWidget;
 	
-	//tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+	//tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 
 	layout->addWidget(tabWidget);
@@ -508,7 +508,7 @@ void MainWindow::createSliderArrowWidget()
 	connect( ArrowForceSlider, SIGNAL(valueChanged(int)),c,SLOT(setForceArrowScale(int)) );
 
 	
-	QGroupBox *ArrowForceGroup = new QGroupBox(tc->toUnicode("—ÍƒZƒ“ƒT"));
+	QGroupBox *ArrowForceGroup = new QGroupBox(tc->toUnicode("åŠ›ã‚»ãƒ³ã‚µ"));
 
 	
 	QVBoxLayout* ArrowForcelayout = new QVBoxLayout();
@@ -525,7 +525,7 @@ void MainWindow::createSliderArrowWidget()
 	connect( ArrowGyroSlider, SIGNAL(valueChanged(int)),c,SLOT(setGyroArrowScale(int)) );
 
 	
-	QGroupBox *ArrowGyroGroup = new QGroupBox(tc->toUnicode("ƒWƒƒƒCƒƒZƒ“ƒT"));
+	QGroupBox *ArrowGyroGroup = new QGroupBox(tc->toUnicode("ã‚¸ãƒ£ã‚¤ãƒ­ã‚»ãƒ³ã‚µ"));
 
 	
 	QVBoxLayout* ArrowGyrolayout = new QVBoxLayout();
@@ -542,7 +542,7 @@ void MainWindow::createSliderArrowWidget()
 	connect( ArrowAccSlider, SIGNAL(valueChanged(int)),c,SLOT(setAccArrowScale(int)) );
 
 	
-	QGroupBox *ArrowAccGroup = new QGroupBox(tc->toUnicode("‰Á‘¬“xƒZƒ“ƒT"));
+	QGroupBox *ArrowAccGroup = new QGroupBox(tc->toUnicode("åŠ é€Ÿåº¦ã‚»ãƒ³ã‚µ"));
 
 	
 	QVBoxLayout* ArrowAcclayout = new QVBoxLayout();
@@ -559,7 +559,7 @@ void MainWindow::createSliderArrowWidget()
 	connect( ArrowRangeSlider, SIGNAL(valueChanged(int)),c,SLOT(setRangeArrowScale(int)) );
 
 	
-	QGroupBox *ArrowRangeGroup = new QGroupBox(tc->toUnicode("‹——£ƒZƒ“ƒT"));
+	QGroupBox *ArrowRangeGroup = new QGroupBox(tc->toUnicode("è·é›¢ã‚»ãƒ³ã‚µ"));
 
 	
 	QVBoxLayout* ArrowRangelayout = new QVBoxLayout();
@@ -576,7 +576,7 @@ void MainWindow::createSliderArrowWidget()
 	connect( ArrowTorqueSlider, SIGNAL(valueChanged(int)),c,SLOT(setTorqueArrowScale(int)) );
 
 	
-	QGroupBox *ArrowTorqueGroup = new QGroupBox(tc->toUnicode("ƒgƒ‹ƒNƒZƒ“ƒT"));
+	QGroupBox *ArrowTorqueGroup = new QGroupBox(tc->toUnicode("ãƒˆãƒ«ã‚¯ã‚»ãƒ³ã‚µ"));
 
 	
 	QVBoxLayout* ArrowTorquelayout = new QVBoxLayout();
@@ -622,8 +622,8 @@ void MainWindow::createSliderWidget()
 
 	
 
-	QGroupBox *JointGroup = new QGroupBox(tc->toUnicode("ƒWƒ‡ƒCƒ“ƒg"));
-	QGroupBox *SensorGroup = new QGroupBox(tc->toUnicode("ƒZƒ“ƒT"));
+	QGroupBox *JointGroup = new QGroupBox(tc->toUnicode("ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ"));
+	QGroupBox *SensorGroup = new QGroupBox(tc->toUnicode("ã‚»ãƒ³ã‚µ"));
 
 	QVBoxLayout* Jointlayout = new QVBoxLayout();
 	Jointlayout->addWidget(JointSlider);
@@ -742,7 +742,7 @@ void MainWindow::createToolBox()
     textButton->setIconSize(QSize(50, 50));
     QGridLayout *textLayout = new QGridLayout;
     textLayout->addWidget(textButton, 0, 0, Qt::AlignHCenter);
-    textLayout->addWidget(new QLabel(tc->toUnicode("ƒŠƒ“ƒN")), 1, 0, Qt::AlignCenter);
+    textLayout->addWidget(new QLabel(tc->toUnicode("ãƒªãƒ³ã‚¯")), 1, 0, Qt::AlignCenter);
     QWidget *textWidget = new QWidget;
     textWidget->setLayout(textLayout);
     layout->addWidget(textWidget, 1, 1);
@@ -756,7 +756,7 @@ void MainWindow::createToolBox()
     actButton->setIconSize(QSize(50, 50));
     QGridLayout *actLayout = new QGridLayout;
     actLayout->addWidget(actButton, 0, 0, Qt::AlignHCenter);
-    actLayout->addWidget(new QLabel(tc->toUnicode("ƒWƒ‡ƒCƒ“ƒg")), 1, 0, Qt::AlignCenter);
+    actLayout->addWidget(new QLabel(tc->toUnicode("ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆ")), 1, 0, Qt::AlignCenter);
     QWidget *actWidget = new QWidget;
     actWidget->setLayout(actLayout);
     layout->addWidget(actWidget, 2, 1);
@@ -770,7 +770,7 @@ void MainWindow::createToolBox()
     sensorButton->setIconSize(QSize(50, 50));
     QGridLayout *sensorLayout = new QGridLayout;
     sensorLayout->addWidget(sensorButton, 0, 0, Qt::AlignHCenter);
-    sensorLayout->addWidget(new QLabel(tc->toUnicode("ƒZƒ“ƒT[")), 1, 0, Qt::AlignCenter);
+    sensorLayout->addWidget(new QLabel(tc->toUnicode("ã‚»ãƒ³ã‚µãƒ¼")), 1, 0, Qt::AlignCenter);
     QWidget *sensorWidget = new QWidget;
     sensorWidget->setLayout(sensorLayout);
     layout->addWidget(sensorWidget, 2, 2);
@@ -784,7 +784,7 @@ void MainWindow::createToolBox()
     cameraButton->setIconSize(QSize(50, 50));
     QGridLayout *cameraLayout = new QGridLayout;
     cameraLayout->addWidget(cameraButton, 0, 0, Qt::AlignHCenter);
-    cameraLayout->addWidget(new QLabel(tc->toUnicode("ƒJƒƒ‰")), 1, 0, Qt::AlignCenter);
+    cameraLayout->addWidget(new QLabel(tc->toUnicode("ã‚«ãƒ¡ãƒ©")), 1, 0, Qt::AlignCenter);
     QWidget *cameraWidget = new QWidget;
     cameraWidget->setLayout(cameraLayout);
     layout->addWidget(cameraWidget, 1, 2);
@@ -1209,15 +1209,15 @@ void MainWindow::check()
 	int ch = scene->CHECK();
 	if(ch == 1){
 		QMessageBox::about(this, "Error", 
-                        tc->toUnicode("ƒ{ƒfƒB‚Ì”Ô†‚ª‡”Ô’Ê‚è‚Å‚Í‚È‚¢‚Å‚·"));
+                        tc->toUnicode("ãƒœãƒ‡ã‚£ã®ç•ªå·ãŒé †ç•ªé€šã‚Šã§ã¯ãªã„ã§ã™"));
 	}
 	if(ch == 2){
 		QMessageBox::about(this, "Error", 
-                        tc->toUnicode("ƒWƒ‡ƒCƒ“ƒg‚Ì”Ô†‚ª‡”Ô’Ê‚è‚Å‚Í‚È‚¢‚Å‚·"));
+                        tc->toUnicode("ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ç•ªå·ãŒé †ç•ªé€šã‚Šã§ã¯ãªã„ã§ã™"));
 	}
 	if(ch == 0){
 		QMessageBox::about(this, "Sucsses", 
-                tc->toUnicode("“®ì‚Å‚«‚Ü‚·"));
+                tc->toUnicode("å‹•ä½œã§ãã¾ã™"));
 		c->CHECK = true;
 		Judge();
 	}
@@ -1339,7 +1339,7 @@ void MainWindow::setRotNum()
 			hingepage->setParam(jp);
 			ParamWidget = hingepage;
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1350,7 +1350,7 @@ void MainWindow::setRotNum()
 			sliderpage->setParam(jp);
 			ParamWidget = sliderpage;
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1361,7 +1361,7 @@ void MainWindow::setRotNum()
 			fixpage->setParam(jp);
 			ParamWidget = fixpage;
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 		}
@@ -1414,7 +1414,7 @@ void MainWindow::setGeoNum()
 			ParamWidget = boxpage;
 			
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1428,7 +1428,7 @@ void MainWindow::setGeoNum()
 			ParamWidget = spherepage;
 			
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1440,7 +1440,7 @@ void MainWindow::setGeoNum()
 			ParamWidget = cylinderpage;
 			
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1452,7 +1452,7 @@ void MainWindow::setGeoNum()
 			ParamWidget = conepage;
 			
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 
@@ -1464,7 +1464,7 @@ void MainWindow::setGeoNum()
 			ParamWidget = polygonpage;
 			
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 		}
@@ -1495,7 +1495,7 @@ void MainWindow::setSSNum()
 			sensorpage->setParam(scene->ReturnsenParam(scene->SSNum)->m_param);
 			ParamWidget = sensorpage;
 
-			tabWidget->addTab(ParamWidget, tc->toUnicode("ƒpƒ‰ƒ[ƒ^"));
+			tabWidget->addTab(ParamWidget, tc->toUnicode("ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿"));
 
 			tabWidget->setCurrentIndex(2);
 

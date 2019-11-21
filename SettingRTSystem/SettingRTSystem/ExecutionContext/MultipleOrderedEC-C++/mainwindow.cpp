@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  mainwindow.cpp
 * @brief メインウインドウ
 *

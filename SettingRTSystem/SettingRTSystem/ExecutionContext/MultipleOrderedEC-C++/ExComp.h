@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  ExComp.h
 * @brief RTCのブロックのウィジェット
 *

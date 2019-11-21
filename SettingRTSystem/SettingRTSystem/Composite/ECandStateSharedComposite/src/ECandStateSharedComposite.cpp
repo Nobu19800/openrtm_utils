@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  ECandStateSharedComposite.cpp
  * @brief EC and State Shared Composite Component
@@ -14,9 +14,9 @@
 
 
 /*!
-* @brief ”ñƒAƒNƒeƒBƒu‰»‚ğs‚¤ƒXƒŒƒbƒh‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+* @brief éã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–ã‚’è¡Œã†ã‚¹ãƒ¬ãƒƒãƒ‰ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 * @param rtc RTC
-* @param ec ÀsƒRƒ“ƒeƒLƒXƒg
+* @param ec å®Ÿè¡Œã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
 */
 DeactiveTask::DeactiveTask(::SDOPackage::SDOList_var sdos, ::RTC::ExecutionContext_ptr ec)
 {
@@ -25,7 +25,7 @@ DeactiveTask::DeactiveTask(::SDOPackage::SDOList_var sdos, ::RTC::ExecutionConte
 };
 
 /*!
-* @brief ƒXƒŒƒbƒhÀsŠÖ”
+* @brief ã‚¹ãƒ¬ãƒƒãƒ‰å®Ÿè¡Œé–¢æ•°
 * @return
 */
 int DeactiveTask::svc()

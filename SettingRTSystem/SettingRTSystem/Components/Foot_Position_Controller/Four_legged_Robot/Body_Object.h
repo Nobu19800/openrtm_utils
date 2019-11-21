@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Body_Object.h
-* @brief dS§ŒäƒNƒ‰ƒX
+* @brief é‡å¿ƒåˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -24,54 +24,54 @@ using namespace Eigen;
 
 /**
 * @class Body_Object
-*@brief “·‘Ì§ŒäƒNƒ‰ƒX
+*@brief èƒ´ä½“åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class Body_Object
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Body_Object();
 
 
 	/**
-	*@brief ‰ñ“]’†SˆÊ’uA‰ñ“]‘¬“x‚È‚Ç‚Ìİ’è
-	*@param p ‰ñ“]’†SˆÊ’u
-	*@param rv ‰ñ“]‘¬“x
-	*@param mc ƒXƒeƒbƒv”
-	*@param sampling ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
-	*@param target_position_update true‚Ìê‡‚Í–Ú•WˆÊ’u‚ğÄİ’è‚·‚é
+	*@brief å›è»¢ä¸­å¿ƒä½ç½®ã€å›è»¢é€Ÿåº¦ãªã©ã®è¨­å®š
+	*@param p å›è»¢ä¸­å¿ƒä½ç½®
+	*@param rv å›è»¢é€Ÿåº¦
+	*@param mc ã‚¹ãƒ†ãƒƒãƒ—æ•°
+	*@param sampling ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
+	*@param target_position_update trueã®å ´åˆã¯ç›®æ¨™ä½ç½®ã‚’å†è¨­å®šã™ã‚‹
 	*/
 	void setRotateStatus(Vector3d p, double rv, int mc, double sampling, bool target_position_update = true);
 	/**
-	*@brief XV
+	*@brief æ›´æ–°
 	*/
 	void update();
 
 	/**
-	*@brief ó‘Ôİ’è
-	*@param s ó‘Ô
+	*@brief çŠ¶æ…‹è¨­å®š
+	*@param s çŠ¶æ…‹
 	*/
 	void set_state(FootState s);
 
 
 	/**
-	*@brief ‰ñ“]‘¬“xAƒXƒeƒbƒv”‚ÌÄİ’è
-	*@param rv ‰ñ“]‘¬“x
-	*@param mc ƒXƒeƒbƒv”
+	*@brief å›è»¢é€Ÿåº¦ã€ã‚¹ãƒ†ãƒƒãƒ—æ•°ã®å†è¨­å®š
+	*@param rv å›è»¢é€Ÿåº¦
+	*@param mc ã‚¹ãƒ†ãƒƒãƒ—æ•°
 	*/
 	void update_status(double rv, int mc);
 
 	/**
-	*@brief ‰ŠúˆÊ’uİ’è
-	*@param p ˆÊ’u
+	*@brief åˆæœŸä½ç½®è¨­å®š
+	*@param p ä½ç½®
 	*/
 	void set_position(Vector3d p);
 
 	/**
-	*@brief ‰Šúp¨İ’è
-	*@param r p¨
+	*@brief åˆæœŸå§¿å‹¢è¨­å®š
+	*@param r å§¿å‹¢
 	*/
 	void set_orientation(Vector3d r);
 

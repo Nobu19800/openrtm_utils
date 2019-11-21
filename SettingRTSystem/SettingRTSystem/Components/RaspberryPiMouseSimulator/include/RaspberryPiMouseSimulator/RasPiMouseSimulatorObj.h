@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  SimulatorObj.h
-* @brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÖ˜A‚ÌƒNƒ‰ƒX
+* @brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢é€£ã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -168,8 +168,8 @@
 
 #define DEFAULT_BLOCK_MASS 100
 
-//ƒZƒ“ƒT‚ÌˆÊ’u
-//MIDDLE_PLATE‚©‚ç‚Ì‹——£
+//ã‚»ãƒ³ã‚µã®ä½ç½®
+//MIDDLE_PLATEã‹ã‚‰ã®è·é›¢
 
 #define DEFAULT_IRSENSOR1_X 0.02
 #define DEFAULT_IRSENSOR1_Y 0.03
@@ -212,8 +212,8 @@ enum EDirection {
 
 /**
 * @struct MyLink
-*@brief ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-*Ú‘±‚·‚éƒWƒ‡ƒCƒ“ƒg‚àŠÜ‚Ş
+*@brief ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+*æ¥ç¶šã™ã‚‹ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã‚‚å«ã‚€
 */
 typedef struct {
   dBodyID  body;
@@ -227,7 +227,7 @@ typedef struct {
 
 /**
 * @class IRSensorData
-*@brief ‹——£ƒZƒ“ƒT‚ÌŠeíƒf[ƒ^Ši”[ƒNƒ‰ƒX
+*@brief è·é›¢ã‚»ãƒ³ã‚µã®å„ç¨®ãƒ‡ãƒ¼ã‚¿æ ¼ç´ã‚¯ãƒ©ã‚¹
 */
 class IRSensorData
 {
@@ -245,7 +245,7 @@ public:
 
 /**
 * @class RasPiMouse_Obj
-*@brief RasPiMouse‚ÌŠeíƒf[ƒ^Ši”[ƒNƒ‰ƒX
+*@brief RasPiMouseã®å„ç¨®ãƒ‡ãƒ¼ã‚¿æ ¼ç´ã‚¯ãƒ©ã‚¹
 */
 class RasPiMouseObj
 {
@@ -259,17 +259,17 @@ public:
 };
 /**
 * @class RasPiMouseSimulatorObj
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì‘€ì‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æ“ä½œã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
 */
 class RasPiMouseSimulatorObj
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RasPiMouseSimulatorObj();
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~RasPiMouseSimulatorObj();
 	coil::Mutex mu;
@@ -290,115 +290,115 @@ public:
 
 	
 	/**
-	*@brief ‹——£ƒZƒ“ƒT‚ğİ’è
+	*@brief è·é›¢ã‚»ãƒ³ã‚µã‚’è¨­å®š
 	*/
 	void setIRSensorRay();
 	/**
-	*@brief Šeƒpƒ‰ƒ[ƒ^‚Ì‰Šú‰»‚ğs‚¤
-	*@param offset_z ‚‚³‚ğ’²®
+	*@brief å„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ã‚’è¡Œã†
+	*@param offset_z é«˜ã•ã‚’èª¿æ•´
 	*/
 	void makeParam(double offset_z=0);
 	/**
-	*@brief ’¼•û‘Ìì¬
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+	*@brief ç›´æ–¹ä½“ä½œæˆ
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void setBox(MyLink *body);
 	/**
-	*@brief ‰~’Œì¬
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+	*@brief å††æŸ±ä½œæˆ
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void setCylinder(MyLink *body);
 	/**
-	*@brief ‹…ì¬
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+	*@brief çƒä½œæˆ
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void setSphere(MyLink *body);
 	/**
-	*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒgì¬
-	* @param body1 ƒ{ƒfƒB1
-	* @param body2 ƒ{ƒfƒB2
+	*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+	* @param body1 ãƒœãƒ‡ã‚£1
+	* @param body2 ãƒœãƒ‡ã‚£2
 	*/
 	void setHinge(MyLink *body1, MyLink *body2);
 	/**
-	*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒgì¬
-	* @param body1 ƒ{ƒfƒB1
-	* @param body2 ƒ{ƒfƒB2
+	*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+	* @param body1 ãƒœãƒ‡ã‚£1
+	* @param body2 ãƒœãƒ‡ã‚£2
 	*/
 	void setSlider(MyLink *body1, MyLink *body2);
 	/**
-	*@brief ŒÅ’èƒWƒ‡ƒCƒ“ƒgì¬
-	* @param body1 ƒ{ƒfƒB1
-	* @param body2 ƒ{ƒfƒB2
+	*@brief å›ºå®šã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+	* @param body1 ãƒœãƒ‡ã‚£1
+	* @param body2 ãƒœãƒ‡ã‚£2
 	*/
 	void setFixed(MyLink *body1, MyLink *body2);
 	/**
-	*@brief ƒ{[ƒ‹ƒWƒ‡ƒCƒ“ƒgì¬
-	* @param body1 ƒ{ƒfƒB1
-	* @param body2 ƒ{ƒfƒB2
+	*@brief ãƒœãƒ¼ãƒ«ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+	* @param body1 ãƒœãƒ‡ã‚£1
+	* @param body2 ãƒœãƒ‡ã‚£2
 	*/
 	void setBall(MyLink *body1, MyLink *body2);
 	/**
-	*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒg¶¬
+	*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆç”Ÿæˆ
 	*/
 	void makeRobot();
 	/**
-	*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg§Œä
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-	* @param theta ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+	*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	* @param theta ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 	*/
 	void controlHinge(MyLink *body, dReal theta);
 	/**
-	*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg§Œä
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-	* @param theta ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
-	* @param vel ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚Ì‘¬“x
+	*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	* @param theta ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
+	* @param vel ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®é€Ÿåº¦
 	*/
 	void controlHinge(MyLink *body, dReal theta, dReal vel);
 	/**
-	*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg§Œä
-	* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-	* @param length ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+	*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+	* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	* @param length ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 	*/
 	void controlSlider(MyLink *body, dReal length);
 	/**
-	*@brief ‘SƒWƒ‡ƒCƒ“ƒg§Œä
+	*@brief å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
 	*/
 	void control();
 	/**
-	*@brief XV
+	*@brief æ›´æ–°
 	*/
 	void update();
 	/**
-	*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒgÁ‹
+	*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆæ¶ˆå»
 	*/
 	void destroyRobot();
 
 	/**
-	*@brief ÚGƒR[ƒ‹ƒoƒbƒN
-	* @param o1 ƒWƒIƒƒgƒŠ1
-	* @param o2 ƒWƒIƒƒgƒŠ2
+	*@brief æ¥è§¦ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+	* @param o1 ã‚¸ã‚ªãƒ¡ãƒˆãƒª1
+	* @param o2 ã‚¸ã‚ªãƒ¡ãƒˆãƒª2
 	*/
 	void m_nearCallback(dGeomID o1, dGeomID o2);
 	/**
-	*@brief ‚İ•İ’è
-	* @param s ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+	*@brief åˆ»ã¿å¹…è¨­å®š
+	* @param s ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 	*/
 	void setSamplingTime(double s);
 
 
 	/**
-	*@brief ’n–Ê¶¬
+	*@brief åœ°é¢ç”Ÿæˆ
 	*/
 	void makePlane(double lx, double ly, double lz);
 
 	/**
-	*@brief áŠQ•¨¶¬
+	*@brief éšœå®³ç‰©ç”Ÿæˆ
 	*/
 	void makeBlock(double x, double y, double z, double lx, double ly, double lz, double r);
 
 	/**
-	*@brief ƒtƒ@ƒCƒ‹‚©‚çáŠQ•¨‚ÍˆÊ’u“Ç‚İ‚İ
-	*@return “Ç‚İ‚İ¬Œ÷(true)A¸”s(false)
+	*@brief ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰éšœå®³ç‰©ã¯ä½ç½®èª­ã¿è¾¼ã¿
+	*@return èª­ã¿è¾¼ã¿æˆåŠŸ(true)ã€å¤±æ•—(false)
 	*/
 	bool loadBlocksData(std::string fname);
 

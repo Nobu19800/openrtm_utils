@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  TrotGait.h
-* @brief ƒgƒƒbƒg•à—e§ŒäƒNƒ‰ƒX
+* @brief ãƒˆãƒ­ãƒƒãƒˆæ­©å®¹åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -25,22 +25,22 @@ using namespace Eigen;
 
 /**
 * @class CrawlGait
-*@brief ƒgƒƒbƒg•à—e§ŒäƒNƒ‰ƒX
+*@brief ãƒˆãƒ­ãƒƒãƒˆæ­©å®¹åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class TrotGait : public GaitBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param ls ‹r‚ÌƒŠƒXƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param ls è„šã®ãƒªã‚¹ãƒˆ
 	*/
 	TrotGait(Leg_Object *ls, Body_Object *bo);
 	/**
-	*@brief •àsXV
-	* @param vx ‘¬“x(X)
-	* @param vy ‘¬“x(Y)
-	* @param dthe ‰ñ“]‘¬“x
-	* @param sd •à•
+	*@brief æ­©è¡Œæ›´æ–°
+	* @param vx é€Ÿåº¦(X)
+	* @param vy é€Ÿåº¦(Y)
+	* @param dthe å›è»¢é€Ÿåº¦
+	* @param sd æ­©å¹…
 	*/
 	virtual void walk(double vx, double vy, double dthe, double sd);
 

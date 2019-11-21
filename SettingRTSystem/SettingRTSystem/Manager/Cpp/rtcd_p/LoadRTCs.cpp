@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  LoadRTCs.cpp
-* @brief RTC“Ç‚İ‚İŠÖ˜A‚ÌƒNƒ‰ƒXAŠÖ˜A
+* @brief RTCèª­ã¿è¾¼ã¿é–¢é€£ã®ã‚¯ãƒ©ã‚¹ã€é–¢é€£
 *
 */
 
@@ -12,12 +12,12 @@ using namespace std;
 
 
 /**
-*@brief “®“IƒŠƒ“ƒNƒ‰ƒCƒuƒ‰ƒŠ‚©‚ç“Ç‚İ‚ñ‚¾RTC‚ÌŠeî•ñ‚ğŠi”[‚·‚éƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param name RTC–¼
-* @param filename ƒtƒ@ƒCƒ‹–¼
-* @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-* @param func ‰Šú‰»ŠÖ”
-* @param compList RTCƒIƒuƒWƒFƒNƒg‚ÌƒŠƒXƒg
+*@brief å‹•çš„ãƒªãƒ³ã‚¯ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‹ã‚‰èª­ã¿è¾¼ã‚“ã RTCã®å„æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param name RTCå
+* @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+* @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+* @param func åˆæœŸåŒ–é–¢æ•°
+* @param compList RTCã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒªã‚¹ãƒˆ
 */
 compParam::compParam(std::string name, std::string filename, std::string filepath, RTCInitFunction func, std::vector<RTC::RtcBase *> compList)
 {
@@ -30,8 +30,8 @@ compParam::compParam(std::string name, std::string filename, std::string filepat
 
 
 /**
-*@brief RTCƒ[ƒhŠÖ˜A‚ÌŠÖ”‚ğ‚ÂƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param manager ƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+*@brief RTCãƒ­ãƒ¼ãƒ‰é–¢é€£ã®é–¢æ•°ã‚’æŒã¤ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param manager ãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 LoadRTCs::LoadRTCs(RTC::Manager* manager)
 {
@@ -40,7 +40,7 @@ LoadRTCs::LoadRTCs(RTC::Manager* manager)
 }
 
 /**
-*@brief RTCƒ[ƒhŠÖ˜A‚ÌŠÖ”‚ğ‚ÂƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^
+*@brief RTCãƒ­ãƒ¼ãƒ‰é–¢é€£ã®é–¢æ•°ã‚’æŒã¤ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 LoadRTCs::~LoadRTCs()
 {
@@ -48,7 +48,7 @@ LoadRTCs::~LoadRTCs()
 }
 
 /**
-*@brief ƒtƒ@ƒCƒ‹‚©‚ç‹N“®‚·‚éRTC‚ÌƒŠƒXƒg‚ğ“Ç‚İ‚ñ‚ÅŠeRTC‚ğ‹N“®
+*@brief ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èµ·å‹•ã™ã‚‹RTCã®ãƒªã‚¹ãƒˆã‚’èª­ã¿è¾¼ã‚“ã§å„RTCã‚’èµ·å‹•
 */
 void LoadRTCs::openFile()
 {
@@ -96,10 +96,10 @@ void LoadRTCs::openFile()
 }
 
 /**
-*@brief ƒtƒ@ƒCƒ‹–¼‚©‚çRTC‚Ì‰Šú‰»ŠÖ”‚ğæ“¾
-* @param filename ƒtƒ@ƒCƒ‹–¼
-* @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-* @return RTC‚Ì‰Šú‰»ŠÖ”
+*@brief ãƒ•ã‚¡ã‚¤ãƒ«åã‹ã‚‰RTCã®åˆæœŸåŒ–é–¢æ•°ã‚’å–å¾—
+* @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+* @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+* @return RTCã®åˆæœŸåŒ–é–¢æ•°
 */
 RTCInitFunction LoadRTCs::getFunc(std::string filename,std::string filepath)
 {
@@ -144,9 +144,9 @@ RTCInitFunction LoadRTCs::getFunc(std::string filename,std::string filepath)
 }
 
 /**
-*@brief RTC–¼‚©‚çRTC‚ÌŠeî•ñ‚ğæ“¾
-* @param name RTC–¼
-* @return RTC‚ÌŠeî•ñ
+*@brief RTCåã‹ã‚‰RTCã®å„æƒ…å ±ã‚’å–å¾—
+* @param name RTCå
+* @return RTCã®å„æƒ…å ±
 */
 compParam *LoadRTCs::getCompFromName(std::string name)
 {
@@ -165,11 +165,11 @@ compParam *LoadRTCs::getCompFromName(std::string name)
 
 
 /**
-*@brief RTC‹N“®‚ÌŠÖ”
-* @param name RTC–¼
-* @param filename ƒtƒ@ƒCƒ‹–¼
-* @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief RTCèµ·å‹•ã®é–¢æ•°
+* @param name RTCå
+* @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+* @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 bool LoadRTCs::createComp(const char* name, const char* filename, const char* filepath)
 {
@@ -234,9 +234,9 @@ bool LoadRTCs::createComp(const char* name, const char* filename, const char* fi
 
 
 /**
-*@brief RTCíœ‚ÌŠÖ”(“¯ˆê‚ÌRTC‚ğ•¡”‹N“®‚µ‚Ä‚¢‚éê‡‚Íˆê”ÔÅŒã‚É‹N“®‚µ‚½RTC‚ğI—¹)
-* @param name RTC–¼
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief RTCå‰Šé™¤ã®é–¢æ•°(åŒä¸€ã®RTCã‚’è¤‡æ•°èµ·å‹•ã—ã¦ã„ã‚‹å ´åˆã¯ä¸€ç•ªæœ€å¾Œã«èµ·å‹•ã—ãŸRTCã‚’çµ‚äº†)
+* @param name RTCå
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 bool LoadRTCs::removeComp(const char* name)
 {
@@ -265,7 +265,7 @@ bool LoadRTCs::removeComp(const char* name)
 }
 
 /**
-*@brief íœ—\’è
+*@brief å‰Šé™¤äºˆå®š
 */
 void LoadRTCs::updateCompList()
 {
@@ -295,9 +295,9 @@ void LoadRTCs::updateCompList()
 
 
 /**
-*@brief RTCI—¹‚ÉRTC‚ÌƒŠƒXƒg‚©‚çíœ‚·‚é‚ÌƒŠƒXƒi‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param rtc RTCƒIƒuƒWƒFƒNƒg
-* @param list RTC‚ÌŠeî•ñ
+*@brief RTCçµ‚äº†æ™‚ã«RTCã®ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹ã®ãƒªã‚¹ãƒŠã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param rtc RTCã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param list RTCã®å„æƒ…å ±
 */
 RTC_FinalizeListener::RTC_FinalizeListener(RTC::RtcBase * rtc, compParam *list)
 {
@@ -306,8 +306,8 @@ RTC_FinalizeListener::RTC_FinalizeListener(RTC::RtcBase * rtc, compParam *list)
 };
 
 /**
-*@brief RTCI—¹‚ÉRTC‚ÌƒŠƒXƒg‚©‚çíœ‚·‚é
-* @param ec_id ÀsƒRƒ“ƒeƒLƒXƒg‚ÌID
+*@brief RTCçµ‚äº†æ™‚ã«RTCã®ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹
+* @param ec_id å®Ÿè¡Œã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®ID
 * @param list RTC::ReturnCode_t
 */
 void RTC_FinalizeListener::operator()(RTC::UniqueId ec_id, RTC::ReturnCode_t ret)

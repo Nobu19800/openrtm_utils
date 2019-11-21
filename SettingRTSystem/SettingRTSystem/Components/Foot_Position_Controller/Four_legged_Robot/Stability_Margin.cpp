@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Stability_Margin.cpp
-* @brief ˆÀ’è—]—TŒvZƒNƒ‰ƒX
+* @brief å®‰å®šä½™è£•è¨ˆç®—ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -21,7 +21,7 @@
 
 
 /**
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 Stability_Margin::Stability_Margin()
 {
@@ -32,8 +32,8 @@ Stability_Margin::Stability_Margin()
 }
 
 /**
-*@brief ‘S‹r‚©‚çˆÀ’è—]—TŒvZ
-*@param legs ‹r‚ÌƒŠƒXƒg
+*@brief å…¨è„šã‹ã‚‰å®‰å®šä½™è£•è¨ˆç®—
+*@param legs è„šã®ãƒªã‚¹ãƒˆ
 */
 Stability_Margin Stability_Margin::calc_stability_margin(Leg_Object *legs, bool ne, bool tf)
 {
@@ -260,10 +260,10 @@ Stability_Margin Stability_Margin::calc_stability_margin(Leg_Object *legs, bool 
 
 
 /**
-*@brief dSˆÊ’u‚Æü‚Ì‹——£‚ğŒvZ
-*@param pos0 ‹r0‚ÌˆÊ’u
-*@param pos1 ‹r1‚ÌˆÊ’u
-*@param dir ˆÀ’è‚É‚È‚édSˆÊ’u‚Ì•ûŒü
+*@brief é‡å¿ƒä½ç½®ã¨ç·šã®è·é›¢ã‚’è¨ˆç®—
+*@param pos0 è„š0ã®ä½ç½®
+*@param pos1 è„š1ã®ä½ç½®
+*@param dir å®‰å®šã«ãªã‚‹é‡å¿ƒä½ç½®ã®æ–¹å‘
 */
 Stability_Margin Stability_Margin::calc_distance(Vector3d pos0, Vector3d pos1, Stability_Direction dir, bool ne)
 {

@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  RobotArm.h
-* @brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€§ŒäƒNƒ‰ƒX
+* @brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -23,13 +23,13 @@ enum MoveType { Joint = 0, Point = 1, };
 
 /**
 * @class TargetPos
-*@brief èæˆÊ’u(‚à‚µ‚­‚ÍŠÖßŠp“x)‚Ì–Ú•WˆÊ’uA‰ŠúˆÊ’uA“’BŠÔ“™‚ğŠi”[‚·‚éƒNƒ‰ƒX
+*@brief æ‰‹å…ˆä½ç½®(ã‚‚ã—ãã¯é–¢ç¯€è§’åº¦)ã®ç›®æ¨™ä½ç½®ã€åˆæœŸä½ç½®ã€åˆ°é”æ™‚é–“ç­‰ã‚’æ ¼ç´ã™ã‚‹ã‚¯ãƒ©ã‚¹
 */
 class TargetPos
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	TargetPos();
 	double end_time;
@@ -43,31 +43,31 @@ public:
 	double start_theta; 
 
 	/**
-	*@brief –Ú•WèæˆÊ’u‚ğİ’è
-	* @param t “’BŠÔ(0ˆÈ‰º‚Éİ’è‚µ‚½ê‡‚Í‰ŠúˆÊ’u‚Æ–Ú•WˆÊ’u‚Æ‚Ì‹——£‚©‚ç©“®“I‚ÉŒvZ)
-	* @param t_p èæˆÊ’u
-	* @param the èæp¨
+	*@brief ç›®æ¨™æ‰‹å…ˆä½ç½®ã‚’è¨­å®š
+	* @param t åˆ°é”æ™‚é–“(0ä»¥ä¸‹ã«è¨­å®šã—ãŸå ´åˆã¯åˆæœŸä½ç½®ã¨ç›®æ¨™ä½ç½®ã¨ã®è·é›¢ã‹ã‚‰è‡ªå‹•çš„ã«è¨ˆç®—)
+	* @param t_p æ‰‹å…ˆä½ç½®
+	* @param the æ‰‹å…ˆå§¿å‹¢
 	*/
 	void setPoint(double t, Vector3d t_p, double the);
 	/**
-	*@brief –Ú•WŠÖßŠp“x‚ğİ’è
-	* @param t “’BŠÔ(0ˆÈ‰º‚Éİ’è‚µ‚½ê‡‚Í‰ŠúŠÖßŠp“x‚Æ–Ú•WŠÖßŠp“x‚Æ‚Ì‹——£‚©‚ç©“®“I‚ÉŒvZ)
-	* @param t_p ŠÖßŠp“x
+	*@brief ç›®æ¨™é–¢ç¯€è§’åº¦ã‚’è¨­å®š
+	* @param t åˆ°é”æ™‚é–“(0ä»¥ä¸‹ã«è¨­å®šã—ãŸå ´åˆã¯åˆæœŸé–¢ç¯€è§’åº¦ã¨ç›®æ¨™é–¢ç¯€è§’åº¦ã¨ã®è·é›¢ã‹ã‚‰è‡ªå‹•çš„ã«è¨ˆç®—)
+	* @param t_p é–¢ç¯€è§’åº¦
 	*/
 	void setJointPos(double t, double *t_p);
 	/**
-	*@brief ‰ŠúèæˆÊ’u‚ğİ’è
-	* @param s_p ‰ŠúèæˆÊ’u
-	* @param the ‰Šúèæp¨
-	* @param maxSpeedCartesianTrans èæ‚ÌÅ‘å‘¬“x
-	* @param maxSpeedCartesianRot èæp¨‚ÌÅ‘å‘¬“x
-	* @param minTime “’BŠÔ‚ÌÅ¬’l
+	*@brief åˆæœŸæ‰‹å…ˆä½ç½®ã‚’è¨­å®š
+	* @param s_p åˆæœŸæ‰‹å…ˆä½ç½®
+	* @param the åˆæœŸæ‰‹å…ˆå§¿å‹¢
+	* @param maxSpeedCartesianTrans æ‰‹å…ˆã®æœ€å¤§é€Ÿåº¦
+	* @param maxSpeedCartesianRot æ‰‹å…ˆå§¿å‹¢ã®æœ€å¤§é€Ÿåº¦
+	* @param minTime åˆ°é”æ™‚é–“ã®æœ€å°å€¤
 	*/
 	void setStartPoint(Vector3d s_p, double the, double maxSpeedCartesianTrans, double maxSpeedCartesianRot, double minTime);
 	/**
-	*@brief –Ú•WŠÖßŠp“x‚ğİ’è
-	* @param t “’BŠÔ
-	* @param t_p ŠÖßŠp“x
+	*@brief ç›®æ¨™é–¢ç¯€è§’åº¦ã‚’è¨­å®š
+	* @param t åˆ°é”æ™‚é–“
+	* @param t_p é–¢ç¯€è§’åº¦
 	*/
 	void setStartJointPos(double *s_p, double *maxSpeedJoint, double minTime);
 
@@ -77,85 +77,85 @@ public:
 
 /**
 * @class RobotArm
-*@brief ƒTƒCƒ“ƒXƒ}[ƒg»4©—R“xƒƒ{ƒbƒgƒA[ƒ€§ŒäƒNƒ‰ƒX
+*@brief ã‚µã‚¤ãƒ³ã‚¹ãƒãƒ¼ãƒˆè£½4è‡ªç”±åº¦ãƒ­ãƒœãƒƒãƒˆã‚¢ãƒ¼ãƒ åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class RobotArm
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	RobotArm();
 	/**
-	*@brief èæˆÊ’uæ“¾
-	*@param the ŠÖßŠp“x
-	* @return èæˆÊ’u
+	*@brief æ‰‹å…ˆä½ç½®å–å¾—
+	*@param the é–¢ç¯€è§’åº¦
+	* @return æ‰‹å…ˆä½ç½®
 	*/
 	Vector3d calcKinematics(double *the);
 	/**
-	*@brief ŠÖßŠp“x‚ğ“ü—Í
-	* @param t1 ŠÖßŠp“x(ŠÖß1)
-	* @param t2 ŠÖßŠp“x(ŠÖß2)
-	* @param t3 ŠÖßŠp“x(ŠÖß3)
-	* @param t4 ŠÖßŠp“x(ŠÖß4)
+	*@brief é–¢ç¯€è§’åº¦ã‚’å…¥åŠ›
+	* @param t1 é–¢ç¯€è§’åº¦(é–¢ç¯€1)
+	* @param t2 é–¢ç¯€è§’åº¦(é–¢ç¯€2)
+	* @param t3 é–¢ç¯€è§’åº¦(é–¢ç¯€3)
+	* @param t4 é–¢ç¯€è§’åº¦(é–¢ç¯€4)
 	*/
 	void setAngle(double t1, double t2, double t3, double t4);
 	/**
-	*@brief ƒ„ƒRƒrs—ñæ“¾
-	*@param the ŠÖßŠp“x
-	* @return ƒ„ƒRƒrs—ñ
+	*@brief ãƒ¤ã‚³ãƒ“è¡Œåˆ—å–å¾—
+	*@param the é–¢ç¯€è§’åº¦
+	* @return ãƒ¤ã‚³ãƒ“è¡Œåˆ—
 	*/
 	Matrix3d calcJacobian(double *the);
 	/**
-	*@brief èæ‘¬“x‚©‚çŠÖßŠp‘¬“x‚ğæ“¾
-	* @param v èæ‘¬“x
-	* @return ŠÖßŠp‘¬“x
+	*@brief æ‰‹å…ˆé€Ÿåº¦ã‹ã‚‰é–¢ç¯€è§’é€Ÿåº¦ã‚’å–å¾—
+	* @param v æ‰‹å…ˆé€Ÿåº¦
+	* @return é–¢ç¯€è§’é€Ÿåº¦
 	*/
 	Vector3d calcJointVel(Vector3d v);
 	/**
-	*@brief ŠÖßŠp‘¬“x‚Ì“ü—Í‚©‚çŠÖßŠp“x‚ğXV
-	* @param v1 ŠÖßŠp‘¬“x(ŠÖß1)
-	* @param v2 ŠÖßŠp‘¬“x(ŠÖß2)
-	* @param v3 ŠÖßŠp‘¬“x(ŠÖß3)
-	* @param v4 ŠÖßŠp‘¬“x(ŠÖß4)
+	*@brief é–¢ç¯€è§’é€Ÿåº¦ã®å…¥åŠ›ã‹ã‚‰é–¢ç¯€è§’åº¦ã‚’æ›´æ–°
+	* @param v1 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€1)
+	* @param v2 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€2)
+	* @param v3 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€3)
+	* @param v4 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€4)
 	*/
 	void updatePos(double v1, double v2, double v3, double v4);
 	/**
-	*@brief ŠÖßŠp“x‚Ìƒz[ƒ€ƒ|ƒWƒVƒ‡ƒ“‚ğİ’è
-	* @param o1 ŠÖßŠp‘¬“x(ŠÖß1)
-	* @param o2 ŠÖßŠp‘¬“x(ŠÖß2)
-	* @param o3 ŠÖßŠp‘¬“x(ŠÖß3)
-	* @param o4 ŠÖßŠp‘¬“x(ŠÖß4)
+	*@brief é–¢ç¯€è§’åº¦ã®ãƒ›ãƒ¼ãƒ ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’è¨­å®š
+	* @param o1 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€1)
+	* @param o2 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€2)
+	* @param o3 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€3)
+	* @param o4 é–¢ç¯€è§’é€Ÿåº¦(é–¢ç¯€4)
 	*/
 	void setOffset(double o1, double o2, double o3, double o4);
 	/**
-	*@brief –Ú•WˆÊ’u‚ÌƒŠƒXƒg‚Ì0”Ô–Ú‚É‰ŠúˆÊ’uA“’BŠÔ‚ğİ’è
+	*@brief ç›®æ¨™ä½ç½®ã®ãƒªã‚¹ãƒˆã®0ç•ªç›®ã«åˆæœŸä½ç½®ã€åˆ°é”æ™‚é–“ã‚’è¨­å®š
 	*/
 	void setTargetPos();
 	/**
-	*@brief XV
-	* @param st ‚İ•
+	*@brief æ›´æ–°
+	* @param st åˆ»ã¿å¹…
 	*/
 	void update(double st);
 	/**
-	*@brief ƒOƒŠƒbƒp[‚ğŠJ‚­
+	*@brief ã‚°ãƒªãƒƒãƒ‘ãƒ¼ã‚’é–‹ã
 	*/
 	void openGripper();
 	/**
-	*@brief ƒOƒŠƒbƒp[‚ğ•Â‚¶‚é
+	*@brief ã‚°ãƒªãƒƒãƒ‘ãƒ¼ã‚’é–‰ã˜ã‚‹
 	*/
 	void closeGripper();
 	/**
-	*@brief –Ú•WˆÊ’u’Ç‰Á
-	* @param p –Ú•WèæˆÊ’u
-	* @param the –Ú•Wèæp¨
-	* @param T “’BŠÔ
+	*@brief ç›®æ¨™ä½ç½®è¿½åŠ 
+	* @param p ç›®æ¨™æ‰‹å…ˆä½ç½®
+	* @param the ç›®æ¨™æ‰‹å…ˆå§¿å‹¢
+	* @param T åˆ°é”æ™‚é–“
 	*/
 	void addTargetPos(Vector3d p, double the, double T);
 	/**
-	*@brief –Ú•WŠÖßŠp“x’Ç‰Á
-	* @param p –Ú•WŠÖßŠp“x
-	* @param T “’BŠÔ
+	*@brief ç›®æ¨™é–¢ç¯€è§’åº¦è¿½åŠ 
+	* @param p ç›®æ¨™é–¢ç¯€è§’åº¦
+	* @param T åˆ°é”æ™‚é–“
 	*/
 	void addTargetJointPos(double *p, double T);
 
@@ -193,68 +193,68 @@ public:
 	TargetPos targetPoint;
 
 	/**
-	*@brief ƒx[ƒXƒIƒtƒZƒbƒg‚Ìİ’è
-	* @param bo ƒx[ƒXƒIƒtƒZƒbƒg
+	*@brief ãƒ™ãƒ¼ã‚¹ã‚ªãƒ•ã‚»ãƒƒãƒˆã®è¨­å®š
+	* @param bo ãƒ™ãƒ¼ã‚¹ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 	*/
 	void setBaseOffset(double *bo);
 	/**
-	*@brief èæÅ‘å‘¬“x‚Ìİ’è
-	* @param msc èæÅ‘å‘¬“x
+	*@brief æ‰‹å…ˆæœ€å¤§é€Ÿåº¦ã®è¨­å®š
+	* @param msc æ‰‹å…ˆæœ€å¤§é€Ÿåº¦
 	*/
 	void setMaxSpeedCartesian(Vector3d msc);
 	/**
-	*@brief ŠÖßÅ‘åŠp‘¬“x‚Ìİ’è
-	* @param msj ŠÖßÅ‘åŠp‘¬“x
+	*@brief é–¢ç¯€æœ€å¤§è§’é€Ÿåº¦ã®è¨­å®š
+	* @param msj é–¢ç¯€æœ€å¤§è§’é€Ÿåº¦
 	*/
 	void setMaxSpeedJoint(double *msj);
 	/**
-	*@brief èæ‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l‚Ìİ’è
-	* @param usl ƒ\ƒtƒgƒŠƒ~ƒbƒg‚ÌÅ‘å’l
-	* @param lsl ƒ\ƒtƒgƒŠƒ~ƒbƒg‚ÌÅ¬’l
+	*@brief æ‰‹å…ˆã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤ã®è¨­å®š
+	* @param usl ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆã®æœ€å¤§å€¤
+	* @param lsl ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆã®æœ€å°å€¤
 	*/
 	void setSoftLimitCartesian(Vector3d usl, Vector3d lsl);
 	/**
-	*@brief ˆê’â~
+	*@brief ä¸€æ™‚åœæ­¢
 	*/
 	void pause();
 	/**
-	*@brief ÄŠJ
+	*@brief å†é–‹
 	*/
 	void resume();
 	/**
-	*@brief ’â~
+	*@brief åœæ­¢
 	*/
 	void stop();
 	/**
-	*@brief ŠÖß‚Ìƒ\ƒtƒgƒŠƒ~ƒbƒg’l‚Ìİ’è
-	* @param usl ƒ\ƒtƒgƒŠƒ~ƒbƒg‚ÌÅ‘å’l
-	* @param lsl ƒ\ƒtƒgƒŠƒ~ƒbƒg‚ÌÅ¬’l
+	*@brief é–¢ç¯€ã®ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå€¤ã®è¨­å®š
+	* @param usl ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆã®æœ€å¤§å€¤
+	* @param lsl ã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆã®æœ€å°å€¤
 	*/
 	void setSoftLimitJoint(double *usl, double *lsl);
 	/**
-	*@brief ƒz[ƒ€ƒ|ƒWƒVƒ‡ƒ“‚ÉˆÚ“®
+	*@brief ãƒ›ãƒ¼ãƒ ãƒã‚¸ã‚·ãƒ§ãƒ³ã«ç§»å‹•
 	*/
 	void goHomePosition();
 	/**
-	*@brief ƒz[ƒ€ƒ|ƒWƒVƒ‡ƒ“‚Ìİ’è
-	* @param jp ƒz[ƒ€ƒ|ƒWƒVƒ‡ƒ“
+	*@brief ãƒ›ãƒ¼ãƒ ãƒã‚¸ã‚·ãƒ§ãƒ³ã®è¨­å®š
+	* @param jp ãƒ›ãƒ¼ãƒ ãƒã‚¸ã‚·ãƒ§ãƒ³
 	*/
 	void setHomePosition(double *jp);
 	/**
-	*@brief ƒT[ƒ{‚ğƒIƒ“AƒIƒt‚É‚·‚é
-	* @param state true‚ÅƒIƒ“Afalse‚ÅƒIƒt
+	*@brief ã‚µãƒ¼ãƒœã‚’ã‚ªãƒ³ã€ã‚ªãƒ•ã«ã™ã‚‹
+	* @param state trueã§ã‚ªãƒ³ã€falseã§ã‚ªãƒ•
 	*/
 	void setSerbo(bool state);
 	/**
-	*@brief ŠÖßAèæˆÊ’u‚ªƒ\ƒtƒgƒŠƒ~ƒbƒg“à‚©‚ğ”»’è‚·‚é
-	*@param the ŠÖßŠp“x
-	*@return ”ÍˆÍ“à‚Ìê‡true
+	*@brief é–¢ç¯€ã€æ‰‹å…ˆä½ç½®ãŒã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå†…ã‹ã‚’åˆ¤å®šã™ã‚‹
+	*@param the é–¢ç¯€è§’åº¦
+	*@return ç¯„å›²å†…ã®å ´åˆtrue
 	*/
 	bool judgeSoftLimitJoint(double *the);
 	/**
-	*@brief èæˆÊ’u‚ªƒ\ƒtƒgƒŠƒ~ƒbƒg“à‚©‚ğ”»’è‚·‚é
-	*@param pos èæˆÊ’u
-	*@return ”ÍˆÍ“à‚Ìê‡true
+	*@brief æ‰‹å…ˆä½ç½®ãŒã‚½ãƒ•ãƒˆãƒªãƒŸãƒƒãƒˆå†…ã‹ã‚’åˆ¤å®šã™ã‚‹
+	*@param pos æ‰‹å…ˆä½ç½®
+	*@return ç¯„å›²å†…ã®å ´åˆtrue
 	*/
 	bool judgeSoftLimitPos(Vector3d pos);
 	
@@ -283,35 +283,35 @@ public:
 	//double speedJointPos;
 
 	/**
-	*@brief èæ‚ÌŠÖß(ŠÖß4)‚ÌŠÖßŠp“xİ’è
-	* @param hjp ŠÖßŠp“x
+	*@brief æ‰‹å…ˆã®é–¢ç¯€(é–¢ç¯€4)ã®é–¢ç¯€è§’åº¦è¨­å®š
+	* @param hjp é–¢ç¯€è§’åº¦
 	*/
 	void setHandJointPosition(double hjp);
 	/**
-	*@brief ‰Šú‚ÌèæˆÊ’uİ’è
-	* @param j1 ŠÖßŠp“x(ŠÖß1)
-	* @param j1 ŠÖßŠp“x(ŠÖß2)
-	* @param j1 ŠÖßŠp“x(ŠÖß3)
-	* @param j1 ŠÖßŠp“x(ŠÖß4)
+	*@brief åˆæœŸã®æ‰‹å…ˆä½ç½®è¨­å®š
+	* @param j1 é–¢ç¯€è§’åº¦(é–¢ç¯€1)
+	* @param j1 é–¢ç¯€è§’åº¦(é–¢ç¯€2)
+	* @param j1 é–¢ç¯€è§’åº¦(é–¢ç¯€3)
+	* @param j1 é–¢ç¯€è§’åº¦(é–¢ç¯€4)
 	*/
 	void setStartPos(double j1, double j2, double j3, double j4);
 	/**
-	*@brief ŠJn
+	*@brief é–‹å§‹
 	*/
 	void start();
 	/**
-	*@brief ƒ‚[ƒ^[‚ÌŠp“x‚ğæ“¾
-	* @return ƒ‚[ƒ^[‚ÌŠp“x
+	*@brief ãƒ¢ãƒ¼ã‚¿ãƒ¼ã®è§’åº¦ã‚’å–å¾—
+	* @return ãƒ¢ãƒ¼ã‚¿ãƒ¼ã®è§’åº¦
 	*/
 	double* getMotorPosition();
 	/**
-	*@brief –Ú•WŠÖßŠp‘¬“x‚ğŒvZ
-	* @param target_theta –Ú•WŠÖßŠp“x
-	* @param start_theta ‰ŠúŠÖßŠp“x
-	* @param end_time “’BŠÔ
-	* @param time Œ»İ‚ÌŠÔ
-	* @param angle Œ»İ‚ÌŠÖßŠp“x
-	* @return –Ú•WŠÖßŠp‘¬“x
+	*@brief ç›®æ¨™é–¢ç¯€è§’é€Ÿåº¦ã‚’è¨ˆç®—
+	* @param target_theta ç›®æ¨™é–¢ç¯€è§’åº¦
+	* @param start_theta åˆæœŸé–¢ç¯€è§’åº¦
+	* @param end_time åˆ°é”æ™‚é–“
+	* @param time ç¾åœ¨ã®æ™‚é–“
+	* @param angle ç¾åœ¨ã®é–¢ç¯€è§’åº¦
+	* @return ç›®æ¨™é–¢ç¯€è§’é€Ÿåº¦
 	*/
 	double calcVel(double target_theta, double start_theta, double end_time, double time, double angle);
 

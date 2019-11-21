@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef JOINTITEM_H
 #define JOINTITEM_H
 
@@ -29,26 +29,26 @@ class JointItem : public QGraphicsPixmapItem
 public:
 
     JointItem(JointData *jd, QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
-	enum JointType { Hinge, Slider, Fix};	//ƒWƒ‡ƒCƒ“ƒg‚Ìí—Ş
-	int returnJoint();	//ƒWƒ‡ƒCƒ“ƒg‚Ìí—Ş‚ğ•Ô‚·
+	enum JointType { Hinge, Slider, Fix};	//ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ç¨®é¡
+	int returnJoint();	//ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ç¨®é¡ã‚’è¿”ã™
 	void setJoint(JointData *jd);
 	void setParam(JointParam jp);
-	ItemDataBase*  returnNUM1();	//ª–{‘¤‚ÉÚ‘±‚µ‚Ä‚¢‚éƒ{ƒfƒB‚Ì”Ô†
-	ItemDataBase*  returnNUM2();	//æ’[‘¤‚ÉÚ‘±‚µ‚Ä‚¢‚éƒ{ƒfƒB‚Ì”Ô†
-	JointData* ReturnParam();	//ƒpƒ‰ƒ[ƒ^‚ğ•Ô‚·
-	void setBody(BodyData* i1, BodyData* i2);	//Ú‘±‚·‚éƒ{ƒfƒB‚ğİ’è
-	bool FLAG;	//•¨‘Ì‚ªÁ‹‚³‚ê‚Ä‚¢‚È‚¯‚ê‚ÎTrue,Á‹Ï‚İ‚È‚çFalse
-	void setName(QString Name);	//–¼‘O‚ğİ’è
-	QString ReturnName();	//–¼‘O‚ğ•Ô‚·
-	int NUM;	//”Ô†
+	ItemDataBase*  returnNUM1();	//æ ¹æœ¬å´ã«æ¥ç¶šã—ã¦ã„ã‚‹ãƒœãƒ‡ã‚£ã®ç•ªå·
+	ItemDataBase*  returnNUM2();	//å…ˆç«¯å´ã«æ¥ç¶šã—ã¦ã„ã‚‹ãƒœãƒ‡ã‚£ã®ç•ªå·
+	JointData* ReturnParam();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
+	void setBody(BodyData* i1, BodyData* i2);	//æ¥ç¶šã™ã‚‹ãƒœãƒ‡ã‚£ã‚’è¨­å®š
+	bool FLAG;	//ç‰©ä½“ãŒæ¶ˆå»ã•ã‚Œã¦ã„ãªã‘ã‚Œã°True,æ¶ˆå»æ¸ˆã¿ãªã‚‰False
+	void setName(QString Name);	//åå‰ã‚’è¨­å®š
+	QString ReturnName();	//åå‰ã‚’è¿”ã™
+	int NUM;	//ç•ªå·
 	QGraphicsLineItem* m_line;
 	QGraphicsTextItem *m_text;
 	JointData *m_param;
 
 
 private:
-	Control_Mode myMode;	//ƒGƒfƒBƒ^ã‚Å‚Ìó‘Ô
-	void open();	//ƒpƒ‰ƒ[ƒ^İ’è‚Ìƒ_ƒCƒAƒƒO•\¦
+	Control_Mode myMode;	//ã‚¨ãƒ‡ã‚£ã‚¿ä¸Šã§ã®çŠ¶æ…‹
+	void open();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒ€ã‚¤ã‚¢ãƒ­ã‚°è¡¨ç¤º
 
 
 

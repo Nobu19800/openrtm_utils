@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  rtcdControl.cpp
- * @brief RTCD‘€ì‚ÌRTC
+ * @brief RTCDæ“ä½œã®RTC
  * @date $Date$
  *
  * $Id$
@@ -30,8 +30,8 @@ static const char* rtcdcontrol_spec[] =
 
 
 /*!
-* @brief RTCD‘€ì‚ÌRTC‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param manager ƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+* @brief RTCDæ“ä½œã®RTCã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param manager ãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 rtcdControl::rtcdControl(RTC::Manager* manager)
     // <rtc-template block="initializer">
@@ -46,7 +46,7 @@ rtcdControl::rtcdControl(RTC::Manager* manager)
 
 
 /*!
-* @brief  RTCD‘€ì‚ÌRTC‚ÌƒfƒXƒgƒ‰ƒNƒ^
+* @brief  RTCDæ“ä½œã®RTCã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 rtcdControl::~rtcdControl()
 {
@@ -56,7 +56,7 @@ rtcdControl::~rtcdControl()
 
 
 /**
-*@brief ‰Šú‰»ˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+*@brief åˆæœŸåŒ–å‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 * @return RTC::ReturnCode_t
 */
 RTC::ReturnCode_t rtcdControl::onInitialize()
@@ -106,7 +106,7 @@ RTC::ReturnCode_t rtcdControl::onShutdown(RTC::UniqueId ec_id)
 */
 
 /**
-*@brief Šˆ«‰»‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+*@brief æ´»æ€§åŒ–æ™‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 * @param ec_id target ExecutionContext Id
 * @return
 */
@@ -116,7 +116,7 @@ RTC::ReturnCode_t rtcdControl::onActivated(RTC::UniqueId ec_id)
 }
 
 /**
-*@brief •sŠˆ«‰»‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”
+*@brief ä¸æ´»æ€§åŒ–æ™‚ã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 * @param ec_id target ExecutionContext Id
 * @return RTC::ReturnCode_t
 */
@@ -126,7 +126,7 @@ RTC::ReturnCode_t rtcdControl::onDeactivated(RTC::UniqueId ec_id)
 }
 
 /**
-*@brief üŠúˆ——pƒR[ƒ‹ƒoƒbƒNŠÖ”
+*@brief å‘¨æœŸå‡¦ç†ç”¨ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°
 * @param ec_id target ExecutionContext Id
 * @return RTC::ReturnCode_t
 */

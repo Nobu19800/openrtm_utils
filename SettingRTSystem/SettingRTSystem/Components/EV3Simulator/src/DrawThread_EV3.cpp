@@ -1,4 +1,4 @@
-#include <fstream>
+ï»¿#include <fstream>
 #include "DrawThread_EV3.h"
 #include "searchFile.h"
 #include <coil/stringutil.h>
@@ -19,7 +19,7 @@ DrawThread_EV3 *obj_drawthread = NULL;
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì•`‰æ‚ğ‚·‚éƒXƒŒƒbƒh‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æç”»ã‚’ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 DrawThread_EV3::DrawThread_EV3(EV3SimulatorObj *so, double dt)
 {
@@ -36,8 +36,8 @@ DrawThread_EV3::DrawThread_EV3(EV3SimulatorObj *so, double dt)
 }
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ƒ‹[ƒv
-* @param pause –¢g—p
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ«ãƒ¼ãƒ—
+* @param pause æœªä½¿ç”¨
 */
 void simLoop(int pause)
 {
@@ -59,7 +59,7 @@ void simLoop(int pause)
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰Šú‰»
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³åˆæœŸåŒ–
 */
 void start()
 {
@@ -79,7 +79,7 @@ void start()
 }
 
 /**
-*@brief ƒXƒŒƒbƒhÀsŠÖ”
+*@brief ã‚¹ãƒ¬ãƒƒãƒ‰å®Ÿè¡Œé–¢æ•°
 * @return
 */
 int DrawThread_EV3::svc()
@@ -94,7 +94,7 @@ int DrawThread_EV3::svc()
 
 
 /**
-*@brief DrawStuff‰Šú‰»
+*@brief DrawStuffåˆæœŸåŒ–
 */
 void DrawThread_EV3::setDrawStuff()
 {
@@ -126,8 +126,8 @@ void DrawThread_EV3::setDrawStuff()
 }
 
 /**
-*@brief ’¼•û‘Ì•`‰æ
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief ç›´æ–¹ä½“æç”»
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void DrawThread_EV3::drawBox(MyLink *body)
 {
@@ -138,8 +138,8 @@ void DrawThread_EV3::drawBox(MyLink *body)
 }
 
 /**
-*@brief ‰~’Œ•`‰æ
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief å††æŸ±æç”»
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void DrawThread_EV3::drawCylinder(MyLink *body)
 {
@@ -150,8 +150,8 @@ void DrawThread_EV3::drawCylinder(MyLink *body)
 
 
 /**
-*@brief ‹…•`‰æ
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief çƒæç”»
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void DrawThread_EV3::drawSphere(MyLink *body)
 {
@@ -161,7 +161,7 @@ void DrawThread_EV3::drawSphere(MyLink *body)
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒB•`‰æ
+*@brief å…¨ãƒœãƒ‡ã‚£æç”»
 */
 void DrawThread_EV3::drawRobot()
 {
@@ -216,7 +216,7 @@ void DrawThread_EV3::drawRobot()
 
 
 /**
-*@brief ƒJƒƒ‰ˆÊ’uÄİ’è
+*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®š
 */
 void DrawThread_EV3::resetCameraPosition()
 {
@@ -239,7 +239,7 @@ void DrawThread_EV3::resetCameraPosition()
 
 
 /**
-*@brief ƒJƒƒ‰ˆÊ’uÄİ’èƒtƒ‰ƒO‚ğ—§‚Ä‚é
+*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®šãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 */
 void DrawThread_EV3::setRCPFlag()
 {
@@ -250,7 +250,7 @@ void DrawThread_EV3::setRCPFlag()
 
 
 /**
-*@brief •`‰æ‚ğ’â~‚·‚é
+*@brief æç”»ã‚’åœæ­¢ã™ã‚‹
 */
 void DrawThread_EV3::stop()
 {

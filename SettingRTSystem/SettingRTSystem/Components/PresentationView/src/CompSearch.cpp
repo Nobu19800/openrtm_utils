@@ -1,7 +1,7 @@
-// -*-C++-*-
+ï»¿// -*-C++-*-
 /*!
  * @file  CompSearch.cpp
- * @brief ƒf[ƒ^ƒ|[ƒg‚ÌŒŸõ
+ * @brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®æ¤œç´¢
  *
  */
 
@@ -17,7 +17,7 @@ using namespace std;
 /*
 http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Fconnect
 http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Flist
-‚Ìƒ\[ƒXƒR[ƒh‚ğˆê•”‰ü•Ï‚µ‚Ü‚µ‚½
+ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’ä¸€éƒ¨æ”¹å¤‰ã—ã¾ã—ãŸ
 */
 
 
@@ -47,7 +47,7 @@ void portConnect(PortService_ptr p1, PortService_var p2)
 
 /*
 http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Fconnect
-‚Ìƒ\[ƒXƒR[ƒh70`78s–Ú
+ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰70ã€œ78è¡Œç›®
 */
 
 	RTC::ConnectorProfile prof;
@@ -69,7 +69,7 @@ http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Fconnect
         CORBA_SeqUtil::push_back(prof.properties,NVUtil::newNV("dataport.push_rate",period.c_str()));
     }
 
-/*‚±‚±‚Ü‚Å*/
+/*ã“ã“ã¾ã§*/
 
     RTC::ReturnCode_t ret;
 
@@ -83,11 +83,11 @@ http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Fconnect
 }
 
 /*
-ˆÈ‰º‚Íhttp://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Flist
-‚Ìƒ\[ƒXƒR[ƒh‚ğ‰ü•Ï‚µ‚Ä‚¢‚Ü‚·B
+ä»¥ä¸‹ã¯http://www17.atpages.jp/~aitech/wiki/?OpenRTM%2FControl%2Flist
+ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã‚’æ”¹å¤‰ã—ã¦ã„ã¾ã™ã€‚
 */
 
-/*ˆø”‚ÉTreeObject‚ğ’Ç‰Á*/
+/*å¼•æ•°ã«TreeObjectã‚’è¿½åŠ */
 void ListRecursive(CosNaming::NamingContext_ptr context,vector<OtherPort> &rtclist,vector<string> &name, TreeObject *to){
     CosNaming::BindingList_var     bl;
     CosNaming::BindingIterator_var bi;
@@ -116,7 +116,7 @@ void ListRecursive(CosNaming::NamingContext_ptr context,vector<OtherPort> &rtcli
                 vector<string> namebuff=name;
                 name.push_back(string(bl[i].binding_name[0].id));
 /*
-ƒf[ƒ^ƒ|[ƒg‚Ìî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒR[ƒh‚ğ’Ç‰Á
+ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã®æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚³ãƒ¼ãƒ‰ã‚’è¿½åŠ 
 */
 				if(string(bl[i].binding_name[0].kind) == "rtc")
 				{
@@ -159,7 +159,7 @@ void ListRecursive(CosNaming::NamingContext_ptr context,vector<OtherPort> &rtcli
 
 					//name=namebuff2;
 				}
-/*‚±‚±‚Ü‚Å*/
+/*ã“ã“ã¾ã§*/
 				name=namebuff;
 				
                 //rtclist.push_back(name_buff);
@@ -178,7 +178,7 @@ void ListRecursive(CosNaming::NamingContext_ptr context,vector<OtherPort> &rtcli
 }
 
 
-/*ˆø”‚ÉTreeObject‚ÆIPƒAƒhƒŒƒX‚ğ’Ç‰Á*/
+/*å¼•æ•°ã«TreeObjectã¨IPã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¿½åŠ */
 int rtc_get_rtclist(RTC::CorbaNaming &naming,vector<OtherPort> &rtclist, TreeObject *to, std::string IP_adress){
 	
     

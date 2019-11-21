@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef DIAGRAMSCENE_H
 #define DIAGRAMSCENE_H
 
@@ -25,7 +25,7 @@ QT_END_NAMESPACE
 
 
 
-/*ƒGƒfƒBƒ^*/
+/*ã‚¨ãƒ‡ã‚£ã‚¿*/
 
 class DiagramScene : public QGraphicsScene
 {

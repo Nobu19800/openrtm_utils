@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  Config.cpp
 * @brief 実行条件のウィジェット
 *

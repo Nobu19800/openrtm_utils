@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  PresentationView.h
  * @brief Presentation View Component
@@ -54,16 +54,16 @@ int rtc_get_rtclist(RTC::CorbaNaming &naming,std::vector<OtherPort> &rtclist, Tr
 
 /*!
  * @class OtherPort
- * @brief ƒf[ƒ^ƒ|[ƒgƒIƒuƒWƒFƒNƒgAƒpƒX‚ğŠi”[‚·‚éƒNƒ‰ƒX
+ * @brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€ãƒ‘ã‚¹ã‚’æ ¼ç´ã™ã‚‹ã‚¯ãƒ©ã‚¹
  *
  */
 class OtherPort
 {
 	public:
 		/**
-		*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-		* @param p ƒf[ƒ^ƒ|[ƒgƒIƒuƒWƒFƒNƒg
-		* @param s ƒpƒX
+		*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		* @param p ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+		* @param s ãƒ‘ã‚¹
 		*/
 		OtherPort(RTC::PortService_var p, std::vector<std::string> s)
 		{
@@ -71,8 +71,8 @@ class OtherPort
 			pb = p;
 			buff = s;
 		};
-		RTC::PortService_var pb; /**<@@brief  */
-		std::vector<std::string> buff; /**<@@brief  */
+		RTC::PortService_var pb; /**<ã€€@brief  */
+		std::vector<std::string> buff; /**<ã€€@brief  */
 		
 };
 
@@ -97,64 +97,64 @@ class PresentationView
   ~PresentationView();
 
   /*!
-   * @brief m_image‚Ìæ“¾
-   * @return CameraImageŒ^‚Ìƒf[ƒ^
+   * @brief m_imageã®å–å¾—
+   * @return CameraImageå‹ã®ãƒ‡ãƒ¼ã‚¿
    */
   CameraImage *getImage();
-  bool imageIsNew;	/**<@@brief  */
+  bool imageIsNew;	/**<ã€€@brief  */
 
   /*!
-   * @brief ƒXƒ‰ƒCƒh‚ği‚ß‚é
-   * @param num i‚ß‚éƒXƒ‰ƒCƒh”
+   * @brief ã‚¹ãƒ©ã‚¤ãƒ‰ã‚’é€²ã‚ã‚‹
+   * @param num é€²ã‚ã‚‹ã‚¹ãƒ©ã‚¤ãƒ‰æ•°
    */
   void writeSlideNumberOut(int num);
   /*!
-   * @brief ƒXƒ‰ƒCƒh‚ğ–ß‚é
-   * @param num –ß‚éƒXƒ‰ƒCƒh”
+   * @brief ã‚¹ãƒ©ã‚¤ãƒ‰ã‚’æˆ»ã‚‹
+   * @param num æˆ»ã‚‹ã‚¹ãƒ©ã‚¤ãƒ‰æ•°
    */
   void writeEffectNumberOut(int num);
   /*!
-   * @brief ÀsüŠúæ“¾
-   * @return ÀsüŠú
+   * @brief å®Ÿè¡Œå‘¨æœŸå–å¾—
+   * @return å®Ÿè¡Œå‘¨æœŸ
    */
   int getRate();
   /*!
-   * @brief üƒf[ƒ^o—Í
-   * @param dt •`‰æ“_
+   * @brief ç·šãƒ‡ãƒ¼ã‚¿å‡ºåŠ›
+   * @param dt æç”»ç‚¹
    */
   void putPenData(std::vector<int>*dt);
   /*!
-   * @brief ƒf[ƒ^ƒx[ƒX‚É“o˜^‚³‚ê‚½“®‰æƒŠƒXƒg‚ğæ“¾
-   * @return “®‰æƒŠƒXƒg
+   * @brief ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ç™»éŒ²ã•ã‚ŒãŸå‹•ç”»ãƒªã‚¹ãƒˆã‚’å–å¾—
+   * @return å‹•ç”»ãƒªã‚¹ãƒˆ
    */
   std::vector<std::vector<std::string>> getList();
   /*!
-   * @brief “®‰æ‚Ì–¼‘O‚ğw’è‚µ‚Ä“®‰æ‚ğ‘—M‚µ‚Ä‚¢‚éRTC‚ÆÚ‘±
-   * @param name “®‰æ‚Ì–¼‘O
-   * @param m_List “®‰æƒŠƒXƒg
-   * @return ¬Œ÷‚µ‚½ê‡TrueA¸”s‚µ‚½ê‡False
+   * @brief å‹•ç”»ã®åå‰ã‚’æŒ‡å®šã—ã¦å‹•ç”»ã‚’é€ä¿¡ã—ã¦ã„ã‚‹RTCã¨æ¥ç¶š
+   * @param name å‹•ç”»ã®åå‰
+   * @param m_List å‹•ç”»ãƒªã‚¹ãƒˆ
+   * @return æˆåŠŸã—ãŸå ´åˆTrueã€å¤±æ•—ã—ãŸå ´åˆFalse
    */
   bool connectDPort(const char *name, std::vector<std::vector<std::string>> m_List);
   /*!
-   * @brief ƒf[ƒ^ƒ|[ƒg‚ğÚ‘±
-   * @param m_path RTC‚ÌƒpƒX
-   * @param pname ƒf[ƒ^ƒ|[ƒg–¼
-   * @return ¬Œ÷‚µ‚½ê‡TrueA¸”s‚µ‚½ê‡False
+   * @brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚’æ¥ç¶š
+   * @param m_path RTCã®ãƒ‘ã‚¹
+   * @param pname ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆå
+   * @return æˆåŠŸã—ãŸå ´åˆTrueã€å¤±æ•—ã—ãŸå ´åˆFalse
    */
   bool connectDPorts(std::string m_path, std::string pname, PortService_ptr p1);
   /*!
-   * @brief “®‰æƒŠƒXƒg‚©‚ç–¼‘O‚Å“®‰æ‚Ìî•ñ‚ğæ“¾
-   * @param name “®‰æ‚Ì–¼‘O
-   * @param m_List “®‰æƒŠƒXƒg
-   * @return RTC‚Ìî•ñ
+   * @brief å‹•ç”»ãƒªã‚¹ãƒˆã‹ã‚‰åå‰ã§å‹•ç”»ã®æƒ…å ±ã‚’å–å¾—
+   * @param name å‹•ç”»ã®åå‰
+   * @param m_List å‹•ç”»ãƒªã‚¹ãƒˆ
+   * @return RTCã®æƒ…å ±
    */
   std::vector<std::string> getPath(const char *name, std::vector<std::vector<std::string>> m_List);
   /*!
-   * @brief ƒpƒX‚©‚çƒf[ƒ^ƒ|[ƒgƒIƒuƒWƒFƒNƒg‚ğæ“¾
-   * @param name ƒpƒX
-   * @param ops ƒf[ƒ^ƒ|[ƒgƒIƒuƒWƒFƒNƒg‚ÌƒŠƒXƒg
-   * @param op æ“¾‚µ‚½ƒf[ƒ^ƒ|[ƒgƒIƒuƒWƒFƒNƒg
-   * @return æ“¾‚É¬Œ÷‚µ‚½ê‡TrueA¸”s‚µ‚½ê‡False
+   * @brief ãƒ‘ã‚¹ã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
+   * @param name ãƒ‘ã‚¹
+   * @param ops ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒªã‚¹ãƒˆ
+   * @param op å–å¾—ã—ãŸãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+   * @return å–å¾—ã«æˆåŠŸã—ãŸå ´åˆTrueã€å¤±æ•—ã—ãŸå ´åˆFalse
    */
   bool getRTC(std::vector<std::string> name, std::vector<OtherPort> ops, OtherPort &op);
 
@@ -391,8 +391,8 @@ class PresentationView
   // </rtc-template>
 
  private:
-	 std::string m_uuidstr;	/**<@@brief  */
-	 RTC::Manager* m_manager;	/**<@@brief  */
+	 std::string m_uuidstr;	/**<ã€€@brief  */
+	 RTC::Manager* m_manager;	/**<ã€€@brief  */
   // <rtc-template block="private_attribute">
   
   // </rtc-template>

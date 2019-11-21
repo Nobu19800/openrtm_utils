@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  FileStreamFunc.cpp
 * @brief ファイル操作関連の関数
 *

@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  Stability_Margin.h
-* @brief ˆÀ’è—]—TŒvZƒNƒ‰ƒX
+* @brief å®‰å®šä½™è£•è¨ˆç®—ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -36,34 +36,34 @@ enum Stability_Direction
 
 /**
 * @class Stability_Margin
-*@brief ˆÀ’è—]—TŒvZƒNƒ‰ƒX
+*@brief å®‰å®šä½™è£•è¨ˆç®—ã‚¯ãƒ©ã‚¹
 */
 class Stability_Margin
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Stability_Margin();
 	/**
-	*@brief ‘S‹r‚©‚çˆÀ’è—]—TŒvZ
-	*@param legs ‹r‚ÌƒŠƒXƒg
-	*@param ne true‚Ìê‡‚ÍNEˆÀ’è—]—T‚àŒvZ
-	*@param tf true‚Ìê‡‚Í–Ú•WˆÊ’u‚Å‚ÌˆÀ’è—]—T‚àŒvZ
+	*@brief å…¨è„šã‹ã‚‰å®‰å®šä½™è£•è¨ˆç®—
+	*@param legs è„šã®ãƒªã‚¹ãƒˆ
+	*@param ne trueã®å ´åˆã¯NEå®‰å®šä½™è£•ã‚‚è¨ˆç®—
+	*@param tf trueã®å ´åˆã¯ç›®æ¨™ä½ç½®ã§ã®å®‰å®šä½™è£•ã‚‚è¨ˆç®—
 	*/
 	static Stability_Margin calc_stability_margin(Leg_Object *legs,bool ne = false, bool tf = true);
 	/**
-	*@brief dSˆÊ’u‚Æx‹r’¼ü‚Ì‹——£‚ğŒvZ
-	*@param pos0 ‹r0‚ÌˆÊ’u
-	*@param pos1 ‹r1‚ÌˆÊ’u
-	*@param dir ˆÀ’è‚É‚È‚édSˆÊ’u‚Ì•ûŒü
-	*@param ne true‚Ìê‡‚ÍNEˆÀ’è—]—T‚àŒvZ
+	*@brief é‡å¿ƒä½ç½®ã¨æ”¯æŒè„šç›´ç·šã®è·é›¢ã‚’è¨ˆç®—
+	*@param pos0 è„š0ã®ä½ç½®
+	*@param pos1 è„š1ã®ä½ç½®
+	*@param dir å®‰å®šã«ãªã‚‹é‡å¿ƒä½ç½®ã®æ–¹å‘
+	*@param ne trueã®å ´åˆã¯NEå®‰å®šä½™è£•ã‚‚è¨ˆç®—
 	*/
 	static Stability_Margin calc_distance(Vector3d pos0, Vector3d pos1, Stability_Direction dir, bool ne = false);
 	/**
-	*@brief ˆÀ’è—]—T‚ğæ“¾
-	*@param ne true‚Ìê‡‚ÍNEˆÀ’è—]—T‚ğæ“¾
-	*@return ˆÀ’è—]—T
+	*@brief å®‰å®šä½™è£•ã‚’å–å¾—
+	*@param ne trueã®å ´åˆã¯NEå®‰å®šä½™è£•ã‚’å–å¾—
+	*@return å®‰å®šä½™è£•
 	*/
 	double getDistance(bool ne);
 	double distance;

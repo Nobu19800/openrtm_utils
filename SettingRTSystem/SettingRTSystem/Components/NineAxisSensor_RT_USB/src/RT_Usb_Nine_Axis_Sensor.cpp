@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
  * @file  RT_Usb_Nine_Axis_Sensor.cpp
- * @brief USBo—Í9²IMUƒZƒ“ƒTƒ‚ƒWƒ…[ƒ‹‚Ì’ÊMŠÖ˜A‚ÌƒNƒ‰ƒX
+ * @brief USBå‡ºåŠ›9è»¸IMUã‚»ãƒ³ã‚µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®é€šä¿¡é–¢é€£ã®ã‚¯ãƒ©ã‚¹
  *
  */
 
@@ -15,16 +15,16 @@
 
 
 /**
-*@brief USBo—Í9²IMUƒZƒ“ƒTƒ‚ƒWƒ…[ƒ‹‚Ì’ÊMŠÖ˜A‚ÌƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param result ‰Šú‰»¬Œ÷‚ÅTrueA¸”s‚ÅFalse
-* @param serial_port ƒfƒoƒCƒXƒtƒ@ƒCƒ‹–¼
-* @param mx_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(X)
-* @param my_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(Y)
-* @param mz_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(Z)
-* @param ar ‰Á‘¬“x‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
-* @param mr ’n¥‹C‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
-* @param gr Šp‘¬“x‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
+*@brief USBå‡ºåŠ›9è»¸IMUã‚»ãƒ³ã‚µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®é€šä¿¡é–¢é€£ã®ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param result åˆæœŸåŒ–æˆåŠŸã§Trueã€å¤±æ•—ã§False
+* @param serial_port ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å
+* @param mx_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(X)
+* @param my_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Y)
+* @param mz_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Z)
+* @param ar åŠ é€Ÿåº¦ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
+* @param mr åœ°ç£æ°—ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
+* @param gr è§’é€Ÿåº¦ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
 */
 RT_Usb_Nine_Axis_Sensor::RT_Usb_Nine_Axis_Sensor(bool &result, std::string serial_port, unsigned int baudrate, int mx_offset, int my_offset, int mz_offset,  double ar, double mr, double gr) {
 	
@@ -53,7 +53,7 @@ RT_Usb_Nine_Axis_Sensor::RT_Usb_Nine_Axis_Sensor(bool &result, std::string seria
 }
 
 /**
-*@brief USBo—Í9²IMUƒZƒ“ƒTƒ‚ƒWƒ…[ƒ‹‚Ì’ÊMŠÖ˜A‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^
+*@brief USBå‡ºåŠ›9è»¸IMUã‚»ãƒ³ã‚µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®é€šä¿¡é–¢é€£ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 RT_Usb_Nine_Axis_Sensor::~RT_Usb_Nine_Axis_Sensor() {
 	closeSerialPort();
@@ -61,9 +61,9 @@ RT_Usb_Nine_Axis_Sensor::~RT_Usb_Nine_Axis_Sensor() {
 
 
 /**
-*@brief ƒfƒoƒCƒXƒtƒ@ƒCƒ‹Äİ’è
-* @param serial_port ƒfƒoƒCƒXƒtƒ@ƒCƒ‹–¼
-* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+*@brief ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å†è¨­å®š
+* @param serial_port ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å
+* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 */
 bool RT_Usb_Nine_Axis_Sensor::setSerialPort(std::string serial_port, unsigned int baudrate)
 {
@@ -117,7 +117,7 @@ bool RT_Usb_Nine_Axis_Sensor::setSerialPort(std::string serial_port, unsigned in
 }
 
 /**
-*@brief ƒfƒoƒCƒXƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+*@brief ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 */
 void RT_Usb_Nine_Axis_Sensor::closeSerialPort()
 {
@@ -136,10 +136,10 @@ void RT_Usb_Nine_Axis_Sensor::closeSerialPort()
 }
 
 /**
-*@brief ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒgÄİ’è
-* @param mx_offset ƒIƒtƒZƒbƒg(X)
-* @param my_offset ƒIƒtƒZƒbƒg(Y)
-* @param mz_offset ƒIƒtƒZƒbƒg(Z)
+*@brief åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆå†è¨­å®š
+* @param mx_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(X)
+* @param my_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Y)
+* @param mz_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::setOffset(int mx_offset, int my_offset, int mz_offset)
 {
@@ -149,10 +149,10 @@ void RT_Usb_Nine_Axis_Sensor::setOffset(int mx_offset, int my_offset, int mz_off
 }
 
 /**
-*@brief Œv‘ª‚µ‚½‰Á‘¬“xæ“¾
-* @param ax ‰Á‘¬“x(X)
-* @param ay ‰Á‘¬“x(Y)
-* @param az ‰Á‘¬“x(Z)
+*@brief è¨ˆæ¸¬ã—ãŸåŠ é€Ÿåº¦å–å¾—
+* @param ax åŠ é€Ÿåº¦(X)
+* @param ay åŠ é€Ÿåº¦(Y)
+* @param az åŠ é€Ÿåº¦(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getAcc(double &ax, double &ay, double &az)
 {
@@ -163,10 +163,10 @@ void RT_Usb_Nine_Axis_Sensor::getAcc(double &ax, double &ay, double &az)
 	lastAZ = _ar*az + (1-_ar)*lastAZ;
 }
 /**
-*@brief Œv‘ª‚µ‚½’n¥‹Cæ“¾
-* @param mx ’n¥‹C(X)
-* @param my ’n¥‹C(Y)
-* @param mz ’n¥‹C(Z)
+*@brief è¨ˆæ¸¬ã—ãŸåœ°ç£æ°—å–å¾—
+* @param mx åœ°ç£æ°—(X)
+* @param my åœ°ç£æ°—(Y)
+* @param mz åœ°ç£æ°—(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getMagn(double &mx, double &my, double &mz)
 {
@@ -178,10 +178,10 @@ void RT_Usb_Nine_Axis_Sensor::getMagn(double &mx, double &my, double &mz)
 	//std::cout << lastMX << "\t" << lastMY << "\t" << lastMZ << std::endl;
 }
 /**
-*@brief Œv‘ª‚µ‚½Šp‘¬“xæ“¾
-* @param avx Šp‘¬“x(X)
-* @param avy Šp‘¬“x(Y)
-* @param avz Šp‘¬“x(Z)
+*@brief è¨ˆæ¸¬ã—ãŸè§’é€Ÿåº¦å–å¾—
+* @param avx è§’é€Ÿåº¦(X)
+* @param avy è§’é€Ÿåº¦(Y)
+* @param avz è§’é€Ÿåº¦(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getGyro(double &avx, double &avy, double &avz)
 {
@@ -197,8 +197,8 @@ void RT_Usb_Nine_Axis_Sensor::getGyro(double &avx, double &avy, double &avz)
 	lastGZ = _gr*avz + (1-_gr)*lastGZ;
 }
 /**
-*@brief Œv‘ª‚µ‚½‰·“xæ“¾(Œ»İ‚Ì‚Æ‚±‚ë‚ÍgetTempData‚Æ“¯‚¶)
-* @return ‰·“x
+*@brief è¨ˆæ¸¬ã—ãŸæ¸©åº¦å–å¾—(ç¾åœ¨ã®ã¨ã“ã‚ã¯getTempDataã¨åŒã˜)
+* @return æ¸©åº¦
 */
 double RT_Usb_Nine_Axis_Sensor::getTemp()
 {
@@ -206,10 +206,10 @@ double RT_Usb_Nine_Axis_Sensor::getTemp()
 	return lastTemp;
 }
 /**
-*@brief Œv‘ª‚µ‚½‰Á‘¬“xæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-* @param ax ‰Á‘¬“x(X)
-* @param ay ‰Á‘¬“x(Y)
-* @param az ‰Á‘¬“x(Z)
+*@brief è¨ˆæ¸¬ã—ãŸåŠ é€Ÿåº¦å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+* @param ax åŠ é€Ÿåº¦(X)
+* @param ay åŠ é€Ÿåº¦(Y)
+* @param az åŠ é€Ÿåº¦(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getAccData(double &ax, double &ay, double &az)
 {
@@ -227,10 +227,10 @@ void RT_Usb_Nine_Axis_Sensor::getAccData(double &ax, double &ay, double &az)
 	az = (double)AccelRaw_z * RT_Usb_Nine_Axis_Sensor_ACCEL_RANGE;
 }
 /**
-*@brief Œv‘ª‚µ‚½’n¥‹Cæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-* @param mx ’n¥‹C(X)
-* @param my ’n¥‹C(Y)
-* @param mz ’n¥‹C(Z)
+*@brief è¨ˆæ¸¬ã—ãŸåœ°ç£æ°—å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+* @param mx åœ°ç£æ°—(X)
+* @param my åœ°ç£æ°—(Y)
+* @param mz åœ°ç£æ°—(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getMagnData(double &mx, double &my, double &mz)
 {
@@ -257,10 +257,10 @@ void RT_Usb_Nine_Axis_Sensor::getMagnData(double &mx, double &my, double &mz)
 	mz = (double)MagnRaw_z * RT_Usb_Nine_Axis_Sensor_MAG_RANGE;
 }
 /**
-*@brief Œv‘ª‚µ‚½Šp‘¬“xæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-* @param avx Šp‘¬“x(X)
-* @param avy Šp‘¬“x(Y)
-* @param avz Šp‘¬“x(Z)
+*@brief è¨ˆæ¸¬ã—ãŸè§’é€Ÿåº¦å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+* @param avx è§’é€Ÿåº¦(X)
+* @param avy è§’é€Ÿåº¦(Y)
+* @param avz è§’é€Ÿåº¦(Z)
 */
 void RT_Usb_Nine_Axis_Sensor::getGyroData(double &avx, double &avy, double &avz)
 {
@@ -284,8 +284,8 @@ void RT_Usb_Nine_Axis_Sensor::getGyroData(double &avx, double &avy, double &avz)
 	
 }
 /**
-*@brief Œv‘ª‚µ‚½‰·“xæ“¾
-* @return ‰·“x
+*@brief è¨ˆæ¸¬ã—ãŸæ¸©åº¦å–å¾—
+* @return æ¸©åº¦
 */
 double RT_Usb_Nine_Axis_Sensor::getTempData()
 {
@@ -297,10 +297,10 @@ double RT_Usb_Nine_Axis_Sensor::getTempData()
 	return (double)Temp/340 + 35;
 }
 /**
-*@brief p¨‚ğŒvZ
-* @param rx ƒ[ƒ‹Šp
-* @param ry ƒsƒbƒ`Šp
-* @param rz ƒˆ[Šp
+*@brief å§¿å‹¢ã‚’è¨ˆç®—
+* @param rx ãƒ­ãƒ¼ãƒ«è§’
+* @param ry ãƒ”ãƒƒãƒè§’
+* @param rz ãƒ¨ãƒ¼è§’
 */
 void RT_Usb_Nine_Axis_Sensor::getOrientation(double &rx, double &ry, double &rz)
 {
@@ -318,8 +318,8 @@ void RT_Usb_Nine_Axis_Sensor::getOrientation(double &rx, double &ry, double &rz)
 }
 
 /**
-*@brief ƒf[ƒ^‚ğ“Ç‚İ‚Ş
-* @return ¬Œ÷‚ÅtrueA¸”s‚Åfalse
+*@brief ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
+* @return æˆåŠŸã§trueã€å¤±æ•—ã§false
 */
 bool RT_Usb_Nine_Axis_Sensor::readData()
 {
@@ -355,7 +355,7 @@ bool RT_Usb_Nine_Axis_Sensor::readData()
 }
 
 /**
-*@brief ‰Šú‰»
+*@brief åˆæœŸåŒ–
 */
 void RT_Usb_Nine_Axis_Sensor::reset()
 {

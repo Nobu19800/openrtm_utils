@@ -1,4 +1,4 @@
-﻿// -*- C++ -*-
+// -*- C++ -*-
 /*!
  * @file EV3SimulatorComp.cpp
  * @brief Standalone component

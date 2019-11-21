@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  CrawlGait.h
-* @brief •à—eŠî–{ƒNƒ‰ƒX
+* @brief æ­©å®¹åŸºæœ¬ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -41,38 +41,38 @@ enum GaitState
 
 /**
 * @class GaitBase
-*@brief •à—eŠî–{ƒNƒ‰ƒX
+*@brief æ­©å®¹åŸºæœ¬ã‚¯ãƒ©ã‚¹
 */
 class GaitBase
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	*@param ls ‹r‚ÌƒŠƒXƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	*@param ls è„šã®ãƒªã‚¹ãƒˆ
 	*/
 	GaitBase(Leg_Object *ls, Body_Object *bo);
 	/**
-	*@brief •àsXV
-	* @param vx ‘¬“x(X)
-	* @param vy ‘¬“x(Y)
-	* @param dthe ‰ñ“]‘¬“x
-	* @param sd •à•
+	*@brief æ­©è¡Œæ›´æ–°
+	* @param vx é€Ÿåº¦(X)
+	* @param vy é€Ÿåº¦(Y)
+	* @param dthe å›è»¢é€Ÿåº¦
+	* @param sd æ­©å¹…
 	*/
 	virtual void walk(double vx, double vy, double dthe, double sd);
 	/**
-	*@brief ‚İ•İ’è
-	* @param st ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+	*@brief åˆ»ã¿å¹…è¨­å®š
+	* @param st ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 	*/
 	virtual void setSamplingTime(double st);
 	/**
-	*@brief Å’áˆÀ’è‚ğ–‚½‚µ‚Ä‚¢‚é‚©‚Ì”»’è
-	* –‚½‚µ‚Ä‚¢‚È‚¢ê‡‚ÍdS‚ğˆÚ“®‚³‚¹‚é
-	* @param mc ˆÚ“®‚É‚©‚©‚éƒXƒeƒbƒv”
+	*@brief æœ€ä½å®‰å®šã‚’æº€ãŸã—ã¦ã„ã‚‹ã‹ã®åˆ¤å®š
+	* æº€ãŸã—ã¦ã„ãªã„å ´åˆã¯é‡å¿ƒã‚’ç§»å‹•ã•ã›ã‚‹
+	* @param mc ç§»å‹•ã«ã‹ã‹ã‚‹ã‚¹ãƒ†ãƒƒãƒ—æ•°
 	*/
 	virtual void judge_Stability(int mc);
 	/**
-	*@brief Å’áˆÀ’è‚Ìİ’è
-	* @param msm ˆÀ’è—]—T
+	*@brief æœ€ä½å®‰å®šã®è¨­å®š
+	* @param msm å®‰å®šä½™è£•
 	*/
 	virtual void set_Min_Margin(double msm);
 	double sampling_time;

@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  ImageDataCom.h
- * @brief ‰æ‘œƒf[ƒ^‘—óM‚ÌŠÖ”
+ * @brief ç”»åƒãƒ‡ãƒ¼ã‚¿é€å—ä¿¡ã®é–¢æ•°
  * @date  $Date$
  *
  * $Id$
@@ -20,18 +20,18 @@
 
 
 /**
-*@brief CameraImageŒ^‚©‚çIplImage‚Ì‰æ‘œƒf[ƒ^‚ğæ“¾
-* @param ci CameraImageŒ^‚Ì‰æ‘œƒf[ƒ^
-* @return IplImage‚Ì‰æ‘œƒf[ƒ^
+*@brief CameraImageå‹ã‹ã‚‰IplImageã®ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
+* @param ci CameraImageå‹ã®ç”»åƒãƒ‡ãƒ¼ã‚¿
+* @return IplImageã®ç”»åƒãƒ‡ãƒ¼ã‚¿
 */
 IplImage* GetCameraImage(RTC::CameraImage *ci);
 
 /**
-*@brief IplImage‚Ì‰æ‘œƒf[ƒ^‚ğCameraImageŒ^‚Ìƒf[ƒ^‚Éİ’è
-* @param ci CameraImageŒ^‚Ìƒf[ƒ^
-* @param im IplImage‚Ì‰æ‘œƒf[ƒ^
-* @param string_encode ˆ³k‚ÌŒ`®(off‚Íˆ³k‚È‚µApngAjpeg‚ğ‘I‘ğ‰Â”\)
-* @param int_encode_quality ˆ³k—¦(png‚Í0`10Ajpeg‚Í0`100)
+*@brief IplImageã®ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’CameraImageå‹ã®ãƒ‡ãƒ¼ã‚¿ã«è¨­å®š
+* @param ci CameraImageå‹ã®ãƒ‡ãƒ¼ã‚¿
+* @param im IplImageã®ç”»åƒãƒ‡ãƒ¼ã‚¿
+* @param string_encode åœ§ç¸®ã®å½¢å¼(offã¯åœ§ç¸®ãªã—ã€pngã€jpegã‚’é¸æŠå¯èƒ½)
+* @param int_encode_quality åœ§ç¸®ç‡(pngã¯0ã€œ10ã€jpegã¯0ã€œ100)
 */
 void SetCameraImage(RTC::CameraImage *ci, IplImage* im, std::string string_encode = "off", int int_encode_quality = 75);
 

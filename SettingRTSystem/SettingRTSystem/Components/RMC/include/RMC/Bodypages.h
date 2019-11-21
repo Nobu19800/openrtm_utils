@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef BODYPAGES_H
 #define BODYPAGES_H
 
@@ -8,7 +8,7 @@
 #include "glbox.h"
 
 
-/*—§•û‘Ì‚Ìƒpƒ‰ƒ[ƒ^İ’èƒy[ƒW*/
+/*ç«‹æ–¹ä½“ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒšãƒ¼ã‚¸*/
 
 class BoxPage : public QWidget
 {
@@ -76,7 +76,7 @@ private:
 };
 
 
-/*‹…‚Ìƒpƒ‰ƒ[ƒ^İ’èƒy[ƒW*/
+/*çƒã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒšãƒ¼ã‚¸*/
 
 class SpherePage : public QWidget
 {
@@ -128,7 +128,7 @@ private:
 };
 
 
-/*‰~’Œ‚Ìƒpƒ‰ƒ[ƒ^İ’èƒy[ƒW*/
+/*å††æŸ±ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒšãƒ¼ã‚¸*/
 
 class CylinderPage : public QWidget
 {
@@ -190,7 +190,7 @@ private:
 };
 
 
-/*‰~‚Ìƒpƒ‰ƒ[ƒ^İ’èƒy[ƒW*/
+/*å††éŒã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒšãƒ¼ã‚¸*/
 
 class ConePage : public QWidget
 {
@@ -254,7 +254,7 @@ private:
 };
 
 
-/*ƒ|ƒŠƒSƒ“‚Ìƒpƒ‰ƒ[ƒ^İ’èƒy[ƒW*/
+/*ãƒãƒªã‚´ãƒ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒšãƒ¼ã‚¸*/
 
 class PolygonPage : public QWidget
 {

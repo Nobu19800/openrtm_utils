@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  LoadRTCs.h
-* @brief RTC“Ç‚İ‚İŠÖ˜A‚ÌƒNƒ‰ƒXAŠÖ˜A
+* @brief RTCèª­ã¿è¾¼ã¿é–¢é€£ã®ã‚¯ãƒ©ã‚¹ã€é–¢é€£
 *
 */
 
@@ -20,19 +20,19 @@ typedef void (*RTCInitFunction)(RTC::Manager* pManager);
 
 /**
 * @class compParam
-*@brief “®“IƒŠƒ“ƒNƒ‰ƒCƒuƒ‰ƒŠ‚©‚ç“Ç‚İ‚ñ‚¾RTC‚ÌŠeî•ñ‚ğŠi”[‚·‚éƒNƒ‰ƒX
+*@brief å‹•çš„ãƒªãƒ³ã‚¯ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‹ã‚‰èª­ã¿è¾¼ã‚“ã RTCã®å„æƒ…å ±ã‚’æ ¼ç´ã™ã‚‹ã‚¯ãƒ©ã‚¹
 */
 
 class compParam
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param name RTC–¼
-	* @param filename ƒtƒ@ƒCƒ‹–¼
-	* @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-	* @param func ‰Šú‰»ŠÖ”
-	* @param compList RTCƒIƒuƒWƒFƒNƒg‚ÌƒŠƒXƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param name RTCå
+	* @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+	* @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+	* @param func åˆæœŸåŒ–é–¢æ•°
+	* @param compList RTCã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒªã‚¹ãƒˆ
 	*/
 	compParam(std::string name, std::string filename, std::string filepath, RTCInitFunction func, std::vector<RTC::RtcBase *> compList);
 	std::string m_name;
@@ -44,66 +44,66 @@ public:
 
 /**
 * @class LoadRTCs
-*@brief RTCƒ[ƒhŠÖ˜A‚ÌŠÖ”‚ğ‚ÂƒNƒ‰ƒX
+*@brief RTCãƒ­ãƒ¼ãƒ‰é–¢é€£ã®é–¢æ•°ã‚’æŒã¤ã‚¯ãƒ©ã‚¹
 */
 class LoadRTCs
 {
  
  public:
   /**
-  *@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-  * @param manager ƒ}ƒl[ƒWƒƒƒIƒuƒWƒFƒNƒg
+  *@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+  * @param manager ãƒãƒãƒ¼ã‚¸ãƒ£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
   */
   LoadRTCs(RTC::Manager* manager);
   /**
-  *@brief ƒfƒXƒgƒ‰ƒNƒ^
+  *@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
   */
   virtual ~LoadRTCs();
 
   /**
-  *@brief íœ—\’è
+  *@brief å‰Šé™¤äºˆå®š
   */
    void updateCompList();
    
    /**
-   *@brief RTC‹N“®‚ÌŠÖ”
-   * @param name RTC–¼
-   * @param filename ƒtƒ@ƒCƒ‹–¼
-   * @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-   * @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+   *@brief RTCèµ·å‹•ã®é–¢æ•°
+   * @param name RTCå
+   * @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+   * @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+   * @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
    */
    bool createComp(const char* name, const char* filename, const char* filepath);
 
    /**
-   *@brief RTCíœ‚ÌŠÖ”(“¯ˆê‚ÌRTC‚ğ•¡”‹N“®‚µ‚Ä‚¢‚éê‡‚Íˆê”ÔÅŒã‚É‹N“®‚µ‚½RTC‚ğI—¹)
-   * @param name RTC–¼
-   * @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+   *@brief RTCå‰Šé™¤ã®é–¢æ•°(åŒä¸€ã®RTCã‚’è¤‡æ•°èµ·å‹•ã—ã¦ã„ã‚‹å ´åˆã¯ä¸€ç•ªæœ€å¾Œã«èµ·å‹•ã—ãŸRTCã‚’çµ‚äº†)
+   * @param name RTCå
+   * @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
    */
    bool removeComp(const char* name);
    
    /**
-   *@brief RTC–¼‚©‚çRTC‚ÌŠeî•ñ‚ğæ“¾
-   * @param name RTC–¼
-   * @return RTC‚ÌŠeî•ñ
+   *@brief RTCåã‹ã‚‰RTCã®å„æƒ…å ±ã‚’å–å¾—
+   * @param name RTCå
+   * @return RTCã®å„æƒ…å ±
    */
    compParam *getCompFromName(std::string name);
    /**
-   *@brief ƒtƒ@ƒCƒ‹–¼‚©‚çRTC‚Ì‰Šú‰»ŠÖ”‚ğæ“¾
-   * @param filename ƒtƒ@ƒCƒ‹–¼
-   * @param filepath ƒfƒBƒŒƒNƒgƒŠƒpƒX
-   * @return RTC‚Ì‰Šú‰»ŠÖ”
+   *@brief ãƒ•ã‚¡ã‚¤ãƒ«åã‹ã‚‰RTCã®åˆæœŸåŒ–é–¢æ•°ã‚’å–å¾—
+   * @param filename ãƒ•ã‚¡ã‚¤ãƒ«å
+   * @param filepath ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ‘ã‚¹
+   * @return RTCã®åˆæœŸåŒ–é–¢æ•°
    */
    RTCInitFunction getFunc(std::string filename,std::string filepath);
    /**
-   *@brief ƒtƒ@ƒCƒ‹‚©‚ç‹N“®‚·‚éRTC‚ÌƒŠƒXƒg‚ğ“Ç‚İ‚ñ‚ÅŠeRTC‚ğ‹N“®
+   *@brief ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èµ·å‹•ã™ã‚‹RTCã®ãƒªã‚¹ãƒˆã‚’èª­ã¿è¾¼ã‚“ã§å„RTCã‚’èµ·å‹•
    */
    void openFile();
 
    /**
-   *@brief ƒvƒƒpƒeƒB‚©‚çw’è‚µ‚½ƒL[‚Ì’l‚ğæ“¾
-   * @param prop ƒvƒƒpƒeƒB
-   * @param key ƒL[
-   * @param value ’l
+   *@brief ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‹ã‚‰æŒ‡å®šã—ãŸã‚­ãƒ¼ã®å€¤ã‚’å–å¾—
+   * @param prop ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
+   * @param key ã‚­ãƒ¼
+   * @param value å€¤
    */
   template <class T>
     void getProperty(coil::Properties& prop, const char* key, T& value)
@@ -130,21 +130,21 @@ private:
 
 /**
 * @class RTC_FinalizeListener
-*@brief RTCI—¹‚ÉRTC‚ÌƒŠƒXƒg‚©‚çíœ‚·‚é‚ÌƒŠƒXƒi
+*@brief RTCçµ‚äº†æ™‚ã«RTCã®ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹ã®ãƒªã‚¹ãƒŠ
 */
 class RTC_FinalizeListener
 	: public RTC::PostComponentActionListener
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param rtc RTCƒIƒuƒWƒFƒNƒg
-	* @param list RTC‚ÌŠeî•ñ
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param rtc RTCã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	* @param list RTCã®å„æƒ…å ±
 	*/
 	RTC_FinalizeListener(RTC::RtcBase * rtc, compParam *list);
 	/**
-	*@brief RTCI—¹‚ÉRTC‚ÌƒŠƒXƒg‚©‚çíœ‚·‚é
-	* @param ec_id ÀsƒRƒ“ƒeƒLƒXƒg‚ÌID
+	*@brief RTCçµ‚äº†æ™‚ã«RTCã®ãƒªã‚¹ãƒˆã‹ã‚‰å‰Šé™¤ã™ã‚‹
+	* @param ec_id å®Ÿè¡Œã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆã®ID
 	* @param list RTC::ReturnCode_t
 	*/
 	void operator()(RTC::UniqueId ec_id, RTC::ReturnCode_t ret);

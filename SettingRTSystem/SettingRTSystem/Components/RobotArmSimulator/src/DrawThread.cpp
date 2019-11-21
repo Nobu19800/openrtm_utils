@@ -1,4 +1,4 @@
-#include <fstream>
+ï»¿#include <fstream>
 #include "DrawThread.h"
 #include "searchFile.h"
 #include <coil/stringutil.h>
@@ -18,7 +18,7 @@ DrawThread *obj_drawthread = NULL;
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì•`‰æ‚ğ‚·‚éƒXƒŒƒbƒh‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æç”»ã‚’ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 DrawThread::DrawThread(SimulatorObj *so, double dt)
 {
@@ -35,8 +35,8 @@ DrawThread::DrawThread(SimulatorObj *so, double dt)
 }
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ƒ‹[ƒv
-* @param pause –¢g—p
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ«ãƒ¼ãƒ—
+* @param pause æœªä½¿ç”¨
 */
 void simLoop(int pause)
 {
@@ -58,7 +58,7 @@ void simLoop(int pause)
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‰Šú‰»
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³åˆæœŸåŒ–
 */
 void start()
 {
@@ -78,7 +78,7 @@ void start()
 }
 
 /**
-*@brief ƒXƒŒƒbƒhÀsŠÖ”
+*@brief ã‚¹ãƒ¬ãƒƒãƒ‰å®Ÿè¡Œé–¢æ•°
 * @return
 */
 int DrawThread::svc()
@@ -93,7 +93,7 @@ int DrawThread::svc()
 
 
 /**
-*@brief DrawStuff‰Šú‰»
+*@brief DrawStuffåˆæœŸåŒ–
 */
 void DrawThread::setDrawStuff()
 {
@@ -121,8 +121,8 @@ void DrawThread::setDrawStuff()
 }
 
 /**
-*@brief ’¼•û‘Ì•`‰æ
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief ç›´æ–¹ä½“æç”»
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void DrawThread::drawBox(MyLink *body)
 {
@@ -133,8 +133,8 @@ void DrawThread::drawBox(MyLink *body)
 }
 
 /**
-*@brief ‰~’Œ•`‰æ
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief å††æŸ±æç”»
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void DrawThread::drawCylinder(MyLink *body)
 {
@@ -144,7 +144,7 @@ void DrawThread::drawCylinder(MyLink *body)
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒB•`‰æ
+*@brief å…¨ãƒœãƒ‡ã‚£æç”»
 */
 void DrawThread::drawRobot()
 {
@@ -168,7 +168,7 @@ void DrawThread::drawRobot()
 }
 
 /**
-*@brief ƒJƒƒ‰ˆÊ’uÄİ’è
+*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®š
 */
 void DrawThread::resetCameraPosition()
 {
@@ -190,7 +190,7 @@ void DrawThread::resetCameraPosition()
 
 
 /**
-*@brief ƒJƒƒ‰ˆÊ’uÄİ’èƒtƒ‰ƒO‚ğ—§‚Ä‚é
+*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®šãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 */
 void DrawThread::setRCPFlag()
 {
@@ -200,7 +200,7 @@ void DrawThread::setRCPFlag()
 }
 
 /**
-*@brief •`‰æ‚ğ’â~‚·‚é
+*@brief æç”»ã‚’åœæ­¢ã™ã‚‹
 */
 void DrawThread::stop()
 {

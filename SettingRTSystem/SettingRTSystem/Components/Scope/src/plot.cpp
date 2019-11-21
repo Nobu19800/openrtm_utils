@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  plot.cpp
-* @brief ƒvƒƒbƒg‘€ì‚ÌƒNƒ‰ƒX
+* @brief ãƒ—ãƒ­ãƒƒãƒˆæ“ä½œã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -25,8 +25,8 @@
 
 
 /**
-*@brief ƒvƒƒbƒg‘€ì‚ÌƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
-* @param parent eƒEƒBƒWƒFƒbƒg
+*@brief ãƒ—ãƒ­ãƒƒãƒˆæ“ä½œã®ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 */
 Plot::Plot( QWidget *parent ):
     QwtPlot( parent ),
@@ -128,7 +128,7 @@ void Plot::setPlotCurve(int num, std::string id)
 
 
 /**
-*@brief İ’è•ÏX‚ÌƒXƒƒbƒg
+*@brief è¨­å®šå¤‰æ›´æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
 */
 void Plot::setSettings( const Settings &s )
 {
@@ -174,8 +174,8 @@ void Plot::setSettings( const Settings &s )
 }
 
 /**
-*@brief ƒ^ƒCƒ}[ƒCƒxƒ“ƒg
-* @param e ƒCƒxƒ“ƒgƒIƒuƒWƒFƒNƒg
+*@brief ã‚¿ã‚¤ãƒãƒ¼ã‚¤ãƒ™ãƒ³ãƒˆ
+* @param e ã‚¤ãƒ™ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void Plot::timerEvent( QTimerEvent * )
 {

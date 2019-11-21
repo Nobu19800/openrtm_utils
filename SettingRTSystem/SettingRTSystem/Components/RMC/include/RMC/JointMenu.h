@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef JOINTMENU_H
 #define JOINTMENU_H
 
@@ -18,7 +18,7 @@ class QTreeWidgetItem;
 QT_END_NAMESPACE
 
 
-/*ƒWƒ‡ƒCƒ“ƒg‚Ìƒpƒ‰ƒ[ƒ^Ý’èƒ_ƒCƒAƒƒO*/
+/*ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒ€ã‚¤ã‚¢ãƒ­ã‚°*/
 
 class ActDialog : public QDialog
 {

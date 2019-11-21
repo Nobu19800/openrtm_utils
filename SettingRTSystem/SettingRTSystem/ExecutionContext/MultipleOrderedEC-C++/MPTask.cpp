@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  MPTask.cpp
 * @brief GUI、直列ブロック実行スレッド
 *

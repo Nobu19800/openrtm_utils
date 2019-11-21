@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
  * @file  RT_Usb_Nine_Axis_Sensor.h
- * @brief USBo—Í9²IMUƒZƒ“ƒTƒ‚ƒWƒ…[ƒ‹‚Ì’ÊMŠÖ˜A‚ÌƒNƒ‰ƒX
+ * @brief USBå‡ºåŠ›9è»¸IMUã‚»ãƒ³ã‚µãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®é€šä¿¡é–¢é€£ã®ã‚¯ãƒ©ã‚¹
  *
  */
 
@@ -51,116 +51,116 @@
 
 /**
  * @class LSM9DS0
-*@brief 9²ƒZƒ“ƒTLSM9DS0‚ÌI2C’ÊMŠÖ˜A‚ÌƒNƒ‰ƒX
+*@brief 9è»¸ã‚»ãƒ³ã‚µLSM9DS0ã®I2Cé€šä¿¡é–¢é€£ã®ã‚¯ãƒ©ã‚¹
 */
 class RT_Usb_Nine_Axis_Sensor
 {
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param result ‰Šú‰»¬Œ÷‚ÅTrueA¸”s‚ÅFalse
-	* @param serial_port ƒfƒoƒCƒXƒtƒ@ƒCƒ‹–¼
-	* @param mx_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(X)
-	* @param my_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(Y)
-	* @param mz_offset ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒg(Z)
-	* @param ar ‰Á‘¬“x‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
-	* @param mr ’n¥‹C‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
-	* @param gr Šp‘¬“x‚Ö‚ÌIIRƒtƒBƒ‹ƒ^‚ÌŒW”
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param result åˆæœŸåŒ–æˆåŠŸã§Trueã€å¤±æ•—ã§False
+	* @param serial_port ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å
+	* @param mx_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(X)
+	* @param my_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Y)
+	* @param mz_offset åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Z)
+	* @param ar åŠ é€Ÿåº¦ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
+	* @param mr åœ°ç£æ°—ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
+	* @param gr è§’é€Ÿåº¦ã¸ã®IIRãƒ•ã‚£ãƒ«ã‚¿ã®ä¿‚æ•°
 	*/
 	RT_Usb_Nine_Axis_Sensor(bool &result, std::string serial_port = DEFAULT_PORT, unsigned int baudrate = DEFAULT_BAUDRATE, int mx_offset = -65, int my_offset = -12, int mz_offset = -5,  double ar = 0.2, double mr = 0.2, double gr = 0.2);
 	/**
-	*@brief ƒfƒXƒgƒ‰ƒNƒ^
+	*@brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~RT_Usb_Nine_Axis_Sensor();
 	
 	/**
-	*@brief ƒfƒoƒCƒXƒtƒ@ƒCƒ‹Äİ’è
-	* @param serial_port ƒfƒoƒCƒXƒtƒ@ƒCƒ‹–¼
-	* @return ¬Œ÷‚ÅTrueA¸”s‚ÅFalse
+	*@brief ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å†è¨­å®š
+	* @param serial_port ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«å
+	* @return æˆåŠŸã§Trueã€å¤±æ•—ã§False
 	*/
 	bool setSerialPort(std::string serial_port = DEFAULT_PORT, unsigned int baudrate = DEFAULT_BAUDRATE);
 
 	/**
-	*@brief ƒfƒoƒCƒXƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	*@brief ãƒ‡ãƒã‚¤ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	*/
 	void closeSerialPort();
 	
 	/**
-	*@brief ’n¥‹CƒZƒ“ƒT‚ÌƒIƒtƒZƒbƒgÄİ’è
-	* @param mx_offset ƒIƒtƒZƒbƒg(X)
-	* @param my_offset ƒIƒtƒZƒbƒg(Y)
-	* @param mz_offset ƒIƒtƒZƒbƒg(Z)
+	*@brief åœ°ç£æ°—ã‚»ãƒ³ã‚µã®ã‚ªãƒ•ã‚»ãƒƒãƒˆå†è¨­å®š
+	* @param mx_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(X)
+	* @param my_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Y)
+	* @param mz_offset ã‚ªãƒ•ã‚»ãƒƒãƒˆ(Z)
 	*/
 	void setOffset(int mx_offset = -65, int my_offset = -12, int mz_offset = -5);
 	
 	/**
-	*@brief Œv‘ª‚µ‚½‰Á‘¬“xæ“¾
-	* @param ax ‰Á‘¬“x(X)
-	* @param ay ‰Á‘¬“x(Y)
-	* @param az ‰Á‘¬“x(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸåŠ é€Ÿåº¦å–å¾—
+	* @param ax åŠ é€Ÿåº¦(X)
+	* @param ay åŠ é€Ÿåº¦(Y)
+	* @param az åŠ é€Ÿåº¦(Z)
 	*/
 	void getAcc(double &ax, double &ay, double &az);
 	/**
-	*@brief Œv‘ª‚µ‚½’n¥‹Cæ“¾
-	* @param mx ’n¥‹C(X)
-	* @param my ’n¥‹C(Y)
-	* @param mz ’n¥‹C(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸåœ°ç£æ°—å–å¾—
+	* @param mx åœ°ç£æ°—(X)
+	* @param my åœ°ç£æ°—(Y)
+	* @param mz åœ°ç£æ°—(Z)
 	*/
 	void getMagn(double &mx, double &my, double &mz);
 	/**
-	*@brief Œv‘ª‚µ‚½Šp‘¬“xæ“¾
-	* @param avx Šp‘¬“x(X)
-	* @param avy Šp‘¬“x(Y)
-	* @param avz Šp‘¬“x(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸè§’é€Ÿåº¦å–å¾—
+	* @param avx è§’é€Ÿåº¦(X)
+	* @param avy è§’é€Ÿåº¦(Y)
+	* @param avz è§’é€Ÿåº¦(Z)
 	*/
 	void getGyro(double &avx, double &avy, double &avz);
 	/**
-	*@brief Œv‘ª‚µ‚½‰·“xæ“¾(Œ»İ‚Ì‚Æ‚±‚ë‚ÍgetTempData‚Æ“¯‚¶)
-	* @return ‰·“x
+	*@brief è¨ˆæ¸¬ã—ãŸæ¸©åº¦å–å¾—(ç¾åœ¨ã®ã¨ã“ã‚ã¯getTempDataã¨åŒã˜)
+	* @return æ¸©åº¦
 	*/
 	double getTemp();
 	/**
-	*@brief Œv‘ª‚µ‚½‰Á‘¬“xæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-	* @param ax ‰Á‘¬“x(X)
-	* @param ay ‰Á‘¬“x(Y)
-	* @param az ‰Á‘¬“x(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸåŠ é€Ÿåº¦å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+	* @param ax åŠ é€Ÿåº¦(X)
+	* @param ay åŠ é€Ÿåº¦(Y)
+	* @param az åŠ é€Ÿåº¦(Z)
 	*/
 	void getAccData(double &ax, double &ay, double &az);
 	/**
-	*@brief Œv‘ª‚µ‚½’n¥‹Cæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-	* @param mx ’n¥‹C(X)
-	* @param my ’n¥‹C(Y)
-	* @param mz ’n¥‹C(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸåœ°ç£æ°—å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+	* @param mx åœ°ç£æ°—(X)
+	* @param my åœ°ç£æ°—(Y)
+	* @param mz åœ°ç£æ°—(Z)
 	*/
 	void getMagnData(double &mx, double &my, double &mz);
 	/**
-	*@brief Œv‘ª‚µ‚½Šp‘¬“xæ“¾(ƒIƒtƒZƒbƒg—L‚è)
-	* @param avx Šp‘¬“x(X)
-	* @param avy Šp‘¬“x(Y)
-	* @param avz Šp‘¬“x(Z)
+	*@brief è¨ˆæ¸¬ã—ãŸè§’é€Ÿåº¦å–å¾—(ã‚ªãƒ•ã‚»ãƒƒãƒˆæœ‰ã‚Š)
+	* @param avx è§’é€Ÿåº¦(X)
+	* @param avy è§’é€Ÿåº¦(Y)
+	* @param avz è§’é€Ÿåº¦(Z)
 	*/
 	void getGyroData(double &avx, double &my, double &mz);
 	/**
-	*@brief Œv‘ª‚µ‚½‰·“xæ“¾
-	* @return ‰·“x
+	*@brief è¨ˆæ¸¬ã—ãŸæ¸©åº¦å–å¾—
+	* @return æ¸©åº¦
 	*/
 	double getTempData();
 	/**
-	*@brief p¨‚ğŒvZ
-	* @param rx ƒ[ƒ‹Šp
-	* @param ry ƒsƒbƒ`Šp
-	* @param rz ƒˆ[Šp
+	*@brief å§¿å‹¢ã‚’è¨ˆç®—
+	* @param rx ãƒ­ãƒ¼ãƒ«è§’
+	* @param ry ãƒ”ãƒƒãƒè§’
+	* @param rz ãƒ¨ãƒ¼è§’
 	*/
 	void getOrientation(double &rx, double &ry, double &rz);
 
 	/**
-	*@brief ƒf[ƒ^‚ğ“Ç‚İ‚Ş
-	* @param buff ƒf[ƒ^
+	*@brief ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
+	* @param buff ãƒ‡ãƒ¼ã‚¿
 	*/
 	bool readData();
 
 	/**
-	*@brief ‰Šú‰»
+	*@brief åˆæœŸåŒ–
 	* @
 	*/
 	void reset();

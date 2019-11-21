@@ -1,4 +1,4 @@
-﻿// -*- C++ -*-
+// -*- C++ -*-
 /*!
  * @file  EV3Simulator.cpp
  * @brief LRGO MINDSTORMS EV3 Simulator

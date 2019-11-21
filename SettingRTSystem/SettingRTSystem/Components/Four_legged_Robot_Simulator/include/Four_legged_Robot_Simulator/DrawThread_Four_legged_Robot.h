@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  DrawThread.h
-* @brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“•`‰æŠÖ˜A‚ÌƒNƒ‰ƒX
+* @brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³æç”»é–¢é€£ã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -19,50 +19,50 @@
 
 /**
 * @class DrawThread_Four_legged_Robot
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì•`‰æ‚ğ‚·‚éƒXƒŒƒbƒh
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æç”»ã‚’ã™ã‚‹ã‚¹ãƒ¬ãƒƒãƒ‰
 */
 class DrawThread_Four_legged_Robot : public virtual coil::Task
 {
 public:
 		/**
-		*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		*/
 		DrawThread_Four_legged_Robot(SimulatorObj_Four_legged_Robot *so);
 		
 		/**
-		*@brief ƒXƒŒƒbƒhÀsŠÖ”
+		*@brief ã‚¹ãƒ¬ãƒƒãƒ‰å®Ÿè¡Œé–¢æ•°
 		* @return 
 		*/
 		virtual int svc();
 		/**
-		*@brief DrawStuff‰Šú‰»
+		*@brief DrawStuffåˆæœŸåŒ–
 		*/
 		void setDrawStuff();
 		/**
-		*@brief ’¼•û‘Ì•`‰æ
-		* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+		*@brief ç›´æ–¹ä½“æç”»
+		* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		*/
 		void drawBox(MyLink *body);
 		/**
-		*@brief ‰~’Œ•`‰æ
-		* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+		*@brief å††æŸ±æç”»
+		* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 		*/
 		void drawCylinder(MyLink *body);
 		/**
-		*@brief ‘Sƒ{ƒfƒB•`‰æ
+		*@brief å…¨ãƒœãƒ‡ã‚£æç”»
 		*/
 		void drawRobot();
 
 		/**
-		*@brief ƒJƒƒ‰ˆÊ’uÄİ’è
+		*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®š
 		*/
 		void resetCameraPosition();
 		/**
-		*@brief ƒJƒƒ‰ˆÊ’uÄİ’èƒtƒ‰ƒO‚ğ—§‚Ä‚é
+		*@brief ã‚«ãƒ¡ãƒ©ä½ç½®å†è¨­å®šãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 		*/
 		void setRCPFlag();
 		/**
-		*@brief •`‰æ‚ğ’â~‚·‚é
+		*@brief æç”»ã‚’åœæ­¢ã™ã‚‹
 		*/
 		void stop();
 

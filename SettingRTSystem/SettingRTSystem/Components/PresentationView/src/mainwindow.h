@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  mainwindow.h
- * @brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+ * @brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
  */
 
 
@@ -23,7 +23,7 @@ QT_FORWARD_DECLARE_CLASS(QSignalMapper)
 
 /*!
  * @class MainWindow
- * @brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+ * @brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
  *
  */
 class MainWindow : public QMainWindow
@@ -32,20 +32,20 @@ class MainWindow : public QMainWindow
 
 public:
 	/*!
-     * @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+     * @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
      */
     MainWindow();
-	QPushButton *pageGB;	/**<@@brief  */
-	QPushButton *pageRB;	/**<@@brief  */
-	QPushButton *effGB;	/**<@@brief  */
-	QPushButton *effRB;	/**<@@brief  */
-	QPushButton *saveSB;	/**<@@brief  */
-	QPushButton *saveEB;	/**<@@brief  */
-	QSpinBox *fpsSB;	/**<@@brief  */
-	QSpinBox *scaleSB;	/**<@@brief  */
-	QPushButton *updateB;	/**<@@brief  */
-	QPushButton *connectB;	/**<@@brief  */
-	QTableWidget *grtcTable;	/**<@@brief  */
+	QPushButton *pageGB;	/**<ã€€@brief  */
+	QPushButton *pageRB;	/**<ã€€@brief  */
+	QPushButton *effGB;	/**<ã€€@brief  */
+	QPushButton *effRB;	/**<ã€€@brief  */
+	QPushButton *saveSB;	/**<ã€€@brief  */
+	QPushButton *saveEB;	/**<ã€€@brief  */
+	QSpinBox *fpsSB;	/**<ã€€@brief  */
+	QSpinBox *scaleSB;	/**<ã€€@brief  */
+	QPushButton *updateB;	/**<ã€€@brief  */
+	QPushButton *connectB;	/**<ã€€@brief  */
+	QTableWidget *grtcTable;	/**<ã€€@brief  */
 	
 
 //protected:
@@ -54,47 +54,47 @@ signals:
 	
 public slots:
 	/*!
-     * @brief ƒXƒ‰ƒCƒh‚ği‚ß‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief ã‚¹ãƒ©ã‚¤ãƒ‰ã‚’é€²ã‚ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
     void pageGclickedSlot();
 	/*!
-     * @brief ƒXƒ‰ƒCƒh‚ğ–ß‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief ã‚¹ãƒ©ã‚¤ãƒ‰ã‚’æˆ»ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void pageRclickedSlot();
 	/*!
-     * @brief ƒAƒjƒ[ƒVƒ‡ƒ“‚ği‚ß‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é€²ã‚ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void effGclickedSlot();
 	/*!
-     * @brief ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ–ß‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’æˆ»ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void effRclickedSlot();
 	/*!
-     * @brief “®‰æ‚ğ•Û‘¶‚·‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief å‹•ç”»ã‚’ä¿å­˜ã™ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void saveSclickedSlot();
 	/*!
-     * @brief “®‰æ‚Ì•Û‘¶‚ğI—¹‚·‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief å‹•ç”»ã®ä¿å­˜ã‚’çµ‚äº†ã™ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void saveEclickedSlot();
 	/*!
-     * @brief “®‰æƒŠƒXƒg‚ÌXVƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief å‹•ç”»ãƒªã‚¹ãƒˆã®æ›´æ–°ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void updateclickedSlot();
 	/*!
-     * @brief ƒf[ƒ^ƒ|[ƒgÚ‘±ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief ãƒ‡ãƒ¼ã‚¿ãƒãƒ¼ãƒˆæ¥ç¶šãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void connectclickedSlot();
 	/*!
-     * @brief Šg‘å—¦ƒXƒsƒ“ƒ{ƒbƒNƒX‚Ì’l‚ª•Ï‰»‚µ‚½‚Æ‚«‚ÌƒXƒƒbƒg
+     * @brief æ‹¡å¤§ç‡ã‚¹ãƒ”ãƒ³ãƒœãƒƒã‚¯ã‚¹ã®å€¤ãŒå¤‰åŒ–ã—ãŸã¨ãã®ã‚¹ãƒ­ãƒƒãƒˆ
      */
 	void scalevalueChangedSlot(int v);
 	
 
 private:
-	QTextCodec* tc;	/**<@@brief  */
-	GraphicsView *gv;	/**<@@brief  */
-	std::vector<std::vector<std::string>> m_result;	/**<@@brief  */
+	QTextCodec* tc;	/**<ã€€@brief  */
+	GraphicsView *gv;	/**<ã€€@brief  */
+	std::vector<std::vector<std::string>> m_result;	/**<ã€€@brief  */
     
 };
 

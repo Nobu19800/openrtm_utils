@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef SENSORPAGES_H
 #define SENSORPAGES_H
 
@@ -6,7 +6,7 @@
 #include "ObjectData.h"
 
 
-/*ƒZƒ“ƒT‚Ìƒpƒ‰ƒ[ƒ^İ’è‚Ìƒy[ƒW*/
+/*ã‚»ãƒ³ã‚µã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒšãƒ¼ã‚¸*/
 
 class SensorPage : public QWidget
 {

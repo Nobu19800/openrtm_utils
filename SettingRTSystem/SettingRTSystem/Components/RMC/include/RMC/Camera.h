@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef CameraItem_H
 #define CameraItem_H
 
@@ -32,17 +32,17 @@ public:
 
     CameraItem(CameraData *cd, QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
 
-	void setData(CameraData *cd);	//ƒpƒ‰ƒ[ƒ^‚ğİ’è
+	void setData(CameraData *cd);	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®š
 	void setParam(CameraParam cd);
-	void setName(QString Name);	//–¼‘O‚ğİ’è
-	int returnType();	//æ“¾‚·‚éî•ñ‚Ìí—Ş‚ğ•Ô‚·
-	CameraData *ReturnParam();	//ƒpƒ‰ƒ[ƒ^‚ğ•Ô‚·
-	int ReturnID();	//ID‚ğ•Ô‚·
-	JointData* ReturnJointNUM();	//Ú‘±‚·‚éƒWƒ‡ƒCƒ“ƒg‚Ì”Ô†‚ğ•Ô‚·
-	QString ReturnName();	//–¼‘O‚ğ•Ô‚·
-	int returnGeom();	//ƒJƒƒ‰‚Ìí—Ş‚ğ•Ô‚·
-	void setJointNum(JointData* jd);	//”Ô†‚ğİ’è
-	int NUM;	//”Ô†
+	void setName(QString Name);	//åå‰ã‚’è¨­å®š
+	int returnType();	//å–å¾—ã™ã‚‹æƒ…å ±ã®ç¨®é¡ã‚’è¿”ã™
+	CameraData *ReturnParam();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
+	int ReturnID();	//IDã‚’è¿”ã™
+	JointData* ReturnJointNUM();	//æ¥ç¶šã™ã‚‹ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ç•ªå·ã‚’è¿”ã™
+	QString ReturnName();	//åå‰ã‚’è¿”ã™
+	int returnGeom();	//ã‚«ãƒ¡ãƒ©ã®ç¨®é¡ã‚’è¿”ã™
+	void setJointNum(JointData* jd);	//ç•ªå·ã‚’è¨­å®š
+	int NUM;	//ç•ªå·
 	CameraData *m_param;
 	QGraphicsTextItem *m_text;
 	QGraphicsLineItem* m_line;

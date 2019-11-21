@@ -1,4 +1,4 @@
-
+ï»¿
 #ifndef CAMERADIALOG_H
 #define CAMERADIALOG_H
 
@@ -20,7 +20,7 @@ QT_END_NAMESPACE
 
 
 
-/*ƒJƒƒ‰‚Ìƒpƒ‰ƒ[ƒ^Ý’èƒ_ƒCƒAƒƒO*/
+/*ã‚«ãƒ¡ãƒ©ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šãƒ€ã‚¤ã‚¢ãƒ­ã‚°*/
 
 
 class CameraDialog : public QDialog

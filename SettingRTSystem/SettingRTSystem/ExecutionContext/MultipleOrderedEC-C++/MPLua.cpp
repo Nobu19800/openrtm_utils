@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * @file  MPLua.cpp
 * @brief Luaから実行順序を読み込む関数
 *

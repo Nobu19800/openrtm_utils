@@ -1,4 +1,4 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  CapturePresentation.h
  * @brief CapturePresentation Component
@@ -284,29 +284,29 @@ class CapturePresentation
  private:
   
 	/**
-	*@brief ƒXƒNƒŠ[ƒ“ƒLƒƒƒvƒ`ƒƒŠJn
-	* @return ci ¬Œ÷‚È‚çtrueA¸”s‚È‚çfalse
+	*@brief ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚­ãƒ£ãƒ—ãƒãƒ£é–‹å§‹
+	* @return ci æˆåŠŸãªã‚‰trueã€å¤±æ•—ãªã‚‰false
 	*/
   bool InitWindowCapture();
 
   /**
-	*@brief ƒXƒNƒŠ[ƒ“ƒLƒƒƒvƒ`ƒƒI—¹
-	* @return ci ¬Œ÷‚È‚çtrueA¸”s‚È‚çfalse
+	*@brief ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚­ãƒ£ãƒ—ãƒãƒ£çµ‚äº†
+	* @return ci æˆåŠŸãªã‚‰trueã€å¤±æ•—ãªã‚‰false
 	*/
   bool ExitWindowCapture();
 
   
 
-  std::string windowtype;	/**<@@brief  */
-  float scale;	/**<@@brief  */
-  std::string m_string_encode;	/**<@@brief  */
-  int m_int_encode_quality;	/**<@@brief  */
-  std::string m_path;	/**<@@brief  */
-  std::string m_name;	/**<@@brief  */
-  int m_screen_x;	/**<@@brief  */
-  int m_screen_y;	/**<@@brief  */
-  int m_screen_width;	/**<@@brief  */
-  int m_screen_height;	/**<@@brief  */
+  std::string windowtype;	/**<ã€€@brief  */
+  float scale;	/**<ã€€@brief  */
+  std::string m_string_encode;	/**<ã€€@brief  */
+  int m_int_encode_quality;	/**<ã€€@brief  */
+  std::string m_path;	/**<ã€€@brief  */
+  std::string m_name;	/**<ã€€@brief  */
+  int m_screen_x;	/**<ã€€@brief  */
+  int m_screen_y;	/**<ã€€@brief  */
+  int m_screen_width;	/**<ã€€@brief  */
+  int m_screen_height;	/**<ã€€@brief  */
   int m_setRect;
   
 

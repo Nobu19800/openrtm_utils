@@ -1,4 +1,4 @@
-#ifndef OBJECTDATA_H
+ï»¿#ifndef OBJECTDATA_H
 #define OBJECTDATA_H
 
 #include <vector>
@@ -29,7 +29,7 @@ enum GeomType { Body_Box, Body_Sphere, Body_Cylinder, Body_Cone, Body_Polygon };
 enum JointType { Hinge, Slider, Fix};
 enum SensorType { Force, Gyro, Range, Acceleration, Torque};
 enum CameraType { Camera };
-enum CameraDataType { COLOR, DEPTH, COLOR_DEPTH, NONE};	//ƒJƒƒ‰‚Ìæ“¾‚·‚éî•ñ‚Ìí—Ş
+enum CameraDataType { COLOR, DEPTH, COLOR_DEPTH, NONE};	//ã‚«ãƒ¡ãƒ©ã®å–å¾—ã™ã‚‹æƒ…å ±ã®ç¨®é¡
 enum BTType { BTFree, BTFix};
 enum SourceType{ Source_NONE, Source_COLOR, Source_POINT, Source_COORD, Source_DEF, Source_TYPE, Source_TRANS, Source_ROTATION, Source_CIT };
 enum Control_Mode { InsertItem, InsertLine, InsertText, MoveItem, MoveLink, CreateLink, CreateSensor, CreateCamera};
@@ -212,7 +212,7 @@ public:
 	double fieldOfView;
 	double frontClipDistance;
 	double backClipDistance;
-	int m_type;	//ƒJƒƒ‰‚Ìæ“¾‚·‚éî•ñ‚Ìí—Ş
+	int m_type;	//ã‚«ãƒ¡ãƒ©ã®å–å¾—ã™ã‚‹æƒ…å ±ã®ç¨®é¡
 	int ID;
 };
 

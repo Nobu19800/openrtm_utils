@@ -1,4 +1,4 @@
-
+ï»¿
 
 
 
@@ -37,29 +37,29 @@ public:
 
     BodyItem(BodyData *bd, QGraphicsItem *parent = 0, QGraphicsScene *scene = 0);
 
-	/*void setBox(BodyBase *Param);	//—§•û‘Ì‚Éİ’è
-	void setSphere(BodyBase *Param);	//‹…‚Éİ’è
-	void setCone(BodyBase *Param);	//‰~‚Éİ’è
-	void setCylinder(BodyBase *Param);	//‰~’Œ‚Éİ’è
-	void setPolygon(BodyBase *Param);	//ƒ|ƒŠƒSƒ“‚Éİ’è*/
-	void setName(QString Name);	//–¼‘O‚ğİ’è
+	/*void setBox(BodyBase *Param);	//ç«‹æ–¹ä½“ã«è¨­å®š
+	void setSphere(BodyBase *Param);	//çƒã«è¨­å®š
+	void setCone(BodyBase *Param);	//å††éŒã«è¨­å®š
+	void setCylinder(BodyBase *Param);	//å††æŸ±ã«è¨­å®š
+	void setPolygon(BodyBase *Param);	//ãƒãƒªã‚´ãƒ³ã«è¨­å®š*/
+	void setName(QString Name);	//åå‰ã‚’è¨­å®š
 	void setGeom(BodyData *bd);
 	void setParam(BodyParam bp);
-	int returnGeom();	//Œ`ó‚Ìí—Ş‚ğ•Ô‚·
-	BodyData *ReturnParam();	//ƒpƒ‰ƒ[ƒ^‚ğ•Ô‚·
+	int returnGeom();	//å½¢çŠ¶ã®ç¨®é¡ã‚’è¿”ã™
+	BodyData *ReturnParam();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¿”ã™
 	//double Param1[26];
-	QString ReturnName();	//–¼‘O‚ğ•Ô‚·
-	//bool Flag;	//•¨‘Ì‚ªÁ‹‚³‚ê‚Ä‚¢‚È‚¯‚ê‚ÎTrue,Á‹Ï‚İ‚È‚çFalse
-	void SetTip(bool Tip);	//æ“ª‚©‚Ç‚¤‚©‚ğİ’è
-	//int NUM;	//”Ô†
+	QString ReturnName();	//åå‰ã‚’è¿”ã™
+	//bool Flag;	//ç‰©ä½“ãŒæ¶ˆå»ã•ã‚Œã¦ã„ãªã‘ã‚Œã°True,æ¶ˆå»æ¸ˆã¿ãªã‚‰False
+	void SetTip(bool Tip);	//å…ˆé ­ã‹ã©ã†ã‹ã‚’è¨­å®š
+	//int NUM;	//ç•ªå·
 	BodyData *m_param;
 	QGraphicsTextItem *m_text;
 
 
 
 private:
-	Control_Mode myMode;	//ƒGƒfƒBƒ^‚Å‚Ìó‘Ô
-	void open();	//ƒpƒ‰ƒ[ƒ^İ’è‚Ìƒ_ƒCƒAƒƒO•\¦
+	Control_Mode myMode;	//ã‚¨ãƒ‡ã‚£ã‚¿ã§ã®çŠ¶æ…‹
+	void open();	//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šã®ãƒ€ã‚¤ã‚¢ãƒ­ã‚°è¡¨ç¤º
 	
 	
 

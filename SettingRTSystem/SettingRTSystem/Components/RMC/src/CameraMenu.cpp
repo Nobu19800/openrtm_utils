@@ -1,4 +1,4 @@
-#include <QtWidgets> 
+ï»¿#include <QtWidgets> 
 #include <QtGui>
 #include "CameraMenu.h"
 
@@ -37,7 +37,7 @@ void CameraDialog::createButtons()
 
     closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     helpButton = buttonBox->addButton(QDialogButtonBox::Help);
-    createButton = buttonBox->addButton(tc->toUnicode("ì¬"),
+    createButton = buttonBox->addButton(tc->toUnicode("ä½œæˆ"),
                                                QDialogButtonBox::ActionRole);
 
 
@@ -56,7 +56,7 @@ void CameraDialog::createitems()
 {
         if(camerapage->returnParam().NAME == tc->toUnicode(""))
         {
-            QMessageBox::about(this, "Error", tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+            QMessageBox::about(this, "Error", tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
         }
         else
         {

@@ -1,7 +1,7 @@
-// -*- C++ -*-
+ï»¿// -*- C++ -*-
 /*!
  * @file  mainwindow.cpp
- * @brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+ * @brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
  */
 
 #include "mainwindow.h"
@@ -52,31 +52,31 @@ MainWindow::MainWindow()
 	layout->addWidget(gv);
 
 	QVBoxLayout *b_layout = new QVBoxLayout;
-	pageGB = new QPushButton(tc->toUnicode("ƒy[ƒW‚ði‚ß‚é"));
+	pageGB = new QPushButton(tc->toUnicode("ãƒšãƒ¼ã‚¸ã‚’é€²ã‚ã‚‹"));
 	b_layout->addWidget(pageGB);
 	connect(pageGB, SIGNAL(clicked()), this, SLOT(pageGclickedSlot()));
-	pageRB = new QPushButton(tc->toUnicode("ƒy[ƒW‚ð–ß‚·"));
+	pageRB = new QPushButton(tc->toUnicode("ãƒšãƒ¼ã‚¸ã‚’æˆ»ã™"));
 	b_layout->addWidget(pageRB);
 	connect(pageRB, SIGNAL(clicked()), this, SLOT(pageRclickedSlot()));
-	effGB = new QPushButton(tc->toUnicode("ƒAƒjƒ[ƒVƒ‡ƒ“‚ðŽÀs"));
+	effGB = new QPushButton(tc->toUnicode("ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œ"));
 	b_layout->addWidget(effGB);
 	connect(effGB, SIGNAL(clicked()), this, SLOT(effGclickedSlot()));
-	effRB = new QPushButton(tc->toUnicode("ƒAƒjƒ[ƒVƒ‡ƒ“‚ð–ß‚·"));
+	effRB = new QPushButton(tc->toUnicode("ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’æˆ»ã™"));
 	b_layout->addWidget(effRB);
 	connect(effRB, SIGNAL(clicked()), this, SLOT(effRclickedSlot()));
 
-	saveSB = new QPushButton(tc->toUnicode("“®‰æ‚ð•Û‘¶‚ðŠJŽn"));
+	saveSB = new QPushButton(tc->toUnicode("å‹•ç”»ã‚’ä¿å­˜ã‚’é–‹å§‹"));
 	b_layout->addWidget(saveSB);
 	connect(saveSB, SIGNAL(clicked()), this, SLOT(saveSclickedSlot()));
 
-	saveEB = new QPushButton(tc->toUnicode("“®‰æ‚Ì•Û‘¶‚ðI—¹"));
+	saveEB = new QPushButton(tc->toUnicode("å‹•ç”»ã®ä¿å­˜ã‚’çµ‚äº†"));
 	b_layout->addWidget(saveEB);
 	connect(saveEB, SIGNAL(clicked()), this, SLOT(saveEclickedSlot()));
 
 	
 
 	QVBoxLayout *scaleLayout = new QVBoxLayout();
-	QLabel *scaleLabel = new QLabel(tc->toUnicode("Šg‘å—¦(“)"));
+	QLabel *scaleLabel = new QLabel(tc->toUnicode("æ‹¡å¤§çŽ‡(ï¼…)"));
 	scaleLayout->addWidget(scaleLabel);
 	scaleSB = new QSpinBox();
 	scaleSB->setMaximum(1000);
@@ -116,11 +116,11 @@ MainWindow::MainWindow()
 
 	b_layout->addWidget(grtcTable);
 
-	updateB = new QPushButton(tc->toUnicode("XV"));
+	updateB = new QPushButton(tc->toUnicode("æ›´æ–°"));
 	b_layout->addWidget(updateB);
 	connect(updateB, SIGNAL(clicked()), this, SLOT(updateclickedSlot()));
 
-	connectB = new QPushButton(tc->toUnicode("Ú‘±"));
+	connectB = new QPushButton(tc->toUnicode("æŽ¥ç¶š"));
 	b_layout->addWidget(connectB);
 	connect(connectB, SIGNAL(clicked()), this, SLOT(connectclickedSlot()));
 
@@ -166,7 +166,7 @@ void MainWindow::saveSclickedSlot()
 	if(!gv->saveVideo)
 	{
 		QString fileName = QFileDialog::getSaveFileName(this,
-								tc->toUnicode("•Û‘¶"), "",
+								tc->toUnicode("ä¿å­˜"), "",
 								tr("AVI File (*.avi);;All Files (*)"));
 		if (fileName.isEmpty())
 			return;
@@ -182,7 +182,7 @@ void MainWindow::saveEclickedSlot()
 	{
 		gv->saveVideo = false;
 		QMessageBox msgBox(this);
-		msgBox.setText(tc->toUnicode("“®‰æ‚Ì•Û‘¶‚ðŠ®—¹‚µ‚Ü‚µ‚½B"));
+		msgBox.setText(tc->toUnicode("å‹•ç”»ã®ä¿å­˜ã‚’å®Œäº†ã—ã¾ã—ãŸã€‚"));
 		msgBox.exec();
 	}
 }
@@ -222,14 +222,14 @@ void MainWindow::connectclickedSlot()
 			if(!comp->connectDPort(ba, m_result))
 			{
 				QMessageBox msgBox(this);
-				msgBox.setText(tc->toUnicode("Ú‘±‚ÉŽ¸”s‚µ‚Ü‚µ‚½"));
+				msgBox.setText(tc->toUnicode("æŽ¥ç¶šã«å¤±æ•—ã—ã¾ã—ãŸ"));
 				msgBox.exec();
 			}
 		}
 		else
 		{
 			QMessageBox msgBox(this);
-			msgBox.setText(tc->toUnicode("RTC‚ª‘I‘ð‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ"));
+			msgBox.setText(tc->toUnicode("RTCãŒé¸æŠžã•ã‚Œã¦ã„ã¾ã›ã‚“"));
 			msgBox.exec();
 		}
 	}

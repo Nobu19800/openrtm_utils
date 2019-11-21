@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  panel.h
-* @brief ‘€ìƒpƒlƒ‹
+* @brief æ“ä½œãƒ‘ãƒãƒ«
 *
 */
 
@@ -21,7 +21,7 @@ class QTextEdit;
 
 /**
 * @class Panel
-*@brief ‘€ìƒpƒlƒ‹
+*@brief æ“ä½œãƒ‘ãƒãƒ«
 */
 class Panel: public QTabWidget
 {
@@ -29,38 +29,38 @@ class Panel: public QTabWidget
 
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param parent eƒEƒBƒWƒFƒbƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 	*/
 	Panel( QWidget *parent = NULL );
 	/**
-	*@brief İ’èæ“¾
-	* @return İ’èƒIƒuƒWƒFƒNƒg
+	*@brief è¨­å®šå–å¾—
+	* @return è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
     Settings settings() const;
 	/**
-	*@brief İ’è”½‰f
-	* @param s İ’èƒIƒuƒWƒFƒNƒg
+	*@brief è¨­å®šåæ˜ 
+	* @param s è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void setSettings(const Settings &s);
 	/**
-	*@brief ƒ‰ƒxƒ‹•tƒEƒBƒWƒFƒbƒgì¬
-	* @param wd ƒEƒBƒWƒFƒbƒg
-	* @param layout ƒEƒBƒWƒFƒbƒg‚ğ’Ç‰Á‚·‚éƒŒƒCƒAƒEƒg
-	* @param name •\¦‚·‚é•¶š—ñ
+	*@brief ãƒ©ãƒ™ãƒ«ä»˜ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆä½œæˆ
+	* @param wd ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
+	* @param layout ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆã‚’è¿½åŠ ã™ã‚‹ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
+	* @param name è¡¨ç¤ºã™ã‚‹æ–‡å­—åˆ—
 	*/
 	void addWidgetWithLabel(QWidget *wd, QBoxLayout *layout, const char* name);
 
 Q_SIGNALS:
 	/**
-	*@brief İ’è•ÏX‚ÌƒVƒOƒiƒ‹
-	* @param settings İ’èƒIƒuƒWƒFƒNƒg
+	*@brief è¨­å®šå¤‰æ›´æ™‚ã®ã‚·ã‚°ãƒŠãƒ«
+	* @param settings è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
     void settingsChanged( const Settings &settings );
 
 private Q_SLOTS:
 	/**
-	*@brief İ’è•ÏX‚ÌƒXƒƒbƒg
+	*@brief è¨­å®šå¤‰æ›´æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
 	*/
     void edited();
 
@@ -69,8 +69,8 @@ protected:
 
 private:
 	/**
-	*@brief Šeíİ’è—pƒ^ƒu‚ğ¶¬
-	* @param parent eƒEƒBƒWƒFƒbƒg
+	*@brief å„ç¨®è¨­å®šç”¨ã‚¿ãƒ–ã‚’ç”Ÿæˆ
+	* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 	*/
 	QWidget *createPlotTab(QWidget *parent);
 

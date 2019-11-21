@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  SimulatorObj_Four_legged_Robot.cpp
-* @brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“ŠÖ˜A‚ÌƒNƒ‰ƒX
+* @brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³é–¢é€£ã®ã‚¯ãƒ©ã‚¹
 *
 */
 
@@ -13,7 +13,7 @@ SimulatorObj_Four_legged_Robot *obj_fourleggedrobot = NULL;
 
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì‘€ì‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æ“ä½œã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 SimulatorObj_Four_legged_Robot::SimulatorObj_Four_legged_Robot()
 {
@@ -43,7 +43,7 @@ SimulatorObj_Four_legged_Robot::SimulatorObj_Four_legged_Robot()
 }
 
 /**
-*@brief ƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚Ì‘€ì‚ğ‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚ÌƒfƒXƒgƒ‰ƒNƒ^
+*@brief ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã®æ“ä½œã‚’ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã®ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 */
 SimulatorObj_Four_legged_Robot::~SimulatorObj_Four_legged_Robot()
 {
@@ -53,7 +53,7 @@ SimulatorObj_Four_legged_Robot::~SimulatorObj_Four_legged_Robot()
 }
 
 /**
-*@brief Šeƒpƒ‰ƒ[ƒ^‚Ì‰Šú‰»‚ğs‚¤
+*@brief å„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åˆæœŸåŒ–ã‚’è¡Œã†
 */
 void SimulatorObj_Four_legged_Robot::makeParam()
 {
@@ -162,8 +162,8 @@ void SimulatorObj_Four_legged_Robot::makeParam()
 }
 
 /**
-*@brief ’¼•û‘Ìì¬
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief ç›´æ–¹ä½“ä½œæˆ
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void SimulatorObj_Four_legged_Robot::setBox(MyLink *body)
 {
@@ -178,8 +178,8 @@ void SimulatorObj_Four_legged_Robot::setBox(MyLink *body)
 }
 
 /**
-*@brief ‰~’Œì¬
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
+*@brief å††æŸ±ä½œæˆ
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 */
 void SimulatorObj_Four_legged_Robot::setCylinder(MyLink *body)
 {
@@ -194,9 +194,9 @@ void SimulatorObj_Four_legged_Robot::setCylinder(MyLink *body)
 }
 
 /**
-*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void SimulatorObj_Four_legged_Robot::setHinge(MyLink *body1, MyLink *body2)
 {
@@ -207,9 +207,9 @@ void SimulatorObj_Four_legged_Robot::setHinge(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void SimulatorObj_Four_legged_Robot::setSlider(MyLink *body1, MyLink *body2)
 {
@@ -220,9 +220,9 @@ void SimulatorObj_Four_legged_Robot::setSlider(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ŒÅ’èƒWƒ‡ƒCƒ“ƒgì¬
-* @param body1 ƒ{ƒfƒB1
-* @param body2 ƒ{ƒfƒB2
+*@brief å›ºå®šã‚¸ãƒ§ã‚¤ãƒ³ãƒˆä½œæˆ
+* @param body1 ãƒœãƒ‡ã‚£1
+* @param body2 ãƒœãƒ‡ã‚£2
 */
 void SimulatorObj_Four_legged_Robot::setFixed(MyLink *body1, MyLink *body2)
 {
@@ -232,7 +232,7 @@ void SimulatorObj_Four_legged_Robot::setFixed(MyLink *body1, MyLink *body2)
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒg¶¬
+*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆç”Ÿæˆ
 */
 void SimulatorObj_Four_legged_Robot::makeRobot()
 {
@@ -267,9 +267,9 @@ void SimulatorObj_Four_legged_Robot::makeRobot()
 }
 
 /**
-*@brief ÚGƒR[ƒ‹ƒoƒbƒN
-* @param o1 ƒWƒIƒƒgƒŠ1
-* @param o2 ƒWƒIƒƒgƒŠ2
+*@brief æ¥è§¦ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+* @param o1 ã‚¸ã‚ªãƒ¡ãƒˆãƒª1
+* @param o2 ã‚¸ã‚ªãƒ¡ãƒˆãƒª2
 */
 void SimulatorObj_Four_legged_Robot::m_nearCallback(dGeomID o1, dGeomID o2)
 {
@@ -304,10 +304,10 @@ void SimulatorObj_Four_legged_Robot::m_nearCallback(dGeomID o1, dGeomID o2)
 }
 
 /**
-*@brief ÚGƒR[ƒ‹ƒoƒbƒN
-* @param data ƒf[ƒ^
-* @param o1 ƒWƒIƒƒgƒŠ1
-* @param o2 ƒWƒIƒƒgƒŠ2
+*@brief æ¥è§¦ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
+* @param data ãƒ‡ãƒ¼ã‚¿
+* @param o1 ã‚¸ã‚ªãƒ¡ãƒˆãƒª1
+* @param o2 ã‚¸ã‚ªãƒ¡ãƒˆãƒª2
 */
 static void nearCallback(void *data, dGeomID o1, dGeomID o2) {
 	
@@ -320,9 +320,9 @@ static void nearCallback(void *data, dGeomID o1, dGeomID o2) {
 }
 
 /**
-*@brief ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg§Œä
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-* @param theta ƒqƒ“ƒWƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+*@brief ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param theta ãƒ’ãƒ³ã‚¸ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 */
 void SimulatorObj_Four_legged_Robot::controlHinge(MyLink *body, dReal theta)
 {
@@ -336,9 +336,9 @@ void SimulatorObj_Four_legged_Robot::controlHinge(MyLink *body, dReal theta)
 }
 
 /**
-*@brief ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg§Œä
-* @param body ƒ{ƒfƒBƒIƒuƒWƒFƒNƒg
-* @param length ƒXƒ‰ƒCƒ_[ƒWƒ‡ƒCƒ“ƒg‚ÌˆÊ’u
+*@brief ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
+* @param body ãƒœãƒ‡ã‚£ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+* @param length ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆã®ä½ç½®
 */
 void SimulatorObj_Four_legged_Robot::controlSlider(MyLink *body, dReal length)
 {
@@ -352,7 +352,7 @@ void SimulatorObj_Four_legged_Robot::controlSlider(MyLink *body, dReal length)
 }
 
 /**
-*@brief ‘SƒWƒ‡ƒCƒ“ƒg§Œä
+*@brief å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆåˆ¶å¾¡
 */
 void SimulatorObj_Four_legged_Robot::control()
 {
@@ -450,7 +450,7 @@ void SimulatorObj_Four_legged_Robot::control()
 }
 
 /**
-*@brief XV
+*@brief æ›´æ–°
 */
 void SimulatorObj_Four_legged_Robot::update()
 {
@@ -467,7 +467,7 @@ void SimulatorObj_Four_legged_Robot::update()
 }
 
 /**
-*@brief ‘Sƒ{ƒfƒBAÚ‘±‚·‚é‘SƒWƒ‡ƒCƒ“ƒgÁ‹
+*@brief å…¨ãƒœãƒ‡ã‚£ã€æ¥ç¶šã™ã‚‹å…¨ã‚¸ãƒ§ã‚¤ãƒ³ãƒˆæ¶ˆå»
 */
 void SimulatorObj_Four_legged_Robot::destroyRobot()
 {
@@ -496,8 +496,8 @@ void SimulatorObj_Four_legged_Robot::destroyRobot()
 }
 
 /**
-*@brief ‚İ•İ’è
-* @param s ƒTƒ“ƒvƒŠƒ“ƒOŠÔ
+*@brief åˆ»ã¿å¹…è¨­å®š
+* @param s ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°æ™‚é–“
 */
 void SimulatorObj_Four_legged_Robot::setSamplingTime(double s)
 {
@@ -506,8 +506,8 @@ void SimulatorObj_Four_legged_Robot::setSamplingTime(double s)
 }
 
 /**
-*@brief ‘«— ‚ğì¬‚·‚é‚©‚ğİ’è
-*@param fe true‚Å‘«— ì¬
+*@brief è¶³è£ã‚’ä½œæˆã™ã‚‹ã‹ã‚’è¨­å®š
+*@param fe trueã§è¶³è£ä½œæˆ
 */
 void SimulatorObj_Four_legged_Robot::setFoot(bool fe)
 {

@@ -1,4 +1,4 @@
-#include <QtWidgets>
+ï»¿#include <QtWidgets>
 #include <QtGui>
 #include <qtextcodec.h>
 #include "JointMenu.h"
@@ -41,7 +41,7 @@ void ActDialog::createButtons()
 
     closeButton = buttonBox->addButton(QDialogButtonBox::Close);
     helpButton = buttonBox->addButton(QDialogButtonBox::Help);
-    createButton = buttonBox->addButton(tc->toUnicode("ì¬"),
+    createButton = buttonBox->addButton(tc->toUnicode("ä½œæˆ"),
                                                QDialogButtonBox::ActionRole);
 
     connect(createButton, SIGNAL(clicked()), this, SLOT(createitems()));
@@ -57,12 +57,12 @@ void ActDialog::createitems()
 		if(m_jp.m_axisx==0&&m_jp.m_axisy==0&&m_jp.m_axisz==0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("²‚ªİ’è‚³‚ê‚Ä‚Ü‚¹‚ñ."));
+                        tc->toUnicode("è»¸ãŒè¨­å®šã•ã‚Œã¦ã¾ã›ã‚“."));
 		}
 		else if(m_jp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -76,12 +76,12 @@ void ActDialog::createitems()
 		if(m_jp.m_axisx==0&&m_jp.m_axisy==0&&m_jp.m_axisz==0)
 		{
 			QMessageBox::about(this, "Error", 
-                        tc->toUnicode("²‚ªİ’è‚³‚ê‚Ä‚Ü‚¹‚ñ."));
+                        tc->toUnicode("è»¸ãŒè¨­å®šã•ã‚Œã¦ã¾ã›ã‚“."));
 		}
 		else if(m_jp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{
@@ -95,7 +95,7 @@ void ActDialog::createitems()
 		if(m_jp.NAME == tc->toUnicode(""))
 		{
 			QMessageBox::about(this, "Error", 
-				            tc->toUnicode("–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñ"));
+				            tc->toUnicode("åå‰ãŒã‚ã‚Šã¾ã›ã‚“"));
 		}
 		else
 		{

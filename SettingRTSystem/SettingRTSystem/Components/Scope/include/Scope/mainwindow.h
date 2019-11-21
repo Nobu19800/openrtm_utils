@@ -1,6 +1,6 @@
-/*!
+ï»¿/*!
 * @file  mainwindow.h
-* @brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+* @brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
 *
 */
 
@@ -17,7 +17,7 @@ class QLabel;
 
 /**
 * @class MainWindow
-*@brief ƒƒCƒ“ƒEƒCƒ“ƒhƒE
+*@brief ãƒ¡ã‚¤ãƒ³ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦
 */
 class MainWindow: public QMainWindow
 {
@@ -25,16 +25,16 @@ class MainWindow: public QMainWindow
 
 public:
 	/**
-	*@brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	* @param parent eƒEƒBƒWƒFƒbƒg
+	*@brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	* @param parent è¦ªã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
 	*/
     MainWindow( QWidget *parent = NULL );
     //virtual bool eventFilter( QObject *, QEvent * );
 
 private Q_SLOTS:
 	/**
-	*@brief İ’è”½‰f‚ÌƒXƒƒbƒg
-	* @param settings İ’èƒIƒuƒWƒFƒNƒg
+	*@brief è¨­å®šåæ˜ æ™‚ã®ã‚¹ãƒ­ãƒƒãƒˆ
+	* @param settings è¨­å®šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void applySettings(const Settings &settings);
 
