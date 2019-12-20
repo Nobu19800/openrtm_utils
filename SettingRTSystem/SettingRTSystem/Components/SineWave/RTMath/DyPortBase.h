@@ -230,7 +230,7 @@ public:
 	*@brief データポートからデータを出力
 	* @param v データ
 	*/
-	void setData(T2 v)
+	void setData(T2 const& v)
 	{
 		Out->data = v;
 		outOut->write();
@@ -328,11 +328,11 @@ public:
 	*@brief データポートからデータを出力
 	* @param v データの配列
 	*/
-	void setData(std::vector<T2> v)
+	void setData(std::vector<T2> const& v)
 	{
-		//Out->data = v;
+		using size_type = typename std::remove_reference<decltype(v)>::type::size_type;
 		Out->data.length(v.size());
-		for(int i=0;i < v.size();i++)
+		for(size_type i=0;i < v.size();i++)
 		{
 			Out->data[i] = v[i];
 		}

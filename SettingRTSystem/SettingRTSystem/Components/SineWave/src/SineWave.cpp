@@ -76,8 +76,8 @@ SineWave::~SineWave()
 void SineWave::configUpdate()
 {
 	this->m_configsets.update("default");
-	coil::eraseBlank(m_dataType);
-	coil::eraseBlank(m_realTime);
+	m_dataType = coil::eraseBlank(std::move(m_dataType));
+	m_realTime = coil::eraseBlank(std::move(m_realTime));
 
 	if(last_dataType != m_dataType)
 	{
@@ -161,8 +161,8 @@ RTC::ReturnCode_t SineWave::onInitialize()
   bindParameter("data_size", m_data_size, "1");
   // </rtc-template>
   configUpdate();
-  this->addConfigurationSetListener(ON_SET_CONFIG_SET, new DynamicPortConfigUpdateParam(this));
-  
+  this->addConfigurationSetListener(ConfigurationSetListenerType::ON_SET_CONFIG_SET,
+                                    new DynamicPortConfigUpdateParam(this));
   return RTC::RTC_OK;
 }
 

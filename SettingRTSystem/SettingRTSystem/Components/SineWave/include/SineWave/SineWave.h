@@ -251,7 +251,7 @@ class SineWave
    * - Name: samplingTime samplingTime
    * - DefaultValue: 0.01
    */
-  double m_samplingTime;
+  std::chrono::nanoseconds m_samplingTime;
   /*!
    * 
    * - Name: realTime realTime
@@ -335,7 +335,7 @@ class SineWave
 class SineWaveCompBase : public RTCLogicBase
 {
 public:
-	virtual void setSamplingTime(double s)
+	virtual void setSamplingTime(std::chrono::nanoseconds s)
 	{
 	
 	};
@@ -381,7 +381,7 @@ public:
 	{
 		delete m_outport;
 	}
-	void setSamplingTime(double s)
+	void setSamplingTime(std::chrono::nanoseconds s)
 	{
 		func.setSamplingTime(s);
 	};
@@ -458,7 +458,7 @@ public:
 	{
 		delete m_outport;
 	}
-	void setSamplingTime(double s)
+	void setSamplingTime(std::chrono::nanoseconds s)
 	{
 		samplingTime = s;
 		for (typename std::vector<RTSineWave<T2>>::iterator it = func.begin(); it != func.end(); ++it)
@@ -477,7 +477,7 @@ public:
 	void setAmplitude(std::string a)
 	{
 		getValueInString(a,amplitude);
-		for (int i=0;i < func.size();i++)
+		for (typename decltype(func)::size_type i=0;i < func.size();i++)
 		{
 			T2 v;
 			if(!getValueInList<T2>(amplitude,i,v))return;
@@ -487,7 +487,7 @@ public:
 	void setBias(std::string b)
 	{
 		getValueInString(b,bias);
-		for (int i=0;i < func.size();i++)
+		for (typename decltype(func)::size_type i=0;i < func.size();i++)
 		{
 			T2 v;
 			if(!getValueInList<T2>(bias,i,v))return;
@@ -497,7 +497,7 @@ public:
 	void setFrequency(std::string f)
 	{
 		getValueInString(f,frequency);
-		for (int i=0;i < func.size();i++)
+		for (typename decltype(func)::size_type i=0;i < func.size();i++)
 		{
 			T2 v;
 			if(!getValueInList<T2>(frequency,i,v))return;
@@ -507,7 +507,7 @@ public:
 	void setPhase(std::string p)
 	{
 		getValueInString(p,phase);
-		for (int i=0;i < func.size();i++)
+		for (typename decltype(func)::size_type i=0;i < func.size();i++)
 		{
 			T2 v;
 			if(!getValueInList<T2>(phase,i,v))return;
@@ -573,7 +573,7 @@ public:
 	DataTypeOutPortSeq<T,T2>* m_outport;
 	std::vector<RTSineWave<T2>> func;
 	bool realTime;
-	double samplingTime;
+	std::chrono::nanoseconds samplingTime;
 	std::vector<T2> amplitude;
 	std::vector<T2> bias;
 	std::vector<T2> frequency;
